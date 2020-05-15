@@ -209,6 +209,12 @@ color: white;
 	max-width: 	1900px;
 }
 
+.clearfix::after{
+  content: "";
+  clear: both;
+  display: block;
+}
+
 .profile-grid{
 	margin-top: 100px;
 	padding-left: 	17px !important;
