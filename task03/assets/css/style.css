@@ -280,6 +280,15 @@ section {
     margin-right: 15%;
     margin-left: 15%;
     list-style: none;
+    cursor: pointer;
+}
+
+.carousel-indicators li::after{
+   content: none;
+}
+
+.carousel-indicators li::before{
+   content: none;
 }
 
 #fade-quote-carousel.carousel {
@@ -601,9 +610,6 @@ padding-top: 62px;
   margin-top: 50px;
 }
 
-.tab-gone{
-  display: none;
-}
 
 
 .nav-link{
