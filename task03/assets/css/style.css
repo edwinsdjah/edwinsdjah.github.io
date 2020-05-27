@@ -266,9 +266,7 @@ section {
 .carousel-indicators{
 	position: absolute;
     top: 384px !important;
-    right: 335px !important;
     bottom: 10px !important	;
-    left: 0px;
     z-index: 15;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -283,13 +281,6 @@ section {
     cursor: pointer;
 }
 
-.carousel-indicators li::after{
-   content: none;
-}
-
-.carousel-indicators li::before{
-   content: none;
-}
 
 #fade-quote-carousel.carousel {
   padding-bottom: 60px;
