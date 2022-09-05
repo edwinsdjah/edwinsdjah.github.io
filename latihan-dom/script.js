@@ -9,15 +9,14 @@ function colorRandom() {
         let hexvalR = rgbtohex(r);
         let hexvalG = rgbtohex(g);
         let hexvalB = rgbtohex(b);
-        let s = document.body.style.backgroundColor = `rgb(${r},${g},${b})`
-        txt.value = s
+        txt.value = document.body.style.backgroundColor = `rgb(${r},${g},${b})`
         txt2.value = `#${hexvalR}${hexvalG}${hexvalB}`
     })
 }
 
-function rgbtohex (n) {
+function rgbtohex(n) {
     let hex = Number(n).toString(16);
-    if (hex.length < 2){
+    if (hex.length < 2) {
         hex = '0' + hex;
     }
     return hex
@@ -52,7 +51,7 @@ function sliderChange() {
         txt.value = (getComputedStyle(document.body).backgroundColor);
         txt2.value = `#${hexvalR}${hexvalG}${hexvalB}`
     })
-    blue.addEventListener('input', ()=>{
+    blue.addEventListener('input', () => {
         let r = red.value;
         let g = green.value;
         let b = blue.value;
@@ -63,20 +62,21 @@ function sliderChange() {
         txt.value = (getComputedStyle(document.body).backgroundColor);
         txt2.value = `#${hexvalR}${hexvalG}${hexvalB}`
     })
-    
+
 }
 
-function copy(){
-    const txt = document.getElementById('txt');
-    const copy = document.querySelector('.btn-copy');
-    copy.addEventListener('click', () =>{
+function copy() {
+    // const copy = document.getElementsByClassName('btn-copy');
+    const copy = document.querySelectorAll('.btn-copy');
+    copy.forEach ( element => element.addEventListener('click', function() {
+        let txt = this.previousElementSibling;
         if(txt.value === ''){
-            alert('Text empty')
+            alert('text empty')
         } else {
-        navigator.clipboard.writeText(txt.value);
-        alert("Copy success")
-        }
-    }) 
+            navigator.clipboard.writeText(txt.value);
+            alert('copy success')
+        }   
+    }))
 }
 
 
