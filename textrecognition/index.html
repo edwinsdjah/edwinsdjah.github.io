@@ -5,13 +5,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
+    <title>Text to speech converter</title>
+    <link href="http://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
     <style>
-    body{
-        width: 100%;
-        text-align: center;
-    }
+        body {
+            width: 100%;
+            text-align: center;
+            background-color: #aa0505;
+        }
+
+        * {
+            font-family: 'SF Pro Display', sans-serif;
+        }
+
+
+        .mascot {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+        .mascot {
+            width: 10em;
+        }
+
+        main {
+            margin: 0 auto;
+            width: 40%;
+            background-color: white;
+            padding: 2em;
+            border: 2px solid black;
+            border-radius: 20px;
+
+        }
+        
+        .submit {
+            background-color: #aa0505;
+            color: white;
+            height: 2rem;
+            border-radius: 10px;
+            margin-top: 2em;
+        }
     </style>
 </head>
 
@@ -20,17 +54,17 @@
 <body>
     <main>
         <h1 class="title">Text to speech Converter</p>
-        <div class="text-section">
-            <p class="text-title">Enter Text</p>
-            <textarea name="" id="text"></textarea>
-        </div>
-        <div class="voice-section">
-            <p class="voice-title">Select Voice</p>
-            <select name="" id="voice">
-                <option value="Google US English">Google US English</option>
-            </select>
-        </div>
-        <button class="submit">Convert to Speech</button>
+            <div class="text-section">
+                <p class="text-title">Enter Text</p>
+                <textarea name="" id="text"></textarea>
+            </div>
+            <div class="voice-section">
+                <p class="voice-title">Select Voice</p>
+                <select name="" id="voice">
+                    <option value="Google US English">Google US English</option>
+                </select>
+            </div>
+            <button class="submit">Convert to Speech</button>
     </main>
 
     <script>
@@ -50,7 +84,7 @@
 
         }
 
-        synth.addEventListener('voiceschanged', voiceSpeech)
+        synth.addEventListener('voiceschanged', voiceSpeech);
 
         function textospeech(text) {
             let utterance = new SpeechSynthesisUtterance(text)
@@ -89,6 +123,7 @@
                 }
             }
         })
+        voiceSpeech();
     </script>
 </body>
 
