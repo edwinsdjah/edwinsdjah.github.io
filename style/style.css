@@ -38,15 +38,23 @@ h1 {
     display: none;
 }
 
+ul.ctrl{
+    display: none;
+}
+
+.navbar.block{
+    background-color: transparent !important;
+}
+
 
 #section1 {
-    background-image: url(/img/background_1.png);
+    background-image: url(../img/background_1.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 #section2 {
-    background-image: url(/img/bg-dark.png);
+    background-image: url(../img/bg-dark.png);
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
@@ -55,7 +63,7 @@ h1 {
 }
 
 #section4 {
-    background-image: url(/img/bg-dark.png);
+    background-image: url(../img/bg-dark.png);
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
@@ -64,13 +72,13 @@ h1 {
 
 #section5 {
     margin-top: 10em;
-    background-image: url(/img/job-bg.png);
+    background-image: url(../img/job-bg.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 #section6 .bg-lower {
-    background-image: url(/img/bg-lower.png);
+    background-image: url(../img/bg-lower.png);
     background-size: cover;
     background-repeat: no-repeat;
     color: #FFFFFF;
@@ -78,7 +86,7 @@ h1 {
 }
 
 #section3 {
-    background-image: url(/img/background_2.png);
+    background-image: url(../img/background_2.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -154,7 +162,7 @@ h1 {
 }
 
 .bg-tri {
-    background-image: url(/img/bg-tri-1.png);
+    background-image: url(../img/bg-tri-1.png);
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;
@@ -164,7 +172,7 @@ h1 {
 
 .bg-tri-2::after {
     position: absolute;
-    content: url(/img/bg-tri-2.png);
+    content: url(../img/bg-tri-2.png);
     right: 0;
     top: -2.5em;
     z-index: -1;
@@ -225,7 +233,7 @@ span.number {
 }
 
 .nav-pills button.nav-link.active::after {
-    content: url(/img/point.png);
+    content: url(../img/point.png);
     position: absolute;
     padding: 0;
     margin: 0;
@@ -239,7 +247,7 @@ span.number {
 }
 
 .nav-pills button.nav-link::before {
-    content: url(/img/line.png);
+    content: url(../img/line.png);
     position: absolute;
     padding: 0;
     margin: 0;
@@ -261,6 +269,13 @@ span.number {
 
 .lower-tab-content {
     margin-top: 5em;
+}
+
+.lower-tab-content .col-lg-5 .content{
+    background-color: #232340;
+    border-radius: 50%;
+    height: 19rem;
+    box-shadow: 0px 23px 50px rgb(0 0 0 / 25%);
 }
 
 #section2 .content>h2 {
@@ -292,6 +307,13 @@ span.number {
     font-weight: 700;
     font-size: 1.5em;
     margin-top: -2em;
+}
+
+.dropdown{
+    width: 10rem;
+    background-color: #232340;
+    color: white;
+    border: none;
 }
 
 .pink-border {
@@ -394,7 +416,7 @@ span.number {
 }
 
 .ico-2::after {
-    content: url(/img/ico-2.png);
+    content: url(../img/ico-2.png);
     width: 32px;
     height: 32px;
     vertical-align: middle;
@@ -402,7 +424,7 @@ span.number {
 }
 
 .ico-6::after {
-    content: url(/img/ico-6.png);
+    content: url(../img/ico-6.png);
     width: 32px;
     height: 32px;
     vertical-align: middle;
@@ -475,11 +497,11 @@ span.number {
 }
 
 .carousel-control-prev-icon {
-    content: url(/img/left.png) !important;
+    content: url(../img/left.png) !important;
 }
 
 .carousel-control-next-icon {
-    content: url(/img/right.png) !important;
+    content: url(../img/right.png) !important;
 }
 
 .carousel {
@@ -590,7 +612,7 @@ span.number {
 }
 
 .greet::before {
-    content: url(/img/emoji.png);
+    content: url(../img/emoji.png);
     margin-right: 10px;
 }
 
@@ -806,6 +828,8 @@ footer .nav-item {
     .icon-content {
         gap: 1.5em;
     }
+    
+
 
     .icon-content a {
         text-decoration: none;
@@ -828,7 +852,7 @@ footer .nav-item {
     }
 
     .navbar.show {
-        background-image: url(/img/nav-sp-bg.png) !important;
+        background-image: url(../img/nav-sp-bg.png) !important;
         background-size: cover;
         background-repeat: no-repeat;
         height: 100vh;
@@ -862,6 +886,14 @@ footer .nav-item {
         font-size: 3em;
         line-height: 55px;
         width: 100%;
+    }
+    
+    .lower-tab-content .col-lg-7, .lower-tab-content .col-lg-5{
+        margin-bottom: 5em;
+    }
+    
+    .lower-tab-content .content{
+        color: #FFFFFF !important;
     }
 
     .card-1,
@@ -937,6 +969,44 @@ footer .nav-item {
         font-weight: 700;
         font-size: 2.1em;
         line-height: 40px;
+    }
+    
+    #foot-select{
+        width: 100%;
+        background-color: #0000;
+        height: 48px;
+        border: 1px solid #D8D8D8;
+        border-radius: 8px;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+    
+    .ico-list-sp {
+        width: 100%;
+    }
+    
+    .ico-list-sp li a{
+        border: 1px solid #D8D8D8;
+        padding: 16px;
+        border-radius: 50%;
+       
+    }
+    
+    .ico-list-sp li a:hover{
+        background-color: #5468E7;
+    }
+    
+    .foot-sp p{
+        margin-top: 40px;
+        color: #ADADAD;
+        font-size: 12px;
+    }
+    
+    #section7 {
+    background-image: url(../img/bg-ft.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: -7em;
     }
 }
 
