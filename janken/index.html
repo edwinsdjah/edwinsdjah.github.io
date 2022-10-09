@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JANKEN</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="../janken/css/style.css">
+  </head>
+  <body>
+    <h1>JANKEN SUWIT</h1>
+    <section class="option">
+        <div class="container">
+            <h2 class="text-center">PILIH GAME SET</h2>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="d-flex row">
+                        <a href="javascript:void(0)" class="col-lg-4 col-md-4 opt3 text-center">3</a>
+                        <a href="javascript:void(0)" class="col-lg-4 col-md-4 opt5 text-center">5</a>
+                        <a href="javascript:void(0)" class="col-lg-4 col-md-4 opt7 text-center">7</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="main">
+        <div class="container">
+            <div class="row pc">
+                <div class="col-lg-12 col-md-12 pc-pic text-center">
+                    <img src="../janken/img/q.png" alt="" class>
+                </div>   
+            </div>
+            <div class="result">   
+            </div>
+            <div class="row player">
+                <div class="col-lg-4 col-md-4 player-pic text-center hearbeat">
+                    <img src="../janken/img/batu.png" alt="" class="batu">
+                </div>
+                <div class="col-lg-4 col-md-4 player-pic text-center">
+                    <img src="../janken/img/kertas.png" alt="" class="kertas">
+                </div>
+                <div class="col-lg-4 col-md-4 player-pic text-center">
+                    <img src="../janken/img/gunting.png" alt="" class="gunting">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="over">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <h2 class="text-center">GAME OVER</h2>
+                        <p class="score-result text-center"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 text-center">
+                    <a href="javascript:void(0)" class="restart">MAIN LAGI?</a>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <a href="javascript:void(0)" class="quit">KELUAR</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="score">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="">SCORE PLAYER : <span class="score-player">0</span></p>
+                    <p class="">SCORE PC : <span class="score-pc">0</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="../janken/js/script.js"></script>
+  </body>
+</html>
