@@ -73,6 +73,19 @@ a {
         text-align: center;
 }
 
+.over{
+        position: relative;
+        background-color: #ffffff;
+        width: 90vw;
+        padding: 1em;
+        margin: 0 auto;
+        border: 2px solid #e1df0d;
+        border-radius: 30%;
+        box-shadow: -2px 7px 32px -3px #eef00b;
+        -webkit-box-shadow: -2px 7px 32px -3px #eef00b;
+        -moz-box-shadow: -2px 7px 32px -3px #eef00b;
+}
+
 h1 img {
         width: 90vw;
 }
@@ -91,6 +104,11 @@ h1 img {
         animation: pulsate-fwd 0.5s ease-in-out infinite both;
 }
 
+.restart button{
+        -webkit-animation: pulsate-fwd 0.5s ease-in-out infinite both;
+        animation: pulsate-fwd 0.5s ease-in-out infinite both;
+}
+
 .pc {
         padding-bottom: 3em;
 }
@@ -99,6 +117,15 @@ h1 img {
         padding-top: 3em;
         border-top: 1px solid black;
         padding-bottom: 1em;
+}
+
+.score p {
+        color: black;
+}
+
+.score span{
+        font-size: 2em;
+        font-weight: bold;
 }
 
 
@@ -114,6 +141,14 @@ h1 img {
 .heartbeat {
         -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
         animation: heartbeat 1.5s ease-in-out infinite both;
+}
+
+.score-result.win{
+        color: green;
+}
+
+.score-result.lose{
+        color: red;
 }
 
 
