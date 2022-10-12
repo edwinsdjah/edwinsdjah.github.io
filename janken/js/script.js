@@ -11,7 +11,7 @@ const restart = document.querySelector('.restart');
 const quit = document.querySelector('.quit');
 let optval = 0;
 let gameResult = document.querySelector('.score-result');
-// const main = new Howl({
+// const theme = new Howl({
 //     src: ['sound/main.mp3'],
 //     html5: true
 // });
@@ -70,9 +70,7 @@ function putar() {
     }, 100)
 }
 
-window.onload = function(){
-    main.play();
-}
+
 
 opt.forEach(function (el) {
     el.addEventListener('click', function (e) {
