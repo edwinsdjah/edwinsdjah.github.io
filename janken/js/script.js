@@ -41,14 +41,16 @@ const quit = document.querySelector('.quit');
 let optval = 0;
 let gameResult = document.querySelector('.score-result');
 const main = new Howl({
-    src: ['sound/main.mp3']
+    src: ['sound/main.mp3'],
+    html5: true
 });
 
 const click = new Howl({
-    src: ['sound/click.wav']
+    src: ['sound/click.wav'],
+    html5: true
 })
-
-
+window.onload = main.resume();
+window.onload = main.play();
 
 opt.forEach(function (el) {
     el.addEventListener('click', function (e) {
