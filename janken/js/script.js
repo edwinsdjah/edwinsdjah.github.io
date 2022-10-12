@@ -40,12 +40,20 @@ const restart = document.querySelector('.restart');
 const quit = document.querySelector('.quit');
 let optval = 0;
 let gameResult = document.querySelector('.score-result');
+const main = new Howl({
+    src: ['sound/main.mp3']
+});
+
+const click = new Howl({
+    src: ['sound/click.wav']
+})
 
 
 
 opt.forEach(function (el) {
     el.addEventListener('click', function (e) {
-        optval = parseInt(this.innerHTML);
+        click.play();
+        optval = parseInt(this.id);
         console.log(optval)
         optwin.style.display = "none"
         mainwin.style.display = "block"
