@@ -52,7 +52,7 @@ function PC() {
 
 function result(pc, player) {
     if (player === pc) return 'SERI'
-    if (player === 'batu') return (pc === 'kertas') ? 'MENANG' : 'KALAH';
+    if (player === 'batu') return (pc === 'gunting') ? 'MENANG' : 'KALAH';
     if (player === 'gunting') return (pc === 'kertas') ? 'MENANG' : 'KALAH';
     if (player === 'kertas') return (pc === 'gunting') ? 'KALAH' : 'MENANG';
 }
