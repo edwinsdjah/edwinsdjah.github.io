@@ -222,6 +222,10 @@ a {
                 width: 88vw;
         }
         
+        .row.player{
+                width: 120%;
+        }
+        
         .option .row {
                 width: 111%;
                 margin-top: 0;
