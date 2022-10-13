@@ -1,7 +1,7 @@
 const playerChoose = document.querySelectorAll('.player-pic img');
 const pcPic = document.querySelector('.pc-pic img');
-const scorepc = document.querySelector('.score .score-pc');
-const scoreplayer = document.querySelector('.score .score-player');
+const scorepc = document.querySelector('.score .score-pc img');
+const scoreplayer = document.querySelector('.score .score-player img');
 const optwin = document.querySelector('.option');
 const mainwin = document.querySelector('.main');
 const over = document.querySelector('.over');
@@ -11,6 +11,8 @@ const restart = document.querySelector('.restart');
 const quit = document.querySelector('.quit');
 let optval = 0;
 let gameResult = document.querySelector('.score-result');
+let valplayer = 0;
+let valpc = 0;
 // const theme = new Howl({
 //     src: ['sound/main.mp3'],
 //     html5: true
@@ -62,11 +64,13 @@ function putar() {
     setInterval(function () {
         if (new Date().getTime() - start > 1000) {
             clearInterval;
-           
             return
         }
         pcPic.setAttribute('src', `img/${img[i++]}.png`);
         if (i === img.length) i = 0;
+        playerChoose.forEach(function(el){
+            el.classList.add('none')
+        })
     }, 100)
 }
 
@@ -89,47 +93,60 @@ playerChoose.forEach(el => {
         const player = el.className;
         const hasil = result(pc, player);
         const info = document.querySelector('.result');
+        
 
         roll.play();
         info.innerHTML = '';
 
         putar();
-        
+
         setTimeout(function () {
+            playerChoose.forEach(function(el){
+                el.classList.remove('none');
+            })
             pcPic.setAttribute('src', `img/${pc}.png`);
             info.innerHTML = hasil
             if (hasil === 'MENANG') {
                 vict.play();
-                scoreplayer.innerHTML++;
+                valplayer++;
+                scoreplayer.setAttribute('src',`img/${valplayer}.png`);
             } else if (hasil === 'KALAH') {
                 boo.play();
-                scorepc.innerHTML++;
+                valpc++;
+                console.log(valpc);
+                scorepc.setAttribute('src',`img/${valpc}.png`);
             } else if (hasil === 'SERI'){
                 tie.play();
             }
 
-            if (parseInt(scorepc.textContent) === optval || parseInt(scoreplayer.textContent) === optval) {
+            if (parseInt(valpc) === optval || parseInt(valplayer) === optval) {
                 mainwin.style.display = "none"
                 info.textContent = ''
                 pcPic.setAttribute('src','img/q.png')
                 over.style.display = "block"
-                if (parseInt(scorepc.textContent) === optval) {
+                if (parseInt(valpc) === optval) {
                     gameResult.textContent = 'PC WIN'
                     gameResult.classList.add('lose')
-                } else if (parseInt(scoreplayer.textContent) === optval) {
+                } else if (parseInt(valplayer) === optval) {
                     gameResult.textContent = 'PLAYER WIN'
                     gameResult.classList.add('win')
                 } else {
                     gameResult.textContent = 'GOBLOK'
                 }
+               
             }
+            
+            
         }, 1000)
     })
 });
 
 restart.addEventListener('click',function(e){
+    click.play();
     over.style.display = 'none'
     optwin.style.display = 'block'
-    scorepc.textContent = 0
-    scoreplayer.textContent = 0
+    valplayer = 0;
+    valpc = 0;
+    scoreplayer.setAttribute('src',`img/${valplayer}.png`);
+    scorepc.setAttribute('src',`img/${valpc}.png`);
 })

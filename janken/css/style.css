@@ -7,17 +7,39 @@ body {
 
 h1 {
         text-align: center;
+        margin-top: 1em;
         margin-bottom: 1em;
+}
+
+h1 img{
+        width: 15em;
+}
+
+main{
+        display: flex;
+        margin-top: 3em;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+}
+
+section{
+        justify-content: center;
+        align-items: center;
 }
 
 a {
         text-decoration: none;
 }
 
+.none{
+        pointer-events: none;
+}
+
 .score {
         position: absolute;
-        right: 0;
-        top: 0;
+        right: 1em;
+        bottom: 2em;
         background-color: #ffffff;
         padding-top: 10px;
         padding-bottom: 10px;
@@ -33,6 +55,7 @@ a {
 
 .option {
         display: block;
+        padding: 3em;
 }
 
 
@@ -64,7 +87,7 @@ a {
         height: 2em;
         background-color: white;
         left: 50%;
-        top: 43%;
+        top: 38%;
         transform: translateX(-50%);
         color: red;
         font-size: 2em;
@@ -75,8 +98,8 @@ a {
 .over{
         position: relative;
         background-color: #ffffff;
-        width: 90vw;
-        padding: 1em;
+        width: 50vw;
+        padding: 3em;
         margin: 0 auto;
         border: 2px solid #e1df0d;
         border-radius: 30%;
@@ -85,16 +108,14 @@ a {
         -moz-box-shadow: -2px 7px 32px -3px #eef00b;
 }
 
-h1 img {
-        width: 90vw;
-}
 
 .main img {
-        max-width: 180px;
+        max-width: 100px;
 }
 
 .option .row {
-        width: 111%;
+        width: 105%;
+        margin-top: 3em;
 }
 
 .choice img {
@@ -127,6 +148,10 @@ h1 img {
         font-weight: bold;
 }
 
+.score-player img, .score-pc img{
+        width: 30px;
+        height: 40px;
+}
 
 
 
@@ -142,6 +167,11 @@ h1 img {
         animation: heartbeat 1.5s ease-in-out infinite both;
 }
 
+.score-result{
+        font-size: 5em;
+        font-weight: bold;
+}
+
 .score-result.win{
         color: green;
 }
@@ -150,6 +180,14 @@ h1 img {
         color: red;
 }
 
+.over{
+        width: 50vw;
+}
+
+.over button{
+        width: 7em;
+        font-size: 1.5em;
+}
 
 /* MOBILE */
 /* Medium devices (landscape tablets, 768px and up) */
@@ -160,7 +198,11 @@ h1 img {
 
         h1 {
                 margin-bottom: 2em;
-                margin-top: 2em;
+                margin-top: 3em;
+        }
+        
+        h1 img{
+                width: 11em;
         }
 
         .col-md-4 {
@@ -175,6 +217,10 @@ h1 img {
         .option {
                 width: 88vw;
         }
+        
+        .option .row {
+                width: 111%;
+            }
 
         .option h2 {
                 padding: 0.5em;
@@ -191,8 +237,9 @@ h1 img {
 
         .score {
                 top: unset;
-                bottom: 1em;
-                width: 12em;
+                bottom: 2em;
+                width: 14em;
+                right: 1em;
         }
 
         .score-result {
