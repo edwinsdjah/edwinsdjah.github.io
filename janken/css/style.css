@@ -212,6 +212,10 @@ a {
         .main img {
                 max-width: 100px;
         }
+        
+        .option{
+                padding: 1em;
+        }
 
         .main,
         .option {
@@ -220,6 +224,7 @@ a {
         
         .option .row {
                 width: 111%;
+                margin-top: 0;
             }
 
         .option h2 {
@@ -243,9 +248,13 @@ a {
         }
 
         .score-result {
-                font-size: 3em;
+                font-size: 2.5em;
                 font-weight: bold;
         }
+        
+        .over {
+                width: 90vw;
+            }
 
 }
 
