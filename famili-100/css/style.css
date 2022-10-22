@@ -1,0 +1,58 @@
+body{
+    
+}
+
+h1{
+    text-align: center;
+}
+
+table {
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+table tr{
+    opacity: 0;
+    border: 1px solid black;
+    height: 3em;
+}
+
+table td{
+    border: 1px solid black;
+}
+
+.option{
+    display: none;
+}
+
+.player{
+    width: 70%;
+    margin-left: 0;
+}
+
+.answer{
+    margin-top: 2em;
+}
+
+.sidebar p{
+    margin-bottom: 0.5em;
+}
+
+.sidebar .container{
+    padding: 1em;
+}
+
+.main{
+    margin-top: 2em;
+}
+
+.main .content{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.block{
+    opacity: 1;
+}
