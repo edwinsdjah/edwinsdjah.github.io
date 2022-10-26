@@ -137,6 +137,13 @@ table td {
     font-size: 1.8em;
 }
 
+/* SP */
+@media only screen and (max-width: 768px) {
+    .sp-none{
+        display: none;
+    }
+
+}
 
 /* ANIMATION */
 /* ----------------------------------------------
