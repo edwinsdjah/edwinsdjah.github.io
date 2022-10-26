@@ -24,6 +24,7 @@ window.addEventListener('load', () => {
     setAvailableQuestion();
     getQuestion();
     search();
+    changeScale();
 })
 
 restart.addEventListener('click', function () {
@@ -41,6 +42,14 @@ restart.addEventListener('click', function () {
     optionMenu.classList.add('show');
     getQuestion();
 })
+
+function changeScale(){
+    if(document.documentElement.clientWidth < 500){
+        document.querySelector('meta[name=viewport]').setAttribute(
+            'content', 'width=device-width, initial-scale=0.7, user-scalable=0');
+    }
+
+}
 
 function getLevel() {
     option.forEach(function (e) {
