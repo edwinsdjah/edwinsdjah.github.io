@@ -24,7 +24,7 @@ window.addEventListener('load', () => {
     setAvailableQuestion();
     getQuestion();
     search();
-    changeScale();
+    // changeScale();
 })
 
 restart.addEventListener('click', function () {
@@ -42,6 +42,22 @@ restart.addEventListener('click', function () {
     optionMenu.classList.add('show');
     getQuestion();
 })
+
+
+    const resize = new ResizeObserver(function(e){
+        let content = e[0].contentRect; 
+        let height = content.height;
+        let main = document.querySelector('.main-content');
+        console.log(`current height = ${height}`);
+        console.log(startHeight);
+        if(height < 400){
+            main.classList.add('zoom-out');
+        }
+        
+    })
+
+resize.observe(document.querySelector('.main-content'));
+
 
 function changeScale(){
     if(document.documentElement.clientWidth < 500){
