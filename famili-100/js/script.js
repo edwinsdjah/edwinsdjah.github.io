@@ -18,16 +18,34 @@ let option = document.querySelectorAll('.option');
 let restart = document.querySelector('.restart');
 const mes = document.querySelector('.message');
 const start = window.innerHeight;
-let style = getComputedStyle(document.querySelector('h1'));
-let height = document.querySelector('h1').clientHeight;
+
 let optheight = document.querySelector('.optionMenu');
+const content = document.querySelectorAll('.container');
 
 
 
-'z'
+let inputPlayer = document.querySelector('.player');
 
-optheight.style.height = `calc(100vh - (${height}px + ${style.marginTop} + ${style.marginBottom}))`
-console.log(optheight.style.height)
+if (window.outerWidth < 768){
+    inputPlayer.addEventListener('focus', function(){
+        let main = document.querySelector('.main-content');
+        main.classList.add('zoom-out');
+        main.classList.remove('zoom-in')
+    })
+    
+    inputPlayer.addEventListener('blur', function(){
+        let main = document.querySelector('.main-content');
+        main.classList.remove('zoom-out');
+        main.classList.add('zoom-in');
+    })
+}
+
+content.forEach(function(e){
+    let style = getComputedStyle(document.querySelector('h1'));
+    let height = document.querySelector('h1').clientHeight;
+    e.style.height = `calc(100vh - (${height}px + ${style.marginTop} + ${style.marginBottom}))`;
+})
+
 
 window.addEventListener('load', () => {
 
