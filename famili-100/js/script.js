@@ -17,14 +17,38 @@ let r = document.querySelector('.hasil');
 let option = document.querySelectorAll('.option');
 let restart = document.querySelector('.restart');
 const mes = document.querySelector('.message');
+const start = window.innerHeight;
+let style = getComputedStyle(document.querySelector('h1'));
+let height = document.querySelector('h1').clientHeight;
+let optheight = document.querySelector('.optionMenu');
+
+
+
+'z'
+
+optheight.style.height = `calc(100vh - (${height}px + ${style.marginTop} + ${style.marginBottom}))`
+console.log(optheight.style.height)
 
 window.addEventListener('load', () => {
+
+    console.log(start)
+
     playMainMusic();
     getLevel();
     setAvailableQuestion();
     getQuestion();
     search();
     // changeScale();
+})
+
+window.addEventListener('resize', () => {
+    let main = document.querySelector('.main-content');
+    if (window.innerHeight > start) {
+        main.classList.add('zoom-out');
+    } else if (window.innerHeight <= start) {
+        main.classList.remove('zoom-out');
+    }
+
 })
 
 restart.addEventListener('click', function () {
@@ -38,29 +62,35 @@ restart.addEventListener('click', function () {
     for (let i = 0; i < currentQuestion.jawab.length; i++) {
         a[i].classList.remove('fade-in');
     }
+    // get position of question index from availablequestion array
+    const index1 = availableQuestion.indexOf(questionIndex);
+
+    // remove the question index from array, so the question does not repeat
+    availableQuestion.splice(index1, 1);
+
+    window.sessionStorage.setItem('items', JSON.stringify(availableQuestion));
     overMenu.classList.remove('show');
     optionMenu.classList.add('show');
     getQuestion();
 })
 
 
-    const resize = new ResizeObserver(function(e){
-        let content = e[0].contentRect; 
-        let height = content.height;
-        let main = document.querySelector('.main-content');
-        console.log(`current height = ${height}`);
-        console.log(startHeight);
-        if(height < 400){
-            main.classList.add('zoom-out');
-        }
-        
-    })
+const resize = new ResizeObserver(function (e) {
+    let content = e[0].contentRect;
+    let height = content.height;
+    let main = document.querySelector('.main-content');
+    console.log(`current height = ${height}`);
+    if (height < 400) {
+        main.classList.add('zoom-out');
+    }
+
+})
 
 resize.observe(document.querySelector('.main-content'));
 
 
-function changeScale(){
-    if(document.documentElement.clientWidth < 500){
+function changeScale() {
+    if (document.documentElement.clientWidth < 500) {
         document.querySelector('meta[name=viewport]').setAttribute(
             'content', 'width=device-width, initial-scale=0.7, user-scalable=0');
     }
@@ -96,23 +126,21 @@ function setAvailableQuestion() {
     for (i = 0; i < quiz.length; i++) {
         availableQuestion.push(quiz[i]);
     }
+
+    window.sessionStorage.setItem('items', JSON.stringify(availableQuestion));
 }
 
 function getQuestion() {
     // generate random question
     const questionIndex = availableQuestion[Math.floor(Math.random() * availableQuestion.length)]
+    console.log(availableQuestion.indexOf(questionIndex));
+    console.log(JSON.parse(sessionStorage.items))
     currentQuestion = questionIndex;
     q.textContent = currentQuestion.tanya;
     for (let i = 0; i < currentQuestion.jawab.length; i++) {
         a[i].textContent = currentQuestion.jawab[i];
         s[i].textContent = currentQuestion.skor[i];
     }
-
-    // get position of question index from availablequestion array
-    const index1 = availableQuestion.indexOf(questionIndex);
-
-    // remove the question index from array, so the question does not repeat
-    availableQuestion.splice(index1, 1);
 }
 
 
@@ -231,7 +259,7 @@ function playMainMusic() {
 
     btnPlay.addEventListener('click', () => {
         btnPlay.classList.toggle('play');
-        if(btnPlay.classList.contains('play')){
+        if (btnPlay.classList.contains('play')) {
             main.play();
             playIcon.classList.remove('show');
             pauseIcon.classList.add('show');
