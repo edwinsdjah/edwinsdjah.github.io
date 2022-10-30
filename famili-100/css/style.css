@@ -144,6 +144,7 @@ table td {
 
 .sp-answer{
     text-align: center;
+    position: sticky;
 }
 
 .zoom-out {
@@ -196,8 +197,12 @@ table td {
         width: 100%;
     }
     
-    .main{
+    .main-content{
         transform: scale(0.8);
+    }
+    
+    .sp-answer:not(:last-child){
+        border-right: 2px solid white !important;
     }
 }
 
