@@ -26,20 +26,6 @@ const content = document.querySelectorAll('.container');
 
 let inputPlayer = document.querySelector('.player');
 
-if (window.outerWidth < 768){
-    inputPlayer.addEventListener('focus', function(){
-        let main = document.querySelector('.main-content');
-        main.classList.add('zoom-out');
-        main.classList.remove('zoom-in')
-    })
-    
-    inputPlayer.addEventListener('blur', function(){
-        let main = document.querySelector('.main-content');
-        main.classList.remove('zoom-out');
-        main.classList.add('zoom-in');
-    })
-}
-
 content.forEach(function(e){
     let style = getComputedStyle(document.querySelector('h1'));
     let height = document.querySelector('h1').clientHeight;
@@ -48,9 +34,6 @@ content.forEach(function(e){
 
 
 window.addEventListener('load', () => {
-
-    console.log(start)
-
     playMainMusic();
     getLevel();
     setAvailableQuestion();

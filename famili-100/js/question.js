@@ -1,7 +1,7 @@
 const quiz = [{
     tanya: "Apa yang biasanya dicari orang dalam majalah?",
     jawab: ["BERITA", "ZODIAK", "CERITA", "HADIAH", "IKLAN"],
-    skor: [30, 25, 23, 7, 5],
+    skor: [40, 25, 23, 7, 5],
 },
 {
     tanya: "Sampah apa yang sering ditemukan dijalan?",
