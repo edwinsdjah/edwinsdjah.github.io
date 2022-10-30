@@ -20,7 +20,7 @@ const mes = document.querySelector('.message');
 const start = window.innerHeight;
 
 let optheight = document.querySelector('.optionMenu');
-const content = document.querySelectorAll('.container');
+const content = document.querySelectorAll('.mainCont');
 
 
 
