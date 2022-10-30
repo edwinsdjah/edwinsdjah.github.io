@@ -138,6 +138,10 @@ table td {
     font-size: 1.8em;
 }
 
+.sp-show{
+    display: none;
+}
+
 .zoom-out {
 	-webkit-animation: zoom-out 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	        animation: zoom-out 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -157,6 +161,10 @@ table td {
     .sp-none {
         display: none;
     }
+    
+    .sp-show{
+        display: block;
+    }
 
     .main-content {
         height: 100vh;
@@ -170,7 +178,14 @@ table td {
         height: 1em;
     }
     
-
+    .player{
+        width: 100%;
+        align-items: center;
+    }
+    
+    .answer p{
+        text-align: center;
+    }
 }
 
 /* ANIMATION */
