@@ -163,9 +163,6 @@ table td {
         height: -webkit-fill-available;
     }
 
-    body{
-        min-height: -webkit-fill-available;
-    }
     
     .sp-none {
         display: none;
