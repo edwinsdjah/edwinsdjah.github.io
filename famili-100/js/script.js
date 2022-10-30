@@ -29,7 +29,7 @@ let inputPlayer = document.querySelector('.player');
 content.forEach(function(e){
     let style = getComputedStyle(document.querySelector('h1'));
     let height = document.querySelector('h1').clientHeight;
-    e.style.height = `calc(100vh - (${height}px + ${style.marginTop} + ${style.marginBottom}))`;
+    // e.style.height = `calc(100vh - (${height}px + ${style.marginTop} + ${style.marginBottom}))`;
 })
 
 
@@ -42,15 +42,15 @@ window.addEventListener('load', () => {
     // changeScale();
 })
 
-window.addEventListener('resize', () => {
-    let main = document.querySelector('.main-content');
-    if (window.innerHeight > start) {
-        main.classList.add('zoom-out');
-    } else if (window.innerHeight <= start) {
-        main.classList.remove('zoom-out');
-    }
+// window.addEventListener('resize', () => {
+//     let main = document.querySelector('.main-content');
+//     if (window.innerHeight > start) {
+//         main.classList.add('zoom-out');
+//     } else if (window.innerHeight <= start) {
+//         main.classList.remove('zoom-out');
+//     }
 
-})
+// })
 
 restart.addEventListener('click', function () {
     const table = document.querySelectorAll('table tr');
