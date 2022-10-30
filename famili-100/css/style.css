@@ -142,6 +142,10 @@ table td {
     display: none;
 }
 
+.sp-answer{
+    text-align: center;
+}
+
 .zoom-out {
 	-webkit-animation: zoom-out 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	        animation: zoom-out 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -163,12 +167,9 @@ table td {
     }
     
     .sp-show{
-        display: block;
+        display: flex;
     }
 
-    .main-content {
-        height: 100vh;
-    }
     
     table{
         width: 100%;
@@ -178,6 +179,10 @@ table td {
         height: 1em;
     }
     
+    table td{
+        padding: 0.3em;
+    }
+    
     .player{
         width: 100%;
         align-items: center;
@@ -185,6 +190,14 @@ table td {
     
     .answer p{
         text-align: center;
+    }
+    
+    .poin{
+        width: 100%;
+    }
+    
+    .main{
+        transform: scale(0.8);
     }
 }
 
