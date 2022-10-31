@@ -20,17 +20,17 @@ const mes = document.querySelector('.message');
 const start = window.innerHeight;
 
 let optheight = document.querySelector('.optionMenu');
-const content = document.querySelectorAll('.mainCol');
+const content = document.querySelectorAll('section>.show');
 
 
 
 let inputPlayer = document.querySelector('.player');
 
-content.forEach(function (e) {
-    let style = getComputedStyle(document.querySelector('h1'));
-    let height = document.querySelector('h1').clientHeight;
-    // e.style.height = `calc(100vh - (${height}px + ${style.marginTop} + ${style.marginBottom}))`;
-})
+// content.forEach(function (e) {
+//     let style = getComputedStyle(document.querySelector('h1'));
+//     let height = document.querySelector('h1').clientHeight;
+//     e.style.height = `calc(100vh - (${height}px + ${style.marginTop} + ${style.marginBottom}))`;
+// })
 
 
 window.addEventListener('load', () => {
@@ -39,7 +39,6 @@ window.addEventListener('load', () => {
     setAvailableQuestion();
     getQuestion();
     search();
-    console.log(availableQuestion);
 })
 
 // window.addEventListener('resize', () => {
