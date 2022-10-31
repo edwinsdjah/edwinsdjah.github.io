@@ -18,6 +18,8 @@ h1 {
 
 }
 
+
+
 .mainCol{
     height: 60vh;
     align-items: center;
@@ -183,6 +185,14 @@ table td {
         flex-direction: column-reverse;
     }
 
+    .mainCol{
+        height: 68vh;
+        align-items: center;
+    }
+    
+    .over .mainCol{
+        height: 83vh;
+    }
     
     table{
         width: 100%;
