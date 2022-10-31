@@ -26,7 +26,7 @@ const content = document.querySelectorAll('.mainCol');
 
 let inputPlayer = document.querySelector('.player');
 
-content.forEach(function(e){
+content.forEach(function (e) {
     let style = getComputedStyle(document.querySelector('h1'));
     let height = document.querySelector('h1').clientHeight;
     // e.style.height = `calc(100vh - (${height}px + ${style.marginTop} + ${style.marginBottom}))`;
@@ -39,7 +39,7 @@ window.addEventListener('load', () => {
     setAvailableQuestion();
     getQuestion();
     search();
-    // changeScale();
+    console.log(availableQuestion);
 })
 
 // window.addEventListener('resize', () => {
@@ -63,16 +63,11 @@ restart.addEventListener('click', function () {
     for (let i = 0; i < currentQuestion.jawab.length; i++) {
         a[i].classList.remove('fade-in');
     }
-    // get position of question index from availablequestion array
-    const index1 = availableQuestion.indexOf(questionIndex);
-
-    // remove the question index from array, so the question does not repeat
-    availableQuestion.splice(index1, 1);
-
     window.sessionStorage.setItem('items', JSON.stringify(availableQuestion));
     overMenu.classList.remove('show');
     optionMenu.classList.add('show');
     getQuestion();
+    console.log(availableQuestion);
 })
 
 
@@ -86,17 +81,6 @@ const resize = new ResizeObserver(function (e) {
     }
 
 })
-
-resize.observe(document.querySelector('.main-content'));
-
-
-function changeScale() {
-    if (document.documentElement.clientWidth < 500) {
-        document.querySelector('meta[name=viewport]').setAttribute(
-            'content', 'width=device-width, initial-scale=0.7, user-scalable=0');
-    }
-
-}
 
 function getLevel() {
     option.forEach(function (e) {
@@ -134,14 +118,13 @@ function setAvailableQuestion() {
 function getQuestion() {
     // generate random question
     const questionIndex = availableQuestion[Math.floor(Math.random() * availableQuestion.length)]
-    console.log(availableQuestion.indexOf(questionIndex));
-    console.log(JSON.parse(sessionStorage.items))
     currentQuestion = questionIndex;
     q.textContent = currentQuestion.tanya;
     for (let i = 0; i < currentQuestion.jawab.length; i++) {
         a[i].textContent = currentQuestion.jawab[i];
         s[i].textContent = currentQuestion.skor[i];
     }
+    return
 }
 
 
@@ -167,7 +150,12 @@ function search() {
                         overMenu.classList.add('show');
                         mainMenu.classList.remove('show');
                         mes.textContent = 'KAMU MENANG';
+                        mes.style.color = 'green'
                         poin.textContent = parseInt(0);
+                        // get position of question index from availablequestion array
+                        const index1 = availableQuestion.indexOf(currentQuestion);
+                        // remove the question index from array, so the question does not repeat
+                        availableQuestion.splice(index1, 1);
                         return;
                     } else {
                         reset();
@@ -186,6 +174,7 @@ function search() {
                         mainMenu.classList.remove('show');
                         mes.textContent = 'KAMU KALAH';
                         poin.textContent = parseInt(0);
+                        mes.style.color = 'red'
                         return;
                     } else {
                         reset();
@@ -214,12 +203,12 @@ function timer(time) {
             l.textContent--;
             if (parseInt(l.textContent) === 0) {
                 clearInterval(counter);
-
                 r.value = 'WAKTU HABIS';
                 overMenu.classList.add('show');
                 mainMenu.classList.remove('show');
                 mes.textContent = 'KAMU KALAH';
                 poin.textContent = parseInt(0);
+                mes.style.color = 'red';
             } else {
                 reset();
             }

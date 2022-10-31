@@ -18,6 +18,11 @@ h1 {
 
 }
 
+.mainCol{
+    height: 60vh;
+    align-items: center;
+}
+
 
 table {
     width: 80%;
@@ -35,6 +40,7 @@ table tr {
 
 table td {
     border: 2px solid white;
+    padding: 0.5em;
     color: white;
     border-style: double;
     border-radius: 5px;
@@ -66,6 +72,11 @@ table td {
 
 .over {
     display: none;
+}
+
+.over h2{
+    font-size: 5em;
+    color: white;
 }
 
 .player {
@@ -166,6 +177,10 @@ table td {
     
     .sp-show{
         display: flex;
+    }
+    
+    .sp-reverse{
+        flex-direction: column-reverse;
     }
 
     
