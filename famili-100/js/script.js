@@ -83,7 +83,7 @@ const resize = new ResizeObserver(function (e) {
 
 function getLevel() {
     option.forEach(function (e) {
-        e.addEventListener('click', function () {
+        e.addEventListener('click', function (el) {
             level = e.id;
             if (level === 'easy') {
                 l.textContent = 7;
@@ -92,6 +92,7 @@ function getLevel() {
             } else {
                 l.textContent = 3;
             }
+            console.log(el)
             click.play();
             main.stop();
             optionMenu.classList.remove('show');
