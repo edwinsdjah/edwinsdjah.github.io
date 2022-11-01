@@ -1,3 +1,9 @@
+html{
+    height: -moz-available;          /* WebKit-based browsers will ignore this. */
+    height: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+    height: fill-available;;
+}
+
 body {
     font-family: 'Triumvirate CG Comp', sans-serif;
     background-image: url(../image/main-bg.jpg);
