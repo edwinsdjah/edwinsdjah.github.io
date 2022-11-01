@@ -7,8 +7,8 @@ html{
 body {
     font-family: 'Triumvirate CG Comp', sans-serif;
     background-image: url(../image/main-bg.jpg);
-    background-size: 170%;
-    background-repeat: no-repeat;
+    background-size: cover;
+    background-repeat: revert;
 }
 
 p {
