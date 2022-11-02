@@ -299,9 +299,9 @@ h3.h3 {
   font-family: 'Anton', sans-serif;
 }
 
-.navbar-inverse .navbar-nav>.active>a,
-.navbar-inverse .navbar-nav>.active>a:focus,
-.navbar-inverse .navbar-nav>.active>a:hover {
+.navbar-light .navbar-nav>.active>a,
+.navbar-light .navbar-nav>.active>a:focus,
+.navbar-light .navbar-nav>.active>a:hover {
   color: #e29d00 !important;
   background-color: #fff0 !important;
 }
