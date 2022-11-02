@@ -460,8 +460,6 @@ h3.h3 {
 }
 
 #accordion {
-  margin-top: 28px;
-  margin-left: 25px;
   font-family: 'Noto Sans JP', sans-serif;
 }
 
@@ -790,8 +788,8 @@ h3.h3 {
   } 
   
   .catalogueCont {
-    margin-left: 1em;
-    margin-right: 1em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
   }
   
   .catalogueCont .col-6{
