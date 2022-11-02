@@ -54,23 +54,23 @@ body {
   color: #ffb108;
 }
 
-#UpperNav ul{
+#UpperNav ul {
   justify-content: end;
 }
 
 
-.navbar-toggler{
+.navbar-toggler {
   border: 0 !important;
 }
 
 
-.nav-icons{
+.nav-icons {
   list-style-type: none !important;
   margin: 0;
   padding: 0;
 }
 
-.nav-icons a{
+.nav-icons a {
   color: #000;
 }
 
@@ -143,7 +143,7 @@ figcaption {
   font-family: 'Noto Sans JP', sans-serif;
 }
 
-#footer>.container{
+#footer>.container {
   padding-top: 2em;
 }
 
@@ -774,40 +774,40 @@ h3.h3 {
 /* SMARTPHONE */
 
 @media only screen and (max-width:768px) {
-  
-  .sp-none{
+
+  .sp-none {
     display: none;
   }
-  
-  .navbar-toggler{
+
+  .navbar-toggler {
     order: 1;
   }
-  
-  .navbar-collapse{
+
+  .navbar-collapse {
     order: 2;
-  } 
-  
-  .catalogueCont {
-    margin-left: 0.5em;
-    margin-right: 0.5em;
   }
-  
-  .catalogueCont .col-6{
+
+  .catalogueCont {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .catalogueCont .col-6 {
     padding-left: 10px;
     padding-right: 10px;
   }
 
-  .banner-img{
+  .banner-img {
     margin-left: 0;
     margin-right: 0;
     margin-top: 0;
   }
-  
-  .nav-item{
+
+  .nav-item {
     margin-right: 0;
   }
-  
-  #UpperNav ul{
+
+  #UpperNav ul {
     justify-content: center;
   }
 }
