@@ -56,7 +56,5 @@ $(".panel-title5").click(function () {
 });
 
 
-  $("#header").load("../component/header.html"); 
-
-
-  $("footer").load("../component/footer.html"); 
+  $("#header").load("/component/header.html"); 
+  $("footer").load("/component/footer.html"); 
