@@ -53,4 +53,12 @@ $(".panel-title4").click(function () {
 
 $(".panel-title5").click(function () {
   $(".angle-down5").toggleClass("down");
-})
+});
+
+$(function(){
+  $("#header").load("../component/header.html"); 
+});
+
+$(function(){
+  $("footer").load("../component/footer.html"); 
+});
