@@ -56,5 +56,5 @@ $(".panel-title5").click(function () {
 });
 
 
-  $("#header").load("/component/header.html"); 
-  $("footer").load("/component/footer.html"); 
+  $("#header").load("Jersey-Store/component/header.html"); 
+  $("footer").load("Jersey-Store/component/footer.html"); 
