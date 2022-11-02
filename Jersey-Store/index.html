@@ -1,636 +1,484 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Norican&display=swap" rel="stylesheet">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <title>Jersey Store - Toko Online Jersey Original Terlengkap</title>
-  </head>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Norican&display=swap" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <title>Jersey Store - Toko Online Jersey Original Terlengkap</title>
+</head>
 
-  <body>
-<div id="UpperNav">
+<body>
+  <section>
+    <div id="UpperNav">
+      <ul class="nav justify-content-end navbar-expand-lg bg-grey">
+        <li class="nav-item flag-icon upperitem">
+          <p class="modal-list"><i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;&nbsp;ID</p>
+        </li>
+        <li class="nav-item upperitem">
+          <a class="nav-link active modal-list" data-toggle="modal" data-target="#loginModal" href="modal.html">Help /
+            Guidance</a>
+        </li>
+        <li class="nav-item upperitem">
+          <a class="nav-link active modal-list" data-toggle="modal" data-target="#loginModal"
+            href="modal.html">Login</a>
+        </li>
+        <li class="nav-item upperitem">
+          <a class="nav-link modal-list" data-toggle="modal" data-target="#loginModal" href="modal.html">Register</a>
+        </li>
+      </ul>
+    </div>
+  </section>
 
-  <ul class="nav justify-content-end navbar-expand-lg bg-grey">
-  <li class="nav-item flag-icon upperitem">
-   <p class="modal-list"><i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;&nbsp;ID</p>
-  </li>
-  <li class="nav-item upperitem">
-    <a class="nav-link active modal-list" data-toggle="modal" data-target="#loginModal" href="modal.html">Help / Guidance</a>
-  </li>
-  <li class="nav-item upperitem">
-    <a class="nav-link active modal-list" data-toggle="modal" data-target="#loginModal" href="modal.html">Login</a>
-  </li>
-  <li class="nav-item upperitem">
-    <a class="nav-link modal-list" href="#">Register</a>
-  </li>
-</ul>
-</div>
-
-
-<!-- START MODAL -->
-    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body omb_socialButtons">
-        <form>
-  <div class="form-group">
-   <div class="modal-caption text-center" style="font-family: 'Anton', sans-serif;">  
-          ONE STOP LOGIN<br>
-          FOR EVERYTHING
-   </div>
-
-        <span><input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"></span>
-  </div>
-  <div class="form-group">
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-  <label class="form-check-label label-caption" for="defaultCheck1">
-    Keep me logged in
-    <a href="#"><p class="  label-caption " style=" float:right;">Forget your password?</p></a>
-  </label>
-
-  <p class="  form-check-label label-caption text-center mt1rem ">By logging in, you agree to our Privacy Policy and Terms of Use</p>
-</div>
-<div class="  omb_socialButtons  mt2rem"  > 
-   <a href="#" class="btn btn-lg btn-block omb_btn-facebook">
-              <span class="hidden-xs" style="font-family: 'Anton', sans-serif;">LOG IN</span>
-   </a>
-   <a href="#" class="btn btn-lg btn-block omb_btn-google">
-              <i class="fab fa-google-plus-g">&nbsp;</i>
-              <span class="hidden-xs" style="font-family: 'Anton', sans-serif;">LOG IN WITH GOOGLE</span>
-   </a>
-</div>
-
-  
-</form>
+  <!-- START MODAL -->
+  <section>
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body omb_socialButtons">
+            <form>
+              <div class="form-group">
+                <div class="modal-caption text-center" style="font-family: 'Anton', sans-serif;">
+                  ONE STOP LOGIN<br>
+                  FOR EVERYTHING
+                </div>
+                <span><input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="Enter email"></span>
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <label class="form-check-label label-caption" for="defaultCheck1">
+                  Keep me logged in
+                  <a href="#">
+                    <p class=" label-caption " style="float:right;">Forget your password?</p>
+                  </a>
+                </label>
+                <p class="  form-check-label label-caption text-center mt1rem ">By logging in, you agree to our Privacy
+                  Policy and Terms of Use</p>
+              </div>
+              <div class="  omb_socialButtons  mt2rem">
+                <a href="#" class="btn btn-lg btn-block omb_btn-facebook">
+                  <span class="hidden-xs" style="font-family: 'Anton', sans-serif;">LOG IN</span>
+                </a>
+                <a href="#" class="btn btn-lg btn-block omb_btn-google">
+                  <i class="fab fa-google-plus-g">&nbsp;</i>
+                  <span class="hidden-xs" style="font-family: 'Anton', sans-serif;">LOG IN WITH GOOGLE</span>
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-<!-- END MODAL -->
+    <!-- END MODAL -->
+  </section>
 
+  <header class="sticky-top">
+    <div id="header">
+      <nav id="logo" class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand brand-black" href="#" style="font-family: 'Norican', cursive; font-size: 30px;">Jersey
+            Store</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-        <div id="header"  class="sticky-top" style="border-top: 1px solid #d6d6cb;">
-     <nav  id="logo" class="navbar navbar-expand-lg  navbar-inverse">
-<a class="navbar-brand brand-black" href="#"  style="font-family: 'Norican', cursive; font-size: 30px;" >Jersey Store</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link sans-serif" href="index.html">HOME</i></a>
-      <li class="nav-item  ">
-        <a class="nav-link sans-serif dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> KATALOG<span class="sr-only">(current)</span></a>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item current" href="katalog.html">MEN'S JERSEY</a>
-    <a class="dropdown-item" href="#">WOMEN'S JERSEY</a>
-    <a class="dropdown-item" href="#">SPORTSWEAR</a>
-  </div>
-      </li>
-      <li class="nav-item ">
-        <a class="nav-link sans-serif" href="katalog.html">CUSTOMIZE</i></a>
-      </li>
-      <li class="nav-item ">
-        <a class="nav-link sans-serif" href="katalog.html">SPECIAL SALE</i></a>
-      </li>
-      <li class="nav-item">
-         <a class="nav-link sans-serif" href="about.html">VINTAGE SELLING<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-         <a class="nav-link sans-serif" href="about.html">ABOUT<span class="sr-only">(current)</span></a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 mt-4 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    </form>
-  </div>
-</nav>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link sans-serif" href="index.html">HOME</i></a>
+              <li class="nav-item  ">
+                <a class="nav-link sans-serif dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"> KATALOG<span class="sr-only">(current)</span></a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item current" href="katalog.html">MEN'S JERSEY</a>
+                  <a class="dropdown-item" href="#">WOMEN'S JERSEY</a>
+                  <a class="dropdown-item" href="#">SPORTSWEAR</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link sans-serif" href="katalog.html">CUSTOMIZE</i></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link sans-serif" href="about.html">ABOUT<span class="sr-only">(current)</span></a>
+              </li>
+            </ul>
+            <form class="form-inline my-2 mt-4 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            </form>
+          </div>
+        </div>
+      </nav>
     </div>
+  </header>
 
-        <div class="banner-img">
-          <div class="bannerText">
-            <p class="bannerTitle">
-              SPECIAL VINTAGE KIT
-            </p>
-            <p class="bannerCaption">
-              Grab our latest Manchester City 125th Vintage Anniversary kit
-            </p>
-            <button type="button" class="btn btn-info font20">Buy Now</button>
+  <section id="content">
+    <div class="banner-img">
+      <div class="bannerText">
+        <p class="bannerTitle">
+          SPECIAL VINTAGE KIT
+        </p>
+        <p class="bannerCaption">
+          Grab our latest Manchester City 125th Vintage Anniversary kit
+        </p>
+        <button type="button" class="btn btn-info font20">Buy Now</button>
+      </div>
+    </div>
+    <h2 align="center" style="font-family: 'Anton', sans-serif;">CATEGORIES</h2>
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-lg-4 col-md-6 col-sm-12 mt-2 " align="center">
+          <div class="carousel-item card fadeIn active" style="width: 18rem;">
+            <img class="card-img-top img-fluid" src="" alt="Men's Jersey">
+            <div class="card-body">
+              <h5 class="card-title" style="font-family: 'Anton', sans-serif;">Men's Jersey</h5>
+              <p class="card-text">Jersey yang di peruntukan untuk Pria dengan fitur fitur yang terbaru</p>
+            </div>
+            <div class="card-body">
+              <a href="file:///D:/WEBHOZZ/PROJECT WEBSITE/katalog.html" target="_blank"><button type="button"
+                  class="btn btn-dark">Take Me There</button></a>
+            </div>
           </div>
         </div>
 
-    
-
-
-
-
-
-    <h2 align="center" style="font-family: 'Anton', sans-serif;" >CATEGORIES</h2>
-
-
-
-
-
-
-
-    <div class="container">
-      <div class="row text-center">
-              <div class="col-lg-4 col-md-6 col-sm-12 mt-2 " align="center">
-                      <div class="carousel-item card fadeIn active" style="width: 18rem;">
-                      <img class="card-img-top img-fluid" src="https://assets.adidas.com/images/w_840,h_840,f_auto,q_auto:sensitive,fl_lossy/d4747e0e3abb46b596eaaa3b00ce48dd_9366/Manchester_United_Home_Jersey_Red_ED7386_21_model.jpg" alt="Men's Jersey">
-                      <div class="card-body">
-                        <h5 class="card-title" style="font-family: 'Anton', sans-serif;">Men's Jersey</h5>
-                        <p class="card-text">Jersey yang di peruntukan untuk Pria dengan fitur fitur yang terbaru</p>
-                      </div>
-                      <div class="card-body">
-                        <a href="file:///D:/WEBHOZZ/PROJECT WEBSITE/katalog.html" target="_blank"><button type="button" class="btn btn-dark">Take Me There</button></a>
-                      </div>
-                    </div>
-        </div>
-
-
-
         <div class="col-lg-4 col-md-6 col-sm-12 mt-2 " align="center">
-                      <div class="card fadeIn" style="width: 18rem;">
-                      <img class="card-img-top img-fluid" src="https://assets.adidas.com/images/w_840,h_840,f_auto,q_auto:sensitive,fl_lossy/a6224a7d90f640e3afb1aac400c88c11_9366/Trefoil_Tee_White_FM3306_21_model.jpg" alt="Card image cap" >
-                      <div class="card-body">
-                        <h5 class="card-title" style="font-family: 'Anton', sans-serif;" >Women's Sporty Cloth</h5>
-                        <p class="card-text">Jersey yang diperuntukkan dan sudah di sesuaikan untuk Wanita</p>
-                      </div>
-                      <div class="card-body">
-                       <a href="file:///D:/WEBHOZZ/PROJECT WEBSITE/katalog.html" target="_blank"><button type="button" class="btn btn-dark">Take Me There</button></a>
-                      </div>
-                    </div>
+          <div class="card fadeIn" style="width: 18rem;">
+            <img class="card-img-top img-fluid" src="" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title" style="font-family: 'Anton', sans-serif;">Women's Sporty Cloth</h5>
+              <p class="card-text">Jersey yang diperuntukkan dan sudah di sesuaikan untuk Wanita</p>
+            </div>
+            <div class="card-body">
+              <a href="file:///D:/WEBHOZZ/PROJECT WEBSITE/katalog.html" target="_blank"><button type="button"
+                  class="btn btn-dark">Take Me There</button></a>
+            </div>
+          </div>
         </div>
 
         <div class="col-lg-4 col-md-6 col-sm-12 fade-in mt-2" align="center">
-                      <div class="card fadeIn" style="width: 18rem;">
-                      <img class="card-img-top img-fluid fade-in" src="https://assets.adidas.com/images/w_840,h_840,f_auto,q_auto:sensitive,fl_lossy/e90384c66b1140f6a48aaafd017b801f_9366/Allover_Print_Shmoo_Hoodie_White_FM1438_22_model.jpg" alt="Card image cap">
-                      <div class="card-body">
-                        <h5 class="card-title" style="font-family: 'Anton', sans-serif;">Sportswear</h5>
-                        <p class="card-text">Temukan segala jenis peralatan untuk aktifitas olahraga kamu</p>
-                      </div>
-                      <div class="card-body">
-                        <a href="file:///D:/WEBHOZZ/PROJECT WEBSITE/katalog.html" target="_blank"><button type="button" class="btn btn-dark">Take Me There</button></a>
-
-                      </div>
-                    </div>
+          <div class="card fadeIn" style="width: 18rem;">
+            <img class="card-img-top img-fluid fade-in" src="" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title" style="font-family: 'Anton', sans-serif;">Sportswear</h5>
+              <p class="card-text">Temukan segala jenis peralatan untuk aktifitas olahraga kamu</p>
+            </div>
+            <div class="card-body">
+              <a href="file:///D:/WEBHOZZ/PROJECT WEBSITE/katalog.html" target="_blank"><button type="button"
+                  class="btn btn-dark">Take Me There</button></a>
+            </div>
+          </div>
         </div>
-  </div>
-</div>
+      </div>
+    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <h2 class="mt50" align="center" style="font-family: 'Anton', sans-serif;" >SPECIAL OFFERS FOR YOU</h2>
-    <div id="promo" data-aos="fade-up">
-    <div class="big-container mt50 slideInUp">
-      <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-1 mb-2" id="promo1">
-          <div>
-                  <div class="promoCtn">
-                    <img src="https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2019%2F09%2Ffc-barcelona-nike-third-kit-2019-20-release-details-05-1.jpg?q=75&w=800&cbr=1&fit=max" class="rounded">
-                    <div class="promoText">
-                      <p class="promoTitle">
-                        ALL NEW BARCELONA THIRD
-                      </p>
-                      <button type="button" class="btn btnTeal">Buy Now</button>
+    <section>
+      <h2 class="mt50" style="font-family: 'Anton', sans-serif;">SPECIAL OFFERS FOR YOU</h2>
+      <div id="promo" data-aos="fade-up">
+        <div class="midContainer mt50" data-aos="fade-up">
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-12 mb-2 promoBanner" id="promo1">
+              <div class="promoBanner">
+                <a href=""><img src="https://i.pinimg.com/564x/40/41/21/4041215b34ef2c3469dd4daf259a2b41.jpg"></a>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-12 mb-2" id="promo1">
+              <div class="row">
+                <div class="col-lg-6 col-md-3 col-12">
+                  <div class="product-grid3">
+                    <div class="product-image3">
+                      <a href="#">
+                        <img class="pic-1"
+                          src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/dfc69d94-8a28-4d3c-a4f6-80ef13acf1c2/air-jordan-1-mid-shoe-BpARGV.jpg">
+                        <img class="pic-2"
+                          src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/00f50b7a-099c-4b85-ad87-8b467134ed52/air-jordan-1-mid-shoe-BpARGV.jpg">
+                      </a>
+                      <ul class="social">
+                        <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
+                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                      </ul>
+                    </div>
+                    <div class="product-content">
+                      <h3 class="title"><a href="#">Air Jordan 1 Mid</a></h3>
+                      <div class="price">
+                        Rp 1,649,000
+                      </div>
+                      <ul class="rating">
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star disable"></li>
+                        <li class="fa fa-star disable"></li>
+                      </ul>
                     </div>
                   </div>
-          </div>
-         </div>
-
-         <div class="col-lg-4 col-md-6 col-sm-6">
-          <div class="promoCtn">
-                <img src="https://i.pinimg.com/564x/44/62/44/4462444a638bcf926d6abaeca32941ae.jpg" class="promo img-fluid figure-img rounded">
-                <div class="promoText">
-                      <p class="promoTitle">
-                        LES VETEMENS SPECIAL VINTAGE 
-                      </p>
-                      <button type="button" class="btn btn-warning">Buy Now</button>
-                    </div>
-          </div>
-        </div>
-
-          <div class="col-lg-4 col-md-6 col-sm-6">
-          <div class="promoCtn ">
-                <img src="https://i.pinimg.com/564x/50/d0/4e/50d04e4728379955e3ff6b9531c8dacd.jpg" class="promo img-fluid figure-img rounded">
-                <div class="promoText">
-                      <p class="promoTitle">
-                        ADIDAS BEING ARSENAL 19/20
-                      </p>
-                      <button type="button" class="btn btn-danger">Buy Now</button>
-                    </div>
-          </div>
-
-
-         </div>
-         </div>
-        </div>
-
-<div class="midContainer mt50" data-aos="fade-up">
-          <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-1 mb-2 promoBanner" id="promo1">
-              <div class="promoBanner"> 
-                <a href=""><img src="https://i.pinimg.com/564x/40/41/21/4041215b34ef2c3469dd4daf259a2b41.jpg" ></a>
-              </div>
-            </div>
-
-    <div class="col-lg-6 col-md-6 col-sm-1 mb-2" id="promo1">
-        <div class="row">
-              <div class="col-lg-6 col-md-3 col-sm-6">
-            <div class="product-grid3">
-                <div class="product-image3">
-                    <a href="#">
-                        <img class="pic-1" src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/dfc69d94-8a28-4d3c-a4f6-80ef13acf1c2/air-jordan-1-mid-shoe-BpARGV.jpg">
-                        <img class="pic-2" src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/00f50b7a-099c-4b85-ad87-8b467134ed52/air-jordan-1-mid-shoe-BpARGV.jpg">
-                    </a>
-                    <ul class="social">
+                  <div class="product-grid3">
+                    <div class="product-image3">
+                      <a href="#">
+                        <img class="pic-1"
+                          src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/e8494c3c-666d-47c3-9131-c7d73461961f/air-max-90-shoe-r5WqV3.jpg">
+                        <img class="pic-2"
+                          src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/630d81b8-5f07-4736-868f-ffc97dfdd647/air-max-90-shoe-r5WqV3.jpg">
+                      </a>
+                      <ul class="social">
                         <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
                         <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                    </ul>
-                </div>
-                <div class="product-content">
-                    <h3 class="title"><a href="#">Air Jordan 1 Mid</a></h3>
-                    <div class="price">            
-                        Rp 1,649,000
+                      </ul>
                     </div>
-                    <ul class="rating">
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star disable"></li>
-                        <li class="fa fa-star disable"></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="product-grid3">
-                <div class="product-image3">
-                    <a href="#">
-                        <img class="pic-1" src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/e8494c3c-666d-47c3-9131-c7d73461961f/air-max-90-shoe-r5WqV3.jpg">
-                        <img class="pic-2" src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/630d81b8-5f07-4736-868f-ffc97dfdd647/air-max-90-shoe-r5WqV3.jpg">
-                    </a>
-                    <ul class="social">
-                        <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                    </ul>
-                </div>
-                <div class="product-content">
-                    <h3 class="title"><a href="#">Nike Air Max 90</a></h3>
-                    <div class="price">            
+                    <div class="product-content">
+                      <h3 class="title"><a href="#">Nike Air Max 90</a></h3>
+                      <div class="price">
                         Rp 1,438,000
+                      </div>
+                      <ul class="rating">
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star disable"></li>
+                        <li class="fa fa-star disable"></li>
+                      </ul>
                     </div>
-                    <ul class="rating">
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star disable"></li>
-                        <li class="fa fa-star disable"></li>
-                    </ul>
+                  </div>
                 </div>
-            </div>
-
-
-
-
-          </div>
-
-          <div class="col-lg-6 col-md-3 col-sm-6">
-            <div class="product-grid3">
-                <div class="product-image3">
-                    <a href="#">
-                        <img class="pic-1" src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/866bfce2-a1a5-48b2-8f72-29c71ecf8035/air-jordan-1-low-se-shoe-XvqDsj.jpg">
-                        <img class="pic-2" src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/c12cf736-abdc-447d-9034-ef9a1ba63ef6/air-jordan-1-low-se-shoe-XvqDsj.jpg">
-                    </a>
-                    <ul class="social">
+                <div class="col-lg-6 col-md-3 col-12">
+                  <div class="product-grid3">
+                    <div class="product-image3">
+                      <a href="#">
+                        <img class="pic-1"
+                          src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/866bfce2-a1a5-48b2-8f72-29c71ecf8035/air-jordan-1-low-se-shoe-XvqDsj.jpg">
+                        <img class="pic-2"
+                          src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/c12cf736-abdc-447d-9034-ef9a1ba63ef6/air-jordan-1-low-se-shoe-XvqDsj.jpg">
+                      </a>
+                      <ul class="social">
                         <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
                         <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                    </ul>
-                    <span class="product-new-label">New</span>
-                </div>
-                <div class="product-content">
-                    <h3 class="title"><a href="#">Air Jordan 1 Low SE</a></h3>
-                    <div class="price">            
+                      </ul>
+                      <span class="product-new-label">New</span>
+                    </div>
+                    <div class="product-content">
+                      <h3 class="title"><a href="#">Air Jordan 1 Low SE</a></h3>
+                      <div class="price">
                         Rp 1,649,000
+                      </div>
+                      <ul class="rating">
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star disable"></li>
+                        <li class="fa fa-star disable"></li>
+                      </ul>
                     </div>
-                    <ul class="rating">
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star disable"></li>
-                        <li class="fa fa-star disable"></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="product-grid3">
-                <div class="product-image3">
-                    <a href="#">
-                        <img class="pic-1" src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/uzppjliwachcqpur6u9i/air-max2-light-shoe-rWm3CX.jpg">
-                        <img class="pic-2" src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/hwo4wriixcrxswfocrea/air-max2-light-shoe-rWm3CX.jpg">
-                    </a>
-                    <ul class="social">
+                  </div>
+                  <div class="product-grid3">
+                    <div class="product-image3">
+                      <a href="#">
+                        <img class="pic-1"
+                          src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/uzppjliwachcqpur6u9i/air-max2-light-shoe-rWm3CX.jpg">
+                        <img class="pic-2"
+                          src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/hwo4wriixcrxswfocrea/air-max2-light-shoe-rWm3CX.jpg">
+                      </a>
+                      <ul class="social">
                         <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
                         <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                    </ul>
-                </div>
-                <div class="product-content">
-                    <h3 class="title"><a href="#">Nike Air Max2 Light</a></h3>
-                    <div class="price">            
+                      </ul>
+                    </div>
+                    <div class="product-content">
+                      <h3 class="title"><a href="#">Nike Air Max2 Light</a></h3>
+                      <div class="price">
                         Rp 1,468,000
+                      </div>
+                      <ul class="rating">
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star disable"></li>
+                        <li class="fa fa-star disable"></li>
+                      </ul>
                     </div>
-                    <ul class="rating">
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star disable"></li>
-                        <li class="fa fa-star disable"></li>
-                    </ul>
+                  </div>
                 </div>
-            </div>
-          </div>
-
-              
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
 
-
-
-
-
-<div class="row mt100" data-aos="fade-up">
-      <div class="col-lg-6 col-md-6 col-sm-1 mb-2" id="promo1">
+    <section>
+      <h2 class="mt100 text-center" style="font-family: 'Anton', sans-serif;">OFFICIAL PRODUCT BY</h2>
+      <div class="container mt50">
         <div class="row">
-          <div class="col-lg-6 col-md-3 col-sm-6">
-            <div class="product-grid3">
-                <div class="product-image3">
-                    <a href="#">
-                        <img class="pic-1" src="https://assets.adidas.com/images/w_840,h_840,f_auto,q_auto:sensitive,fl_lossy/fa1d5647d0c74fac9859ab7600270eb8_9366/Pullover_Hoodie_Pink_FT9490_21_model.jpg">
-                        <img class="pic-2" src="https://assets.adidas.com/images/w_840,h_840,f_auto,q_auto:sensitive,fl_lossy/aa7cd89af5e14ee6a155ab76002b4b18_9366/Pullover_Hoodie_Pink_FT9490_22_model.jpg">
-                    </a>
-                    <ul class="social">
-                        <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                    </ul>
-                </div>
-                <div class="product-content">
-                    <h3 class="title"><a href="#">Pullover Hoodie</a></h3>
-                    <div class="price">            
-                        Rp 750,000
-                    </div>
-                    <ul class="rating">
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star disable"></li>
-                        <li class="fa fa-star disable"></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-          <div class="col-lg-6 col-md-3 col-sm-6">
-            <div class="product-grid3">
-                <div class="product-image3">
-                    <a href="#">
-                        <img class="pic-1" src="https://assets.adidas.com/images/w_840,h_840,f_auto,q_auto:sensitive,fl_lossy/8bc7e91a6f8647b98cafaac400c0b5bf_9366/adidas_Adicolor_Trefoil_Hoodie_Red_FM3298_21_model.jpg">
-                        <img class="pic-2" src="https://assets.adidas.com/images/w_840,h_840,f_auto,q_auto:sensitive,fl_lossy/596c4e2d03064441a0cdaac400c0c22c_9366/adidas_Adicolor_Trefoil_Hoodie_Red_FM3298_22_model.jpg">
-                    </a>
-                    <ul class="social">
-                        <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                    </ul>
-                    <span class="product-new-label">New</span>
-                </div>
-                <div class="product-content">
-                    <h3 class="title"><a href="#">Adidas Adicolor Trifoil Hoodie</a></h3>
-                    <div class="price">            
-                        Rp 900,000
-                    </div>
-                    <ul class="rating">
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star disable"></li>
-                        <li class="fa fa-star disable"></li>
-                    </ul>
-                </div>
-            </div>
-
-            
+          <div class="sponsor col-lg-3 col-md-6 col-sm-12 mt-2">
+            <img src="http://pngimg.com/uploads/nike/nike_PNG11.png" , class="slide-fwd-center sponsor img-fluid ">
           </div>
-
-              
-              </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 mt-2">
+            <img src="http://pngimg.com/uploads/adidas/adidas_PNG8.png" , class="sponsor img-fluid ">
           </div>
-
-
-
-        <div class="col-lg-6 col-md-6 col-sm-1 mb-2 promoBanner2" id="promo1">
-          <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-1 mb-2 promoBanner2" id="promo1">
-              <div class="promoBanner2"> 
-                <a href=""><img src="https://i.pinimg.com/564x/78/aa/87/78aa873dca6d846bb95b83e234bd0bd1.jpg" class="rounded img-fluid"></a>
-              </div>
-            </div>    
-
-
-            <div class="col-lg-6 col-md-6 col-sm-1 mb-2 promoBanner2" id="promo1">
-              <div class="promoBanner2"> 
-                <a href=""><img src="https://i.pinimg.com/564x/7f/c9/15/7fc9156daea8ad59eb07ca0622964f4c.jpg" class="rounded img-fluid"></a>
-              </div>
-            </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 mt-2">
+            <img src="https://www.stickpng.com/assets/images/580b57fcd9996e24bc43c4f8.png" , class="sponsor img-fluid">
           </div>
-        </div>
-
-
-
-
-
-
-
-
-
-
-        </div>
-
-
-
-      </div>
-    </div>
-
-
-    <h2 class="mt100" align="center" style="font-family: 'Anton', sans-serif;" >OFFICIAL PRODUCT BY</h2>
-
-       <div class="container mt50">
-          <div class="row">
-            <div class="sponsor col-lg-3 col-md-6 col-sm-12 mt-2">
-              <img src="http://pngimg.com/uploads/nike/nike_PNG11.png", class="slide-fwd-center sponsor img-fluid ">
-            </div>
-             <div class="col-lg-3 col-md-6 col-sm-12 mt-2">
-              <img src="http://pngimg.com/uploads/adidas/adidas_PNG8.png", class="sponsor img-fluid ">
-            </div>
-             <div class="col-lg-3 col-md-6 col-sm-12 mt-2">
-              <img src="https://www.stickpng.com/assets/images/580b57fcd9996e24bc43c4f8.png", class="sponsor img-fluid">
-            </div>
-             <div class="col-lg-3 col-md-6 col-sm-12 mt-2">
-              <img src="https://cdn.freebiesupply.com/logos/large/2x/umbro-logo-png-transparent.png", class="sponsor img-fluid">
-            </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 mt-2">
+            <img src="https://cdn.freebiesupply.com/logos/large/2x/umbro-logo-png-transparent.png" ,
+              class="sponsor img-fluid">
+          </div>
         </div>
       </div>
+    </section>
+  </section>
 
-     <div class="mt50" id="footer" style="background-color: black">
-        <div class="container">
+  <footer>
+    <div class="mt50" id="footer" style="background-color: black">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-12 mt-4">
             <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-12 mt-4">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                          <h4>NEW YEAR DISCOUNT</h4>
-                          <br>
-                          <h4>SEASON PASS</h4>
-                          <br>
-                          <h4>BECOME A MEMBER</h4>
-                          <br>
-                          <h4>SITE FEEDBACK</h4>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                          <h4>MORE INFORMATION</h4>
-                                <ul>
-                                  <li>
-                                    Order Status
-                                  </li>
-                                  <li>
-                                    Shipping and Delivery
-                                  </li>
-                                  <li>
-                                    Contact Us
-                                  </li>
-                                  <li>
-                                    Store And Branch
-                                  </li>
-                                </ul>
-                          <h4>
-                            ABOUT US
-                          </h4>
-                                <ul>
-                                  <li>
-                                    News
-                                  </li>
-                                  <li>
-                                    Careers
-                                  </li>
-                                  <li>
-                                    Partners
-                                  </li>
-                                  <li>
-                                    Investments
-                                  </li>
-                                  </ul>
-                    </div>
-                </div>
-             </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 mt-4">
-                     <h4>FIND US</h4>
-                    <div class="float-right ml-4">
-                        <img src="ASSETS/icon/instagram.png" class="img-fluid">
-                    </div>
-                    <div class="float-right ml-4" style="size:24px;">
-                        <img src="ASSETS/icon/twitter.png">
-                    </div>
-                    <div class="float-right ml-4">
-                        <img src="ASSETS/icon/facebook.png">
-                    </div>
-                    <div class="float-right">
-                        <img src="ASSETS/icon/google.png">
-                    </div>
-                      <br>
-                      <br>
-                      <br>
-                      <h4>SUBSCRIBE FOR LATEST NEWS AND TRENDS</h4>
-                    <div class="input-group mb-3">
-                      <input type="text"  class="form-control rounded-lg" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">&nbsp;&nbsp;
-                      <button type="button" class="btn btn-light"><b>Submit</b></button>
-                    </div>
-                </div>
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <h4>NEW YEAR DISCOUNT</h4>
+                <br>
+                <h4>SEASON PASS</h4>
+                <br>
+                <h4>BECOME A MEMBER</h4>
+                <br>
+                <h4>SITE FEEDBACK</h4>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <h4>MORE INFORMATION</h4>
+                <ul>
+                  <li>
+                    Order Status
+                  </li>
+                  <li>
+                    Shipping and Delivery
+                  </li>
+                  <li>
+                    Contact Us
+                  </li>
+                  <li>
+                    Store And Branch
+                  </li>
+                </ul>
+                <h4>
+                  ABOUT US
+                </h4>
+                <ul>
+                  <li>
+                    News
+                  </li>
+                  <li>
+                    Careers
+                  </li>
+                  <li>
+                    Partners
+                  </li>
+                  <li>
+                    Investments
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12 mt-4">
+            <h4>FIND US</h4>
+            <div class="float-right ml-4">
+              <img src="ASSETS/icon/instagram.png" class="img-fluid">
+            </div>
+            <div class="float-right ml-4" style="size:24px;">
+              <img src="ASSETS/icon/twitter.png">
+            </div>
+            <div class="float-right ml-4">
+              <img src="ASSETS/icon/facebook.png">
+            </div>
+            <div class="float-right">
+              <img src="ASSETS/icon/google.png">
+            </div>
+            <br>
+            <br>
+            <br>
+            <h4>SUBSCRIBE FOR LATEST NEWS AND TRENDS</h4>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control rounded-lg" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">&nbsp;&nbsp;
+              <button type="button" class="btn btn-light"><b>Submit</b></button>
+            </div>
+          </div>
 
-                 <div class="container mt-5">
-                <div class="row">
-                  <hr>
-                    <div class="col-lg-12">
-                    <hr>
-                        <div class="col-lg-6 md-6 sm-6 rounded float-left">
-                          <p style="color: white; font-size:10px; ">  <img src="ASSETS/gambar/indonesia.png"> &nbsp;&nbsp; Indonesia&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2019 All Rights Reserved</p>
-                        </div>
-                        <div class="col-lg-6 md-6 sm-12 rounded float-left" >
-                          <p class="float-right" style="color: white; font-size:10px; ">Guides&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Terms & Policy</p>
-                        </div>
-                    </div>
+          <div class="container mt-5">
+            <div class="row">
+              <hr>
+              <div class="col-lg-12">
+                <hr>
+                <div class="col-lg-6 md-6 sm-6 rounded float-left">
+                  <p style="color: white; font-size:10px; "> <img src="ASSETS/gambar/indonesia.png"> &nbsp;&nbsp;
+                    Indonesia&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2019
+                    All Rights Reserved</p>
                 </div>
+                <div class="col-lg-6 md-6 sm-12 rounded float-left">
+                  <p class="float-right" style="color: white; font-size:10px; ">
+                    Guides&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Terms & Policy</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+      </div>
     </div>
+  </footer>
 
 
 
 
 
 
-
-  </body>
-
+</body>
 
 
-      <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script>
-    AOS.init();
-    </script>
-    <script type="text/javascript">
-      $('.promoBanner').hover(
-       function(){ $(this).addClass('zoomIn') },
-       function(){ $(this).removeClass('zoomIn') }
-)
-    </script>
-    <script src="js/common.js"></script>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script>
+  AOS.init();
+</script>
+<script type="text/javascript">
+  $('.promoBanner').hover(
+    function () {
+      $(this).addClass('zoomIn')
+    },
+    function () {
+      $(this).removeClass('zoomIn')
+    }
+  )
+</script>
+<script src="js/common.js"></script>
 
 </html>
