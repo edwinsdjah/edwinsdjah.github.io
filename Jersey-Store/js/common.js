@@ -55,10 +55,8 @@ $(".panel-title5").click(function () {
   $(".angle-down5").toggleClass("down");
 });
 
-$(function(){
-  $("#header").load("../component/header.html"); 
-});
 
-$(function(){
+  $("#header").load("../component/header.html"); 
+
+
   $("footer").load("../component/footer.html"); 
-});
