@@ -56,6 +56,25 @@ $(".panel-title5").click(function () {
 });
 
 
-  $("#header").load("component/header.html");
-  $("#sidebar").load("component/sidebar.html"); 
-  $("footer").load("component/footer.html"); 
+$("#header").load("component/header.html");
+$("#sidebar").load("component/sidebar.html");
+$("footer").load("component/footer.html");
+
+
+const openShopCart = document.querySelector('#cart a');
+openShopCart.addEventListener('click', () => {
+  const cart = document.querySelector('.productCart');
+  cart.classList.toggle('hide');
+  document.querySelector('body').classList.toggle('stopScrolling');
+});
+
+const closeShopCart = document.querySelector('#closeButton');
+const overlay = document.querySelector('.overlay');
+closeShopCart.addEventListener('click', closeCart);
+overlay.addEventListener('click', closeCart);
+
+function closeCart() {
+	const cart = document.querySelector('.productCart');
+	cart.classList.toggle('hide');
+	document.querySelector('body').classList.toggle('stopScrolling')
+}

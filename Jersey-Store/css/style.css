@@ -1,26 +1,9 @@
-@-webkit-keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-
 body {
   overflow-x: hidden;
+}
+
+.hide {
+  display: none;
 }
 
 .carousel-inner img {
@@ -32,8 +15,6 @@ body {
   /* Chrome, Safari, Opera */
   filter: blur(6px);
 }
-
-
 
 .carousel-caption {
   position: absolute;
@@ -57,7 +38,6 @@ body {
 #UpperNav ul {
   justify-content: end;
 }
-
 
 .navbar-toggler {
   border: 0 !important;
@@ -97,6 +77,68 @@ a:hover {
   color: white;
 }
 
+.stopScrolling {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.productCart {
+  overflow: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
+  background-color: #ffffff;
+  width: 300px;
+  height: 500px;
+  color: #000;
+  z-index: 15;
+  position: fixed;
+  top: 0;
+  right: 0;
+  text-align: center;
+  animation: fade 0.3s;
+}
+
+.overlay {
+  overflow: hidden;
+  display: inline-block;
+  content: "";
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: rgb(0 0 0 / 50%);
+}
+
+.productCart .top {
+  display: flex;
+  background-color: #f7f7f7;
+  text-align: center;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+.top button {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  margin-left: 10px;
+  color: rgb(226, 157, 0);
+  cursor: pointer;
+}
+
+.top h3 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+}
+
 .brand-black {
   color: black;
 }
@@ -129,8 +171,6 @@ a:hover {
   color: black;
 
 }
-
-
 
 .mt30 {
   margin-top: 30px;
@@ -376,7 +416,8 @@ h3.h3 {
 #seeMoreBtn {
   background-color: #e67e22;
   color: #fff;
-  font-size: 17px width: 100%;
+  font-size: 17px;
+  width: 100%;
 
 }
 
@@ -767,7 +808,6 @@ h3.h3 {
 
   .product-grid3 .rating {
     margin: 0px 0 0;
-    float-left;
   }
 }
 
@@ -1118,6 +1158,36 @@ h2 {
     border-right: 1px solid #e7e7e7;
 }*/
 
+@-webkit-keyframes fade {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: none;
+  }
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 @-webkit-keyframes slideInUp {
   from {
     -webkit-transform: translate3d(0, 100%, 0);
@@ -1189,14 +1259,3 @@ h2 {
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
-
-
-
-
-
-
-
-
-
-
-</style>
