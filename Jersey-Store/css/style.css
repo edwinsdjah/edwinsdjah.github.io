@@ -777,6 +777,10 @@ h3.h3 {
     margin-top: 0;
   }
   
+  .nav-item{
+    margin-right: 0.5em;
+  }
+  
   #UpperNav ul{
     justify-content: center;
   }
