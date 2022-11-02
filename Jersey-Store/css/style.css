@@ -63,6 +63,10 @@ body {
   color: #ffb108;
 }
 
+#UpperNav ul{
+  justify-content: end;
+}
+
 
 a:hover {
   color: #e29d00;
@@ -771,6 +775,10 @@ h3.h3 {
     margin-left: 0;
     margin-right: 0;
     margin-top: 0;
+  }
+  
+  #UpperNav ul{
+    justify-content: center;
   }
 }
 
