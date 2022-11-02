@@ -793,6 +793,11 @@ h3.h3 {
     margin-left: 1em;
     margin-right: 1em;
   }
+  
+  .catalogueCont .col-6{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 
   .banner-img{
     margin-left: 0;
