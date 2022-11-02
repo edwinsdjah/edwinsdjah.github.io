@@ -79,6 +79,24 @@ a:hover {
   text-decoration: underline;
 }
 
+.notif {
+  position: absolute;
+  top: 0;
+  right: 0.3em;
+  height: 15px;
+  width: 15px;
+  background: red;
+  border-radius: 3px;
+}
+
+.counter {
+  font-size: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
 .brand-black {
   color: black;
 }
