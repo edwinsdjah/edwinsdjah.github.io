@@ -788,6 +788,11 @@ h3.h3 {
   .navbar-collapse{
     order: 2;
   } 
+  
+  .catalogueCont {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
 
   .banner-img{
     margin-left: 0;
