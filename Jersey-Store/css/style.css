@@ -85,6 +85,7 @@ a:hover {
 .productCart {
   overflow: hidden;
   overflow-y: scroll;
+  overflow-y: unset;
   scroll-behavior: smooth;
   overscroll-behavior: contain;
   background-color: #ffffff;
@@ -93,10 +94,11 @@ a:hover {
   color: #000;
   z-index: 15;
   position: fixed;
-  top: 0;
-  right: 0;
+  top: 0.2em;
+  right: 0.2em;
   text-align: center;
   animation: fade 0.3s;
+  border-radius: 10px;
 }
 
 .overlay {
@@ -222,6 +224,14 @@ figcaption {
   font-style: bold;
   color: #000;
   font-size: 0.8em;
+}
+
+.productCart ul {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 h4 {
