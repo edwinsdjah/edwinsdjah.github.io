@@ -1,6 +1,13 @@
-$("#header").load("component/header.html");
 $("#sidebar").load("component/sidebar.html");
 $("footer").load("component/footer.html");
+
+$(function () {
+  $("#header").load("component/header.html"),
+    function () {
+      openCart();
+      closeCart();
+    }
+});
 
 
 window.onscroll = function () {
@@ -40,30 +47,30 @@ $(".panel-title5").click(function () {
 
 
 const myTime = setTimeout(function () {
- 
-} , 6000)
+
+}, 6000)
 
 
 
-window.addEventListener('DOMContentLoaded',function(){
-  openCart();
+window.addEventListener('DOMContentLoaded', function () {
+
 })
 
-function openCart(){
-const openShopCart = document.querySelector('#cart a');
-openShopCart.addEventListener('click', () => {
-  const cart = document.querySelector('.productCart');
-  cart.classList.toggle('hide');
-  document.querySelector('body').classList.toggle('stopScrolling');
-});
+function openCart() {
+  const openShopCart = document.querySelector('#cart a');
+  openShopCart.addEventListener('click', () => {
+    const cart = document.querySelector('.productCart');
+    cart.classList.toggle('hide');
+    document.querySelector('body').classList.toggle('stopScrolling');
+  });
 }
 
-const closeShopCart = document.querySelector('#closeButton');
-const overlay = document.querySelector('.overlay');
-closeShopCart.addEventListener('click', closeCart);
-overlay.addEventListener('click', closeCart);
-
 function closeCart() {
+  const closeShopCart = document.querySelector('#closeButton');
+  const overlay = document.querySelector('.overlay');
+  closeShopCart.addEventListener('click', closeCart);
+  overlay.addEventListener('click', closeCart);
+  
   const cart = document.querySelector('.productCart');
   cart.classList.toggle('hide');
   document.querySelector('body').classList.toggle('stopScrolling')
