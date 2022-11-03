@@ -2,21 +2,23 @@ $("#sidebar").load("component/sidebar.html");
 $("footer").load("component/footer.html");
 
 $(document).ready(function () {
-  $("#header").load("component/header.html"),
-    function () {
+  $("#header").load("component/header.html"), function () {
       const openShopCart = document.querySelector('#cart a');
+      const closeShopCart = document.querySelector('#closeButton');
+      const overlay = document.querySelector('.overlay');
+      const cart = document.querySelector('.productCart');
+      
       openShopCart.addEventListener('click', () => {
         const cart = document.querySelector('.productCart');
         cart.classList.toggle('hide');
         document.querySelector('body').classList.toggle('stopScrolling');
       });
 
-      const closeShopCart = document.querySelector('#closeButton');
-      const overlay = document.querySelector('.overlay');
+      
       closeShopCart.addEventListener('click', closeCart);
       overlay.addEventListener('click', closeCart);
 
-      const cart = document.querySelector('.productCart');
+      
       cart.classList.toggle('hide');
       document.querySelector('body').classList.toggle('stopScrolling')
     }
@@ -54,23 +56,3 @@ $(".panel-title4").click(function () {
 $(".panel-title5").click(function () {
   $(".angle-down5").toggleClass("down");
 });
-
-
-
-
-
-const myTime = setTimeout(function () {
-
-}, 6000)
-
-
-
-window.addEventListener('DOMContentLoaded', function () {
-
-})
-
-
-
-function closeCart() {
-
-}
