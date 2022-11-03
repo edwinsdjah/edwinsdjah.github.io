@@ -1,7 +1,7 @@
 $("#sidebar").load("component/sidebar.html");
 $("footer").load("component/footer.html");
 
-$(function () {
+$(document).ready(function () {
   $("#header").load("component/header.html"),
     function () {
       const openShopCart = document.querySelector('#cart a');
@@ -19,8 +19,6 @@ $(function () {
       const cart = document.querySelector('.productCart');
       cart.classList.toggle('hide');
       document.querySelector('body').classList.toggle('stopScrolling')
-
-
     }
 });
 
