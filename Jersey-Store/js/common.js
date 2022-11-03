@@ -59,3 +59,29 @@ $(".panel-title4").click(function () {
 $(".panel-title5").click(function () {
   $(".angle-down5").toggleClass("down");
 });
+
+
+
+
+
+const myTime = setTimeout(function () {
+  const openShopCart = document.querySelector('#cart a');
+  openShopCart.addEventListener('click', () => {
+    const cart = document.querySelector('.productCart');
+    cart.classList.toggle('hide');
+    document.querySelector('body').classList.toggle('stopScrolling');
+  });
+
+  const closeShopCart = document.querySelector('#closeButton');
+  const overlay = document.querySelector('.overlay');
+  closeShopCart.addEventListener('click', closeCart);
+  overlay.addEventListener('click', closeCart);
+  
+  function closeCart() {
+    const cart = document.querySelector('.productCart');
+    cart.classList.toggle('hide');
+    document.querySelector('body').classList.toggle('stopScrolling')
+  }
+} , 6000)
+
+
