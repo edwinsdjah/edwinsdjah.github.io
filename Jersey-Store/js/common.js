@@ -1,6 +1,7 @@
-// $("#header").load("component/header.html");
-// $("#sidebar").load("component/sidebar.html");
-// $("footer").load("component/footer.html");
+$("#header").load("component/header.html");
+$("#sidebar").load("component/sidebar.html");
+$("footer").load("component/footer.html");
+
 
 window.onscroll = function () {
   scrollFunction()
@@ -42,12 +43,20 @@ const myTime = setTimeout(function () {
  
 } , 6000)
 
+
+
+window.addEventListener('DOMContentLoaded',function(){
+  openCart();
+})
+
+function openCart(){
 const openShopCart = document.querySelector('#cart a');
 openShopCart.addEventListener('click', () => {
   const cart = document.querySelector('.productCart');
   cart.classList.toggle('hide');
   document.querySelector('body').classList.toggle('stopScrolling');
 });
+}
 
 const closeShopCart = document.querySelector('#closeButton');
 const overlay = document.querySelector('.overlay');
@@ -59,5 +68,3 @@ function closeCart() {
   cart.classList.toggle('hide');
   document.querySelector('body').classList.toggle('stopScrolling')
 }
-
-
