@@ -190,6 +190,18 @@ a:hover {
   font-size: 28px;
 }
 
+.producCart ul {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.productCart .empty {
+  justify-self: center;
+  margin: 150px auto;
+}
 
 
 
