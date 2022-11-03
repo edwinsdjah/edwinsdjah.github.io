@@ -1,6 +1,6 @@
-$("#header").load("component/header.html");
-$("#sidebar").load("component/sidebar.html");
-$("footer").load("component/footer.html");
+// $("#header").load("component/header.html");
+// $("#sidebar").load("component/sidebar.html");
+// $("footer").load("component/footer.html");
 
 
 window.onscroll = function () {
