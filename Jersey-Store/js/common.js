@@ -2,26 +2,26 @@ $("#sidebar").load("component/sidebar.html");
 $("footer").load("component/footer.html");
 
 $(document).ready(function () {
-  $("#header").load("component/header.html"), function () {
-      const openShopCart = document.querySelector('#cart a');
-      const closeShopCart = document.querySelector('#closeButton');
-      const overlay = document.querySelector('.overlay');
+  $("#header").load("component/header.html", function () {
+    const openShopCart = document.querySelector('#cart a');
+    const closeShopCart = document.querySelector('#closeButton');
+    const overlay = document.querySelector('.overlay');
+    const cart = document.querySelector('.productCart');
+    
+    openShopCart.addEventListener('click', () => {
       const cart = document.querySelector('.productCart');
-      
-      openShopCart.addEventListener('click', () => {
-        const cart = document.querySelector('.productCart');
-        cart.classList.toggle('hide');
-        document.querySelector('body').classList.toggle('stopScrolling');
-      });
-
-      
-      closeShopCart.addEventListener('click', closeCart);
-      overlay.addEventListener('click', closeCart);
-
-      
       cart.classList.toggle('hide');
-      document.querySelector('body').classList.toggle('stopScrolling')
-    }
+      document.querySelector('body').classList.toggle('stopScrolling');
+    });
+
+    
+    closeShopCart.addEventListener('click', closeCart);
+    overlay.addEventListener('click', closeCart);
+
+    
+    cart.classList.toggle('hide');
+    document.querySelector('body').classList.toggle('stopScrolling')
+  })
 });
 
 
