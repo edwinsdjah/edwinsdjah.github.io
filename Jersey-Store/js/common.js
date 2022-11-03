@@ -7,22 +7,25 @@ $(document).ready(function () {
     const closeShopCart = document.querySelector('#closeButton');
     const overlay = document.querySelector('.overlay');
     const cart = document.querySelector('.productCart');
-    
+
     openShopCart.addEventListener('click', () => {
       const cart = document.querySelector('.productCart');
       cart.classList.toggle('hide');
       document.querySelector('body').classList.toggle('stopScrolling');
     });
 
-    
     closeShopCart.addEventListener('click', closeCart);
     overlay.addEventListener('click', closeCart);
-
     
-    cart.classList.toggle('hide');
-    document.querySelector('body').classList.toggle('stopScrolling')
+    function closeCart() {
+      cart.classList.toggle('hide');
+      document.querySelector('body').classList.toggle('stopScrolling')
+    }
+
   })
 });
+
+
 
 
 window.onscroll = function () {
