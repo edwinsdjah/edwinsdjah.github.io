@@ -5,13 +5,13 @@ window.onscroll = function () {
   scrollFunction()
 };
 
-function scrollFunction() {
-  if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
-    document.getElementById("header").style.fontSize = "20px";
-  } else {
-    document.getElementById("header").style.fontSize = "28px";
-  }
-};
+// function scrollFunction() {
+//   if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
+//     document.getElementById("header").style.fontSize = "20px";
+//   } else {
+//     document.getElementById("header").style.fontSize = "28px";
+//   }
+// };
 
 $(".panel-title1").click(function () {
   $(".angle-down1").toggleClass("down");
