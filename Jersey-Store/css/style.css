@@ -61,7 +61,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  
+
 }
 
 .cat-content img {
@@ -931,6 +931,14 @@ h3.h3 {
   .catalogueCont .col-6 {
     padding-left: 10px;
     padding-right: 10px;
+  }
+
+  .cat-content {
+    width: 100%;
+  }
+  
+  .cat-content img{
+    max-height: none;
   }
 
   .banner-img {
