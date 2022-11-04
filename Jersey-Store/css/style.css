@@ -85,7 +85,7 @@ body {
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(48, 61, 68, 0.98);
+  background: rgba(48, 61, 68, 0.62);
   mix-blend-mode: multiply;
   border-radius: 5%;
 }
