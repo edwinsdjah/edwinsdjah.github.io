@@ -2,7 +2,7 @@ $("#sidebar").load("component/sidebar.html");
 $("footer").load("component/footer.html");
 
 window.onscroll = function () {
-  scrollFunction()
+  // scrollFunction()
 };
 
 // function scrollFunction() {
