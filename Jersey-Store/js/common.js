@@ -38,6 +38,12 @@ $(document).ready(function () {
     const closeShopCart = document.querySelector('#closeButton');
     const overlay = document.querySelector('.overlay');
     const cart = document.querySelector('.productCart');
+    
+    function closeCart() {
+      cart.classList.toggle('hide');
+      document.querySelector('body').classList.toggle('stopScrolling');
+      overlay.classList.toggle('hide');
+    }
 
     openShopCart.addEventListener('click', () => {
       const cart = document.querySelector('.productCart');
@@ -49,10 +55,6 @@ $(document).ready(function () {
     closeShopCart.addEventListener('click', closeCart);
     overlay.addEventListener('click', closeCart);
     
-    function closeCart() {
-      cart.classList.toggle('hide');
-      document.querySelector('body').classList.toggle('stopScrolling');
-      overlay.classList.toggle('hide');
-    }
+    
   })
 });
