@@ -125,7 +125,6 @@ a:hover {
 }
 
 .stopScrolling {
-  height: 100vh;
   overflow: hidden;
 }
 
