@@ -41,10 +41,8 @@ $(document).ready(function () {
     const cartWindow = document.getElementById('cartWindow');
     const wishWindow = document.getElementById('wishWindow');
     const nav = document.querySelector('.nav-icons');
-    const sideCloseBtn = document.querySelectorAll('.closeButton');
     const overlay = document.querySelector('.overlay');
     const product = document.querySelectorAll('.sideProduct');
-    const wish = document.querySelector('.wishlistWindow');
 
 
     function openCart() {
@@ -80,18 +78,18 @@ $(document).ready(function () {
             sideWindow.classList.toggle('hide');
             overlay.classList.toggle('hide');
           }, 300);
-        }
-      })
-    })
+        };
+      });
+    });
 
     nav.addEventListener('click', function (e) {
-      if (e.target.classList.contains('fa-heart')) {
+      if (e.target.classList.contains('fa-heart')||e.target.classList.contains('click')) {
         openWish();
-      } else if (e.target.classList.contains('fa-shopping-cart')) {
+      } else if (e.target.classList.contains('fa-shopping-cart')||e.target.classList.contains('click')) {
         openCart();
-      }
-    })
+      };
+    });
 
-  })
+  });
 
 });
