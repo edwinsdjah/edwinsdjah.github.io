@@ -196,11 +196,12 @@ li.buyItem{
   width: 90%;
   padding: 10px 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: normal;
 }
 
 .buyItem img{
   width: 90px;
+  height: auto;
 }
 
 .top button {
@@ -316,6 +317,7 @@ figcaption {
 
 .sideProduct .caption{
   color: #000;
+  margin-left: 1em;
 }
 
 h4 {
