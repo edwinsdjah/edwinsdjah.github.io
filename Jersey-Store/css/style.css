@@ -147,6 +147,18 @@ a:hover {
   border-radius: 10px;
 }
 
+.exit{
+  animation: exit 0.3s;
+}
+
+.fade-in{
+  animation: fade-in 0.3s;
+}
+
+.fade-out{
+  animation: fade-out 0.3s;
+}
+
 .overlay {
   overflow: hidden;
   display: inline-block;
@@ -1253,6 +1265,16 @@ h2 {
   }
 }
 
+@-webkit-keyframes exit {
+  0% {
+    transform: none;
+  }
+  
+  100% {
+    transform: translateX(100%);
+  }
+}
+
 @-webkit-keyframes fade-in {
   0% {
     opacity: 0;
@@ -1270,6 +1292,16 @@ h2 {
 
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
   }
 }
 

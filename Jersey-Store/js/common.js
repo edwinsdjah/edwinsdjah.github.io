@@ -40,9 +40,16 @@ $(document).ready(function () {
     const cart = document.querySelector('.productCart');
     
     function closeCart() {
-      cart.classList.toggle('hide');
+      
       document.querySelector('body').classList.toggle('stopScrolling');
-      overlay.classList.toggle('hide');
+      cart.classList.add('exit');
+      overlay.classList.add('fade-out')
+      setTimeout(function(){
+        cart.classList.remove('exit');
+        overlay.classList.remove('fade-out');
+        cart.classList.toggle('hide');
+        overlay.classList.toggle('hide');
+      },300)
     }
 
     openShopCart.addEventListener('click', () => {
@@ -50,6 +57,10 @@ $(document).ready(function () {
       cart.classList.toggle('hide');
       document.querySelector('body').classList.toggle('stopScrolling');
       overlay.classList.toggle('hide');
+      overlay.classList.add('fade-in');
+      setTimeout(function(){
+        overlay.classList.remove('fade-in');
+      },300)
     });
 
     closeShopCart.addEventListener('click', closeCart);
