@@ -51,7 +51,8 @@ $(document).ready(function () {
     
     function closeCart() {
       cart.classList.toggle('hide');
-      document.querySelector('body').classList.toggle('stopScrolling')
+      document.querySelector('body').classList.toggle('stopScrolling');
+      overlay.classList.toggle('hide');
     }
   })
 });
