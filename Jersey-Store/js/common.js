@@ -69,7 +69,7 @@ $(document).ready(function () {
 
     product.forEach(function (el) {
       el.addEventListener('click', function (event) {
-        if (event.target.classList.contains('closeIcon') || event.target.classList.contains('closeButton')) {
+        if (event.target.classList.contains('closeIcon') || event.target.classList.contains('closeButton'))  {
           const sideWindow = event.target.closest('.sideProduct');
           document.querySelector('body').classList.toggle('stopScrolling');
           sideWindow.classList.add('exit');
