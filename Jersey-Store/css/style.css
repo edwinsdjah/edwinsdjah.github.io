@@ -148,7 +148,7 @@ a:hover {
 }
 
 .exit{
-  animation: exit 0.3s;
+  animation: exit 0.4s;
 }
 
 .fade-in{
@@ -1271,7 +1271,7 @@ h2 {
   }
   
   100% {
-    transform: translateX(100%);
+    transform: translateX(110%);
   }
 }
 
