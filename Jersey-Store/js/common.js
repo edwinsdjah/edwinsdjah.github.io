@@ -31,8 +31,12 @@ $(document).ready(function () {
     const productDetail = document.querySelectorAll('.product-grid3');
     const parentElement = document.querySelectorAll('.buyItems');
     let productInCart = JSON.parse(localStorage.getItem('shoppingCart'));
+    let wishlistData = JSON.parse(localStorage.getItem('wishlist'));
     if (!productInCart) {
       productInCart = [];
+    }
+    if (!wishlistData) {
+      wishlistData = [];
     }
 
 
@@ -84,8 +88,6 @@ $(document).ready(function () {
 
     // UPDATE TO PRODUCT CART //
 
-
-
     const countTheSumPrice = () => {
       let sum = 0;
       productInCart.forEach(function (item) {
@@ -108,9 +110,20 @@ $(document).ready(function () {
             price: +productPrice,
             basePrice: +productPrice,
           }
-          console.log(product);
           updateProduct(product);
           updateCartinHTML();
+        } else if (event.target.classList.contains('fa-heart') || event.target.classList.contains('addWish')) {
+          const productID = index + 1;
+          const productName = el.querySelector('.title').textContent;
+          const productPrice = el.querySelector('.price').textContent;
+          const productImg = el.querySelector('.pic-1').src;
+          let product = {
+            id: productID,
+            name: productName,
+            image: productImg,
+          }
+          updateWish(product);
+          updateWishinHTML();
         }
       });
     });
@@ -124,6 +137,16 @@ $(document).ready(function () {
         }
       }
       productInCart.push(product);
+    }
+    
+    function updateWish(product){
+      for(let i = 0; i< wishlistData.length; i++){
+        if (wishlistData[i].name === product.name){
+          alert('WISHLIST SUDAH ADA');
+          return;
+        }
+      }
+      wishlistData.push(product);
     }
 
     const updateCartinHTML = function () {
@@ -143,7 +166,32 @@ $(document).ready(function () {
         parentElement[0].innerHTML = `<h4 class="empty">Your shopping cart is empty</h4>`;
       }
     }
+    
+    const updateWishinHTML = function (){
+      localStorage.setItem('wishlist', JSON.stringify(wishlistData));
+      if (wishlistData.length > 0) {
+        let notif = document.querySelector('#wishlist .notif');
+        notif.classList.remove('hide');
+        notif.firstChild.textContent = wishlistData.length;        
+        let result = wishlistData.map(product => {
+          return `<li class="buyItem">
+            <img src='${product.image}'>
+            <div class ="caption">
+              <h5>${product.name}</h5>
+            </div>
+          </li>`
+        });
+        parentElement[1].innerHTML = result.join('');
+      } else {
+        parentElement[1].innerHTML = `<h4 class="empty">Your wishlist is empty</h4>`;
+      }
+    }
 
     updateCartinHTML();
+    updateWishinHTML();
+
+    // UPDATE TO WISHLIST
+
+
   });
 });
