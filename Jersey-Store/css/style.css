@@ -128,7 +128,7 @@ a:hover {
   overflow: hidden;
 }
 
-.productCart {
+.sideProduct {
   overflow: hidden;
   overflow-y: scroll;
   overflow-y: unset;
@@ -172,14 +172,23 @@ a:hover {
   background: rgba(0, 0, 0, 0.6);
 }
 
-.productCart .top {
+.sideProduct .top {
   display: flex;
-  background-color: #f7f7f7;
+  background-color: #e9e9e9;
   text-align: center;
   padding: 10px 0;
   position: sticky;
   top: 0;
   width: 100%;
+}
+
+.sideProduct h4{
+  color: #000;
+  font-size: 0.7em;
+}
+
+#buyItems{
+  padding-left: 0;
 }
 
 .top button {
@@ -258,7 +267,7 @@ a:hover {
   align-items: center;
 }
 
-.productCart .empty {
+.sideProduct .empty {
   justify-self: center;
   margin: 150px auto;
 }
@@ -277,14 +286,14 @@ figcaption {
   padding-top: 2em;
 }
 
-.productCart h3 {
+.sideProduct h3 {
   font-family: 'Anton', sans-serif;
   font-style: bold;
   color: #000;
   font-size: 0.8em;
 }
 
-.productCart ul {
+.sideProduct ul {
   text-align: left;
   display: flex;
   flex-direction: column;
