@@ -43,6 +43,7 @@ $(document).ready(function () {
       const cart = document.querySelector('.productCart');
       cart.classList.toggle('hide');
       document.querySelector('body').classList.toggle('stopScrolling');
+      overlay.classList.toggle('hide');
     });
 
     closeShopCart.addEventListener('click', closeCart);
