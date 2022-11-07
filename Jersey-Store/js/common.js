@@ -138,10 +138,10 @@ $(document).ready(function () {
       }
       productInCart.push(product);
     }
-    
-    function updateWish(product){
-      for(let i = 0; i< wishlistData.length; i++){
-        if (wishlistData[i].name === product.name){
+
+    function updateWish(product) {
+      for (let i = 0; i < wishlistData.length; i++) {
+        if (wishlistData[i].name === product.name) {
           alert('WISHLIST SUDAH ADA');
           return;
         }
@@ -166,13 +166,17 @@ $(document).ready(function () {
         parentElement[0].innerHTML = `<h4 class="empty">Your shopping cart is empty</h4>`;
       }
     }
-    
-    const updateWishinHTML = function (){
+
+    const updateWishinHTML = function () {
       localStorage.setItem('wishlist', JSON.stringify(wishlistData));
       if (wishlistData.length > 0) {
         let notif = document.querySelector('#wishlist .notif');
+        notif.classList.add('heartbeat');
+        setTimeout(() => {
+          notif.classList.remove('heartbeat')
+        }, 1000)
         notif.classList.remove('hide');
-        notif.firstChild.textContent = wishlistData.length;        
+        notif.firstChild.textContent = wishlistData.length;
         let result = wishlistData.map(product => {
           return `<li class="buyItem">
             <img src='${product.image}'>
