@@ -1,18 +1,6 @@
 $("#sidebar").load("component/sidebar.html");
 $("footer").load("component/footer.html");
 
-window.onscroll = function () {
-  // scrollFunction()
-};
-
-// function scrollFunction() {
-//   if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
-//     document.getElementById("header").style.fontSize = "20px";
-//   } else {
-//     document.getElementById("header").style.fontSize = "28px";
-//   }
-// };
-
 $(".panel-title1").click(function () {
   $(".angle-down1").toggleClass("down");
 })
@@ -33,9 +21,6 @@ $(".panel-title5").click(function () {
 });
 
 
-
-
-
 $(document).ready(function () {
   $("#header").load("component/header.html", function () {
     const cartWindow = document.getElementById('cartWindow');
@@ -43,8 +28,15 @@ $(document).ready(function () {
     const nav = document.querySelector('.nav-icons');
     const overlay = document.querySelector('.overlay');
     const product = document.querySelectorAll('.sideProduct');
+    const productDetail = document.querySelectorAll('.product-grid3');
+    const parentElement = document.querySelectorAll('.buyItems');
+    let productInCart = JSON.parse(localStorage.getItem('shoppingCart'));
+    if (!productInCart) {
+      productInCart = [];
+    }
 
 
+    // TOGGLE NAV MENU //
     function openCart() {
       product[0].classList.toggle('hide');
       document.querySelector('body').classList.toggle('stopScrolling');
@@ -67,7 +59,7 @@ $(document).ready(function () {
 
     product.forEach(function (el) {
       el.addEventListener('click', function (event) {
-        if (event.target.classList.contains('closeIcon') || event.target.classList.contains('closeButton'))  {
+        if (event.target.classList.contains('closeIcon') || event.target.classList.contains('closeButton')) {
           const sideWindow = event.target.closest('.sideProduct');
           document.querySelector('body').classList.toggle('stopScrolling');
           sideWindow.classList.add('exit');
@@ -83,13 +75,75 @@ $(document).ready(function () {
     });
 
     nav.addEventListener('click', function (e) {
-      if (e.target.classList.contains('fa-heart')||e.target.classList.contains('click')) {
+      if (e.target.classList.contains('fa-heart') || e.target.classList.contains('click')) {
         openWish();
-      } else if (e.target.classList.contains('fa-shopping-cart')||e.target.classList.contains('click')) {
+      } else if (e.target.classList.contains('fa-shopping-cart') || e.target.classList.contains('click')) {
         openCart();
       };
     });
 
-  });
+    // UPDATE TO PRODUCT CART //
 
+
+
+    const countTheSumPrice = () => {
+      let sum = 0;
+      productInCart.forEach(function (item) {
+        sum += item.price
+      });
+      return sum
+    }
+
+    productDetail.forEach(function (el, index) {
+      el.addEventListener('click', function (event) {
+        if (event.target.classList.contains('fa-shopping-cart') || event.target.classList.contains('addCart')) {
+          const productID = index + 1;
+          const productName = el.querySelector('.title').textContent;
+          const productPrice = el.querySelector('.price').textContent;
+          const productImg = el.querySelector('.pic-1').src;
+          let product = {
+            id: productID,
+            name: productName,
+            image: productImg,
+            price: +productPrice,
+            basePrice: +productPrice,
+          }
+          console.log(product);
+          updateProduct(product);
+          updateCartinHTML();
+        }
+      });
+    });
+
+    function updateProduct(product) {
+      for (let i = 0; i < productInCart.length; i++) {
+        if (productInCart[i].name === product.name) {
+          productInCart[i].count += 1;
+          productInCart[i].price = productInCart[i].basePrice * productInCart.count;
+          return;
+        }
+      }
+      productInCart.push(product);
+    }
+
+    const updateCartinHTML = function () {
+      localStorage.setItem('shoppingCart', JSON.stringify(productInCart));
+      if (productInCart.length > 0) {
+        let result = productInCart.map(product => {
+          return `<li class="buyItem">
+            <img src='${product.image}'>
+            <div class ="caption">
+              <h5>${product.name}</h5>
+              <h6>$${product.price}</h6>
+            </div>
+          </li>`
+        });
+        parentElement[0].innerHTML = result.join('');
+      } else {
+        parentElement[0].innerHTML = `<h4 class="empty">Your shopping cart is empty</h4>`;
+      }
+    }
+
+    updateCartinHTML();
+  });
 });

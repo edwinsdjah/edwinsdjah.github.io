@@ -187,8 +187,19 @@ a:hover {
   font-size: 0.7em;
 }
 
-#buyItems{
-  padding-left: 0;
+
+
+
+
+li.buyItem{
+  border-bottom: #aaa 1px solid;
+  width: 90%;
+  padding: 10px 0;
+  display: flex;
+}
+
+.buyItem img{
+  width: 90px;
 }
 
 .top button {
@@ -299,6 +310,11 @@ figcaption {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-left: 0;
+}
+
+.sideProduct .caption{
+  color: #000;
 }
 
 h4 {
