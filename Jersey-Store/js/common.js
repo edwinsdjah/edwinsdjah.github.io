@@ -1,24 +1,6 @@
 $("#sidebar").load("component/sidebar.html");
 $("footer").load("component/footer.html");
 
-$(".panel-title1").click(function () {
-  $(".angle-down1").toggleClass("down");
-})
-$(".panel-title2").click(function () {
-  $(".angle-down2").toggleClass("down");
-})
-
-$(".panel-title3").click(function () {
-  $(".angle-down3").toggleClass("down");
-})
-
-$(".panel-title4").click(function () {
-  $(".angle-down4").toggleClass("down");
-})
-
-$(".panel-title5").click(function () {
-  $(".angle-down5").toggleClass("down");
-});
 
 function getPrice(price) {
   price = price.replace(/\,/g, '');
@@ -29,6 +11,8 @@ function numberWithCommas(price) {
   return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+
+// FUNCTION DI DALAM HEADER
 
 $(document).ready(function () {
   $("#header").load("component/header.html", function () {
@@ -47,8 +31,6 @@ $(document).ready(function () {
     if (!wishlistData) {
       wishlistData = [];
     }
-
-
 
 
     // TOGGLE NAV MENU //
@@ -175,17 +157,34 @@ $(document).ready(function () {
     const updateCartinHTML = function () {
       localStorage.setItem('shoppingCart', JSON.stringify(productInCart));
       if (productInCart.length > 0) {
+        let notif = document.querySelector('#cart .notif');
+        notif.classList.add('heartbeat');
+        setTimeout(() => {
+          notif.classList.remove('heartbeat')
+        }, 1000)
+        notif.classList.remove('hide');
+        notif.firstChild.textContent = productInCart.length;
         let result = productInCart.map(product => {
           return `<li class="buyItem">
             <img src='${product.image}'>
             <div class ="caption">
-              <h5>${product.name}</h5>
-              <h6>Rp${product.priceString}</h6>
+              <h5 class="product-name">${product.name}</h5>
+              <h6 class="product-price">Rp${product.priceString}</h6>
+              <ul class="social row">
+                <div class="">
+                 <button>+</button>
+                 <span class="count">1</span>
+                 <button>-</button>
+                </div>
+                <li class=""><a href="javaScript:void(0)" class=""><i class="fas fa-trash"></i></a></li>
+              </ul>
             </div>
           </li>`
         });
         parentElement[0].innerHTML = result.join('');
       } else {
+        let notif = document.querySelector('#cart .notif');
+        notif.classList.add('hide')
         parentElement[0].innerHTML = `<h4 class="empty">Your shopping cart is empty</h4>`;
       }
     }
@@ -204,8 +203,8 @@ $(document).ready(function () {
           return `<li class="buyItem">
             <img src='${product.image}'>
             <div class ="caption">
-              <h5>${product.name}</h5>
-              <h6>Rp${product.priceString}</h6>
+              <h5 class="product-name">${product.name}</h5>
+              <h6 class="product-price">Rp${product.priceString}</h6>
               <ul class="social row">
                 <li><a href="javaScript:void(0)" class="addCart"><i class="fa fa-shopping-cart"></i></a></li>
                 <li><a href="javaScript:void(0)" class=""><i class="fas fa-trash"></i></a></li>
@@ -215,9 +214,41 @@ $(document).ready(function () {
         });
         parentElement[1].innerHTML = result.join('');
       } else {
+        let notif = document.querySelector('#wishlist .notif');
+        notif.classList.add('hide')
         parentElement[1].innerHTML = `<h4 class="empty">Your wishlist is empty</h4>`;
       }
     }
+    
+    wishWindow.addEventListener('click',function(event){
+      if(event.target.classList.contains('fa-trash')){
+          let list = event.target.closest('.buyItem');
+          let name = list.querySelector('.product-name').textContent;
+          list.remove();
+          wishlistData.forEach(function(el,index){
+            if(name === el.name){
+              wishlistData.splice(index,1)
+            }
+          })
+      } else if (event.target.classList.contains('btn-danger')|| event.target.innerHTML === 'CLEAR') {
+        wishlistData.length = 0;
+      }
+      updateWishinHTML();
+    })
+    
+    cartWindow.addEventListener('click', function(event){
+      if(event.target.classList.contains('fa-trash')){
+          let list = event.target.closest('.buyItem');
+          let name = list.querySelector('.product-name').textContent;
+          list.remove();
+          productInCart.forEach(function(el,index){
+            if(name === el.name){
+              productInCart.splice(index,1)
+            }
+          });
+      }
+      updateCartinHTML();
+    })
 
     updateCartinHTML();
     updateWishinHTML();

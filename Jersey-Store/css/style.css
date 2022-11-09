@@ -374,6 +374,24 @@ figcaption {
   font-size: 0.9rem;
 }
 
+.buyItem button {
+  background: transparent;
+  color: #000;
+  cursor: pointer;
+  font-weight: 900;
+  font-size: 1.2rem;
+  padding: 0 6px;
+  border: none;
+}
+
+.count {
+  font-size: 0.6em;
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 6px;
+  background-color: #eac6a666;
+}
+
 .sticky-bottom {
   position: sticky;
   bottom: 0;
