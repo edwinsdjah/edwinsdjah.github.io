@@ -208,7 +208,7 @@ $(document).ready(function () {
               <h6>Rp${product.priceString}</h6>
               <ul class="social row">
                 <li><a href="javaScript:void(0)" class="addCart"><i class="fa fa-shopping-cart"></i></a></li>
-                <li><a href="javaScript:void(0)" class=""><i class="fa fa-trash"></i></a></li>
+                <li><a href="javaScript:void(0)" class=""><i class="fas fa-trash"></i></a></li>
               </ul>
             </div>
           </li>`
