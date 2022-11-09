@@ -371,6 +371,10 @@ figcaption {
   width: 100%;
 }
 
+.buyItem h5{
+  font-size: 0.9rem;
+}
+
 h4 {
   font-family: 'Anton', sans-serif;
   font-style: bold;
