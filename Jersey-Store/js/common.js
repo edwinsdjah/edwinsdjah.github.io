@@ -20,6 +20,15 @@ $(".panel-title5").click(function () {
   $(".angle-down5").toggleClass("down");
 });
 
+function getPrice(price) {
+  price = price.replace(/\,/g, '');
+  return parseInt(price);
+}
+
+function numberWithCommas(price) {
+  return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 
 $(document).ready(function () {
   $("#header").load("component/header.html", function () {
@@ -38,6 +47,8 @@ $(document).ready(function () {
     if (!wishlistData) {
       wishlistData = [];
     }
+
+
 
 
     // TOGGLE NAV MENU //
@@ -101,27 +112,39 @@ $(document).ready(function () {
         if (event.target.classList.contains('fa-shopping-cart') || event.target.classList.contains('addCart')) {
           const productID = index + 1;
           const productName = el.querySelector('.title').textContent;
-          const productPrice = el.querySelector('.price').textContent;
+          const productPrice = el.querySelector('.price').textContent.split('Rp')[1];
           const productImg = el.querySelector('.pic-1').src;
+          const priceNum = getPrice(productPrice);
           let product = {
             id: productID,
             name: productName,
             image: productImg,
-            price: +productPrice,
-            basePrice: +productPrice,
+            priceString: productPrice,
+            price: +priceNum,
+            basePrice: +priceNum,
           }
+          let numString = numberWithCommas(priceNum);
+          console.log(priceNum);
+          console.log(numString);
           updateProduct(product);
           updateCartinHTML();
-        } else if (event.target.classList.contains('fa-heart') || event.target.classList.contains('addWish')) {
+        }
+        // UPDATE WISHLIST TO STORAGE
+        else if (event.target.classList.contains('fa-heart') || event.target.classList.contains('addWish')) {
           const productID = index + 1;
           const productName = el.querySelector('.title').textContent;
-          const productPrice = el.querySelector('.price').textContent;
+          const productPrice = el.querySelector('.price').textContent.split('Rp')[1];
+          const priceNum = getPrice(productPrice);
           const productImg = el.querySelector('.pic-1').src;
           let product = {
             id: productID,
             name: productName,
             image: productImg,
+            priceString: productPrice,
+            price: +priceNum,
+            basePrice: +priceNum,
           }
+          getPrice(productPrice);
           updateWish(product);
           updateWishinHTML();
         }
@@ -157,7 +180,7 @@ $(document).ready(function () {
             <img src='${product.image}'>
             <div class ="caption">
               <h5>${product.name}</h5>
-              <h6>$${product.price}</h6>
+              <h6>Rp${product.priceString}</h6>
             </div>
           </li>`
         });
@@ -182,6 +205,11 @@ $(document).ready(function () {
             <img src='${product.image}'>
             <div class ="caption">
               <h5>${product.name}</h5>
+              <h6>Rp${product.priceString}</h6>
+              <ul class="social row">
+                <li><a href="javaScript:void(0)" class="addCart"><i class="fa fa-shopping-cart"></i></a></li>
+                <li><a href="javaScript:void(0)" class=""><i class="fa fa-trash"></i></a></li>
+              </ul>
             </div>
           </li>`
         });
