@@ -13,7 +13,7 @@ function spOnly() {
     const sec = document.getElementById('section1');
     const nav = document.querySelector('.navbar');
 
-    window.onload = () => {
+    window.onload = function(){
         if (window.innerWidth < 787) {
             let h = nav.clientHeight;
             sec.style.paddingTop = h + 'px';
@@ -22,7 +22,7 @@ function spOnly() {
         }
     }
 
-    window.addEventListener('resize', () => {
+    window.addEventListener('resize', function() {
         if (window.innerWidth < 787) {
             let h = nav.clientHeight;
             sec.style.paddingTop = h + 'px';
@@ -68,7 +68,7 @@ function navBack() {
 function scroll() {
     let nav = document.querySelector(".navbar");
 
-    window.onscroll = () => {
+    window.onscroll = function(){
         let scrollPos = window.pageYOffset | document.body.scrollTop;
         if (scrollPos > 50) {
             nav.classList.remove('block')
