@@ -117,50 +117,50 @@ function showSlides(n) {
     dots[slideIndex - 1].className += " active";
 }
 
-function sel() {
-    const ctrl = document.querySelectorAll('.tabctrl');
-    const prev = document.querySelector('.carousel-control-prev span');
-    const next = document.querySelector('.carousel-control-next span');
+// function sel() {
+//     const ctrl = document.querySelectorAll('.tabctrl');
+//     const prev = document.querySelector('.carousel-control-prev span');
+//     const next = document.querySelector('.carousel-control-next span');
 
-    const cont = document.querySelectorAll('#carouselExampleControls .carousel-inner .carousel-item')
-    const btn = document.querySelector('.carousel-control-prev');
-    const btn2 = document.querySelector('.carousel-control-next');
-    let drop = document.querySelector('.dropdown');
+//     const cont = document.querySelectorAll('#carouselExampleControls .carousel-inner .carousel-item')
+//     const btn = document.querySelector('.carousel-control-prev');
+//     const btn2 = document.querySelector('.carousel-control-next');
+//     let drop = document.querySelector('.dropdown');
 
-    ctrl.forEach(function (e, index) {
-        let target = e.getAttribute('data-target');
-        let label = e.innerHTML;
-        let classname = e.getAttribute('class');
-        data.push(target);
+//     ctrl.forEach(function (e, index) {
+//         let target = e.getAttribute('data-target');
+//         let label = e.innerHTML;
+//         let classname = e.getAttribute('class');
+//         data.push(target);
 
-        if (classname === "tabctrl active") {
-            active = label;
-            selecteditem = index;
-            option += "<option value='" + target + "' selected>" + label + "</option>";
-        } else {
-            option += "<option value='" + target + "'>" + label + "</option>";
-        }
-        total++;
-        console.log(data);
-        drop.innerHTML = option;
-    })
+//         if (classname === "tabctrl active") {
+//             active = label;
+//             selecteditem = index;
+//             option += "<option value='" + target + "' selected>" + label + "</option>";
+//         } else {
+//             option += "<option value='" + target + "'>" + label + "</option>";
+//         }
+//         total++;
+//         console.log(data);
+//         drop.innerHTML = option;
+//     })
 
 
-    btn.addEventListener('click', function () {
-        if (selecteditem < total - 1) {
-            selecteditem++;
-            let sel = data[selecteditem];
-            drop.setAttribute(sel).addEventListener('change');
+//     btn.addEventListener('click', function () {
+//         if (selecteditem < total - 1) {
+//             selecteditem++;
+//             let sel = data[selecteditem];
+//             drop.setAttribute(sel).addEventListener('change');
 
-        }
+//         }
 
-    })
+//     })
 
-}
+// }
 
 
 scroll();
 // dropDown();
 spOnly();
 navBack();
-sel();
+// sel();
