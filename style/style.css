@@ -890,6 +890,16 @@ footer .nav-item {
 
 /* ANIMATION */
 
+@media only screen and (max-width: 991px){
+.navbar {
+    position: fixed;
+    background-color: #FFFFFF !important;
+    align-items: baseline;
+    width: 100vw;
+    z-index: 9999;
+}
+}
+
 
 
 /* MOBILE VIEW */
@@ -902,13 +912,6 @@ footer .nav-item {
         padding: 2.5em 2.3em 1.5em !important;
     }
 
-    .navbar {
-        position: fixed;
-        background-color: #FFFFFF !important;
-        align-items: baseline;
-        width: 100vw;
-        z-index: 9999;
-    }
 
     .navbar-nav {
         justify-content: center;
