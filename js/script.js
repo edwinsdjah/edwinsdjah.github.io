@@ -26,7 +26,7 @@ function spOnly() {
             sec.style.paddingTop = '0'
         }
     })
-    let load = setTimeout(showPage, 2000);
+    setTimeout(showPage, 2000);
     return spOnly
 }
 
