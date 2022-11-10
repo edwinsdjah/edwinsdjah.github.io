@@ -101,6 +101,8 @@ function showSlides(n) {
     let i;
     let slides = document.getElementsByClassName("mySlides");
     let dots = document.getElementsByClassName("dot");
+    console.log(slides.length);
+    console.log(slideIndex)
     if (n > slides.length) {
         slideIndex = 1
     }
@@ -114,6 +116,10 @@ function showSlides(n) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
     slides[slideIndex - 1].style.display = "block";
+    slides[slideIndex - 1].classList.add('blink');
+    setTimeout(function () {
+        slides[slideIndex - 1].classList.remove('blink')
+    }, 500);
     dots[slideIndex - 1].className += " active";
 }
 
@@ -157,6 +163,39 @@ function showSlides(n) {
 //     })
 
 // }
+
+function navtoggle() {
+    let c = document.querySelector('.collapse');
+    c.classList.toggle('show');
+}
+
+function openTab(event, id) {
+    let i, tabcontent, tablink;
+    tabcontent = document.querySelectorAll('.tab-pane');
+    tablink = document.querySelectorAll('.nav-link');
+    let contId = document.getElementById(id);
+    for (let i = 0; i < tabcontent.length; i++) {
+        if (tabcontent[i].classList.contains('active')) {
+            tabcontent[i].classList.remove('active');
+        }
+    }
+
+    for (let i = 0; i < tablink.length; i++) {
+        if (tablink[i].classList.contains('active')) {
+            tablink[i].classList.remove('active');
+        }
+    }
+
+
+    
+    contId.classList.add('active');
+    contId.classList.add('blink');
+    setTimeout(function () {
+        contId.classList.remove('blink')
+    }, 500);
+    event.target.classList.add('active');
+    // event.currentTarget.className += 'active';
+}
 
 
 scroll();
