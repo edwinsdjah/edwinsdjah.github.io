@@ -403,6 +403,10 @@ img {vertical-align: middle;}
   animation-duration: 1.5s;
 }
 
+.fade:not(.show) {
+    opacity: 1 !important;
+}
+
 @keyframes fade {
   from {opacity: .4} 
   to {opacity: 1}
