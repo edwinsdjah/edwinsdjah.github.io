@@ -160,7 +160,6 @@ function sel() {
 
 
 scroll();
-car();
 // dropDown();
 spOnly();
 navBack();
