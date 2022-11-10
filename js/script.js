@@ -5,6 +5,10 @@ var selecteditem = 0;
 var total = 0;
 var option2 = "";
 
+window.addEventListener('DOMContentLoaded',
+    setTimeout(showPage,2000)
+)
+
 function spOnly() {
     const sec = document.getElementById('section1');
     const nav = document.querySelector('.navbar');
@@ -26,6 +30,8 @@ function spOnly() {
             sec.style.paddingTop = '0'
         }
     })
+    
+    
     setTimeout(showPage, 2000);
     return spOnly
 }
@@ -36,6 +42,7 @@ function showPage() {
     l.style.display = 'none'
     c.style.opacity = '1'
 }
+
 
 
 
