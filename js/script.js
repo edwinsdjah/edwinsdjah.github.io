@@ -18,7 +18,7 @@ function spOnly() {
             let h = nav.clientHeight;
             sec.style.paddingTop = h + 'px';
         } else {
-            sec.style.paddingTop = '0'
+            sec.style.paddingTop = '0';
         }
     }
 
@@ -27,14 +27,14 @@ function spOnly() {
             let h = nav.clientHeight;
             sec.style.paddingTop = h + 'px';
         } else {
-            sec.style.paddingTop = '0'
+            sec.style.paddingTop = '0';
         }
     })
     
     
     setTimeout(showPage, 2000);
-    return spOnly
-}
+    return
+};
 
 function showPage() {
     const l = document.getElementById('loader');
@@ -42,9 +42,6 @@ function showPage() {
     l.style.display = 'none'
     c.style.opacity = '1'
 }
-
-
-
 
 function navBack() {
     const nav = document.querySelector('.navbar');
@@ -62,7 +59,7 @@ function navBack() {
         dark.classList.toggle('hide');
         light.classList.toggle('hide');
         burg.classList.toggle('is-active');
-    })
+    });
 };
 
 function scroll() {
@@ -71,9 +68,9 @@ function scroll() {
     window.onscroll = function(){
         let scrollPos = window.pageYOffset | document.body.scrollTop;
         if (scrollPos > 50) {
-            nav.classList.remove('block')
+            nav.classList.remove('block');
         } else {
-            nav.classList.add('block')
+            nav.classList.add('block');
         }
     }
 };
