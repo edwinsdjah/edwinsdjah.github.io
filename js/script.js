@@ -5,15 +5,15 @@ var selecteditem = 0;
 var total = 0;
 var option2 = "";
 
-window.addEventListener('DOMContentLoaded',
-    setTimeout(showPage,2000)
-)
+window.addEventListener('load', function () {
+    setTimeout(showPage, 2000)
+});
 
 function spOnly() {
     const sec = document.getElementById('section1');
     const nav = document.querySelector('.navbar');
 
-    window.onload = function(){
+    window.onload = function () {
         if (window.innerWidth < 787) {
             let h = nav.clientHeight;
             sec.style.paddingTop = h + 'px';
@@ -22,7 +22,7 @@ function spOnly() {
         }
     }
 
-    window.addEventListener('resize', function() {
+    window.addEventListener('resize', function () {
         if (window.innerWidth < 787) {
             let h = nav.clientHeight;
             sec.style.paddingTop = h + 'px';
@@ -30,8 +30,8 @@ function spOnly() {
             sec.style.paddingTop = '0';
         }
     })
-    
-    
+
+
     setTimeout(showPage, 2000);
     return
 };
@@ -65,7 +65,7 @@ function navBack() {
 function scroll() {
     let nav = document.querySelector(".navbar");
 
-    window.onscroll = function(){
+    window.onscroll = function () {
         let scrollPos = window.pageYOffset | document.body.scrollTop;
         if (scrollPos > 50) {
             nav.classList.remove('block');
@@ -90,27 +90,31 @@ let slideIndex = 1;
 showSlides(slideIndex);
 
 function plusSlides(n) {
-  showSlides(slideIndex += n);
+    showSlides(slideIndex += n);
 }
 
 function currentSlide(n) {
-  showSlides(slideIndex = n);
+    showSlides(slideIndex = n);
 }
 
 function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {
+        slideIndex = 1
+    }
+    if (n < 1) {
+        slideIndex = slides.length
+    }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
 }
 
 function sel() {
