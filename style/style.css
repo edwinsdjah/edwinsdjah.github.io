@@ -48,13 +48,13 @@ ul.ctrl {
 
 
 #section1 {
-    background-image: url(../img/background_1.png);
+    background-image: url(/img/background_1.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 #section2 {
-    background-image: url(../img/bg-dark.png);
+    background-image: url(/img/bg-dark.png);
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
@@ -63,7 +63,7 @@ ul.ctrl {
 }
 
 #section4 {
-    background-image: url(../img/bg-dark.png);
+    background-image: url(/img/bg-dark.png);
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
@@ -72,13 +72,13 @@ ul.ctrl {
 
 #section5 {
     margin-top: 10em;
-    background-image: url(../img/job-bg.png);
+    background-image: url(/img/job-bg.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 #section6 .bg-lower {
-    background-image: url(../img/bg-lower.png);
+    background-image: url(/img/bg-lower.png);
     background-size: cover;
     background-repeat: no-repeat;
     color: #FFFFFF;
@@ -86,7 +86,7 @@ ul.ctrl {
 }
 
 #section3 {
-    background-image: url(../img/background_2.png);
+    background-image: url(/img/background_2.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -163,7 +163,7 @@ ul.ctrl {
 }
 
 .bg-tri {
-    background-image: url(../img/bg-tri-1.png);
+    background-image: url(/img/bg-tri-1.png);
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;
@@ -173,7 +173,7 @@ ul.ctrl {
 
 .bg-tri-2::after {
     position: absolute;
-    content: url(../img/bg-tri-2.png);
+    content: url(/img/bg-tri-2.png);
     right: 0;
     top: -2.5em;
     z-index: -1;
@@ -242,7 +242,7 @@ span.number {
 }
 
 .nav-pills button.nav-link.active::after {
-    content: url(../img/point.png);
+    content: url(/img/point.png);
     position: absolute;
     padding: 0;
     margin: 0;
@@ -256,7 +256,7 @@ span.number {
 }
 
 .nav-pills button.nav-link::before {
-    content: url(../img/line.png);
+    content: url(/img/line.png);
     position: absolute;
     padding: 0;
     margin: 0;
@@ -414,6 +414,15 @@ img {
     background-color: #717171;
 }
 
+.tab-button{
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.tab-button .prev, .tab-button .next{
+    position: static;
+}
+
 /* Fading animation */
 .blink {
     animation-name: blink;
@@ -538,7 +547,7 @@ img {
 }
 
 .ico-2::after {
-    content: url(../img/ico-2.png);
+    content: url(/img/ico-2.png);
     width: 32px;
     height: 32px;
     vertical-align: middle;
@@ -546,7 +555,7 @@ img {
 }
 
 .ico-6::after {
-    content: url(../img/ico-6.png);
+    content: url(/img/ico-6.png);
     width: 32px;
     height: 32px;
     vertical-align: middle;
@@ -619,11 +628,11 @@ img {
 }
 
 .carousel-control-prev-icon {
-    content: url(../img/left.png) !important;
+    content: url(/img/left.png) !important;
 }
 
 .carousel-control-next-icon {
-    content: url(../img/right.png) !important;
+    content: url(/img/right.png) !important;
 }
 
 .carousel {
@@ -734,7 +743,7 @@ img {
 }
 
 .greet::before {
-    content: url(../img/emoji.png);
+    content: url(/img/emoji.png);
     margin-right: 10px;
 }
 
@@ -917,17 +926,28 @@ footer .nav-item {
 
 /* ANIMATION */
 
-@media only screen and (max-width: 991px) {
-    .navbar {
-        position: fixed;
-        background-color: #FFFFFF !important;
-        align-items: baseline;
-        width: 100vw;
-        z-index: 9999;
-    }
+
+
+
+@media (min-width: 769px){
+.navbar-expand-lg {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
 }
 
+.navbar-expand-lg .navbar-toggler {
+    display: none;
+}
 
+.navbar-expand-lg .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+  }
+  
+  .navbar-nav{
+    flex-direction: row;
+  }
+}
 
 /* MOBILE VIEW */
 @media only screen and (max-width: 768px) {
@@ -977,7 +997,7 @@ footer .nav-item {
     }
 
     .navbar.show {
-        background-image: url(../img/nav-sp-bg.png) !important;
+        background-image: url(/img/nav-sp-bg.png) !important;
         background-size: cover;
         background-repeat: no-repeat;
         height: 100vh;
@@ -1129,7 +1149,7 @@ footer .nav-item {
     }
 
     #section7 {
-        background-image: url(../img/bg-ft.png);
+        background-image: url(/img/bg-ft.png);
         background-size: cover;
         background-repeat: no-repeat;
         background-position-y: -7em;

@@ -36,6 +36,13 @@ function spOnly() {
     return
 };
 
+let burger = document.querySelector('.hamburger');
+
+burger.addEventListener('click', function () {
+    let c = document.querySelector('.navbar-collapse ');
+    c.classList.toggle('show')
+})
+
 function showPage() {
     const l = document.getElementById('loader');
     const c = document.getElementById('content');
@@ -76,14 +83,127 @@ function scroll() {
 };
 
 
-function dropDown() {
-    let contents = document.getElementsByClassName('drop-content');
-    let drop = document.getElementById('drop');
-    let car = document.querySelectorAll('#carouselExampleControls .carousel-item')
-    for (i = 0; i < contents.length; i++) {
-        drop.options.add(new Option(contents[i].value));
+// carousel tab
+let tabindex = 1;
+showTab(tabindex);
+
+function plusTab(n) {
+    if (tabindex !== 5 && n > 0) {
+        showTab(tabindex += n);
+        console.log(tabindex)
+    } else if (tabindex <= 5 && tabindex !== 1 && n < 0) {
+        showTab(tabindex += n);
+        console.log(tabindex)
     }
-};
+}
+
+
+function currentTab(n) {
+    // showTab(tabindex = n);
+    // let opt = document.querySelectorAll('.tab-option');
+    // for (let i = 0; i < opt.length; i++) {
+    //     if (opt[i].hasAttribute('selected')) {
+    //         opt[i].removeAttribute('selected');
+    //     }
+    // }
+    // opt[tabindex - 1].setAttribute('selected', '');
+}
+
+function selectTab() {
+    let sel = document.querySelector('select');
+    let opt = document.querySelectorAll('.tab-option');
+    
+    
+
+
+    sel.addEventListener('change', function () {
+        tabindex = this.selectedIndex + 1;
+        let tab = document.querySelectorAll('.tab-option');
+        let select = this.selectedIndex;
+        console.log(tabindex);
+        // for(let i = 0; tab.length; i++){
+        //    if(tab[i].hasAttribute('selected')){
+        //     tab[i].removeAttribute('selected','')
+        //    }
+        // }
+        tab.forEach(function(el){
+            if(el.hasAttribute('selected')){
+                el.removeAttribute('selected','')
+            }
+        })
+        tab[select].setAttribute('selected','')
+        let next = document.querySelector('.next');
+        let prev = document.querySelector('.prev');
+        
+        if (tabindex >= tab.length) {
+            next.style.opacity = 0;
+        } else {
+            next.style.opacity = 1;
+        }
+    
+        if (tabindex === 1) {
+            prev.style.opacity = 0;
+        } else {
+            prev.style.opacity = 1;
+        }
+        
+        showTab(tabindex)
+    })
+
+}
+
+// let select = document.querySelector('select');
+
+// select.addEventListener('click',function(event){
+//     if(event.target.classList.contains('tab-option')){
+//         let tabcontent = document.querySelectorAll('.tab-pane');
+//         for(let i = 0; i < tabcontent.length ; i++)
+//     }
+// })
+
+
+function showTab(n) {
+    let tab = document.querySelectorAll('.tab-pane');
+    let opt = document.querySelectorAll('.tab-option');
+    let next = document.querySelector('.next');
+    let prev = document.querySelector('.prev');
+
+    console.log(tabindex);
+
+    if (n >= tab.length) {
+        next.style.opacity = 0;
+    } else {
+        next.style.opacity = 1;
+    }
+
+    if (tabindex === 1) {
+        prev.style.opacity = 0;
+    } else {
+        prev.style.opacity = 1;
+    }
+
+
+    for (let i = 0; i < tab.length; i++) {
+        if (tab[i].classList.contains('active')) {
+            tab[i].classList.remove('active');
+        }
+    }
+
+    for (let i = 0; i < opt.length; i++) {
+        if (opt[i].hasAttribute('selected')) {
+            opt[i].removeAttribute('selected');
+        }
+    }
+
+
+    tab[tabindex - 1].classList.add('active');
+    tab[tabindex - 1].classList.add('blink');
+    opt[tabindex - 1].setAttribute('selected', '');
+    setTimeout(function () {
+        tab[tabindex - 1].classList.remove('blink')
+    }, 500);
+}
+
 
 // carousel
 let slideIndex = 1;
@@ -101,8 +221,7 @@ function showSlides(n) {
     let i;
     let slides = document.getElementsByClassName("mySlides");
     let dots = document.getElementsByClassName("dot");
-    console.log(slides.length);
-    console.log(slideIndex)
+
     if (n > slides.length) {
         slideIndex = 1
     }
@@ -123,51 +242,7 @@ function showSlides(n) {
     dots[slideIndex - 1].className += " active";
 }
 
-// function sel() {
-//     const ctrl = document.querySelectorAll('.tabctrl');
-//     const prev = document.querySelector('.carousel-control-prev span');
-//     const next = document.querySelector('.carousel-control-next span');
 
-//     const cont = document.querySelectorAll('#carouselExampleControls .carousel-inner .carousel-item')
-//     const btn = document.querySelector('.carousel-control-prev');
-//     const btn2 = document.querySelector('.carousel-control-next');
-//     let drop = document.querySelector('.dropdown');
-
-//     ctrl.forEach(function (e, index) {
-//         let target = e.getAttribute('data-target');
-//         let label = e.innerHTML;
-//         let classname = e.getAttribute('class');
-//         data.push(target);
-
-//         if (classname === "tabctrl active") {
-//             active = label;
-//             selecteditem = index;
-//             option += "<option value='" + target + "' selected>" + label + "</option>";
-//         } else {
-//             option += "<option value='" + target + "'>" + label + "</option>";
-//         }
-//         total++;
-//         console.log(data);
-//         drop.innerHTML = option;
-//     })
-
-
-//     btn.addEventListener('click', function () {
-//         if (selecteditem < total - 1) {
-//             selecteditem++;
-//             let sel = data[selecteditem];
-//             drop.setAttribute(sel).addEventListener('change');
-
-//         }
-
-//     })
-
-// }
-
-function navtoggle() {
-    let c = document.querySelector('.collapse');
-    c.classList.toggle('show');
-}
 
 function openTab(event, id) {
     let i, tabcontent, tablink;
@@ -187,7 +262,7 @@ function openTab(event, id) {
     }
 
 
-    
+
     contId.classList.add('active');
     contId.classList.add('blink');
     setTimeout(function () {
@@ -203,3 +278,4 @@ scroll();
 spOnly();
 navBack();
 // sel();
+selectTab();
