@@ -926,6 +926,16 @@ footer .nav-item {
 
 /* ANIMATION */
 
+@media only screen and (max-width: 768px) {
+    .navbar {
+        position: fixed;
+        background-color: #FFFFFF !important;
+        align-items: baseline;
+        width: 100vw;
+        z-index: 9999;
+    }
+}
+
 
 
 
