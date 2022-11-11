@@ -9,6 +9,19 @@ window.addEventListener('load', function () {
     setTimeout(showPage, 2000)
 });
 
+function isIE() {
+    return /Trident\/|MSIE/.test(window.navigator.userAgent);
+}
+
+if (isIE() === true) {
+    let burger = document.querySelector('.hamburger');
+
+    burger.addEventListener('click', function () {
+        let c = document.querySelector('.navbar-collapse ');
+        c.classList.toggle('show')
+    })
+}
+
 function spOnly() {
     const sec = document.getElementById('section1');
     const nav = document.querySelector('.navbar');
@@ -36,12 +49,7 @@ function spOnly() {
     return
 };
 
-let burger = document.querySelector('.hamburger');
 
-burger.addEventListener('click', function () {
-    let c = document.querySelector('.navbar-collapse ');
-    c.classList.toggle('show')
-})
 
 function showPage() {
     const l = document.getElementById('loader');
@@ -55,17 +63,16 @@ function navBack() {
     const btn = document.querySelector('.navbar-toggler');
     const dark = document.querySelector('.nav-black');
     const light = document.querySelector('.nav-light');
-    const burg = document.querySelector('.hamburger')
-    // if(content.classList.contains('show')){
-    //     // nav.style.backgroundColor = 'red !important';
-    //     console.log(nav);
-    // }
+    const burg = document.querySelector('.hamburger');
+    const body = document.querySelector('body');
 
     btn.addEventListener('click', function () {
         nav.classList.toggle('show');
         dark.classList.toggle('hide');
         light.classList.toggle('hide');
         burg.classList.toggle('is-active');
+        body.classList.toggle('no-scroll')
+        // c.classList.toggle('show');
     });
 };
 
@@ -98,68 +105,43 @@ function plusTab(n) {
 }
 
 
-function currentTab(n) {
-    // showTab(tabindex = n);
-    // let opt = document.querySelectorAll('.tab-option');
-    // for (let i = 0; i < opt.length; i++) {
-    //     if (opt[i].hasAttribute('selected')) {
-    //         opt[i].removeAttribute('selected');
-    //     }
-    // }
-    // opt[tabindex - 1].setAttribute('selected', '');
-}
-
 function selectTab() {
     let sel = document.querySelector('select');
     let opt = document.querySelectorAll('.tab-option');
-    
-    
+
+
 
 
     sel.addEventListener('change', function () {
         tabindex = this.selectedIndex + 1;
-        let tab = document.querySelectorAll('.tab-option');
         let select = this.selectedIndex;
         console.log(tabindex);
-        // for(let i = 0; tab.length; i++){
-        //    if(tab[i].hasAttribute('selected')){
-        //     tab[i].removeAttribute('selected','')
-        //    }
-        // }
-        tab.forEach(function(el){
-            if(el.hasAttribute('selected')){
-                el.removeAttribute('selected','')
+        console.log(opt)
+        for (let i = 0; i < opt.length; i++) {
+            if (opt[i].hasAttribute('selected')) {
+                opt[i].removeAttribute('selected', '')
             }
-        })
-        tab[select].setAttribute('selected','')
+        }
+        opt[select].setAttribute('selected', '')
         let next = document.querySelector('.next');
         let prev = document.querySelector('.prev');
-        
-        if (tabindex >= tab.length) {
+
+        if (tabindex >= opt.length) {
             next.style.opacity = 0;
         } else {
             next.style.opacity = 1;
         }
-    
+
         if (tabindex === 1) {
             prev.style.opacity = 0;
         } else {
             prev.style.opacity = 1;
         }
-        
+
         showTab(tabindex)
     })
 
 }
-
-// let select = document.querySelector('select');
-
-// select.addEventListener('click',function(event){
-//     if(event.target.classList.contains('tab-option')){
-//         let tabcontent = document.querySelectorAll('.tab-pane');
-//         for(let i = 0; i < tabcontent.length ; i++)
-//     }
-// })
 
 
 function showTab(n) {
