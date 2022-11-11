@@ -136,6 +136,7 @@ ul.ctrl {
     font-size: 18px;
     line-height: 24px;
     position: relative;
+    overflow: visible;
 }
 
 .nav-link.active {
@@ -1006,6 +1007,7 @@ footer .nav-item {
 
     .nav-link.active {
         color: #FFFFFF;
+        
     }
 
     .navbar-nav .nav-item.text-center {
