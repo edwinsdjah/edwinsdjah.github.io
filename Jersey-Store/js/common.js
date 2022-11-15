@@ -219,33 +219,33 @@ $(document).ready(function () {
         parentElement[1].innerHTML = `<h4 class="empty">Your wishlist is empty</h4>`;
       }
     }
-    
-    wishWindow.addEventListener('click',function(event){
-      if(event.target.classList.contains('fa-trash')){
-          let list = event.target.closest('.buyItem');
-          let name = list.querySelector('.product-name').textContent;
-          list.remove();
-          wishlistData.forEach(function(el,index){
-            if(name === el.name){
-              wishlistData.splice(index,1)
-            }
-          })
-      } else if (event.target.classList.contains('btn-danger')|| event.target.innerHTML === 'CLEAR') {
+
+    wishWindow.addEventListener('click', function (event) {
+      if (event.target.classList.contains('fa-trash')) {
+        let list = event.target.closest('.buyItem');
+        let name = list.querySelector('.product-name').textContent;
+        list.remove();
+        wishlistData.forEach(function (el, index) {
+          if (name === el.name) {
+            wishlistData.splice(index, 1)
+          }
+        })
+      } else if (event.target.classList.contains('btn-danger') || event.target.innerHTML === 'CLEAR') {
         wishlistData.length = 0;
       }
       updateWishinHTML();
     })
-    
-    cartWindow.addEventListener('click', function(event){
-      if(event.target.classList.contains('fa-trash')){
-          let list = event.target.closest('.buyItem');
-          let name = list.querySelector('.product-name').textContent;
-          list.remove();
-          productInCart.forEach(function(el,index){
-            if(name === el.name){
-              productInCart.splice(index,1)
-            }
-          });
+
+    cartWindow.addEventListener('click', function (event) {
+      if (event.target.classList.contains('fa-trash')) {
+        let list = event.target.closest('.buyItem');
+        let name = list.querySelector('.product-name').textContent;
+        list.remove();
+        productInCart.forEach(function (el, index) {
+          if (name === el.name) {
+            productInCart.splice(index, 1)
+          }
+        });
       }
       updateCartinHTML();
     })
@@ -258,3 +258,90 @@ $(document).ready(function () {
 
   });
 });
+
+
+function getCatalogueContent() {
+  let parentCatalogue = document.querySelector('.contentTest .row');
+  const catalogueParameter = parentCatalogue.parentElement.id;
+  let catalogueList;
+
+  switch (catalogueParameter) {
+    case 'jersey-man':
+      catalogueList = menCatalogueList;
+      break;
+    case 'jersey-woman':
+      catalogueList = womenCatalogueList;
+      break;
+  }
+
+  let newContent = menCatalogueList.map(function (product) {
+    let currency = Intl.NumberFormat('id-ID');
+    let newPrice = currency.format(product.price);
+
+    if (product.isNew === true) {
+      return `<div class="col-lg-3 col-md-6 col-6">
+  <div class="product-grid3">
+      <div class="product-image3">
+          <a href="javaScript:void(0)">
+              <img class="pic-1"
+                  src="${product.img1}">
+              <img class="pic-2"
+                  src="${product.img2}">
+          </a>
+          <ul class="social">
+              <li><a href="javaScript:void(0)"><i class="fa fa-heart"></i></a></li>
+              <li><a href="javaScript:void(0)"><i class="fa fa-shopping-cart"></i></a></li>
+          </ul>
+          <span class="product-new-label">New</span>
+      </div>
+      <div class="product-content">
+          <h3 class="title"><a href="javaScript:void(0)">${product.name}</a></h3>
+          <div class="price">
+              Rp ${newPrice}
+          </div>
+          <ul class="rating">
+              <li class="fa fa-star"></li>
+              <li class="fa fa-star"></li>
+              <li class="fa fa-star"></li>
+              <li class="fa fa-star disable"></li>
+              <li class="fa fa-star disable"></li>
+          </ul>
+      </div>
+  </div>
+</div>`
+    } else {
+      return `<div class="col-lg-3 col-md-6 col-6">
+  <div class="product-grid3">
+      <div class="product-image3">
+          <a href="javaScript:void(0)">
+              <img class="pic-1"
+                  src="${product.img1}">
+              <img class="pic-2"
+                  src="${product.img2}">
+          </a>
+          <ul class="social">
+              <li><a href="javaScript:void(0)"><i class="fa fa-heart"></i></a></li>
+              <li><a href="javaScript:void(0)"><i class="fa fa-shopping-cart"></i></a></li>
+          </ul>
+      </div>
+      <div class="product-content">
+          <h3 class="title"><a href="javaScript:void(0)">${product.name}</a></h3>
+          <div class="price">
+              Rp ${newPrice}
+          </div>
+          <ul class="rating">
+              <li class="fa fa-star"></li>
+              <li class="fa fa-star"></li>
+              <li class="fa fa-star"></li>
+              <li class="fa fa-star disable"></li>
+              <li class="fa fa-star disable"></li>
+          </ul>
+      </div>
+  </div>
+</div>`
+    }
+  });
+  parentCatalogue.innerHTML = newContent.join('');
+}
+
+getCatalogueContent();
