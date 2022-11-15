@@ -3,7 +3,7 @@ $("footer").load("component/footer.html");
 
 
 function getPrice(price) {
-  price = price.replace(/\,/g, '');
+  price = price.replace(/.\,/g, '');
   return parseInt(price);
 }
 
@@ -106,7 +106,7 @@ $(document).ready(function () {
             basePrice: +priceNum,
           }
           let numString = numberWithCommas(priceNum);
-          console.log(priceNum);
+          console.log(productPrice);
           console.log(numString);
           updateProduct(product);
           updateCartinHTML();
