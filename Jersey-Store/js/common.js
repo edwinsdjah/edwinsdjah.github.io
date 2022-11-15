@@ -1,16 +1,10 @@
 $("#sidebar").load("component/sidebar.html");
 $("footer").load("component/footer.html");
 
-
 function getPrice(price) {
-  price = price.replace(/.\,/g, '');
-  return parseInt(price);
+  let new_price = price.replaceAll('.', '');
+  return parseInt(new_price);
 }
-
-function numberWithCommas(price) {
-  return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
 
 // FUNCTION DI DALAM HEADER
 
@@ -79,16 +73,7 @@ $(document).ready(function () {
       };
     });
 
-    // UPDATE TO PRODUCT CART //
-
-    const countTheSumPrice = () => {
-      let sum = 0;
-      productInCart.forEach(function (item) {
-        sum += item.price
-      });
-      return sum
-    }
-
+    // UPDATE TO PRODUCT CART //  
     productDetail.forEach(function (el, index) {
       el.addEventListener('click', function (event) {
         if (event.target.classList.contains('fa-shopping-cart') || event.target.classList.contains('addCart')) {
@@ -102,12 +87,10 @@ $(document).ready(function () {
             name: productName,
             image: productImg,
             priceString: productPrice,
+            count: 1,
             price: +priceNum,
-            basePrice: +priceNum,
+            basePrice: priceNum,
           }
-          let numString = numberWithCommas(priceNum);
-          console.log(productPrice);
-          console.log(numString);
           updateProduct(product);
           updateCartinHTML();
         }
@@ -137,7 +120,8 @@ $(document).ready(function () {
       for (let i = 0; i < productInCart.length; i++) {
         if (productInCart[i].name === product.name) {
           productInCart[i].count += 1;
-          productInCart[i].price = productInCart[i].basePrice * productInCart.count;
+          productInCart[i].price = productInCart[i].count * productInCart[i].basePrice;
+          console.log(productInCart[i].basePrice)
           return;
         }
       }
@@ -172,9 +156,9 @@ $(document).ready(function () {
               <h6 class="product-price">Rp${product.priceString}</h6>
               <ul class="social row">
                 <div class="">
-                 <button>+</button>
-                 <span class="count">1</span>
-                 <button>-</button>
+                 <button class="plus">+</button>
+                 <span class="count">${product.count}</span>
+                 <button class="minus">-</button>
                 </div>
                 <li class=""><a href="javaScript:void(0)" class=""><i class="fas fa-trash"></i></a></li>
               </ul>
@@ -187,6 +171,7 @@ $(document).ready(function () {
         notif.classList.add('hide')
         parentElement[0].innerHTML = `<h4 class="empty">Your shopping cart is empty</h4>`;
       }
+      countTotalPrice();
     }
 
     const updateWishinHTML = function () {
@@ -250,18 +235,57 @@ $(document).ready(function () {
       updateCartinHTML();
     })
 
+    // COUNT ITEM IN CART
+    function countItemInCart() {
+      let parentElement = document.querySelector('#cartWindow .buyItems');
+      parentElement.addEventListener('click', function (event) {
+        const plusButton = event.target.classList.contains('plus');
+        const minusButton = event.target.classList.contains('minus');
+        if (plusButton || minusButton) {
+          let parent = event.target.closest('.caption');
+          let name = parent.querySelector('.product-name');
+          productInCart.forEach(function (el, index) {
+            if (el.name === name.textContent) {
+              if (plusButton) {
+                el.count += 1;
+              } else if (minusButton) {
+                el.count -= 1;
+              }
+              el.price = el.count * el.basePrice;
+            }
+
+            if (el.count < 1) {
+              productInCart.splice(index, 1)
+            }
+          })
+          countTotalPrice();
+        }
+      })
+      updateCartinHTML();
+    }
+
+    // count Total Price
+    function countTotalPrice() {
+      let value = document.querySelector('.price-value')
+      let sum = 0;
+      let currency = Intl.NumberFormat('id-ID');
+      productInCart.forEach((el) => {
+        sum += el.price;
+      })
+      let newPrice = currency.format(sum)
+      return value.innerHTML = newPrice
+    }
+    countTotalPrice();
+    countItemInCart();
     updateCartinHTML();
     updateWishinHTML();
-
-    // UPDATE TO WISHLIST
-
 
   });
 });
 
 
 function getCatalogueContent() {
-  let parentCatalogue = document.querySelector('.contentTest .row');
+  let parentCatalogue = document.querySelector('.content-generate .row');
   const catalogueParameter = parentCatalogue.parentElement.id;
   let catalogueList;
 
@@ -269,12 +293,16 @@ function getCatalogueContent() {
     case 'jersey-man':
       catalogueList = menCatalogueList;
       break;
+    case 'special-catalogue':
+      catalogueList = specialCatalogueList;
+      break;
     case 'jersey-woman':
       catalogueList = womenCatalogueList;
       break;
+
   }
 
-  let newContent = menCatalogueList.map(function (product) {
+    let newContent = catalogueList.map(function (product) {
     let currency = Intl.NumberFormat('id-ID');
     let newPrice = currency.format(product.price);
 
