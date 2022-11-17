@@ -705,6 +705,10 @@ h3.h3 {
   margin-right: 10px;
 }
 
+.panel-default{
+  margin-top: 1em;
+}
+
 .panel-body {
   padding: 0px;
 }
@@ -719,11 +723,6 @@ h3.h3 {
 
 #accordion {
   font-family: 'Noto Sans JP', sans-serif;
-}
-
-.panelContainer {
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
 #accordion a {

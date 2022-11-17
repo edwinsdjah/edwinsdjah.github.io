@@ -1,10 +1,11 @@
-$("#sidebar").load("component/sidebar.html");
 $("footer").load("component/footer.html");
 
 function getPrice(price) {
   let new_price = price.replaceAll('.', '');
   return parseInt(new_price);
 }
+
+let newContent;
 
 // FUNCTION DI DALAM HEADER
 
@@ -281,13 +282,53 @@ $(document).ready(function () {
     updateWishinHTML();
 
   });
+  $("#sidebar").load("component/sidebar.html", function () {
+    let parentElement = document.getElementById('sidebar');
+    parentElement.addEventListener('click', function (event) {
+      // checkbox new and vintage
+      let isNew = document.getElementById('checkboxnew');
+      let isVintage = document.getElementById('checkboxvintage');
+      let product = document.querySelectorAll('.product-grid3');
+
+      product.forEach(function (el) {
+        let dataProduct = el.getAttribute('data-product');
+        newOldCheck();
+        
+        function newOldCheck() {
+          if (isNew.checked) {
+            if (dataProduct !== 'new') {
+              el.classList.add('hide');
+            }
+          } else if (!isNew.checked) {
+            if (dataProduct !== 'new') {
+              el.classList.remove('hide');
+            }
+          }
+
+          if (isVintage.checked) {
+            if (dataProduct !== 'old') {
+              el.classList.add('hide');
+            }
+          } else if (!isVintage.checked) {
+            if (dataProduct !== 'old') {
+              el.classList.remove('hide');
+            }
+          }
+
+          if (isNew.checked && isVintage.checked) {
+            el.classList.remove('hide');
+          }
+        }
+      })
+    })
+  });
 });
 
 
 function getCatalogueContent() {
   let parentCatalogue = document.querySelector('.content-generate .row');
-  const catalogueParameter = parentCatalogue.parentElement.id;
   let catalogueList;
+  const catalogueParameter = parentCatalogue.parentElement.id;
 
   switch (catalogueParameter) {
     case 'jersey-man':
@@ -302,13 +343,13 @@ function getCatalogueContent() {
 
   }
 
-    let newContent = catalogueList.map(function (product) {
+  newContent = catalogueList.map(function (product) {
     let currency = Intl.NumberFormat('id-ID');
     let newPrice = currency.format(product.price);
 
     if (product.isNew === true) {
       return `<div class="col-lg-3 col-md-6 col-6">
-  <div class="product-grid3">
+  <div class="product-grid3" data-product="new" data-brand="${product.brand}">
       <div class="product-image3">
           <a href="javaScript:void(0)">
               <img class="pic-1"
@@ -339,7 +380,7 @@ function getCatalogueContent() {
 </div>`
     } else {
       return `<div class="col-lg-3 col-md-6 col-6">
-  <div class="product-grid3">
+  <div class="product-grid3" data-product="old" data-brand="${product.brand}">
       <div class="product-image3">
           <a href="javaScript:void(0)">
               <img class="pic-1"
