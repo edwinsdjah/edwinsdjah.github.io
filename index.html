@@ -35,14 +35,14 @@
                     <img height="40"  src="/img/logo-light.png" alt=""
                         class="d-inline-block align-text-top logo-dark">
                 </a>
-                <button class="hamburger hamburger--squeeze navbar-toggler" type="button" data-bs-toggle="collapse"
+                <button class="hamburger hamburger--squeeze navbar-toggler" type="button"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation"" type=" button">
+                    aria-expanded="false" aria-label="Toggle navigation">
                     <span class="hamburger-box">
                         <span class="hamburger-inner"></span>
                     </span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="nav-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav cst-center mb-2 mb-lg-0">
                         <li class="nav-item text-center">
                             <a class="nav-link active" aria-current="page" href="#about">About</a>
@@ -54,7 +54,7 @@
                             <a class="nav-link" href="#service">Services </a>
                         </li>
                         <li class="nav-item text-center">
-                            <a class="nav-link" href="#jobs" tabindex="-1" aria-disabled="true">Jobs</a>
+                            <a class="nav-link" href="#jobs">Jobs</a>
                         </li>
                     </ul>
                     <form class="d-flex sp-none">
@@ -119,11 +119,11 @@
                         </div>
                         <div class="tabing">
                             <div class="sp-show tab-button">
-                                <a class="prev" onclick="plusTab(-1)">❮</a>
-                                <a class="next" onclick="plusTab(1)">❯</a>
+                                <a class="prev" onclick="plusTab(-1)"><img src="/img/arrow-left.png" alt=""></a>
+                                <a class="next" onclick="plusTab(1)"><img src="/img/arrow-right.png" alt=""></a>
                             </div>
                             <div class="sp-show">
-                            <select class="tab-select" id="">
+                            <select class="tab-select" id="select-option">
                                 <option class="tab-option" value="2018">2018</option>
                                 <option class="tab-option" value="2019">2019</option>  
                                 <option class="tab-option" value="2020">2020</option>
@@ -180,7 +180,7 @@
                                         </div>
                                         <div class="tab-pane blink" id="2019" role="tabpanel"
                                             aria-labelledby="v-pills-2019-tab">
-                                            <img  src="/img/tab-content1.png" class="img-def"
+                                            <img src="/img/tab-content1.png" class="img-def"
                                                 alt="">
                                             <div class="row lower-tab-content">
                                                 <div class="col-lg-7">
@@ -293,7 +293,7 @@
 
         </section>
 
-        <section id="section3">
+        <div id="section3">
             <div id="work" class="cst-container bg-tri-3">
                 <div class="content">
                     <div class="container">
@@ -346,6 +346,9 @@
                                                 <img class="sp-show" src="/img/circle-arrow.png" alt="">
                                             </div>
                                         </div>
+                                        <form class="sp-show">
+                                            <button class="btn btn-outline-success btn-contact sp-show" type="submit">Contact Us</button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -353,7 +356,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
 
         <section id="section4">
             <div id="service" class="cst-container bg-tri-2">
@@ -403,25 +406,25 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-12 center">
+                            <div id="lower-slideshow" class="col-lg-12 center">
                                 <!-- CAROUSEL -->
                                 <div class="slideshow-container">
-
+                                    <div class="button">
+                                        <a class="prev" onclick="plusSlides(-1)"><img src="/img/arrow-left.png" alt=""></a>
+                                        <a class="next" onclick="plusSlides(1)"><img src="/img/arrow-right.png" alt=""></a>
+                                    </div>
                                     <div class="mySlides">
-                                        <img  src="/img/carousel-item-1.png" style="width:100%">
+                                        <img src="/img/carousel-item-1.png" alt="carousel">
                                     </div>
 
                                     <div class="mySlides">
-                                        <img  src="/img/carousel-item-1.png" style="width:100%">
+                                        <img src="/img/carousel-item-1.png" alt="carousel">
                                     </div>
 
                                     <div class="mySlides">
-                                        <img  src="/img/carousel-item-1.png" style="width:100%">
+                                        <img src="/img/carousel-item-1.png" alt="carousel">
                                     </div>
-
-                                    <a class="prev" onclick="plusSlides(-1)">❮</a>
-                                    <a class="next" onclick="plusSlides(1)">❯</a>
-
+                                   
                                 </div>
                                 <div style="text-align:center; margin-top:30px;">
                                     <span class="dot" onclick="currentSlide(1)"></span>
@@ -611,7 +614,7 @@
             </div>
         </section>
 
-        <section id="section7">
+        <div id="section7">
             <div class="cst-container">
                 <div class="content">
                     <div class="container">
@@ -636,14 +639,13 @@
                                                     <a class="nav-link" href="#">Services</a>
                                                 </li>
                                                 <li class="nav-item text-center">
-                                                    <a class="nav-link" href="#" tabindex="-1"
-                                                        aria-disabled="true">Jobs</a>
+                                                    <a class="nav-link" href="#" tabindex="-1">Jobs</a>
                                                 </li>
                                             </ul>
                                         </div>
                                     </div>
                                 </nav>
-                                <select name="" id="foot-select" class="sp-show">
+                                <select name="footer" id="foot-select" class="sp-show">
                                     <option value="About">About</option>
                                     <option value="Work">Work</option>
                                     <option value="Services">Services</option>
@@ -694,7 +696,7 @@
                     </ul>
                 </footer>
             </div>
-        </section>
+        </div>
 
 
     </div>

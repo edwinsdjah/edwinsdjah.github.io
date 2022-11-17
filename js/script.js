@@ -9,18 +9,13 @@ window.addEventListener('load', function () {
     setTimeout(showPage, 2000)
 });
 
-function isIE() {
-    return /Trident\/|MSIE/.test(window.navigator.userAgent);
-}
+let burger = document.querySelector('.hamburger');
 
-if (isIE() === true) {
-    let burger = document.querySelector('.hamburger');
-
-    burger.addEventListener('click', function () {
-        let c = document.querySelector('.navbar-collapse ');
-        c.classList.toggle('show')
-    })
-}
+burger.addEventListener('click', function () {
+    let c = document.querySelector('.nav-collapse ');
+    c.classList.toggle('show');
+    c.classList.add('blink');
+})
 
 function spOnly() {
     const sec = document.getElementById('section1');
@@ -216,7 +211,7 @@ function showSlides(n) {
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
-    slides[slideIndex - 1].style.display = "block";
+    slides[slideIndex - 1].style.display = "flex";
     slides[slideIndex - 1].classList.add('blink');
     setTimeout(function () {
         slides[slideIndex - 1].classList.remove('blink')
