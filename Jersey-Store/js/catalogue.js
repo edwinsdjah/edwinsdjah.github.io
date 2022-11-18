@@ -113,5 +113,19 @@ const menCatalogueList = [{
     brand: 'adidas',
     img1: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fcfd5b998c3f44cbafbfaeb6010f3a09_9366/Japan_22_Home_Jersey_Blue_HF1845_21_model.jpg',
     img2: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/8541618e9d8c485c8a6baeb6010f4b2c_9366/Japan_22_Home_Jersey_Blue_HF1845_23_hover_model.jpg',
+  }, {
+    name: 'Italy Home 22/23 Replica',
+    price: 1450000,
+    isNew: true,
+    brand: 'puma',
+    img1: 'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/765643/01/mod01/fnd/SEA/fmt/png/Italy-Home-22/23-Replica-Jersey-Men',
+    img2: 'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/765643/01/mod04/fnd/SEA/fmt/png/Italy-Home-22/23-Replica-Jersey-Men',
+  }, {
+    name: 'A.C. Milan Home 22/23 Replica',
+    price: 1600000,
+    isNew: true,
+    brand: 'puma',
+    img1: 'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/765824/01/mod01/fnd/SEA/fmt/png/A.C.-Milan-Home-22/23-Replica-Football-Jersey-Men',
+    img2: 'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/765824/01/mod03/fnd/SEA/fmt/png/A.C.-Milan-Home-22/23-Replica-Football-Jersey-Men',
   }
 ]

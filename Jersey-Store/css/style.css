@@ -274,6 +274,18 @@ li.buyItem {
   font-size: 1.6rem !important;
 }
 
+.checkout {
+  width: 70%;
+  margin-bottom: 1em;
+}
+
+.checkout h3 {
+  margin-bottom: 0;
+  color: #000 !important;
+  font-size: 1.6rem !important;
+}
+
+
 
 .carousel-caption-lg {
   bottom: 50px;
@@ -398,6 +410,13 @@ figcaption {
   width: 100%;
   padding: 10px 0;
   background-color: #fff;
+}
+
+#pagination {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 h4 {
@@ -705,7 +724,7 @@ h3.h3 {
   margin-right: 10px;
 }
 
-.panel-default{
+.panel-default {
   margin-top: 1em;
 }
 
@@ -745,8 +764,20 @@ h3.h3 {
 
 }
 
-.col-md-6 {
-  margin-bottom: 10px;
+.page-number {
+  padding: .5rem .75rem;
+  font-family: 'Anton', sans-serif;
+  font-weight: bold;
+}
+
+.page-number:hover {
+  background-color: #e29d00;
+  border-color: #e29d00;
+}
+
+.page-number.active {
+  background-color: #e29d00;
+  border-color: #e29d00;
 }
 
 .dropdown-menu {
@@ -803,6 +834,30 @@ h3.h3 {
   color: black;
   background-color: #e29d00;
   border-color: #e29d00;
+}
+
+.page-link[disabled='true'] {
+  background-color: #dedede;
+}
+
+.page-link[disabled='true']:hover {
+  color: #000;
+}
+
+.page-link {
+  position: relative;
+  display: block;
+  padding: .5rem .75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+}
+
+.pagination button {
+  border: none;
+  background: none;
 }
 
 .breadcrumb a {
@@ -1075,6 +1130,11 @@ h3.h3 {
 
   #UpperNav ul {
     justify-content: center;
+  }
+
+  #promo2 .promoBanner {
+    margin-left: -4em;
+    margin-right: -4em;
   }
 }
 

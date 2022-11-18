@@ -1,16 +1,7 @@
-$("footer").load("component/footer.html");
-
-function getPrice(price) {
-  let new_price = price.replaceAll('.', '');
-  return parseInt(new_price);
-}
-
-let newContent;
-
-// FUNCTION DI DALAM HEADER
 
 $(document).ready(function () {
   $("#header").load("component/header.html", function () {
+    // FUNCTION DALAM HEADER
     const cartWindow = document.getElementById('cartWindow');
     const wishWindow = document.getElementById('wishWindow');
     const nav = document.querySelector('.nav-icons');
@@ -18,6 +9,7 @@ $(document).ready(function () {
     const product = document.querySelectorAll('.sideProduct');
     const productDetail = document.querySelectorAll('.product-grid3');
     const parentElement = document.querySelectorAll('.buyItems');
+    const checkout = document.querySelector('.checkout');
     let productInCart = JSON.parse(localStorage.getItem('shoppingCart'));
     let wishlistData = JSON.parse(localStorage.getItem('wishlist'));
     if (!productInCart) {
@@ -166,11 +158,13 @@ $(document).ready(function () {
             </div>
           </li>`
         });
+        checkout.removeAttribute('disabled');
         parentElement[0].innerHTML = result.join('');
       } else {
         let notif = document.querySelector('#cart .notif');
         notif.classList.add('hide')
         parentElement[0].innerHTML = `<h4 class="empty">Your shopping cart is empty</h4>`;
+        checkout.setAttribute('disabled','true');
       }
       countTotalPrice();
     }
@@ -293,7 +287,7 @@ $(document).ready(function () {
       product.forEach(function (el) {
         let dataProduct = el.getAttribute('data-product');
         newOldCheck();
-        
+
         function newOldCheck() {
           if (isNew.checked) {
             if (dataProduct !== 'new') {
@@ -322,6 +316,27 @@ $(document).ready(function () {
       })
     })
   });
+  $("footer").load("component/footer.html");
+
+  // Pagination
+  getPageNumber();
+  setCurrentPage(1);
+  before.addEventListener('click', function () {
+    setCurrentPage(currentPage - 1);
+  })
+  after.addEventListener('click', function () {
+    setCurrentPage(currentPage + 1);
+  })
+
+  document.querySelectorAll('.page-number').forEach((function (button) {
+    const pageIndex = Number(button.getAttribute('page-index'));
+    if (pageIndex) {
+      button.addEventListener('click', function () {
+        setCurrentPage(pageIndex);
+      })
+    };
+  }));
+  // END OF WINDOW LOAD
 });
 
 
@@ -343,7 +358,7 @@ function getCatalogueContent() {
 
   }
 
-  newContent = catalogueList.map(function (product) {
+    let newContent = catalogueList.map(function (product) {
     let currency = Intl.NumberFormat('id-ID');
     let newPrice = currency.format(product.price);
 
@@ -412,5 +427,86 @@ function getCatalogueContent() {
   });
   parentCatalogue.innerHTML = newContent.join('');
 }
-
 getCatalogueContent();
+
+// PAGINATION
+const content = document.querySelectorAll('.product-grid3');
+const pageContainer = document.querySelector('.pagination');
+const pageItem = document.querySelectorAll('.page-item');
+const before = document.querySelector('.page-before');
+const after = document.querySelector('.page-after');
+
+const pageLimit = 12;
+const pageCount = Math.ceil(content.length / pageLimit);
+let currentPage;
+
+const appendPageNumber = function (index) {
+  const pageNumber = document.createElement('button');
+  pageNumber.className = 'page-number';
+  pageNumber.innerHTML = index;
+  pageNumber.setAttribute('page-index', index);
+  pageNumber.setAttribute('aria-label', 'Page' + index);
+
+  pageContainer.appendChild(pageNumber)
+};
+
+const getPageNumber = function () {
+  for (i = 1; i <= pageCount; i++) {
+    appendPageNumber(i);
+  }
+};
+
+
+const setCurrentPage = function (pagenum) {
+  currentPage = pagenum;
+  handleButtons();
+  handleActivePageNumber();
+
+  const prevRange = (pagenum - 1) * pageLimit;
+  const currRange = pagenum * pageLimit;
+
+  content.forEach(function (el, index) {
+    el.classList.add('hide')
+    if (index >= prevRange && index < currRange) {
+      el.classList.remove('hide');
+    }
+  })
+}
+
+const handleActivePageNumber = function () {
+  document.querySelectorAll('.page-number').forEach(function (button) {
+    button.classList.remove('active');
+
+    const pageIndex = Number(button.getAttribute('page-index'));
+    if (pageIndex === currentPage) {
+      button.classList.add('active');
+    }
+  })
+}
+
+const disableButton = function (button) {
+  button.setAttribute('disabled', 'true');
+}
+
+const enableButton = function (button) {
+  button.removeAttribute('disabled');
+}
+
+const handleButtons = function () {
+  if (currentPage === 1) {
+    disableButton(before);
+  } else {
+    enableButton(before);
+  }
+
+  if (pageCount === currentPage) {
+    disableButton(after)
+  } else {
+    enableButton(after)
+  }
+};
+
+function getPrice(price) {
+  let new_price = price.replaceAll('.', '');
+  return parseInt(new_price);
+}
