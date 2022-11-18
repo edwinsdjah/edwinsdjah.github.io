@@ -1136,7 +1136,7 @@ h3.h3 {
     margin-bottom: 50px;
   }
 
- .promoBanner {
+#promo1 .promoBanner, #promo2 .promoBanner{
     position: relative;
     left: calc(-50vw + 50%);
     width: 100vw;
