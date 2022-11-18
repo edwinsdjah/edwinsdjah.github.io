@@ -1131,8 +1131,12 @@ h3.h3 {
   #UpperNav ul {
     justify-content: center;
   }
+  
+  #promo1 .promoBanner{
+    margin-bottom: 50px;
+  }
 
-  #promo2 .promoBanner {
+ .promoBanner {
     position: relative;
     left: calc(-50vw + 50%);
     width: 100vw;
