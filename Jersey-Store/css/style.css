@@ -1133,8 +1133,9 @@ h3.h3 {
   }
 
   #promo2 .promoBanner {
-    margin-left: -4em;
-    margin-right: -4em;
+    position: relative;
+    left: calc(-50vw + 50%);
+    width: 100vw;
   }
 }
 
