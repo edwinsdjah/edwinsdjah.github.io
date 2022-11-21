@@ -1,5 +1,8 @@
-
 $(document).ready(function () {
+  let couponCode = localStorage.setItem('coupon',JSON.stringify(couponList));
+  let path = window.location.pathname;
+  let page = path.split("/").pop();
+  
   $("#header").load("component/header.html", function () {
     // FUNCTION DALAM HEADER
     const cartWindow = document.getElementById('cartWindow');
@@ -266,15 +269,15 @@ $(document).ready(function () {
       let currency = Intl.NumberFormat('id-ID');
       productInCart.forEach((el) => {
         sum += el.price;
-      })
-      let newPrice = currency.format(sum)
+      });
+      localStorage.setItem('totalValue',sum)
+      let newPrice = currency.format(sum);
       return value.innerHTML = newPrice
     }
     countTotalPrice();
     countItemInCart();
     updateCartinHTML();
     updateWishinHTML();
-
   });
   $("#sidebar").load("component/sidebar.html", function () {
     let parentElement = document.getElementById('sidebar');
@@ -441,11 +444,13 @@ const pageCount = Math.ceil(content.length / pageLimit);
 let currentPage;
 
 const appendPageNumber = function (index) {
-  const pageNumber = document.createElement('button');
+  const pageNumber = document.createElement('a');
   pageNumber.className = 'page-number';
   pageNumber.innerHTML = index;
+  pageNumber.setAttribute('href', '#katalog')
   pageNumber.setAttribute('page-index', index);
   pageNumber.setAttribute('aria-label', 'Page' + index);
+  pageNumber.setAttribute('role','button')
 
   pageContainer.appendChild(pageNumber)
 };

@@ -129,3 +129,11 @@ const menCatalogueList = [{
     img2: 'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/765824/01/mod03/fnd/SEA/fmt/png/A.C.-Milan-Home-22/23-Replica-Football-Jersey-Men',
   }
 ]
+
+const couponList = [{
+  name: 'FSTBUY',
+  value: 0.2
+},{
+  name: 'QUARTER',
+  value: 0.4
+}]
