@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  localStorage.setItem('coupon',JSON.stringify(couponList));
+  // localStorage.setItem('coupon',JSON.stringify(couponList));
   // let path = window.location.pathname;
   // let page = path.split("/").pop();
   
