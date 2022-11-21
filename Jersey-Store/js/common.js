@@ -1,7 +1,7 @@
 $(document).ready(function () {
-  let couponCode = localStorage.setItem('coupon',JSON.stringify(couponList));
-  let path = window.location.pathname;
-  let page = path.split("/").pop();
+  localStorage.setItem('coupon',JSON.stringify(couponList));
+  // let path = window.location.pathname;
+  // let page = path.split("/").pop();
   
   $("#header").load("component/header.html", function () {
     // FUNCTION DALAM HEADER
