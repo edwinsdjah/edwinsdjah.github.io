@@ -517,7 +517,7 @@ $(document).ready(function () {
   if (body.classList.contains('checkoutPage')) {
     localStorage.setItem('coupon', JSON.stringify(couponList));
     let couponData = JSON.parse(localStorage.getItem('coupon'));
-    const couponName = document.querySelector('.couponName')
+    const couponName = document.querySelector('.couponName');
     let btnCoupon = document.querySelector('.btn-coupon');
     let total = getCurrency(localStorage.getItem('totalValue'));
     let container = document.querySelector('.order-container')
@@ -545,17 +545,24 @@ $(document).ready(function () {
       }
     });
     container.innerHTML = orderDetail.join('');
-    
-    btnCoupon.addEventListener('click',function(){
-      couponData.forEach(function(el){
+
+    const discountCount = function (value) {
+      let total = localStorage.getItem('totalValue');
+      let sub = total * value;
+      return total - sub
+    }
+
+    btnCoupon.addEventListener('click', function () {
+      couponData.forEach(function (el) {
         console.log(el);
         console.log(el.name);
-      
-        if(couponName === el.name){
+
+        if (couponName.value.toUpperCase() == el.name) {
           console.log(el.name)
-         } else{
+          totalValue.innerHTML = `Rp ${discountCount(el.value)}`
+        } else {
           console.log('GOBLOK')
-         }
+        }
       })
     })
   }
