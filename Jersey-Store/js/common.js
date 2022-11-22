@@ -1,8 +1,6 @@
 $(document).ready(function () {
   // localStorage.setItem('coupon',JSON.stringify(couponList));
-  // let path = window.location.pathname;
-  // let page = path.split("/").pop();
-  
+
   $("#header").load("component/header.html", function () {
     // FUNCTION DALAM HEADER
     const cartWindow = document.getElementById('cartWindow');
@@ -167,7 +165,7 @@ $(document).ready(function () {
         let notif = document.querySelector('#cart .notif');
         notif.classList.add('hide')
         parentElement[0].innerHTML = `<h4 class="empty">Your shopping cart is empty</h4>`;
-        checkout.setAttribute('disabled','true');
+        checkout.setAttribute('disabled', 'true');
       }
       countTotalPrice();
     }
@@ -270,7 +268,7 @@ $(document).ready(function () {
       productInCart.forEach((el) => {
         sum += el.price;
       });
-      localStorage.setItem('totalValue',sum)
+      localStorage.setItem('totalValue', sum)
       let newPrice = currency.format(sum);
       return value.innerHTML = newPrice
     }
@@ -321,24 +319,108 @@ $(document).ready(function () {
   });
   $("footer").load("component/footer.html");
 
-  // Pagination
-  getPageNumber();
-  setCurrentPage(1);
-  before.addEventListener('click', function () {
-    setCurrentPage(currentPage - 1);
-  })
-  after.addEventListener('click', function () {
-    setCurrentPage(currentPage + 1);
-  })
+  let body = document.querySelector('body');
+  if (body.classList.contains('cataloguePage')) {
+    getCatalogueContent();
+    // PAGINATION
+    const content = document.querySelectorAll('.product-grid3');
+    const pageContainer = document.querySelector('.pagination');
+    const pageItem = document.querySelectorAll('.page-item');
+    const before = document.querySelector('.page-before');
+    const after = document.querySelector('.page-after');
+    const pageLimit = 12;
+    const pageCount = Math.ceil(content.length / pageLimit);
+    let currentPage;
 
-  document.querySelectorAll('.page-number').forEach((function (button) {
-    const pageIndex = Number(button.getAttribute('page-index'));
-    if (pageIndex) {
-      button.addEventListener('click', function () {
-        setCurrentPage(pageIndex);
-      })
+    const appendPageNumber = function (index) {
+      const pageNumber = document.createElement('a');
+      pageNumber.className = 'page-number';
+      pageNumber.innerHTML = index;
+      pageNumber.setAttribute('href', '#katalog')
+      pageNumber.setAttribute('page-index', index);
+      pageNumber.setAttribute('aria-label', 'Page' + index);
+      pageNumber.setAttribute('role', 'button')
+
+      pageContainer.appendChild(pageNumber)
     };
-  }));
+
+    const getPageNumber = function () {
+      for (i = 1; i <= pageCount; i++) {
+        appendPageNumber(i);
+      }
+    };
+
+
+    const setCurrentPage = function (pagenum) {
+      currentPage = pagenum;
+      handleButtons();
+      handleActivePageNumber();
+
+      const prevRange = (pagenum - 1) * pageLimit;
+      const currRange = pagenum * pageLimit;
+
+      content.forEach(function (el, index) {
+        el.classList.add('hide')
+        if (index >= prevRange && index < currRange) {
+          el.classList.remove('hide');
+        }
+      })
+    }
+
+    const handleActivePageNumber = function () {
+      document.querySelectorAll('.page-number').forEach(function (button) {
+        button.classList.remove('active');
+
+        const pageIndex = Number(button.getAttribute('page-index'));
+        if (pageIndex === currentPage) {
+          button.classList.add('active');
+        }
+      })
+    }
+
+    const disableButton = function (button) {
+      button.setAttribute('disabled', 'true');
+    }
+
+    const enableButton = function (button) {
+      button.removeAttribute('disabled');
+    }
+
+    const handleButtons = function () {
+      if (currentPage === 1) {
+        disableButton(before);
+      } else {
+        enableButton(before);
+      }
+
+      if (pageCount === currentPage) {
+        disableButton(after)
+      } else {
+        enableButton(after)
+      }
+    };
+
+    getPageNumber();
+    setCurrentPage(1);
+    before.addEventListener('click', function () {
+      setCurrentPage(currentPage - 1);
+    })
+    after.addEventListener('click', function () {
+      setCurrentPage(currentPage + 1);
+    })
+
+    document.querySelectorAll('.page-number').forEach((function (button) {
+      const pageIndex = Number(button.getAttribute('page-index'));
+      if (pageIndex) {
+        button.addEventListener('click', function () {
+          setCurrentPage(pageIndex);
+        })
+      };
+    }));
+
+  }
+  // Pagination
+
   // END OF WINDOW LOAD
 });
 
@@ -361,7 +443,7 @@ function getCatalogueContent() {
 
   }
 
-    let newContent = catalogueList.map(function (product) {
+  let newContent = catalogueList.map(function (product) {
     let currency = Intl.NumberFormat('id-ID');
     let newPrice = currency.format(product.price);
 
@@ -430,86 +512,7 @@ function getCatalogueContent() {
   });
   parentCatalogue.innerHTML = newContent.join('');
 }
-getCatalogueContent();
 
-// PAGINATION
-const content = document.querySelectorAll('.product-grid3');
-const pageContainer = document.querySelector('.pagination');
-const pageItem = document.querySelectorAll('.page-item');
-const before = document.querySelector('.page-before');
-const after = document.querySelector('.page-after');
-
-const pageLimit = 12;
-const pageCount = Math.ceil(content.length / pageLimit);
-let currentPage;
-
-const appendPageNumber = function (index) {
-  const pageNumber = document.createElement('a');
-  pageNumber.className = 'page-number';
-  pageNumber.innerHTML = index;
-  pageNumber.setAttribute('href', '#katalog')
-  pageNumber.setAttribute('page-index', index);
-  pageNumber.setAttribute('aria-label', 'Page' + index);
-  pageNumber.setAttribute('role','button')
-
-  pageContainer.appendChild(pageNumber)
-};
-
-const getPageNumber = function () {
-  for (i = 1; i <= pageCount; i++) {
-    appendPageNumber(i);
-  }
-};
-
-
-const setCurrentPage = function (pagenum) {
-  currentPage = pagenum;
-  handleButtons();
-  handleActivePageNumber();
-
-  const prevRange = (pagenum - 1) * pageLimit;
-  const currRange = pagenum * pageLimit;
-
-  content.forEach(function (el, index) {
-    el.classList.add('hide')
-    if (index >= prevRange && index < currRange) {
-      el.classList.remove('hide');
-    }
-  })
-}
-
-const handleActivePageNumber = function () {
-  document.querySelectorAll('.page-number').forEach(function (button) {
-    button.classList.remove('active');
-
-    const pageIndex = Number(button.getAttribute('page-index'));
-    if (pageIndex === currentPage) {
-      button.classList.add('active');
-    }
-  })
-}
-
-const disableButton = function (button) {
-  button.setAttribute('disabled', 'true');
-}
-
-const enableButton = function (button) {
-  button.removeAttribute('disabled');
-}
-
-const handleButtons = function () {
-  if (currentPage === 1) {
-    disableButton(before);
-  } else {
-    enableButton(before);
-  }
-
-  if (pageCount === currentPage) {
-    disableButton(after)
-  } else {
-    enableButton(after)
-  }
-};
 
 function getPrice(price) {
   let new_price = price.replaceAll('.', '');
