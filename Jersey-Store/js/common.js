@@ -515,7 +515,7 @@ $(document).ready(function () {
       let productInCart = JSON.parse(localStorage.getItem('shoppingCart'));
       let orderDetail = productInCart.map(function(el,index){
         return `<tr>
-        <th scope="row">${el.index+1}</th>
+        <th scope="row">${index+1}</th>
         <td>${el.name}</td>
         <td>${el.count}</td>
         <td>Rp ${el.priceString}</td>
