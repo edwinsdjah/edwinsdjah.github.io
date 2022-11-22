@@ -521,7 +521,6 @@ $(document).ready(function () {
     let totalValue = document.querySelector('.totalValue')
     let productInCart = JSON.parse(localStorage.getItem('shoppingCart'));
     let orderDetail = productInCart.map(function (el, index) {
-      console.log(index)
       if (index + 1 === productInCart.length) {
         return `<tr>
         <th scope="row">${index+1}</th>
@@ -543,7 +542,6 @@ $(document).ready(function () {
       }
     });
     container.innerHTML = orderDetail.join('');
-    console.log(orderDetail)
   }
 
   // END OF WINDOW LOAD
