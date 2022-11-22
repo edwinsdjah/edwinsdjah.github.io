@@ -516,7 +516,10 @@ $(document).ready(function () {
 
   if (body.classList.contains('checkoutPage')) {
     localStorage.setItem('coupon', JSON.stringify(couponList));
-    let total = getCurrency(localStorage.getItem('totalValue'))
+    let couponList = JSON.parse(localStorage.getItem('couponList'));
+    const couponName = document.querySelector('.couponName')
+    let btnCoupon = document.querySelector('.btn-coupon');
+    let total = getCurrency(localStorage.getItem('totalValue'));
     let container = document.querySelector('.order-container')
     let totalValue = document.querySelector('.totalValue')
     let productInCart = JSON.parse(localStorage.getItem('shoppingCart'));
@@ -542,6 +545,14 @@ $(document).ready(function () {
       }
     });
     container.innerHTML = orderDetail.join('');
+    
+    btnCoupon.addEventListener('click',function(){
+      couponList.forEach(function(el){
+        if(couponName === el.name){
+          console.log(el.name)
+        }
+      })
+    })
   }
 
   // END OF WINDOW LOAD

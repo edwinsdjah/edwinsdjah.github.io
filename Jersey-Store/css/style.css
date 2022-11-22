@@ -371,6 +371,23 @@ figcaption {
   font-size: 0.8em;
 }
 
+#couponWindow .row{
+  justify-content: center;
+  align-items: center;
+}
+
+.couponName{
+  text-transform: uppercase;
+}
+
+.btn-coupon h3{
+  font-family: 'Anton', sans-serif;
+  margin-bottom: 0;
+  font-style: bold;
+  color: #000;
+  font-size: 1.6em;
+}
+
 .sideProduct ul {
   text-align: left;
   display: flex;
@@ -1168,7 +1185,7 @@ h3.h3 {
 
 @media only screen and (min-width:768px) {
   table{
-    width: 85%;
+    width: 85% !important;
     margin: 0 auto;
   }
   
