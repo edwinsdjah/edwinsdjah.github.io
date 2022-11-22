@@ -511,8 +511,17 @@ $(document).ready(function () {
   
   if (body.classList.contains('checkoutPage')){
       localStorage.setItem('coupon',JSON.stringify(couponList));
+      let container = document.querySelector('.order-container')
       let productInCart = JSON.parse(localStorage.getItem('shoppingCart'));
-      let orderDetail = productInCart.map();
+      let orderDetail = productInCart.map(function(el,index){
+        return `<tr>
+        <th scope="row">${el.index+1}</th>
+        <td>${el.name}</td>
+        <td>${el.count}</td>
+        <td>Rp ${el.priceString}</td>
+      </tr>`
+      });
+      container.innerHTML = orderDetail.join('');
       console.log(orderDetail)
       
   }
