@@ -549,7 +549,7 @@ $(document).ready(function () {
     const discountCount = function (value) {
       let total = localStorage.getItem('totalValue');
       let sub = total * value;
-      return total - sub
+      return getCurrency(total - sub)
     }
 
     btnCoupon.addEventListener('click', function () {
