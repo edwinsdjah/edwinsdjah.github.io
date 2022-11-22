@@ -850,6 +850,7 @@ h3.h3 {
 
 .page-link[disabled='true'] {
   background-color: #dedede;
+  pointer-events: none;
 }
 
 .page-link[disabled='true']:hover {
