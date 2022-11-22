@@ -511,6 +511,10 @@ $(document).ready(function () {
   
   if (body.classList.contains('checkoutPage')){
       localStorage.setItem('coupon',JSON.stringify(couponList));
+      let productInCart = JSON.parse(localStorage.getItem('shoppingCart'));
+      let orderDetail = productInCart.map();
+      console.log(orderDetail)
+      
   }
 
   // END OF WINDOW LOAD
