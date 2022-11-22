@@ -91,7 +91,7 @@ function getPrice(price) {
   return parseInt(new_price);
 }
 
-function getCurrency(price){
+function getCurrency(price) {
   let currency = Intl.NumberFormat('id-ID');
   return currency.format(price);
 }
@@ -513,24 +513,31 @@ $(document).ready(function () {
       };
     }));
   }
-  
-  if (body.classList.contains('checkoutPage')){
-      localStorage.setItem('coupon',JSON.stringify(couponList));
-      let total = getCurrency(localStorage.getItem('totalValue'))
-      let container = document.querySelector('.order-container')
-      let totalValue = document.querySelector('.totalValue')
-      let productInCart = JSON.parse(localStorage.getItem('shoppingCart'));
-      let orderDetail = productInCart.map(function(el,index){
+
+  if (body.classList.contains('checkoutPage')) {
+    localStorage.setItem('coupon', JSON.stringify(couponList));
+    let total = getCurrency(localStorage.getItem('totalValue'))
+    let container = document.querySelector('.order-container')
+    let totalValue = document.querySelector('.totalValue')
+    let productInCart = JSON.parse(localStorage.getItem('shoppingCart'));
+    let orderDetail = productInCart.map(function (el, index) {
+
+      if (index + 1 === el.length) {
+        return ` <tr>
+          <td colspan="3" class="caption" style="font-family: 'Anton', sans-serif; font-size: 2em;">TOTAL</td>
+          <td class="totalValue">${total}</td>
+      </tr>`
+      } else {
         return `<tr>
         <th scope="row">${index+1}</th>
         <td>${el.name}</td>
         <td>${el.count}</td>
         <td>Rp ${el.priceString}</td>
       </tr>`
-      });
-      container.innerHTML = orderDetail.join('');
-      totalValue.textContent = total
-      console.log(orderDetail)
+      }
+    });
+    container.innerHTML = orderDetail.join('');
+    console.log(orderDetail)
   }
 
   // END OF WINDOW LOAD
