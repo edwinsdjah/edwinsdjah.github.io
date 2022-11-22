@@ -558,11 +558,11 @@ $(document).ready(function () {
         if (couponName.value.toUpperCase() == el.name) {
           totalValue.innerHTML = `Rp ${discountCount(el.value)}`
           message.textContent = 'Code Coupon has been Applied'
-          return
         } else {
           console.log('GOBLOK')
           message.textContent = 'Code invalid'
         }
+        return
       })
     })
   }
