@@ -523,7 +523,13 @@ $(document).ready(function () {
     let orderDetail = productInCart.map(function (el, index) {
       console.log(index)
       if (index + 1 === productInCart.length) {
-        return ` <tr>
+        return `<tr>
+        <th scope="row">${index+1}</th>
+        <td>${el.name}</td>
+        <td>${el.count}</td>
+        <td>Rp ${el.priceString}</td>
+      </tr>
+      <tr>
           <td colspan="3" class="caption" style="font-family: 'Anton', sans-serif; font-size: 2em;">TOTAL</td>
           <td class="totalValue">${total}</td>
       </tr>`
