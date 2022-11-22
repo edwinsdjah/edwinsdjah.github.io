@@ -287,8 +287,9 @@ li.buyItem {
 
 .checkout[disabled='true']{
   pointer-events: none;
+  background-color: #c5bfbf;
+  border-color: #c5bfbf;
 }
-
 
 .carousel-caption-lg {
   bottom: 50px;
