@@ -1063,6 +1063,11 @@ h3.h3 {
   display: inline-block
 }
 
+/* TABLE */
+.table td, .table th{
+  vertical-align: middle;
+}
+
 .product-grid3 .rating li.disable {
   color: #dcdcdc
 }
