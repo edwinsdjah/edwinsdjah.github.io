@@ -520,8 +520,8 @@ $(document).ready(function () {
     const couponName = document.querySelector('.couponName');
     let btnCoupon = document.querySelector('.btn-coupon');
     let total = getCurrency(localStorage.getItem('totalValue'));
-    let container = document.querySelector('.order-container')
-    let totalValue = document.querySelector('.totalValue')
+    let container = document.querySelector('.order-container');
+    let totalValue = document.querySelector('.totalValue');
     let productInCart = JSON.parse(localStorage.getItem('shoppingCart'));
     let orderDetail = productInCart.map(function (el, index) {
       if (index + 1 === productInCart.length) {
@@ -556,13 +556,14 @@ $(document).ready(function () {
       couponData.forEach(function (el) {
         console.log(el);
         console.log(el.name);
-
+        let totalValue = document.querySelector('.totalValue');
         if (couponName.value.toUpperCase() == el.name) {
           console.log(el.name)
           totalValue.innerHTML = `Rp ${discountCount(el.value)}`
         } else {
           console.log('GOBLOK')
         }
+        return
       })
     })
   }
