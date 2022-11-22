@@ -556,7 +556,6 @@ $(document).ready(function () {
         let totalValue = document.querySelector('.totalValue');
         const message = document.querySelector('.message');
         if (couponName.value.toUpperCase() == el.name) {
-          console.log(el.name)
           totalValue.innerHTML = `Rp ${discountCount(el.value)}`
           message.textContent = 'Code Coupon has been Applied'
           return
