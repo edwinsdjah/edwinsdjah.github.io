@@ -555,9 +555,10 @@ $(document).ready(function () {
       couponData.forEach(function (el) {
         let totalValue = document.querySelector('.totalValue');
         const message = document.querySelector('.message');
-        if (couponName.value.toUpperCase() == el.name) {
+        if (couponName.value.toUpperCase() === el.name) {
           totalValue.innerHTML = `Rp ${discountCount(el.value)}`
           message.textContent = 'Code Coupon has been Applied'
+          return
         } else {
           console.log('GOBLOK')
           message.textContent = 'Code invalid'
