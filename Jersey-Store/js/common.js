@@ -559,11 +559,11 @@ $(document).ready(function () {
           console.log(el.name)
           totalValue.innerHTML = `Rp ${discountCount(el.value)}`
           message.textContent = 'Code Coupon has been Applied'
+          return
         } else {
           console.log('GOBLOK')
           message.textContent = 'Code invalid'
         }
-        return
       })
     })
   }
