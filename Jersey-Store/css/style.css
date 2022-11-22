@@ -419,6 +419,14 @@ figcaption {
   justify-content: center;
 }
 
+#pagination a{
+  color: #212529;
+}
+
+#pagination a:hover{
+  color: #212529;
+}
+
 h4 {
   font-family: 'Anton', sans-serif;
   font-style: bold;
