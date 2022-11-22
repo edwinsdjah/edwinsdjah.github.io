@@ -516,7 +516,7 @@ $(document).ready(function () {
 
   if (body.classList.contains('checkoutPage')) {
     localStorage.setItem('coupon', JSON.stringify(couponList));
-    let couponList = JSON.parse(localStorage.getItem('couponList'));
+    let couponData = JSON.parse(localStorage.getItem('couponList'));
     const couponName = document.querySelector('.couponName')
     let btnCoupon = document.querySelector('.btn-coupon');
     let total = getCurrency(localStorage.getItem('totalValue'));
@@ -547,8 +547,8 @@ $(document).ready(function () {
     container.innerHTML = orderDetail.join('');
     
     btnCoupon.addEventListener('click',function(){
-      couponList.forEach(function(el){
-        if(couponName === el.name){
+      couponData.forEach(function(el){
+        if(couponData === el.name){
           console.log(el.name)
         }
       })
