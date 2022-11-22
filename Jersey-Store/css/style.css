@@ -285,6 +285,9 @@ li.buyItem {
   font-size: 1.6rem !important;
 }
 
+.checkout[disabled='true']{
+  pointer-events: none;
+}
 
 
 .carousel-caption-lg {
