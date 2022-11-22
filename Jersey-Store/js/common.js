@@ -548,6 +548,9 @@ $(document).ready(function () {
     
     btnCoupon.addEventListener('click',function(){
       couponData.forEach(function(el){
+        console.log(el);
+        console.log(el.name);
+      
         if(couponName === el.name){
           console.log(el.name)
          } else{
