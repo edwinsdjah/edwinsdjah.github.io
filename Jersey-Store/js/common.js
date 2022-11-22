@@ -521,9 +521,8 @@ $(document).ready(function () {
     let totalValue = document.querySelector('.totalValue')
     let productInCart = JSON.parse(localStorage.getItem('shoppingCart'));
     let orderDetail = productInCart.map(function (el, index) {
-      console.log(el.length);
       console.log(index)
-      if (index === el.length) {
+      if (index + 1 === productInCart.length) {
         return ` <tr>
           <td colspan="3" class="caption" style="font-family: 'Anton', sans-serif; font-size: 2em;">TOTAL</td>
           <td class="totalValue">${total}</td>
