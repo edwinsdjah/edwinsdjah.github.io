@@ -427,7 +427,7 @@ $(document).ready(function () {
       const pageNumber = document.createElement('a');
       pageNumber.className = 'page-number';
       pageNumber.innerHTML = index;
-      pageNumber.setAttribute('href', '#katalog')
+      pageNumber.setAttribute('href', '#main')
       pageNumber.setAttribute('page-index', index);
       pageNumber.setAttribute('aria-label', 'Page' + index);
       pageNumber.setAttribute('role', 'button')
@@ -440,7 +440,6 @@ $(document).ready(function () {
         appendPageNumber(i);
       }
     };
-
 
     const setCurrentPage = function (pagenum) {
       currentPage = pagenum;
@@ -508,9 +507,8 @@ $(document).ready(function () {
         })
       };
     }));
-
   }
-  // Pagination
+  
   if (body.classList.contains('checkoutPage')){
       localStorage.setItem('coupon',JSON.stringify(couponList));
   }
