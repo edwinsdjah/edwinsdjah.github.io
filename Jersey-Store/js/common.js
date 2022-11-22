@@ -516,7 +516,7 @@ $(document).ready(function () {
 
   if (body.classList.contains('checkoutPage')) {
     localStorage.setItem('coupon', JSON.stringify(couponList));
-    let couponData = JSON.parse(localStorage.getItem('couponList'));
+    let couponData = JSON.parse(localStorage.getItem('coupon'));
     const couponName = document.querySelector('.couponName')
     let btnCoupon = document.querySelector('.btn-coupon');
     let total = getCurrency(localStorage.getItem('totalValue'));

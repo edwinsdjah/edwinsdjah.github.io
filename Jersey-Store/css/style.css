@@ -1121,6 +1121,11 @@ h3.h3 {
   .part2 {
     height: 400px
   }
+  
+  .couponCont{
+    width: 80%;
+    margin: 0 auto;
+  }
 }
 
 /* SMARTPHONE */
