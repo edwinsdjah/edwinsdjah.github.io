@@ -1122,10 +1122,6 @@ h3.h3 {
     height: 400px
   }
   
-  .couponCont{
-    width: 80%;
-    margin: 0 auto;
-  }
 }
 
 /* SMARTPHONE */
@@ -1191,6 +1187,11 @@ h3.h3 {
 @media only screen and (min-width:768px) {
   table{
     width: 85% !important;
+    margin: 0 auto;
+  }
+  
+  .couponCont{
+    width: 80%;
     margin: 0 auto;
   }
   

@@ -548,9 +548,11 @@ $(document).ready(function () {
     
     btnCoupon.addEventListener('click',function(){
       couponData.forEach(function(el){
-        if(couponData === el.name){
+        if(couponName === el.name){
           console.log(el.name)
-        }
+         } else{
+          console.log('GOBLOK')
+         }
       })
     })
   }
