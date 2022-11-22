@@ -531,7 +531,7 @@ $(document).ready(function () {
       </tr>
       <tr>
           <td colspan="3" class="caption" style="font-family: 'Anton', sans-serif; font-size: 2em;">TOTAL</td>
-          <td class="totalValue">${total}</td>
+          <td class="totalValue">Rp ${total}</td>
       </tr>`
       } else {
         return `<tr>
