@@ -1,6 +1,97 @@
-$(document).ready(function () {
-  // localStorage.setItem('coupon',JSON.stringify(couponList));
+function getCatalogueContent() {
+  let parentCatalogue = document.querySelector('.content-generate .row');
+  let catalogueList;
+  const catalogueParameter = parentCatalogue.parentElement.id;
 
+  switch (catalogueParameter) {
+    case 'jersey-man':
+      catalogueList = menCatalogueList;
+      break;
+    case 'special-catalogue':
+      catalogueList = specialCatalogueList;
+      break;
+    case 'jersey-woman':
+      catalogueList = womenCatalogueList;
+      break;
+
+  }
+
+  let newContent = catalogueList.map(function (product) {
+    let currency = Intl.NumberFormat('id-ID');
+    let newPrice = currency.format(product.price);
+
+    if (product.isNew === true) {
+      return `<div class="col-lg-3 col-md-6 col-6">
+  <div class="product-grid3" data-product="new" data-brand="${product.brand}">
+      <div class="product-image3">
+          <a href="javaScript:void(0)">
+              <img class="pic-1"
+                  src="${product.img1}">
+              <img class="pic-2"
+                  src="${product.img2}">
+          </a>
+          <ul class="social">
+              <li><a href="javaScript:void(0)"><i class="fa fa-heart"></i></a></li>
+              <li><a href="javaScript:void(0)"><i class="fa fa-shopping-cart"></i></a></li>
+          </ul>
+          <span class="product-new-label">New</span>
+      </div>
+      <div class="product-content">
+          <h3 class="title"><a href="javaScript:void(0)">${product.name}</a></h3>
+          <div class="price">
+              Rp ${newPrice}
+          </div>
+          <ul class="rating">
+              <li class="fa fa-star"></li>
+              <li class="fa fa-star"></li>
+              <li class="fa fa-star"></li>
+              <li class="fa fa-star disable"></li>
+              <li class="fa fa-star disable"></li>
+          </ul>
+      </div>
+  </div>
+</div>`
+    } else {
+      return `<div class="col-lg-3 col-md-6 col-6">
+  <div class="product-grid3" data-product="old" data-brand="${product.brand}">
+      <div class="product-image3">
+          <a href="javaScript:void(0)">
+              <img class="pic-1"
+                  src="${product.img1}">
+              <img class="pic-2"
+                  src="${product.img2}">
+          </a>
+          <ul class="social">
+              <li><a href="javaScript:void(0)"><i class="fa fa-heart"></i></a></li>
+              <li><a href="javaScript:void(0)"><i class="fa fa-shopping-cart"></i></a></li>
+          </ul>
+      </div>
+      <div class="product-content">
+          <h3 class="title"><a href="javaScript:void(0)">${product.name}</a></h3>
+          <div class="price">
+              Rp ${newPrice}
+          </div>
+          <ul class="rating">
+              <li class="fa fa-star"></li>
+              <li class="fa fa-star"></li>
+              <li class="fa fa-star"></li>
+              <li class="fa fa-star disable"></li>
+              <li class="fa fa-star disable"></li>
+          </ul>
+      </div>
+  </div>
+</div>`
+    }
+  });
+  parentCatalogue.innerHTML = newContent.join('');
+}
+
+function getPrice(price) {
+  let new_price = price.replaceAll('.', '');
+  return parseInt(new_price);
+}
+
+$(document).ready(function () {
   $("#header").load("component/header.html", function () {
     // FUNCTION DALAM HEADER
     const cartWindow = document.getElementById('cartWindow');
@@ -420,101 +511,9 @@ $(document).ready(function () {
 
   }
   // Pagination
+  if (body.classList.contains('checkoutPage')){
+      localStorage.setItem('coupon',JSON.stringify(couponList));
+  }
 
   // END OF WINDOW LOAD
 });
-
-
-function getCatalogueContent() {
-  let parentCatalogue = document.querySelector('.content-generate .row');
-  let catalogueList;
-  const catalogueParameter = parentCatalogue.parentElement.id;
-
-  switch (catalogueParameter) {
-    case 'jersey-man':
-      catalogueList = menCatalogueList;
-      break;
-    case 'special-catalogue':
-      catalogueList = specialCatalogueList;
-      break;
-    case 'jersey-woman':
-      catalogueList = womenCatalogueList;
-      break;
-
-  }
-
-  let newContent = catalogueList.map(function (product) {
-    let currency = Intl.NumberFormat('id-ID');
-    let newPrice = currency.format(product.price);
-
-    if (product.isNew === true) {
-      return `<div class="col-lg-3 col-md-6 col-6">
-  <div class="product-grid3" data-product="new" data-brand="${product.brand}">
-      <div class="product-image3">
-          <a href="javaScript:void(0)">
-              <img class="pic-1"
-                  src="${product.img1}">
-              <img class="pic-2"
-                  src="${product.img2}">
-          </a>
-          <ul class="social">
-              <li><a href="javaScript:void(0)"><i class="fa fa-heart"></i></a></li>
-              <li><a href="javaScript:void(0)"><i class="fa fa-shopping-cart"></i></a></li>
-          </ul>
-          <span class="product-new-label">New</span>
-      </div>
-      <div class="product-content">
-          <h3 class="title"><a href="javaScript:void(0)">${product.name}</a></h3>
-          <div class="price">
-              Rp ${newPrice}
-          </div>
-          <ul class="rating">
-              <li class="fa fa-star"></li>
-              <li class="fa fa-star"></li>
-              <li class="fa fa-star"></li>
-              <li class="fa fa-star disable"></li>
-              <li class="fa fa-star disable"></li>
-          </ul>
-      </div>
-  </div>
-</div>`
-    } else {
-      return `<div class="col-lg-3 col-md-6 col-6">
-  <div class="product-grid3" data-product="old" data-brand="${product.brand}">
-      <div class="product-image3">
-          <a href="javaScript:void(0)">
-              <img class="pic-1"
-                  src="${product.img1}">
-              <img class="pic-2"
-                  src="${product.img2}">
-          </a>
-          <ul class="social">
-              <li><a href="javaScript:void(0)"><i class="fa fa-heart"></i></a></li>
-              <li><a href="javaScript:void(0)"><i class="fa fa-shopping-cart"></i></a></li>
-          </ul>
-      </div>
-      <div class="product-content">
-          <h3 class="title"><a href="javaScript:void(0)">${product.name}</a></h3>
-          <div class="price">
-              Rp ${newPrice}
-          </div>
-          <ul class="rating">
-              <li class="fa fa-star"></li>
-              <li class="fa fa-star"></li>
-              <li class="fa fa-star"></li>
-              <li class="fa fa-star disable"></li>
-              <li class="fa fa-star disable"></li>
-          </ul>
-      </div>
-  </div>
-</div>`
-    }
-  });
-  parentCatalogue.innerHTML = newContent.join('');
-}
-
-
-function getPrice(price) {
-  let new_price = price.replaceAll('.', '');
-  return parseInt(new_price);
-}
