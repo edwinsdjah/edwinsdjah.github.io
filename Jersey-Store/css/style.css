@@ -585,6 +585,10 @@ h3.h3 {
   border-color: #ffffff !important;
 }
 
+.navbar-checkout{
+  font-size: 28px;
+}
+
 .sans-serif {
   font-family: 'Anton', sans-serif;
 }
