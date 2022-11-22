@@ -134,6 +134,9 @@ const couponList = [{
   name: 'FSTBUY',
   value: 0.2
 },{
-  name: 'QUARTER',
+  name: '40PCNT',
   value: 0.4
+},{
+  name: '30PCNT',
+  value: 0.3
 }]
