@@ -557,8 +557,8 @@ $(document).ready(function () {
       let totalValue = document.querySelector('.totalValue');
       const message = document.querySelector('.message');
       for(let i = 0; i < couponData.length; i++){
-        if (couponName.value.toUpperCase() === el.name) {
-          totalValue.innerHTML = `Rp ${discountCount(el.value)}`
+        if (couponName.value.toUpperCase() === couponData[i].name) {
+          totalValue.innerHTML = `Rp ${discountCount(couponData[i].value)}`
           message.textContent = 'Code Coupon has been Applied';
           return
         } else {
