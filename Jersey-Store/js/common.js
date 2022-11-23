@@ -551,19 +551,21 @@ $(document).ready(function () {
       return getCurrency(total - sub)
     }
 
+    
+
     btnCoupon.addEventListener('click', function () {
-      couponData.forEach(function (el) {
-        let totalValue = document.querySelector('.totalValue');
-        const message = document.querySelector('.message');
+      let totalValue = document.querySelector('.totalValue');
+      const message = document.querySelector('.message');
+      for(let i = 0; i < couponData.length; i++){
         if (couponName.value.toUpperCase() === el.name) {
           totalValue.innerHTML = `Rp ${discountCount(el.value)}`
           message.textContent = 'Code Coupon has been Applied';
+          return
         } else {
           console.log('GOBLOK')
           message.textContent = 'Code invalid';
-        }
-        return
-      })
+        }     
+      }
     })
   }
 
