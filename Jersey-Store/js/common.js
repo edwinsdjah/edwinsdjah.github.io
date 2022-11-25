@@ -541,10 +541,12 @@ $(document).ready(function () {
         if (couponName.value.toUpperCase() === couponData[i].name) {
           totalValue.innerHTML = `Rp ${discountCount(couponData[i].value)}`
           message.textContent = 'Code Coupon has been Applied';
+          message.style.color = 'green'
           return
         } else {
           console.log('GOBLOK')
           message.textContent = 'Code invalid';
+          message.style.color = 'red'
         }
       }
     })
