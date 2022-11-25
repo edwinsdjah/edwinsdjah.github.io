@@ -1,91 +1,3 @@
-function getCatalogueContent() {
-  let parentCatalogue = document.querySelector('.content-generate .row');
-  let catalogueList;
-  const catalogueParameter = parentCatalogue.parentElement.id;
-
-  switch (catalogueParameter) {
-    case 'jersey-man':
-      catalogueList = menCatalogueList;
-      break;
-    case 'special-catalogue':
-      catalogueList = specialCatalogueList;
-      break;
-    case 'jersey-woman':
-      catalogueList = womenCatalogueList;
-      break;
-
-  }
-
-  let newContent = catalogueList.map(function (product) {
-    let currency = Intl.NumberFormat('id-ID');
-    let newPrice = currency.format(product.price);
-
-    if (product.isNew === true) {
-      return `<div class="col-lg-3 col-md-6 col-6">
-  <div class="product-grid3" data-product="new" data-brand="${product.brand}">
-      <div class="product-image3">
-          <a href="javaScript:void(0)">
-              <img class="pic-1"
-                  src="${product.img1}">
-              <img class="pic-2"
-                  src="${product.img2}">
-          </a>
-          <ul class="social">
-              <li><a href="javaScript:void(0)"><i class="fa fa-heart"></i></a></li>
-              <li><a href="javaScript:void(0)"><i class="fa fa-shopping-cart"></i></a></li>
-          </ul>
-          <span class="product-new-label">New</span>
-      </div>
-      <div class="product-content">
-          <h3 class="title"><a href="javaScript:void(0)">${product.name}</a></h3>
-          <div class="price">
-              Rp ${newPrice}
-          </div>
-          <ul class="rating">
-              <li class="fa fa-star"></li>
-              <li class="fa fa-star"></li>
-              <li class="fa fa-star"></li>
-              <li class="fa fa-star disable"></li>
-              <li class="fa fa-star disable"></li>
-          </ul>
-      </div>
-  </div>
-</div>`
-    } else {
-      return `<div class="col-lg-3 col-md-6 col-6">
-  <div class="product-grid3" data-product="old" data-brand="${product.brand}">
-      <div class="product-image3">
-          <a href="javaScript:void(0)">
-              <img class="pic-1"
-                  src="${product.img1}">
-              <img class="pic-2"
-                  src="${product.img2}">
-          </a>
-          <ul class="social">
-              <li><a href="javaScript:void(0)"><i class="fa fa-heart"></i></a></li>
-              <li><a href="javaScript:void(0)"><i class="fa fa-shopping-cart"></i></a></li>
-          </ul>
-      </div>
-      <div class="product-content">
-          <h3 class="title"><a href="javaScript:void(0)">${product.name}</a></h3>
-          <div class="price">
-              Rp ${newPrice}
-          </div>
-          <ul class="rating">
-              <li class="fa fa-star"></li>
-              <li class="fa fa-star"></li>
-              <li class="fa fa-star"></li>
-              <li class="fa fa-star disable"></li>
-              <li class="fa fa-star disable"></li>
-          </ul>
-      </div>
-  </div>
-</div>`
-    }
-  });
-  parentCatalogue.innerHTML = newContent.join('');
-}
-
 function getPrice(price) {
   let new_price = price.replaceAll('.', '');
   return parseInt(new_price);
@@ -417,17 +329,34 @@ $(document).ready(function () {
 
   let body = document.querySelector('body');
   if (body.classList.contains('cataloguePage')) {
-    getCatalogueContent();
+    let parentCatalogue = document.querySelector('.content-generate .row');
+    // getCatalogueContent
+    let catalogueList;
+    const catalogueParameter = parentCatalogue.parentElement.id;
+
+    switch (catalogueParameter) {
+      case 'jersey-man':
+        catalogueList = menCatalogueList;
+        break;
+      case 'special-catalogue':
+        catalogueList = specialCatalogueList;
+        break;
+      case 'jersey-woman':
+        catalogueList = womenCatalogueList;
+        break;
+    }
+
+    const pageLimit = 12;
+    const pageCount = Math.ceil(catalogueList.length / pageLimit);
+      
     // PAGINATION
     const content = document.querySelectorAll('.product-grid3');
     const pageContainer = document.querySelector('.pagination');
     const pageItem = document.querySelectorAll('.page-item');
     const before = document.querySelector('.page-before');
     const after = document.querySelector('.page-after');
-    const pageLimit = 12;
-    const pageCount = Math.ceil(content.length / pageLimit);
     let currentPage;
-
+    // FUNCTION AS VARIABLE
     const appendPageNumber = function (index) {
       const pageNumber = document.createElement('a');
       pageNumber.className = 'page-number';
@@ -439,13 +368,11 @@ $(document).ready(function () {
 
       pageContainer.appendChild(pageNumber)
     };
-
     const getPageNumber = function () {
       for (i = 1; i <= pageCount; i++) {
         appendPageNumber(i);
       }
     };
-
     const setCurrentPage = function (pagenum) {
       currentPage = pagenum;
       handleButtons();
@@ -453,15 +380,74 @@ $(document).ready(function () {
 
       const prevRange = (pagenum - 1) * pageLimit;
       const currRange = pagenum * pageLimit;
-
-      content.forEach(function (el, index) {
-        el.classList.add('hide')
-        if (index >= prevRange && index < currRange) {
-          el.classList.remove('hide');
-        }
-      })
+      
+      let newContent = catalogueList.map(function (product,index) {
+      if(index >= prevRange && index < currRange){
+        if (product.isNew === true) {
+          return `<div class="col-lg-3 col-md-6 col-6">
+    <div class="product-grid3" data-product="new" data-brand="${product.brand}">
+        <div class="product-image3">
+            <a href="javaScript:void(0)">
+                <img class="pic-1"
+                    src="${product.img1}">
+                <img class="pic-2"
+                    src="${product.img2}">
+            </a>
+            <ul class="social">
+                <li><a href="javaScript:void(0)"><i class="fa fa-heart"></i></a></li>
+                <li><a href="javaScript:void(0)"><i class="fa fa-shopping-cart"></i></a></li>
+            </ul>
+            <span class="product-new-label">New</span>
+        </div>
+        <div class="product-content">
+            <h3 class="title"><a href="javaScript:void(0)">${product.name}</a></h3>
+            <div class="price">
+                Rp ${getCurrency(product.price)}
+            </div>
+            <ul class="rating">
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star disable"></li>
+                <li class="fa fa-star disable"></li>
+            </ul>
+        </div>
+    </div>
+  </div>`
+        } else {
+          return `<div class="col-lg-3 col-md-6 col-6">
+    <div class="product-grid3" data-product="old" data-brand="${product.brand}">
+        <div class="product-image3">
+            <a href="javaScript:void(0)">
+                <img class="pic-1"
+                    src="${product.img1}">
+                <img class="pic-2"
+                    src="${product.img2}">
+            </a>
+            <ul class="social">
+                <li><a href="javaScript:void(0)"><i class="fa fa-heart"></i></a></li>
+                <li><a href="javaScript:void(0)"><i class="fa fa-shopping-cart"></i></a></li>
+            </ul>
+        </div>
+        <div class="product-content">
+            <h3 class="title"><a href="javaScript:void(0)">${product.name}</a></h3>
+            <div class="price">
+                Rp ${getCurrency(product.price)}
+            </div>
+            <ul class="rating">
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star disable"></li>
+                <li class="fa fa-star disable"></li>
+            </ul>
+        </div>
+    </div>
+  </div>`
+        }}
+      });
+      parentCatalogue.innerHTML = newContent.join(''); 
     }
-
     const handleActivePageNumber = function () {
       document.querySelectorAll('.page-number').forEach(function (button) {
         button.classList.remove('active');
@@ -472,15 +458,12 @@ $(document).ready(function () {
         }
       })
     }
-
     const disableButton = function (button) {
       button.setAttribute('disabled', 'true');
     }
-
     const enableButton = function (button) {
       button.removeAttribute('disabled');
     }
-
     const handleButtons = function () {
       if (currentPage === 1) {
         disableButton(before);
@@ -551,12 +534,10 @@ $(document).ready(function () {
       return getCurrency(total - sub)
     }
 
-    
-
     btnCoupon.addEventListener('click', function () {
       let totalValue = document.querySelector('.totalValue');
       const message = document.querySelector('.message');
-      for(let i = 0; i < couponData.length; i++){
+      for (let i = 0; i < couponData.length; i++) {
         if (couponName.value.toUpperCase() === couponData[i].name) {
           totalValue.innerHTML = `Rp ${discountCount(couponData[i].value)}`
           message.textContent = 'Code Coupon has been Applied';
@@ -564,7 +545,7 @@ $(document).ready(function () {
         } else {
           console.log('GOBLOK')
           message.textContent = 'Code invalid';
-        }     
+        }
       }
     })
   }
