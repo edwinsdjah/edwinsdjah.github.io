@@ -16,6 +16,7 @@ $(document).ready(function () {
     const nav = document.querySelector('.nav-icons');
     const overlay = document.querySelector('.overlay');
     const product = document.querySelectorAll('.sideProduct');
+    const katalog = document.querySelector('#katalog')
     const productDetail = document.querySelectorAll('.product-grid3');
     const parentElement = document.querySelectorAll('.buyItems');
     const checkout = document.querySelector('.checkout');
@@ -76,16 +77,16 @@ $(document).ready(function () {
     });
 
     // UPDATE TO PRODUCT CART //  
-    productDetail.forEach(function (el, index) {
-      el.addEventListener('click', function (event) {
+    // productDetail.forEach(function (el, index) {
+      katalog.addEventListener('click', function (event) {
         if (event.target.classList.contains('fa-shopping-cart') || event.target.classList.contains('addCart')) {
-          const productID = index + 1;
+          // const productID = index + 1;
+          const el = event.target.closest('.product-grid3');
           const productName = el.querySelector('.title').textContent;
           const productPrice = el.querySelector('.price').textContent.split('Rp')[1];
           const productImg = el.querySelector('.pic-1').src;
           const priceNum = getPrice(productPrice);
           let product = {
-            id: productID,
             name: productName,
             image: productImg,
             priceString: productPrice,
@@ -98,13 +99,12 @@ $(document).ready(function () {
         }
         // UPDATE WISHLIST TO STORAGE
         else if (event.target.classList.contains('fa-heart') || event.target.classList.contains('addWish')) {
-          const productID = index + 1;
+          const el = event.target.closest('.product-grid3');
           const productName = el.querySelector('.title').textContent;
           const productPrice = el.querySelector('.price').textContent.split('Rp')[1];
           const priceNum = getPrice(productPrice);
           const productImg = el.querySelector('.pic-1').src;
           let product = {
-            id: productID,
             name: productName,
             image: productImg,
             priceString: productPrice,
@@ -116,7 +116,6 @@ $(document).ready(function () {
           updateWishinHTML();
         }
       });
-    });
 
     function updateProduct(product) {
       for (let i = 0; i < productInCart.length; i++) {
