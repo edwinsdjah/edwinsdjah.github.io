@@ -239,7 +239,9 @@ li.buyItem {
   border: 1px solid rgba(0, 0, 0, .1);
   border-radius: 50%;
   margin: 0 2px;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transition: all .3s ease 0s;
 }
 
@@ -1017,7 +1019,8 @@ h3.h3 {
 
 .product-grid3 .social li a:hover {
   background: #e67e22;
-  color: #fff
+  color: #fff;
+  text-decoration: none;
 }
 
 .product-grid3 .product-discount-label,

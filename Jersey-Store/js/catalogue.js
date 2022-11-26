@@ -144,20 +144,64 @@ const womenCatalogueList = [{
   brand: 'nike',
   img1: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/i1-eea51404-c257-4376-bc9f-6428fd37557b/jordan-paris-saint-germain-2019-20-stadium-fourth-football-shirt-Gn1T2v.jpg',
   img2: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/i1-2442be21-a00f-4d36-acfa-7abadd1f5fce/jordan-paris-saint-germain-2019-20-stadium-fourth-football-shirt-Gn1T2v.jpg',
-},{
+}, {
   name: 'Portland Thorns FC 2020 Women Jersey Home',
   price: 550000,
   isNew: false,
   brand: 'nike',
   img1: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/91dc0545-2329-4b64-954c-2bc51be6358e/portland-thorns-fc-2020-stadium-home-football-shirt-K4BvL5.jpg',
   img2: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/56f9ac20-2f24-4e98-adb8-1146d7bd9d7e/portland-thorns-fc-2020-stadium-home-football-shirt-K4BvL5.jpg',
-},{
+}, {
   name: 'Reversible Basketball Jersey Women',
   price: 550000,
   isNew: false,
   brand: 'nike',
   img1: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/150dc630-bcaa-4992-a1b5-b2c1031331ec/fly-reversible-basketball-jersey-k3rXwW.jpg',
   img2: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/1db728fb-4ea4-4d5d-b3e2-0db00a98f606/fly-reversible-basketball-jersey-k3rXwW.jpg',
+}]
+
+const shoesCatalogueList = [{
+  name: 'Nike Air Max 90',
+  price: 2500000,
+  isNew: false,
+  brand: 'nike',
+  img1: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/59134415-2a8b-4bae-8966-ac925373e99a/air-max-90-shoe-5SF5FN.jpg',
+  img2: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/db640b72-ec84-428f-a252-cbc8219b8738/air-max-90-shoe-5SF5FN.jpg',
+}, {
+  name: `Jordan 'Why Not?' Zer0.3 SE`,
+  price: 4000000,
+  isNew: false,
+  brand: 'nike',
+  img1: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/933b8a6e-39d6-4e7e-8bda-04f9ab1e7123/jordan-why-not-zer03-se-basketball-shoe-ZSX170.jpg',
+  img2: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/89836b3c-95f1-44be-9c5e-d84ec32435ca/jordan-why-not-zer03-se-basketball-shoe-ZSX170.jpg',
+}, {
+  name: `Jordan Air Cadence`,
+  price: 3000000,
+  isNew: false,
+  brand: 'nike',
+  img1: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/3b4e89f2-5bc0-4d5b-bfce-568368252c79/jordan-air-cadence-shoe-VplNXJ.jpg',
+  img2: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/7f31899f-6223-4a78-a52b-2107fbe7b573/jordan-air-cadence-shoe-VplNXJ.jpg',
+}, {
+  name: `NikeCourt Air Zoom GP Turbo`,
+  price: 2800000,
+  isNew: false,
+  brand: 'nike',
+  img1: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/25e07551-7dc5-45e0-967a-ac1297df7397/air-jordan-1-low-se-shoe-mQtldb.jpg',
+  img2: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/4f9de58e-a157-498d-aa46-28cf55590074/air-jordan-1-low-se-shoe-mQtldb.jpg',
+}, {
+  name: `Nike Zoom Fly 3`,
+  price: 2800000,
+  isNew: false,
+  brand: 'nike',
+  img1: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/c8fc9ed5-8b84-437f-a2b8-daab62e9126a/zoom-fly-3-running-shoe-ZzPPcv.jpg',
+  img2: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/d4d45dce-20b3-4389-8111-12395dd97984/zoom-fly-3-running-shoe-ZzPPcv.jpg',
+}, {
+  name: `Nike Air Zoom Pegasus 37`,
+  price: 2800000,
+  isNew: false,
+  brand: 'nike',
+  img1: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/ea66f58b-15d9-4756-8079-5fb7e8a9b03d/air-zoom-pegasus-37-running-shoe-W3gMz9.jpg',
+  img2: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/85e06902-739b-4873-8fa1-f6c8b741b359/air-zoom-pegasus-37-running-shoe-W3gMz9.jpg',
 }]
 
 const couponList = [{

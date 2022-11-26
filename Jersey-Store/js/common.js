@@ -337,8 +337,8 @@ $(document).ready(function () {
       case 'jersey-man':
         catalogueList = menCatalogueList;
         break;
-      case 'special-catalogue':
-        catalogueList = specialCatalogueList;
+      case 'shoes':
+        catalogueList = shoesCatalogueList;
         break;
       case 'jersey-woman':
         catalogueList = womenCatalogueList;
