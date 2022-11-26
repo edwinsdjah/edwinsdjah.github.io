@@ -128,15 +128,45 @@ const menCatalogueList = [{
     img1: 'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/765824/01/mod01/fnd/SEA/fmt/png/A.C.-Milan-Home-22/23-Replica-Football-Jersey-Men',
     img2: 'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/765824/01/mod03/fnd/SEA/fmt/png/A.C.-Milan-Home-22/23-Replica-Football-Jersey-Men',
   }
-]
+];
+
+const womenCatalogueList = [{
+  name: 'Portland Thorns FC 2020 Women Jersey Away',
+  price: 650000,
+  isNew: false,
+  brand: 'nike',
+  img1: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b00e21da-ddeb-4bba-8dfb-30e40fe6bc41/portland-thorns-fc-2020-stadium-away-football-shirt-j0DMWg.jpg',
+  img2: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/eae933bf-c31f-47fe-a39a-d03c2c7bb24d/portland-thorns-fc-2020-stadium-away-football-shirt-j0DMWg.jpg',
+}, {
+  name: 'Paris Saint Germain 2020 Women Jersey Third',
+  price: 800000,
+  isNew: false,
+  brand: 'nike',
+  img1: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/i1-eea51404-c257-4376-bc9f-6428fd37557b/jordan-paris-saint-germain-2019-20-stadium-fourth-football-shirt-Gn1T2v.jpg',
+  img2: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/i1-2442be21-a00f-4d36-acfa-7abadd1f5fce/jordan-paris-saint-germain-2019-20-stadium-fourth-football-shirt-Gn1T2v.jpg',
+},{
+  name: 'Portland Thorns FC 2020 Women Jersey Home',
+  price: 550000,
+  isNew: false,
+  brand: 'nike',
+  img1: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/91dc0545-2329-4b64-954c-2bc51be6358e/portland-thorns-fc-2020-stadium-home-football-shirt-K4BvL5.jpg',
+  img2: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/56f9ac20-2f24-4e98-adb8-1146d7bd9d7e/portland-thorns-fc-2020-stadium-home-football-shirt-K4BvL5.jpg',
+},{
+  name: 'Reversible Basketball Jersey Women',
+  price: 550000,
+  isNew: false,
+  brand: 'nike',
+  img1: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/150dc630-bcaa-4992-a1b5-b2c1031331ec/fly-reversible-basketball-jersey-k3rXwW.jpg',
+  img2: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/1db728fb-4ea4-4d5d-b3e2-0db00a98f606/fly-reversible-basketball-jersey-k3rXwW.jpg',
+}]
 
 const couponList = [{
   name: 'FSTBUY',
   value: 0.2
-},{
+}, {
   name: '40PCNT',
   value: 0.4
-},{
+}, {
   name: '30PCNT',
   value: 0.3
 }]
