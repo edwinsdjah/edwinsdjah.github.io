@@ -393,8 +393,8 @@ $(document).ready(function () {
                     src="${product.img2}">
             </a>
             <ul class="social">
-                <li><a class="addToCart" href="javaScript:void(0)"><i class="fa fa-heart"></i></a></li>
-                <li><a class="addToWish" href="javaScript:void(0)"><i class="fa fa-shopping-cart"></i></a></li>
+                <li><a class="addToWish" href="javaScript:void(0)"><i class="fa fa-heart"></i></a></li>
+                <li><a class="addToCart" href="javaScript:void(0)"><i class="fa fa-shopping-cart"></i></a></li>
             </ul>
             <span class="product-new-label">New</span>
         </div>
@@ -424,8 +424,8 @@ $(document).ready(function () {
                     src="${product.img2}">
             </a>
             <ul class="social">
-                <li><a class="addToCart" href="javaScript:void(0)"><i class="fa fa-heart"></i></a></li>
-                <li><a class="addToWish" href="javaScript:void(0)"><i class="fa fa-shopping-cart"></i></a></li>
+                <li><a class="addToWish" href="javaScript:void(0)"><i class="fa fa-heart"></i></a></li>
+                <li><a class="addToCart" href="javaScript:void(0)"><i class="fa fa-shopping-cart"></i></a></li>
             </ul>
         </div>
         <div class="product-content">
