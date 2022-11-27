@@ -202,6 +202,27 @@ const shoesCatalogueList = [{
   brand: 'nike',
   img1: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/ea66f58b-15d9-4756-8079-5fb7e8a9b03d/air-zoom-pegasus-37-running-shoe-W3gMz9.jpg',
   img2: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/85e06902-739b-4873-8fa1-f6c8b741b359/air-zoom-pegasus-37-running-shoe-W3gMz9.jpg',
+}, {
+  name: `Nike Air Jordan 1 Mid SE`,
+  price: 1750000,
+  isNew: true,
+  brand: 'nike',
+  img1: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b7f9b8aa-8ab3-437f-b4f2-8e707a0afaa5/air-jordan-1-mid-se-shoes-fcz83T.png',
+  img2: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/7a43fc31-cc5d-4109-b2c9-311b071affd2/air-jordan-1-mid-se-shoes-fcz83T.png',
+}, {
+  name: `Nike Air Jordan 1 Retro High OG`,
+  price: 2178000,
+  isNew: true,
+  brand: 'nike',
+  img1: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/36d75096-a70c-4f59-8419-5ae2885c02d0/air-jordan-1-retro-high-og-shoes-a7Zzxm.png',
+  img2: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/45cabdd9-670d-4cf3-b1b3-ff0d904a784c/air-jordan-1-retro-high-og-shoes-a7Zzxm.png',
+}, {
+  name: `Adidas 4DFWD 2`,
+  price: 3500000,
+  isNew: true,
+  brand: 'adidas',
+  img1: 'https://www.adidas.co.id/media/catalog/product/h/q/hq1039_smc_ecom.jpg',
+  img2: 'https://www.adidas.co.id/media/catalog/product/h/q/hq1039_flt_ecom.jpg',
 }]
 
 const couponList = [{
