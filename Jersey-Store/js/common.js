@@ -297,28 +297,29 @@ $(document).ready(function () {
         newOldCheck();
 
         function newOldCheck() {
+          let cont = el.closest('col-6')
           if (isNew.checked) {
             if (dataProduct !== 'new') {
-              el.classList.add('hide');
+              cont.classList.add('hide');
             }
           } else if (!isNew.checked) {
             if (dataProduct !== 'new') {
-              el.classList.remove('hide');
+              cont.classList.remove('hide');
             }
           }
 
           if (isVintage.checked) {
             if (dataProduct !== 'old') {
-              el.classList.add('hide');
+              cont.classList.add('hide');
             }
           } else if (!isVintage.checked) {
             if (dataProduct !== 'old') {
-              el.classList.remove('hide');
+              cont.classList.remove('hide');
             }
           }
 
           if (isNew.checked && isVintage.checked) {
-            el.classList.remove('hide');
+            cont.classList.remove('hide');
           }
         }
       })
