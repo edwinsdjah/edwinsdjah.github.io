@@ -297,7 +297,8 @@ $(document).ready(function () {
         newOldCheck();
 
         function newOldCheck() {
-          let cont = el.closest('col-6')
+          let cont = el.closest('.col-6');
+          console.log(cont);
           if (isNew.checked) {
             if (dataProduct !== 'new') {
               cont.classList.add('hide');
