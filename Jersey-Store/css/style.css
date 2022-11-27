@@ -248,6 +248,7 @@ li.buyItem {
 .buyItem .social li a:hover {
   background: #e67e22;
   color: #fff;
+  text-decoration: none;
 }
 
 .brand-black {
