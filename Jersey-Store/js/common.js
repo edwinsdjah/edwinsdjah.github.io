@@ -79,7 +79,7 @@ $(document).ready(function () {
     // UPDATE TO PRODUCT CART //  
     // productDetail.forEach(function (el, index) {
       katalog.addEventListener('click', function (event) {
-        if (event.target.classList.contains('fa-shopping-cart') || event.target.classList.contains('addCart')) {
+        if (event.target.classList.contains('fa-shopping-cart') || event.target.classList.contains('addToCart')) {
           // const productID = index + 1;
           const el = event.target.closest('.product-grid3');
           const productName = el.querySelector('.title').textContent;
@@ -98,7 +98,7 @@ $(document).ready(function () {
           updateCartinHTML();
         }
         // UPDATE WISHLIST TO STORAGE
-        else if (event.target.classList.contains('fa-heart') || event.target.classList.contains('addWish')) {
+        else if (event.target.classList.contains('fa-heart') || event.target.classList.contains('addToWish')) {
           const el = event.target.closest('.product-grid3');
           const productName = el.querySelector('.title').textContent;
           const productPrice = el.querySelector('.price').textContent.split('Rp')[1];
