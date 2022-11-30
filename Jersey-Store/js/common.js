@@ -220,6 +220,27 @@ $(document).ready(function () {
         })
       } else if (event.target.classList.contains('btn-danger') || event.target.innerHTML === 'CLEAR') {
         wishlistData.length = 0;
+      } else if (event.target.classList.contains('addCart') || event.target.classList.contains('fa-shopping-cart')) {
+        const el = event.target.closest('.buyItem');
+        const productName = el.querySelector('.product-name').textContent;
+        const productPrice = el.querySelector('.product-price').textContent.split('Rp')[1];
+        const productImg = el.querySelector('img').src;
+        const priceNum = getPrice(productPrice);
+        let product = {
+          name: productName,
+          image: productImg,
+          priceString: productPrice,
+          count: 1,
+          price: +priceNum,
+          basePrice: priceNum,
+        }
+        updateProduct(product);
+        updateCartinHTML();
+        wishlistData.forEach(function (el, index) {
+          if (productName === el.name) {
+            wishlistData.splice(index, 1)
+          }
+        })
       }
       updateWishinHTML();
     })
@@ -547,7 +568,7 @@ $(document).ready(function () {
           totalValue.innerHTML = `Rp ${discountCount(couponData[i].value)}`
           message.textContent = 'Code Coupon has been Applied';
           message.style.color = 'green'
-          btnCoupon.setAttribute('disabled','true')
+          btnCoupon.setAttribute('disabled', 'true')
           return
         } else {
           console.log('GOBLOK')

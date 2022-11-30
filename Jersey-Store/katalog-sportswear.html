@@ -99,6 +99,99 @@
   </section>
 
   <header id="header" class="sticky-top">
+    <nav id="logo" class="navbar navbar-expand-lg navbar-light sticky-top">
+      <div class="container-fluid">
+          <a class="navbar-brand brand-black" href="#" style="font-family: 'Norican', cursive; font-size: 30px;">Jersey
+              Store</a>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                      <a class="nav-link sans-serif" href="index.html">HOME</i></a>
+                  <li class="nav-item  ">
+                      <a class="nav-link sans-serif dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false"> KATALOG<span class="sr-only">(current)</span></a>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item current" href="katalog.html">MEN'S JERSEY</a>
+                          <a class="dropdown-item" href="katalog-women.html">WOMEN'S JERSEY</a>
+                          <a class="dropdown-item" href="shoes.html">SHOES</a>
+                          <a class="dropdown-item" href="katalog-sportswear.html">SPORTSWEAR</a>
+                      </div>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link sans-serif" href="katalog.html">CUSTOMIZE</i></a>
+                  </li>
+              </ul>
+          </div>
+          <div class="row">
+              <ul class="nav-icons row">
+                  <li id="cart" class="col-lg-4 col-6">
+                      <a class="click" href="javaScript:void(0)"><i class="fa fa-shopping-cart">
+                              <p class="notif"><span class="counter">4</span></p>
+                          </i></a>
+                  </li>
+                  <li id="wishlist" class="col-lg-4 col-6">
+                      <a class="click" href="javaScript:void(0)"><i class="fa fa-heart">
+                              <p class="notif hide"><span class="counter">2</span></p>
+                          </i></a>
+                  </li>
+                  <li id="login" class="col-lg-4 sp-none">
+                      <a href="modal.html" data-toggle="modal" data-target="#loginModal"><i class="fa fa-user"></i></a>
+                  </li>
+              </ul>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+          </div>
+          <div class="overlay hide"></div>
+          <div id="cartWindow" class="sideProduct hide">
+              <div class="top">
+                  <button class="closeButton">
+                      <i class="fas fa-times-circle closeIcon"></i>
+                  </button>
+                  <h3>Shopping Cart</h3>
+              </div>
+              <ul class="buyItems">
+                  <!-- <h4 class="empty">Your shopping cart is empty</h4> -->
+              </ul>
+              <div class="total-price row sticky-bottom">
+                  <h3 class="title col-4">TOTAL</h3>
+                  <p class="col-8">Rp <span class="price-value">1111</span></p>
+              </div>
+              <a class="btn btn-warning checkout" href="checkout.html" role="button">
+                  <h3>CHECKOUT</h3>
+              </a>
+          </div>
+          <div id="wishWindow" class="sideProduct hide">
+              <div class="top">
+                  <button class="closeButton">
+                      <i class="fas fa-times-circle closeIcon"></i>
+                  </button>
+                  <h3>Wish List</h3>
+              </div>
+              <ul class="buyItems">
+                  <h4 class="empty">Your Wish List is empty</h4>
+                  <!-- <li class="buyItem">
+                  <img src="Images/producs-images/Mobiles/galaxynote10.png">
+                  <div>
+                    <h5>Products Name</h5>
+                    <h6>$199</h6>
+                    <div>
+                      <button>-</button>
+                      <span class="countOfProduct">1</span>
+                      <button>+</button>
+                    </div>
+                  </div>
+                </li> -->
+              </ul>
+              <div class="sticky-bottom">
+                  <button type="button" class="btn btn-danger">
+                      <h3>CLEAR</h3>
+                  </button>
+              </div>
+          </div>
+      </div>
+  </nav>
   </header>
 
   <section id="main">
