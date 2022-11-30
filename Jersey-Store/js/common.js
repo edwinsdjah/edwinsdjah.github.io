@@ -78,44 +78,44 @@ $(document).ready(function () {
 
     // UPDATE TO PRODUCT CART //  
     // productDetail.forEach(function (el, index) {
-      katalog.addEventListener('click', function (event) {
-        if (event.target.classList.contains('fa-shopping-cart') || event.target.classList.contains('addToCart')) {
-          // const productID = index + 1;
-          const el = event.target.closest('.product-grid3');
-          const productName = el.querySelector('.title').textContent;
-          const productPrice = el.querySelector('.price').textContent.split('Rp')[1];
-          const productImg = el.querySelector('.pic-1').src;
-          const priceNum = getPrice(productPrice);
-          let product = {
-            name: productName,
-            image: productImg,
-            priceString: productPrice,
-            count: 1,
-            price: +priceNum,
-            basePrice: priceNum,
-          }
-          updateProduct(product);
-          updateCartinHTML();
+    katalog.addEventListener('click', function (event) {
+      if (event.target.classList.contains('fa-shopping-cart') || event.target.classList.contains('addToCart')) {
+        // const productID = index + 1;
+        const el = event.target.closest('.product-grid3');
+        const productName = el.querySelector('.title').textContent;
+        const productPrice = el.querySelector('.price').textContent.split('Rp')[1];
+        const productImg = el.querySelector('.pic-1').src;
+        const priceNum = getPrice(productPrice);
+        let product = {
+          name: productName,
+          image: productImg,
+          priceString: productPrice,
+          count: 1,
+          price: +priceNum,
+          basePrice: priceNum,
         }
-        // UPDATE WISHLIST TO STORAGE
-        else if (event.target.classList.contains('fa-heart') || event.target.classList.contains('addToWish')) {
-          const el = event.target.closest('.product-grid3');
-          const productName = el.querySelector('.title').textContent;
-          const productPrice = el.querySelector('.price').textContent.split('Rp')[1];
-          const priceNum = getPrice(productPrice);
-          const productImg = el.querySelector('.pic-1').src;
-          let product = {
-            name: productName,
-            image: productImg,
-            priceString: productPrice,
-            price: +priceNum,
-            basePrice: +priceNum,
-          }
-          getPrice(productPrice);
-          updateWish(product);
-          updateWishinHTML();
+        updateProduct(product);
+        updateCartinHTML();
+      }
+      // UPDATE WISHLIST TO STORAGE
+      else if (event.target.classList.contains('fa-heart') || event.target.classList.contains('addToWish')) {
+        const el = event.target.closest('.product-grid3');
+        const productName = el.querySelector('.title').textContent;
+        const productPrice = el.querySelector('.price').textContent.split('Rp')[1];
+        const priceNum = getPrice(productPrice);
+        const productImg = el.querySelector('.pic-1').src;
+        let product = {
+          name: productName,
+          image: productImg,
+          priceString: productPrice,
+          price: +priceNum,
+          basePrice: +priceNum,
         }
-      });
+        getPrice(productPrice);
+        updateWish(product);
+        updateWishinHTML();
+      }
+    });
 
     function updateProduct(product) {
       for (let i = 0; i < productInCart.length; i++) {
@@ -345,11 +345,14 @@ $(document).ready(function () {
       case 'jersey-woman':
         catalogueList = womenCatalogueList;
         break;
+      case 'sportswear':
+        catalogueList = sportswearList;
+        break;
     }
 
     const pageLimit = 12;
     const pageCount = Math.ceil(catalogueList.length / pageLimit);
-      
+
     // PAGINATION
     const content = document.querySelectorAll('.product-grid3');
     const pageContainer = document.querySelector('.pagination');
@@ -381,11 +384,11 @@ $(document).ready(function () {
 
       const prevRange = (pagenum - 1) * pageLimit;
       const currRange = pagenum * pageLimit;
-      
-      let newContent = catalogueList.map(function (product,index) {
-      if(index >= prevRange && index < currRange){
-        if (product.isNew === true) {
-          return `<div class="col-lg-3 col-md-6 col-6">
+
+      let newContent = catalogueList.map(function (product, index) {
+        if (index >= prevRange && index < currRange) {
+          if (product.isNew === true) {
+            return `<div class="col-lg-3 col-md-6 col-6">
     <div class="product-grid3" data-product="new" data-brand="${product.brand}">
         <div class="product-image3">
             <a href="javaScript:void(0)">
@@ -415,8 +418,8 @@ $(document).ready(function () {
         </div>
     </div>
   </div>`
-        } else {
-          return `<div class="col-lg-3 col-md-6 col-6">
+          } else {
+            return `<div class="col-lg-3 col-md-6 col-6">
     <div class="product-grid3" data-product="old" data-brand="${product.brand}">
         <div class="product-image3">
             <a href="javaScript:void(0)">
@@ -445,9 +448,10 @@ $(document).ready(function () {
         </div>
     </div>
   </div>`
-        }}
+          }
+        }
       });
-      parentCatalogue.innerHTML = newContent.join(''); 
+      parentCatalogue.innerHTML = newContent.join('');
     }
     const handleActivePageNumber = function () {
       document.querySelectorAll('.page-number').forEach(function (button) {
