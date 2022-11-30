@@ -547,6 +547,7 @@ $(document).ready(function () {
           totalValue.innerHTML = `Rp ${discountCount(couponData[i].value)}`
           message.textContent = 'Code Coupon has been Applied';
           message.style.color = 'green'
+          btnCoupon.setAttribute('disabled','true')
           return
         } else {
           console.log('GOBLOK')
