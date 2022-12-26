@@ -105,8 +105,6 @@ function selectTab() {
     let opt = document.querySelectorAll('.tab-option');
 
 
-
-
     sel.addEventListener('change', function () {
         tabindex = this.selectedIndex + 1;
         let select = this.selectedIndex;
@@ -138,14 +136,21 @@ function selectTab() {
 
 }
 
+function tabcontent (tabindex){
+    
+}
+
 
 function showTab(n) {
     let tab = document.querySelectorAll('.tab-pane');
     let opt = document.querySelectorAll('.tab-option');
     let next = document.querySelector('.next');
     let prev = document.querySelector('.prev');
+    
 
     console.log(tabindex);
+    
+    
 
     if (n >= tab.length) {
         next.style.opacity = 0;
@@ -172,6 +177,7 @@ function showTab(n) {
         }
     }
 
+    
 
     tab[tabindex - 1].classList.add('active');
     tab[tabindex - 1].classList.add('blink');
@@ -179,6 +185,9 @@ function showTab(n) {
     setTimeout(function () {
         tab[tabindex - 1].classList.remove('blink')
     }, 500);
+    
+    
+    
 }
 
 
@@ -198,6 +207,10 @@ function showSlides(n) {
     let i;
     let slides = document.getElementsByClassName("mySlides");
     let dots = document.getElementsByClassName("dot");
+    let topDot = document.querySelectorAll("#section1 .dot");
+    let toph1 = document.querySelector('.top-caption h1');
+    let topcaption = document.querySelector('.top-caption .caption p');
+    let btn = document.querySelector('.btn-green')
 
     if (n > slides.length) {
         slideIndex = 1
@@ -212,11 +225,23 @@ function showSlides(n) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
     slides[slideIndex - 1].style.display = "flex";
-    slides[slideIndex - 1].classList.add('blink');
+    slides[slideIndex - 1].classList.add('slide-in-tr');
+    // btn.classList.add('slide-top')
     setTimeout(function () {
-        slides[slideIndex - 1].classList.remove('blink')
+        slides[slideIndex - 1].classList.remove('slide-in-tr')
+        // btn.classList.remove('slide-top')
     }, 500);
     dots[slideIndex - 1].className += " active";
+
+    for (i = 0; i < topDot.length; i++) {
+        if (topDot[0].classList.contains('active')) {
+            toph1.textContent = 'Reimagining social media through the power of the blockchain.';
+            topcaption.textContent = 'We are creating social media 3.0 with influencers, celebrities and creators being able to launch their own digital currency by simply creating a profile with media content posted as Non fungible Tokens that can be owned and traded on the Tknrs network'
+        } else if (topDot[1].classList.contains('active')) {
+            toph1.textContent = 'Stand Out from The Crowd.';
+            topcaption.textContent = 'Agency is a full-service agency, busy designing and building beautiful digital products, brands, and experiences.'
+        }
+    }
 }
 
 
@@ -225,6 +250,9 @@ function openTab(event, id) {
     let i, tabcontent, tablink;
     tabcontent = document.querySelectorAll('.tab-pane');
     tablink = document.querySelectorAll('.nav-link');
+    let lowercontent = document.querySelector('.lower-tab-content .content h2');
+    let lowercaption = document.querySelector('.lower-tab-content .caption');
+    let lowerdate = document.querySelector('.lower-tab-content .content .date')
     let contId = document.getElementById(id);
     for (let i = 0; i < tabcontent.length; i++) {
         if (tabcontent[i].classList.contains('active')) {
@@ -246,6 +274,35 @@ function openTab(event, id) {
         contId.classList.remove('blink')
     }, 500);
     event.target.classList.add('active');
+    
+    switch (id) {
+        case '2018':
+            lowercontent.textContent = 'Lorem ipsum dolor sit amet, consectetur cing elit.';
+            lowercaption.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porta sodales leo ibulum. Nullam vel posuere nisi. Donec in lobortis arcu.'
+            lowerdate.textContent = '28';
+            break;
+        case '2019':
+            lowercontent.textContent = 'Lorem ipsum dolor sit amet, consectadipiscing elit.';
+            lowercaption.textContent = 'Lorem iolor sit amet, consectetur adipiscing elit. Nam porta sodales leo vitae vestibulum. Nullam vel posuere nisi. Donec in lobortis arcu.'
+            lowerdate.textContent = '27';
+            break;
+        case '2020':
+            lowercontent.textContent = 'Lorem ipsum dolor sit amet, ur adipiscing elit.';
+            lowercaption.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porta soditae vestibulum. Nullam vel posuere nisi. Donec in lobortis arcu.'
+            lowerdate.textContent = '38';
+            break;
+        case '2021':
+            lowercontent.textContent = 'Lorem i dolor sit amet, consectetur adipiscing elit.';
+            lowercaption.textContent = 'Lorem ipsum dolt, consectetur adipiscing elit. Nam porta sodales leo vitae vestibulum. Nullam vel posuere nisi. Donec in lobortis arcu.'
+            lowerdate.textContent = '58';
+            break;
+        case '2022':
+            lowercontent.textContent = 'Lorem ipsum dolor sit amet, consectetur elit.';
+            lowercaption.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porta soe vestibulum. Nullam vel posuere nisi. Donec in lobortis arcu.'
+            lowerdate.textContent = '19';
+            break;
+    }
+    
     // event.currentTarget.className += 'active';
 }
 

@@ -10,696 +10,613 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="/style/style.css">
-    <link href="http://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/century-gothic" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/ceviche-one" rel="stylesheet">
     <title>TECHNICAL TEST FRONT END EDWIN</title>
 </head>
 
 <body>
-    <div id="loader" class="fade-out">
-        <div class="loadingio-spinner-ball-g09ak85wt5">
-            <div class="bounce">
-                <div></div>
-            </div>
-        </div>
-    </div>
-
-    <div id="content" class="fade-in">
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg block">
-            <div class="container-fluid">
-                <a class="navbar-brand nav-black" href="#">
-                    <img  src="/img/logo.png" alt=""
-                        class="d-inline-block align-text-top logo-dark">
-                </a>
-                <a class="navbar-brand nav-light hide" href="#">
-                    <img height="40"  src="/img/logo-light.png" alt=""
-                        class="d-inline-block align-text-top logo-dark">
-                </a>
-                <button class="hamburger hamburger--squeeze navbar-toggler" type="button"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="hamburger-box">
-                        <span class="hamburger-inner"></span>
-                    </span>
-                </button>
-                <div class="nav-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav cst-center mb-2 mb-lg-0">
-                        <li class="nav-item text-center">
-                            <a class="nav-link active" aria-current="page" href="#about">About</a>
-                        </li>
-                        <li class="nav-item text-center">
-                            <a class="nav-link" href="#work">Work</a>
-                        </li>
-                        <li class="nav-item text-center">
-                            <a class="nav-link" href="#service">Services </a>
-                        </li>
-                        <li class="nav-item text-center">
-                            <a class="nav-link" href="#jobs">Jobs</a>
-                        </li>
-                    </ul>
-                    <form class="d-flex sp-none">
-                        <button class="btn btn-outline-success btn-contact sp-none" type="submit">Contact Us</button>
-                    </form>
-                    <div class="row sp-show">
-                        <ul class="icon-content d-flex">
-                            <li class="icon-item"><a href=""><img  src="/img/icon_1.png"
-                                        alt=""></a></li>
-                            <li class="icon-item"><a href=""><img  src="/img/icon_2.png"
-                                        alt=""></a></li>
-                            <li class="icon-item"><a href=""><img  src="/img/icon_3.png"
-                                        alt=""></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </nav>
-        <!-- Navbar -->
-        <section id="section1">
-            <div id="about" class="cst-container">
-
-                <div class="content">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <h1>Stand Out from The Crowd.</h1>
-                                <div class="caption">
-                                    <p>Agency is a full-service agency, busy designing and building beautiful digital
-                                        products, brands, and experiences.</p>
-                                </div>
-                                <button type="button" class="btn btn-primary btn-purple">Recent Work</button>
-                                <div class="row mt-lg downArr sp-none">
-                                    <a href="#section5" class="link-prim"><img class="link-icon"
-                                             src="/img/arrow1.png" alt="">Scroll Down</a>
-                                </div>
-                            </div>
-                            <div class="col-lg-8 text-center bg-tri">
-                                <img class="content-img"  src="/img/img_desktop.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <section id="section2">
-            <div class="cst-container bg-tri-2">
-                <div class="content">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-3 sp-none">
-                                <img width="24" height="24" src="/img/logo-symbol.png" alt="">
-                            </div>
-                            <div class="col-lg-9">
-                                <div class="text-title">
-                                    <p class="title-caption"><span class="number">01</span>Who We Are</p>
-                                    <p class="title">We Make Design that Lead and Inspire</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tabing">
-                            <div class="sp-show tab-button">
-                                <a class="prev" onclick="plusTab(-1)"><img src="/img/arrow-left.png" alt=""></a>
-                                <a class="next" onclick="plusTab(1)"><img src="/img/arrow-right.png" alt=""></a>
-                            </div>
-                            <div class="sp-show">
-                            <select class="tab-select" id="select-option">
-                                <option class="tab-option" value="2018">2018</option>
-                                <option class="tab-option" value="2019">2019</option>  
-                                <option class="tab-option" value="2020">2020</option>
-                                <option class="tab-option" value="2021">2021</option>
-                                <option class="tab-option" value="2022">2022</option>
-                              </select>
-                            </div>
-                            <div class="row">
-                                <!-- CAROUSEL -->
-                                
-                                <!-- CAROUSEL -->
-                                
-                                <!-- Tabbing -->
-                                <div class="col-lg-3 col-md-4 sp-none">
-                                    <div class="d-flex align-items-start">
-                                        <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist"
-                                            aria-orientation="vertical">
-                                            <button class="nav-link active" onclick="openTab(event, '2018')" id="v-pills-2018-tab">2018</button>
-                                            <button class="nav-link" onclick="openTab(event, '2019')" id="v-pills-2019-tab">2019</button>
-                                            <button class="nav-link" onclick="openTab(event, '2020')" id="v-pills-2020-tab">2020</button>
-                                            <button class="nav-link" onclick="openTab(event, '2021')" id="v-pills-2021-tab">2021</button>
-                                            <button class="nav-link" onclick="openTab(event, '2022')" id="v-pills-2022-tab">2022</button>
-                                            <div class="pink-border"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-9 col-md-8 col-12">
-                                    <div class="tab-content" id="v-pills-tabContent">
-                                        <div class="tab-pane blink active" id="2018" role="tabpanel"
-                                            aria-labelledby="v-pills-2018-tab">
-                                            <img  src="/img/tab-content1.png" class="img-def"
-                                                alt="">
-                                            <div class="row lower-tab-content">
-                                                <div class="col-lg-7">
-                                                    <div class="content">
-                                                        <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                                        </h2>
-                                                        <p class="caption">Lorem ipsum dolor, sit amet consectetur
-                                                            adipisicing elit. Quisquam adipisci hic corporis veritatis
-                                                            minus, quaerat in ratione ipsam cupiditate quod corrupti
-                                                            veniam vero nemo atque alias architecto error, debitis
-                                                            facilis.</p>
-                                                        <button type="button" class="btn btn-primary btn-purple">Contact
-                                                            us</button>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-5">
-                                                    <div class="content text-center">
-                                                        <p class="date">24</p>
-                                                        <p class="date-caption">Lorem Ipsum</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="tab-pane blink" id="2019" role="tabpanel"
-                                            aria-labelledby="v-pills-2019-tab">
-                                            <img src="/img/tab-content1.png" class="img-def"
-                                                alt="">
-                                            <div class="row lower-tab-content">
-                                                <div class="col-lg-7">
-                                                    <div class="content">
-                                                        <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                                        </h2>
-                                                        <p class="caption">Lorem ipsum dolor, sit amet consectetur
-                                                            adipisicing elit. Quisquam adipisci hic corporis veritatis
-                                                            minus, quaerat in ratione ipsam cupiditate quod corrupti
-                                                            veniam vero nemo atque alias architecto error, debitis
-                                                            facilis.</p>
-                                                        <button type="button" class="btn btn-primary btn-purple">Contact
-                                                            us</button>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-5">
-                                                    <div class="content text-center">
-                                                        <p class="date">25</p>
-                                                        <p class="date-caption">Lorem Ipsum</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="tab-pane blink" id="2020" role="tabpanel"
-                                            aria-labelledby="v-pills-2020-tab">
-                                            <img  src="/img/tab-content1.png" class="img-def"
-                                                alt="">
-                                            <div class="row lower-tab-content">
-                                                <div class="col-lg-7">
-                                                    <div class="content">
-                                                        <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                                        </h2>
-                                                        <p class="caption">Lorem ipsum dolor, sit amet consectetur
-                                                            adipisicing elit. Quisquam adipisci hic corporis veritatis
-                                                            minus, quaerat in ratione ipsam cupiditate quod corrupti
-                                                            veniam vero nemo atque alias architecto error, debitis
-                                                            facilis.</p>
-                                                        <button type="button" class="btn btn-primary btn-purple">Contact
-                                                            us</button>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-5">
-                                                    <div class="content text-center">
-                                                        <p class="date">26</p>
-                                                        <p class="date-caption">Lorem Ipsum</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="tab-pane blink" id="2021" role="tabpanel"
-                                            aria-labelledby="v-pills-2021-tab">
-                                            <img  src="/img/tab-content1.png" class="img-def"
-                                                alt="">
-                                            <div class="row lower-tab-content">
-                                                <div class="col-lg-7">
-                                                    <div class="content">
-                                                        <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                                        </h2>
-                                                        <p class="caption">Lorem ipsum dolor, sit amet consectetur
-                                                            adipisicing elit. Quisquam adipisci hic corporis veritatis
-                                                            minus, quaerat in ratione ipsam cupiditate quod corrupti
-                                                            veniam vero nemo atque alias architecto error, debitis
-                                                            facilis.</p>
-                                                        <button type="button" class="btn btn-primary btn-purple">Contact
-                                                            us</button>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-5">
-                                                    <div class="content text-center">
-                                                        <p class="date">27</p>
-                                                        <p class="date-caption">Lorem Ipsum</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="tab-pane blink" id="2022" role="tabpanel"
-                                            aria-labelledby="v-pills-2022-tab">
-                                            <img  src="/img/tab-content1.png" class="img-def"
-                                                alt="">
-                                            <div class="row lower-tab-content">
-                                                <div class="col-lg-7">
-                                                    <div class="content">
-                                                        <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                                        </h2>
-                                                        <p class="caption">Lorem ipsum dolor, sit amet consectetur
-                                                            adipisicing elit. Quisquam adipisci hic corporis veritatis
-                                                            minus, quaerat in ratione ipsam cupiditate quod corrupti
-                                                            veniam vero nemo atque alias architecto error, debitis
-                                                            facilis.</p>
-                                                        <button type="button" class="btn btn-primary btn-purple">Contact
-                                                            us</button>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-5">
-                                                    <div class="content text-center">
-                                                        <p class="date">28</p>
-                                                        <p class="date-caption">Lorem Ipsum</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Tabbing -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <div id="section3">
-            <div id="work" class="cst-container bg-tri-3">
-                <div class="content">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-3 sp-none">
-                                <img width="24" height="24"  src="/img/logo-symbol.png" alt="">
-                            </div>
-                            <div class="col-lg-9 col-md-12">
-                                <div class="text-title">
-                                    <p class="title-caption"><span class="number">02</span>You may also like</p>
-                                    <p class="title">Recent Works</p>
-                                    <p class="title-lower">Agency is a full service agency, busy designing and building,
-                                        beautiful digital products, brands, and experiences.</p>
-                                </div>
-                                <div class="content">
-                                    <div class="row card-content">
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="card-1">
-                                                <span class="featured sp-none"><img
-                                                         src="/img/feature.png" alt=""></span>
-                                                <img class="img-def"  src="/img/card-img-1.png"
-                                                    alt="">
-                                                <span class="card-arrow sp-none"><a href=""><img
-                                                             src="/img/circle-arrow.png"
-                                                            alt=""></a></span>
-                                            </div>
-                                            <div class="card-caption">
-                                                <p class="caption">Bento 3D Illustration</p>
-                                                <p class="lower-caption">Agency is a full-service agency, busy designing
-                                                    and building beautiful digital products, brands, and experiences.
-                                                </p>
-                                                <a href="" class="sp-show"><img
-                                                    src="/img/circle-arrow.png"
-                                                   alt=""></a>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="card-2">
-                                                <img class="img-def"  src="/img/card-img-2.png"
-                                                    alt="">
-                                                <span class="card-arrow sp-none"><img
-                                                         src="/img/circle-arrow.png"
-                                                        alt=""></span>
-                                            </div>
-                                            <div class="card-caption">
-                                                <p class="caption">Bento Vol. 3</p>
-                                                <p class="lower-caption">Agency is a full-service agency, busy designing
-                                                    and building beautiful digital products, brands, and experiences.
-                                                </p>
-                                                <img class="sp-show" src="/img/circle-arrow.png" alt="">
-                                            </div>
-                                        </div>
-                                        <form class="sp-show">
-                                            <button class="btn btn-outline-success btn-contact sp-show" type="submit">Contact Us</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <section class="main-content">
+        <div id="loader" class="fade-out">
+            <div class="loadingio-spinner-ball-g09ak85wt5">
+                <div class="bounce">
+                    <div></div>
                 </div>
             </div>
         </div>
 
-        <section id="section4">
-            <div id="service" class="cst-container bg-tri-2">
-                <div class="content">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-3 sp-none">
-                                <img width="24" height="24"  src="/img/logo-symbol.png" alt="">
-                            </div>
-                            <div class="col-lg-9 col-md-9">
-                                <div class="text-title">
-                                    <p class="title-caption"><span class="number">03</span>Folio Agency</p>
-                                    <p class="title">By the Numbers</p>
-                                </div>
-                                <div class="row card-info-content">
-                                    <div class="col-lg-4 col-md-4">
-                                        <div class="card-info">
-                                            <h2>20</h2>
-                                            <p class="caption fire">Pre-build Scenes</p>
-                                        </div>
-                                        <div class="content">
-                                            <p class="caption-card">Bento is the first fully editable, 3D visual design
-                                                system with global auto-updatable style guides built right in figma</p>
-                                        </div>
-                                        <div class="content mt-20 sp-none">
-                                            <a class="download-link" href=""><span><img
-                                                         src="/img/download_ico.png"
-                                                        alt="">Download</span></a>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4">
-                                        <div class="card-info">
-                                            <h2>40<sup>+</sup></h2>
-                                            <p class="caption fire">Pre-build Scenes</p>
-                                        </div>
-                                        <div class="content">
-                                            <p class="caption-card">Bento is the first fully editable, 3D visual design
-                                                system with global auto-updatable style guides built right in figma</p>
-                                        </div>
-                                        <div class="content mt-20">
-                                            <a class="download-link" href=""><span><img
-                                                         src="/img/download_ico.png"
-                                                        alt="">Download</span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div id="lower-slideshow" class="col-lg-12 center">
-                                <!-- CAROUSEL -->
-                                <div class="slideshow-container">
-                                    <div class="button">
-                                        <a class="prev" onclick="plusSlides(-1)"><img src="/img/arrow-left.png" alt=""></a>
-                                        <a class="next" onclick="plusSlides(1)"><img src="/img/arrow-right.png" alt=""></a>
-                                    </div>
-                                    <div class="mySlides">
-                                        <img src="/img/carousel-item-1.png" alt="carousel">
-                                    </div>
-
-                                    <div class="mySlides">
-                                        <img src="/img/carousel-item-1.png" alt="carousel">
-                                    </div>
-
-                                    <div class="mySlides">
-                                        <img src="/img/carousel-item-1.png" alt="carousel">
-                                    </div>
-                                   
-                                </div>
-                                <div style="text-align:center; margin-top:30px;">
-                                    <span class="dot" onclick="currentSlide(1)"></span>
-                                    <span class="dot" onclick="currentSlide(2)"></span>
-                                    <span class="dot" onclick="currentSlide(3)"></span>
-                                </div>
-                                <!-- CAROUSEL -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <section id="section5">
-            <div id="jobs" class="cst-container bg-tri-3">
-                <div class="content">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-1 sp-none">
-                                <img width="24" height="24"  src="/img/logo-symbol.png" alt="">
-                            </div>
-                            <div class="col-lg-5">
-                                <div class="text-title">
-                                    <p class="title-caption"><span class="number">04</span>We are hiring</p>
-                                    <p class="title">Jobs</p>
-                                    <p class="title-lower">Agency is a full service agency, busy designing and building,
-                                        beautiful digital products, brands, and experiences.</p>
-                                </div>
-                                <div class="row mt-lg rightArr sp-none">
-                                    <a href="#" class="link-prim"><img class="link-icon"
-                                             src="/img/arrow2.png" alt="">Available Jobs</a>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="content">
-                                    <div class="row job-card-content">
-
-                                        <div class="job-card card-white justify-content-center">
-                                            <div class="content">
-                                                <div class="row">
-                                                    <div class="col-lg-7">
-                                                        <h3 class="card-title ico-2">Graphic Designer</h3>
-                                                        <p class="caption">2 years experience</p>
-                                                        <div class="job-arrow">
-                                                            <img class="img-b"
-                                                                 src="/img/card-arrow-b.png"
-                                                                alt="">
-                                                            <img class="img-w"
-                                                                 src="/img/card-arrow-w.png"
-                                                                alt="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-5 sp-none">
-                                                        <img  src="/img/job-card-img-1.png"
-                                                            class="img-def card-img" alt="">
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-                                        <div class="job-card card-white justify-content-center">
-                                            <div class="content">
-                                                <div class="row">
-                                                    <div class="col-lg-7">
-                                                        <h3 class="card-title">Visual Designer</h3>
-                                                        <p class="caption">2 years experience</p>
-                                                        <div class="job-arrow">
-                                                            <img class="img-b"
-                                                                 src="/img/card-arrow-b.png"
-                                                                alt="">
-                                                            <img class="img-w"
-                                                                 src="/img/card-arrow-w.png"
-                                                                alt="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-5 sp-none">
-                                                        <img  src="/img/job-card-img-1.png"
-                                                            class="img-def card-img" alt="">
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-                                        <div class="job-card card-white justify-content-center">
-                                            <div class="content">
-                                                <div class="row">
-                                                    <div class="col-lg-7">
-                                                        <h3 class="card-title">Art Director</h3>
-                                                        <p class="caption">2 years experience</p>
-                                                        <div class="job-arrow">
-                                                            <img class="img-b"
-                                                                 src="/img/card-arrow-b.png"
-                                                                alt="">
-                                                            <img class="img-w"
-                                                                 src="/img/card-arrow-w.png"
-                                                                alt="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-5 sp-none">
-                                                        <img  src="/img/job-card-img-1.png"
-                                                            class="img-def card-img" alt="">
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-                                        <div class="job-card card-white justify-content-center">
-                                            <div class="content">
-                                                <div class="row">
-                                                    <div class="col-lg-7">
-                                                        <h3 class="card-title ico-6">Web Designer</h3>
-                                                        <p class="caption">2 years experience</p>
-                                                        <div class="job-arrow">
-                                                            <img class="img-b"
-                                                                 src="/img/card-arrow-b.png"
-                                                                alt="">
-                                                            <img class="img-w"
-                                                                 src="/img/card-arrow-w.png"
-                                                                alt="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-5 sp-none">
-                                                        <img  src="/img/job-card-img-1.png"
-                                                            class="img-def card-img" alt="">
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="section6">
-            <div class="cst-container">
-                <div class="content">
-                    <div class="container">
-                        <div class="bg-lower">
-                            <div class="row">
-                                <div class="col-lg-12 text-center">
-                                    <img width="24" height="24" class="sp-none"
-                                         src="/img/logo-symbol.png" alt="">
-                                    <img class="bubble sp-show cst-center" width="103" height="103"
-                                         src="/img/bubble.png" alt="">
-                                    <div class="greet cst-center">
-                                        <p>Say Hello</p>
-                                        <h3 class="caption cst-center">
-                                            A design team building a curated marketplace for UI designers.
-                                        </h3>
-                                    </div>
-
-
-                                </div>
-                            </div>
-                            <div class="row cst-center">
-                                <div class="col-lg-6">
-                                    <div class="content">
-                                        <h2>Let's talk about your next project</h2>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 sp-none">
-                                    <div class="content">
-                                        <img class="bubble" width="103" height="103"
-                                             src="/img/bubble.png" alt="">
-                                        <h3 class="rightArr">Invest in your design today <span><img
-                                                     src="/img/circle-arrow-w.png" alt=""></span>
-                                        </h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div id="section7">
-            <div class="cst-container">
-                <div class="content">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12 text-center">
-                                <img  src="/img/logo.png" alt="">
-                                <div class="caption">
-                                    <p>Agency is a full-service agency, busy designing and building beautiful digital
-                                        products, brands, and experiences.</p>
-                                </div>
-                                <nav class="navbar navbar-expand-lg lower-nav sp-none">
-                                    <div class="container-fluid">
-                                        <div class="cst-center">
-                                            <ul class="navbar-nav mb-2 mb-lg-0">
-                                                <li class="nav-item text-center">
-                                                    <a class="nav-link active" aria-current="page" href="#">About</a>
-                                                </li>
-                                                <li class="nav-item text-center">
-                                                    <a class="nav-link" href="#">Work</a>
-                                                </li>
-                                                <li class="nav-item text-center">
-                                                    <a class="nav-link" href="#">Services</a>
-                                                </li>
-                                                <li class="nav-item text-center">
-                                                    <a class="nav-link" href="#" tabindex="-1">Jobs</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </nav>
-                                <select name="footer" id="foot-select" class="sp-show">
-                                    <option value="About">About</option>
-                                    <option value="Work">Work</option>
-                                    <option value="Services">Services</option>
-                                    <option value="Jobs">Jobs</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="cst-container">
-                <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top">
-                    <div class="foot-sp container sp-show">
-                        <div class="row">
-                            <div class="col-md-12 d-flex text-center">
-                                <ul class="ico-list-sp nav col-md-12 list-unstyled d-flex justify-content-center">
-                                    <li class="ms-3"><a class="text-muted" href="#"><img
-                                                 src="/img/logo-facebook.png" alt=""></a></li>
-                                    <li class="ms-3"><a class="text-muted" href="#"><img
-                                                 src="/img/logo-instagram.png" alt=""></a></li>
-                                    <li class="ms-3"><a class="text-muted" href="#"><img
-                                                 src="/img/logo-youtube.png" alt=""></a></li>
+        <div id="content" class="fade-in">
+            <div class="container-fluid" id="top">
+                <!-- Navbar -->
+                <nav class="navbar navbar-expand-lg block">
+                    <div class="container-fluid">
+                        <a class="navbar-brand nav-black" href="#">
+                            <img src="/img/logo.png" alt="" class="d-inline-block align-text-top logo-dark">
+                        </a>
+                        <a class="navbar-brand nav-light hide" href="#">
+                            <img height="40" src="/img/logo-light.png" alt=""
+                                class="d-inline-block align-text-top logo-dark">
+                        </a>
+                        <button class="hamburger hamburger--squeeze navbar-toggler" type="button"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                        <div class="nav-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav cst-center mb-2 mb-lg-0">
+                                <li class="nav-item text-center">
+                                    <a class="nav-link active" aria-current="page" href="#about">About</a>
+                                </li>
+                                <li class="nav-item text-center">
+                                    <a class="nav-link" href="#work">Work</a>
+                                </li>
+                                <li class="nav-item text-center">
+                                    <a class="nav-link" href="#service">Services </a>
+                                </li>
+                                <li class="nav-item text-center">
+                                    <a class="nav-link" href="#jobs">Jobs</a>
+                                </li>
+                            </ul>
+                            <form class="d-flex sp-none">
+                                <button class="btn btn-outline-success btn-contact sp-none" type="submit">Contact
+                                    Us</button>
+                            </form>
+                            <div class="row sp-show">
+                                <ul class="icon-content d-flex">
+                                    <li class="icon-item"><a href=""><img src="/img/icon_1.png" alt=""></a></li>
+                                    <li class="icon-item"><a href=""><img src="/img/icon_2.png" alt=""></a></li>
+                                    <li class="icon-item"><a href=""><img src="/img/icon_3.png" alt=""></a></li>
                                 </ul>
                             </div>
                         </div>
-                        <p class="text-center">© 2020, UI8 LLC.</p>
                     </div>
+                </nav>
+                <!-- Navbar -->
+                <section id="section1">
+                    <div id="about" class="cst-container cont-background">
 
-                    <div class="col-md-4 d-flex align-items-center sp-none">
-                        <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-                            <svg class="bi" width="30" height="24">
-                                <use xlink:href="#bootstrap"></use>
-                            </svg>
-                        </a>
-                        <span class="text-muted">© 2020, UI8 Inc</span>
+                        <div class="content">
+                            <div class="container">
+                                <div class="row vh60">
+                                    <div class="col-lg-5">
+                                        <div class="top-caption">
+                                            <h1>Reimagining social media through the power of the blockchain.</h1>
+                                            <div class="caption">
+                                                <p>We are creating social media 3.0 with influencers, celebrities and
+                                                    creators being able to launch their own digital currency by simply
+                                                    creating a profile with media content posted as Non fungible Tokens
+                                                    that can be owned and traded on the Tknrs network</p>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn btn-primary btn-green">Learn More</button>
+                                        <div style="text-align:center; margin-top:30px;">
+                                            <span class="dot" onclick="currentSlide(1)"></span>
+                                            <span class="dot" onclick="currentSlide(2)"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 text-center">
+                                        <div id="top-slideshow" class="center">
+                                            <!-- CAROUSEL -->
+                                            <div class="slideshow-container">
+                                                <div class="mySlides">
+                                                    <img src="/img/img-top-1.png" class="tes" alt="carousel">
+                                                </div>
+
+                                                <div class="mySlides">
+                                                    <img src="/img/img-top-2.png" alt="carousel">
+                                                </div>
+                                            </div>
+
+                                            <!-- CAROUSEL -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
-                    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex sp-none">
-                        <li class="nav-item text-center">
-                            <a class="nav-link active" aria-current="page" href="#">Follow us</a>
-                        </li>
-                        <li class="ms-3"><a class="text-muted" href="#"><img
-                                     src="/img/logo-facebook.png" alt=""></a></li>
-                        <li class="ms-3"><a class="text-muted" href="#"><img
-                                     src="/img/logo-instagram.png" alt=""></a></li>
-                        <li class="ms-3"><a class="text-muted" href="#"><img
-                                     src="/img/logo-youtube.png" alt=""></a></li>
-                    </ul>
-                </footer>
+                </section>
             </div>
+
+
+            <section id="section2">
+                <div class="cst-container">
+                    <div class="content">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-11">
+                                    <div class="text-title">
+                                        <p class="title">We Make Design that Lead and Inspire</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tabing">
+                                <div class="sp-show tab-button">
+                                    <a class="prev" onclick="plusTab(-1)"><img src="/img/arrow-left.png" alt=""></a>
+                                    <a class="next" onclick="plusTab(1)"><img src="/img/arrow-right.png" alt=""></a>
+                                </div>
+                                <div class="sp-show">
+                                    <select class="tab-select" id="select-option">
+                                        <option class="tab-option" value="2018">2018</option>
+                                        <option class="tab-option" value="2019">2019</option>
+                                        <option class="tab-option" value="2020">2020</option>
+                                        <option class="tab-option" value="2021">2021</option>
+                                        <option class="tab-option" value="2022">2022</option>
+                                    </select>
+                                </div>
+                                <div class="row">
+                                    <!-- CAROUSEL -->
+
+                                    <!-- CAROUSEL -->
+
+                                    <!-- Tabbing -->
+                                    <div class="col-lg-3 col-md-4 sp-none">
+                                        <div class="d-flex align-items-start">
+                                            <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist"
+                                                aria-orientation="vertical">
+                                                <button class="nav-link active" onclick="openTab(event, '2018')"
+                                                    id="v-pills-2018-tab">2018</button>
+                                                <button class="nav-link" onclick="openTab(event, '2019')"
+                                                    id="v-pills-2019-tab">2019</button>
+                                                <button class="nav-link" onclick="openTab(event, '2020')"
+                                                    id="v-pills-2020-tab">2020</button>
+                                                <button class="nav-link" onclick="openTab(event, '2021')"
+                                                    id="v-pills-2021-tab">2021</button>
+                                                <button class="nav-link" onclick="openTab(event, '2022')"
+                                                    id="v-pills-2022-tab">2022</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-8 col-12">
+                                        <div class="tab-content" id="v-pills-tabContent">
+                                            <div class="tab-pane blink active" id="2018" role="tabpanel"
+                                                aria-labelledby="v-pills-2018-tab">
+                                                <img src="/img/tab-img-1.png" class="img-def" alt="">
+
+                                            </div>
+                                            <div class="tab-pane blink" id="2019" role="tabpanel"
+                                                aria-labelledby="v-pills-2019-tab">
+                                                <img src="/img/tab-img-2.png" class="img-def" alt="">
+                                            </div>
+                                            <div class="tab-pane blink" id="2020" role="tabpanel"
+                                                aria-labelledby="v-pills-2020-tab">
+                                                <img src="/img/tab-img-3.png" class="img-def" alt="">
+                                            </div>
+                                            <div class="tab-pane blink" id="2021" role="tabpanel"
+                                                aria-labelledby="v-pills-2021-tab">
+                                                <img src="/img/tab-img-4.png" class="img-def" alt="">
+                                            </div>
+                                            <div class="tab-pane blink" id="2022" role="tabpanel"
+                                                aria-labelledby="v-pills-2022-tab">
+                                                <img src="/img/tab-img-5.png" class="img-def" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Tabbing -->
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-11">
+                                        <div class="row lower-tab-content">
+                                            <div class="col-lg-6">
+                                                <div class="content">
+                                                    <h2>Lorem ipsum dolor sit amet, consectetur cing elit.</h2>
+                                                    <p class="caption">Lorem ipsum dolor sit amet, consectetur
+                                                        adipiscing elit. Nam porta sodales leo ibulum. Nullam vel
+                                                        posuere nisi. Donec in lobortis arcu.</p>
+                                                    <button type="button" class="btn btn-primary btn-yellow">Contact
+                                                        us</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="content text-center">
+                                                    <p class="date">28</p>
+                                                    <p class="date-caption">Lorem Ipsum</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row card-section">
+                                <div class="col-lg-6">
+                                    <div class="cst-card">
+                                        <img src="/img/card-icon1.png" alt="">
+                                        <h2 class="card-title">
+                                            For <span class="green-ttl">Creators</span>
+                                        </h2>
+                                        <p class="caption">
+                                            Creators can gain independence through a decentralised digital currency
+                                            system that is dependent on growing and engaging with the community and also
+                                            their star power. They own 10-15% of the total value of the tokens minted.
+                                        </p>
+                                        <a class="card-link" href="#">Learn More</a>
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="cst-card">
+                                        <img src="/img/card-icon2.png" alt="">
+                                        <h2 class="card-title">
+                                            For <span class="blue-ttl">Holders</span>
+                                        </h2>
+                                        <p class="caption">
+                                            Holding social tokens allows the individual to gain access to benefits
+                                            including unreleased content, private communities, direct access to
+                                            celebrity, early- access to tickets and more as well as the ability to trade
+                                            with other communities in order to gain access to more creator content with
+                                            early token buyers being the biggest winners as the value of the token
+                                            increases with more buyers.
+                                        </p>
+                                        <a class="card-link" href="#">Learn More</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <section id="section3">
+                <div class="cont">
+                    <div class="cst-row">
+                        <div class="width-half width-container1">
+                        </div>
+                        <div class="width-half width-container2">
+
+                            <h2 class="title">What makes us different?</h2>
+                            <p class="sub-title">We would only launch tokens with the express permission of the
+                                creators.</p>
+                            <p class="caption">There are several thousand celebrities and creators on twitter, tiktok,
+                                Instagram and YouTube with followings in the millions who we would be actively engaging
+                                before we go viral. We would get them on our platform and they would see the opportunity
+                                to create a fan driven digital economy where their digital content can be traded as NFTs
+                                and their most loyal fans can have the monetary value of their creator's currency
+                                increase significantly as they promote their digital currency across their channels
+                                while our native token holders benefit from the Weentar popularity.
+                                <br>We would only launch tokens with the express permission of the creators.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div id="work" class="cst-container bg-tri-3">
+                    <div class="content">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 sp-none">
+                                    <img width="24" height="24" src="/img/logo-symbol.png" alt="">
+                                </div>
+                                <div class="col-lg-9 col-md-12">
+                                    <div class="text-title">
+                                        <p class="title-caption"><span class="number">02</span>You may also like</p>
+                                        <p class="title">Recent Works</p>
+                                        <p class="title-lower">Agency is a full service agency, busy designing and
+                                            building,
+                                            beautiful digital products, brands, and experiences.</p>
+                                    </div>
+                                    <div class="content">
+                                        <div class="row card-content">
+                                            <div class="col-lg-6 col-md-6">
+                                                <div class="card-1">
+                                                    <span class="featured sp-none"><img src="/img/feature.png"
+                                                            alt=""></span>
+                                                    <img class="img-def" src="/img/card-img-1.png" alt="">
+                                                    <span class="card-arrow sp-none"><a href=""><img
+                                                                src="/img/circle-arrow.png" alt=""></a></span>
+                                                </div>
+                                                <div class="card-caption">
+                                                    <p class="caption">Bento 3D Illustration</p>
+                                                    <p class="lower-caption">Agency is a full-service agency, busy
+                                                        designing
+                                                        and building beautiful digital products, brands, and
+                                                        experiences.
+                                                    </p>
+                                                    <a href="" class="sp-show"><img src="/img/circle-arrow.png"
+                                                            alt=""></a>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+                                                <div class="card-2">
+                                                    <img class="img-def" src="/img/card-img-2.png" alt="">
+                                                    <span class="card-arrow sp-none"><img src="/img/circle-arrow.png"
+                                                            alt=""></span>
+                                                </div>
+                                                <div class="card-caption">
+                                                    <p class="caption">Bento Vol. 3</p>
+                                                    <p class="lower-caption">Agency is a full-service agency, busy
+                                                        designing
+                                                        and building beautiful digital products, brands, and
+                                                        experiences.
+                                                    </p>
+                                                    <img class="sp-show" src="/img/circle-arrow.png" alt="">
+                                                </div>
+                                            </div>
+                                            <form class="sp-show">
+                                                <button class="btn btn-outline-success btn-contact sp-show"
+                                                    type="submit">Contact Us</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </section>
+
+            <section id="section4">
+                <div class="container-fluid">
+                    <div class="container">
+                        <div class="row list-container">
+                            <div class="col-lg-3">
+                                <div class="upper-img">
+                                    <img src="/img/icon-low-1.png" alt="">
+                                </div>
+                                <ol class="caption green-list">
+                                    <li>Team set-up</li>
+                                    <li>Launch of informational website</li>
+                                </ol>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="upper-img">
+                                    <img src="/img/icon-low-2.png" alt="">
+                                </div>
+                                <ol class="caption blue-list">
+                                    <li>Presale and exchange listings</li>
+                                    <li>Blockchain development and launch</li>
+                                    <li>Launch of our MVP</li>
+                                    <li>Influencer agency partnerships</li>
+                                    <li>Marketing and promotion</li>
+                                </ol>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="upper-img">
+                                    <img src="/img/icon-low-3.png" alt="">
+                                </div>
+                                <ol class="caption yellow-list">
+                                    <li>Celebrity, Creator and Influencer partnerships</li>
+                                    <li>Expansion of creator communities on our platform</li>
+                                    <li>More Marketing and promotion</li>
+                                </ol>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="upper-img">
+                                    <img src="/img/icon-low-4.png" alt="">
+                                </div>
+                                <ol class="caption red-list">
+                                    <li>Mainstream partnerships</li>
+                                    <li>500 active creator communities</li>
+                                    <li>2Million active community members</li>
+                                    <li>More Marketing and promotion</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="row lower-content">
+                            <div class="col-lg-6">
+                                <h2><span><img src="/img/img-logo.png" class="base-vert" alt=""></span>Tokner is coming</h2>
+                                <p class="caption"><b>
+                                    Cryptocurrency adoption is at less than 1% of the global world population with some
+                                    countries and entities actively fighting against its mass adoption and the smartest
+                                    developers and nerds holding the fort.</b><br>
+                                    Bitcoin was the first, and it has since grown to thousands of tokens launched all
+                                    aiming to fix one problem or the other with some quite simply FOMOing the moment.
+                                    Our goal is to bring mass adoption to the cryptocurrency space by dumbing it down.
+                                    How far down? So down that even a celebrity can explain it in simple words to their
+                                    followers and have them download an app, buy into the social currency of their
+                                    favourite person and watch their
+                                    investment as is with other crypto currency project. <br>
+                                    We are trying to do to this space what investment apps did for the "nonexistent
+                                    retail investors". We are gamefying digital currency, bringing in popular faces
+                                    instead of hard to understand projects to make it the norm and inadvertently being
+                                    the "gateway drug" for a lot of people to finally give this space a real look.
+                                </p>
+                                <button class="btn btn-outline-success btn-green-transparent" type="submit">Read More</button>
+                                <p class="caption">
+                                    <b>new digital economy is coming. People would be just as powerful as countries and
+                                    creators would be paid beyond the peanuts that conventional social media platforms
+                                    can offer.</b><br>
+                                    There would be new markets and advertisers with little to offer would not find home
+                                    there. Like Kanye said,
+                                </p>
+                                <p class="caption quotes">
+                                    "Personalities would become the new currency, and services would be built on top of
+                                    them".
+                                </p>
+                                <p class="caption">
+                                    Well, Kanye didn't exactly say that, but it sounds like something we hope he would
+                                    say.<br>
+                                    Currency is digital, it has been that way for a while now, but this time there would
+                                    be no dead presidents on the money, there would people like you on the money, and
+                                    you would own it because it would make the most sense in the world.
+                                </p>
+                            </div>
+                            <div class="col-lg-6">
+                                <img class="img-block" src="/img/lower-content-img.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section5">
+                <div class="container-fluid">
+                    <div class="container">
+                        <div class="row lower-card">
+                            <h2>Presale Details</h2>
+                            <div class="col-lg-4">
+                                <div class="card">
+                                    <img src="/img/card-logo-1.png" alt="">
+                                    <h3 class="card-title">Phase One</h3>
+                                    <p class="card-date">0/04/2021 - 16/04/2021</p>
+                                    <div class="card-price">
+                                        <h4>1 BNB = 100000 WNTR</h4>
+                                        <p>Soft cap: <b>5000 BNB</b></p>
+                                        <p>Hard cap: <b>10000 BNB</b></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card">
+                                    <img src="/img/card-logo-2.png" alt="">
+                                    <h3 class="card-title">Phase Two</h3>
+                                    <p class="card-date">0/04/2021 - 16/04/2021</p>
+                                    <div class="card-price">
+                                        <h4>1 BNB = 100000 WNTR</h4>
+                                        <p>Soft cap: <b>5000 BNB</b></p>
+                                        <p>Hard cap: <b>10000 BNB</b></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card">
+                                    <img src="/img/card-logo-3.png" alt="">
+                                    <h3 class="card-title">Phase Three</h3>
+                                    <p class="card-date">0/04/2021 - 16/04/2021</p>
+                                    <div class="card-price">
+                                        <h4>1 BNB = 100000 WNTR</h4>
+                                        <p>Soft cap: <b>5000 BNB</b></p>
+                                        <p>Hard cap: <b>10000 BNB</b></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section6">
+                <div class="cst-container">
+                    <div class="content">
+                        <div class="container">
+                            <div class="bg-lower">
+                                <div class="row">
+                                    <div class="col-lg-12 text-center">
+                                        <img width="24" height="24" class="sp-none" src="/img/logo-symbol.png" alt="">
+                                        <img class="bubble sp-show cst-center" width="103" height="103"
+                                            src="/img/bubble.png" alt="">
+                                        <div class="greet cst-center">
+                                            <p>Say Hello</p>
+                                            <h3 class="caption cst-center">
+                                                A design team building a curated marketplace for UI designers.
+                                            </h3>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="row cst-center">
+                                    <div class="col-lg-6">
+                                        <div class="content">
+                                            <h2>Let's talk about your next project</h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 sp-none">
+                                        <div class="content">
+                                            <img class="bubble" width="103" height="103" src="/img/bubble.png" alt="">
+                                            <h3 class="rightArr">Invest in your design today <span><img
+                                                        src="/img/circle-arrow-w.png" alt=""></span>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div id="section7">
+                <div class="cst-container">
+                    <div class="content">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12 text-center">
+                                    <img src="/img/logo.png" alt="">
+                                    <div class="caption">
+                                        <p>Agency is a full-service agency, busy designing and building beautiful
+                                            digital
+                                            products, brands, and experiences.</p>
+                                    </div>
+                                    <nav class="navbar navbar-expand-lg lower-nav sp-none">
+                                        <div class="container-fluid">
+                                            <div class="cst-center">
+                                                <ul class="navbar-nav mb-2 mb-lg-0">
+                                                    <li class="nav-item text-center">
+                                                        <a class="nav-link active" aria-current="page"
+                                                            href="#">About</a>
+                                                    </li>
+                                                    <li class="nav-item text-center">
+                                                        <a class="nav-link" href="#">Work</a>
+                                                    </li>
+                                                    <li class="nav-item text-center">
+                                                        <a class="nav-link" href="#">Services</a>
+                                                    </li>
+                                                    <li class="nav-item text-center">
+                                                        <a class="nav-link" href="#" tabindex="-1">Jobs</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </nav>
+                                    <select name="footer" id="foot-select" class="sp-show">
+                                        <option value="About">About</option>
+                                        <option value="Work">Work</option>
+                                        <option value="Services">Services</option>
+                                        <option value="Jobs">Jobs</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cst-container">
+                    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top">
+                        <div class="foot-sp container sp-show">
+                            <div class="row">
+                                <div class="col-md-12 d-flex text-center">
+                                    <ul class="ico-list-sp nav col-md-12 list-unstyled d-flex justify-content-center">
+                                        <li class="ms-3"><a class="text-muted" href="#"><img
+                                                    src="/img/logo-facebook.png" alt=""></a></li>
+                                        <li class="ms-3"><a class="text-muted" href="#"><img
+                                                    src="/img/logo-instagram.png" alt=""></a></li>
+                                        <li class="ms-3"><a class="text-muted" href="#"><img src="/img/logo-youtube.png"
+                                                    alt=""></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p class="text-center">© 2020, UI8 LLC.</p>
+                        </div>
+
+                        <div class="col-md-4 d-flex align-items-center sp-none">
+                            <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                                <svg class="bi" width="30" height="24">
+                                    <use xlink:href="#bootstrap"></use>
+                                </svg>
+                            </a>
+                            <span class="text-muted">© 2020, UI8 Inc</span>
+                        </div>
+
+                        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex sp-none">
+                            <li class="nav-item text-center">
+                                <a class="nav-link active" aria-current="page" href="#">Follow us</a>
+                            </li>
+                            <li class="ms-3"><a class="text-muted" href="#"><img src="/img/logo-facebook.png"
+                                        alt=""></a></li>
+                            <li class="ms-3"><a class="text-muted" href="#"><img src="/img/logo-instagram.png"
+                                        alt=""></a></li>
+                            <li class="ms-3"><a class="text-muted" href="#"><img src="/img/logo-youtube.png" alt=""></a>
+                            </li>
+                        </ul>
+                    </footer>
+                </div>
+            </div>
+
+
         </div>
-
-
-    </div>
+    </section>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
