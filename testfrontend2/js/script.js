@@ -11,11 +11,11 @@ window.addEventListener('load', function () {
 
 let burger = document.querySelector('.hamburger');
 
-burger.addEventListener('click', function () {
-    let c = document.querySelector('.nav-collapse ');
-    c.classList.toggle('show');
-    c.classList.add('blink');
-})
+// burger.addEventListener('click', function () {
+//     let c = document.querySelector('.nav-collapse ');
+//     c.classList.toggle('show');
+//     c.classList.add('blink');
+// })
 
 function spOnly() {
     const sec = document.getElementById('section1');
@@ -306,6 +306,21 @@ function openTab(event, id) {
     // event.currentTarget.className += 'active';
 }
 
+
+// Read more
+let btnmore = document.querySelector('.btn-more');
+
+btnmore.addEventListener('click',function(){
+    let moretext= document.querySelector('.more-text')
+    if(btnmore.textContent === 'Read More'){
+        moretext.style.display = 'inline';
+        btnmore.textContent = 'Read Less';
+     } else if (btnmore.textContent === 'Read Less'){
+        moretext.style.display = 'none';
+        btnmore.textContent = 'Read More';
+     }
+    
+})
 
 scroll();
 // dropDown();
