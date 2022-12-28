@@ -724,6 +724,16 @@ span.number {
     content: " ";
 }
 
+.width-half.width-container2 .caption br{
+    display: block;
+margin-top: 2em;
+content: " ";
+}
+
+#section4>.container-fluid{
+    border-top-right-radius: 0;
+}
+
 
 #section2 .content>p.caption {
     font-weight: 400;
@@ -1520,8 +1530,25 @@ footer ul {
         margin: 0;
         padding: 2.5em 2.3em 1.5em !important;
     }
-
-
+    
+    .container {
+        padding: 3em 1em;
+    }
+    
+    .vh60{
+        height: auto;
+    }
+    
+    .mt-3-sp{
+        margin-top: 3em;
+    }
+    
+    
+    .cont-background{
+        background-size: contain;
+        background-position-y: 30em;
+    }
+    
     .navbar-nav {
         justify-content: center;
         height: 65vh;
@@ -1597,7 +1624,7 @@ footer ul {
     }
 
     h1 {
-        font-size: 3.5em;
+        font-size: 2.2em;
         line-height: 1.2em;
     }
 
@@ -1610,14 +1637,18 @@ footer ul {
     #section2 .title {
         font-style: normal;
         font-weight: 700;
-        font-size: 3em;
-        line-height: 55px;
+        font-size: 2.4em;
+        line-height: 1.2em;
         width: 100%;
     }
 
     .card-2 {
         margin-top: 2em;
         margin-bottom: 2em;
+    }
+    
+    .lower-tab-content .col-lg-4{
+        margin-left: 0;
     }
 
     .lower-tab-content .col-lg-7,
@@ -1627,6 +1658,68 @@ footer ul {
 
     .lower-tab-content .content {
         color: #FFFFFF !important;
+    }
+    
+    .lower-tab-content h2{
+        border: none;
+    }
+    
+    .lower-tab-content h2, .lower-tab-content .caption {
+        padding-left: 0;
+    }
+    
+    .lower-tab-content button{
+        margin-left: 0;
+    }
+    
+    .width-half{
+        width: 100%;
+    }
+    
+    .cst-row{
+        flex-direction: column;
+    }
+    
+    .width-container1{
+        height: 50vh;
+        border-top-right-radius: 0;
+        border-top-left-radius: 53%;
+    }
+    
+    .width-container2{
+        padding-top: 0;
+        padding-left: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 53%;
+    }
+    
+    .list-container{
+        margin-top: 0;
+    }
+    
+    #section4 .lower-content {
+        margin-top: 3em;
+    }
+    
+    #section4>.container-fluid{
+        border-bottom-left-radius: 4em;
+    }
+    
+    .lower-content{
+        flex-direction: column-reverse;
+    }
+    
+    .row.list-container .upper-img img{
+        margin-left: -2em;
+    }
+    
+    .cst-row .title{
+        font-size: 2.2em;
+    }
+    
+    .cst-row .sub-title{
+        font-size: 1em;
+        font-weight: bold;
     }
 
     .card-1,
@@ -1683,9 +1776,17 @@ footer ul {
     .nav-pills button.nav-link.active::after {
         left: 0;
     }
+    
+    #section4::after{
+        content: none;
+    }
 
-    #section5 {
-        margin-top: 1em;
+    #section5::before{
+        content: none;
+    }
+    
+    #section5::after{
+        content: none;
     }
 
     .job-card-content {
