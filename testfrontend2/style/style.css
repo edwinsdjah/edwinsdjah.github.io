@@ -2171,8 +2171,8 @@ footer ul {
 
     .slick-dots li button {
         cursor: pointer;
-        height: 15px;
-        width: 15px;
+        height: 1em;
+        width: 1em;
         margin: 0 2px;
         background-color: #ffffff;
         border-radius: 50%;
