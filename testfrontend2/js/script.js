@@ -222,31 +222,31 @@ function getTabContentbyId(id) {
             lowercontent.textContent = 'Lorem ipsum dolor sit amet, consectetur cing elit.';
             lowercaption.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porta sodales leo ibulum. Nullam vel posuere nisi. Donec in lobortis arcu.'
             lowerdate.textContent = '28';
-            tabBg.style.backgroundImage = 'url(/img/tab-bg-1.png)';
+            tabBg.style.backgroundImage = 'url(/testfrontend2/img/tab-bg-1.png)';
             break;
         case '2019':
             lowercontent.textContent = 'Lorem ipsum dolor sit amet, consectadipiscing elit.';
             lowercaption.textContent = 'Lorem iolor sit amet, consectetur adipiscing elit. Nam porta sodales leo vitae vestibulum. Nullam vel posuere nisi. Donec in lobortis arcu.'
             lowerdate.textContent = '27';
-            tabBg.style.backgroundImage = 'url(/img/tab-bg-2.png)';
+            tabBg.style.backgroundImage = 'url(/testfrontend2/img/tab-bg-2.png)';
             break;
         case '2020':
             lowercontent.textContent = 'Lorem ipsum dolor sit amet, ur adipiscing elit.';
             lowercaption.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porta soditae vestibulum. Nullam vel posuere nisi. Donec in lobortis arcu.'
             lowerdate.textContent = '38';
-            tabBg.style.backgroundImage = 'url(/img/tab-bg-3.png)';
+            tabBg.style.backgroundImage = 'url(/testfrontend2/img/tab-bg-3.png)';
             break;
         case '2021':
             lowercontent.textContent = 'Lorem i dolor sit amet, consectetur adipiscing elit.';
             lowercaption.textContent = 'Lorem ipsum dolt, consectetur adipiscing elit. Nam porta sodales leo vitae vestibulum. Nullam vel posuere nisi. Donec in lobortis arcu.'
             lowerdate.textContent = '58';
-            tabBg.style.backgroundImage = 'url(/img/tab-bg-4.png)';
+            tabBg.style.backgroundImage = 'url(/testfrontend2/img/tab-bg-4.png)';
             break;
         case '2022':
             lowercontent.textContent = 'Lorem ipsum dolor sit amet, consectetur elit.';
             lowercaption.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porta soe vestibulum. Nullam vel posuere nisi. Donec in lobortis arcu.'
             lowerdate.textContent = '19';
-            tabBg.style.backgroundImage = 'url(/img/tab-bg-5.png)';
+            tabBg.style.backgroundImage = 'url(/testfrontend2/img/tab-bg-5.png)';
             break;
     }
 }
