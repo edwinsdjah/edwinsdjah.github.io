@@ -52,12 +52,15 @@ function spOnly() {
 
 function changeColor(){
     let bounce = document.querySelector('.bounce div');
-    let colors = ['#FFD100','#22A75D','#2278D4','#E20613']
+    let index = 0   
+    let colors = ['#FFD100','#22A75D','#2278D4','#E20613'];
     for(let i = 0; i < colors.length; i++){
-        setInterval(function(){
-            bounce.style.background = `${colors[i]}`
-        }, 500)
-    }
+        setInterval(
+            function(){
+                bounce.style.background = `${colors[i]}`
+            }, 500
+        )
+    } 
 }
 
 
