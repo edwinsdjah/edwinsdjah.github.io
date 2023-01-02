@@ -57,10 +57,10 @@ function changeColor() {
     let colors = ['#FFD100', '#22A75D', '#2278D4', '#E20613'];
     setInterval(
         function () {
-            bounce.style.background = `${colors[index++]}`
             if(index === colors.length){
                 clearInterval();
             }
+            bounce.style.background = `${colors[index++]}`
         }, 500
     )
 }
@@ -329,9 +329,9 @@ btnmore.addEventListener('click', function () {
     let caption = document.getElementById('caption-read');
     if (btnmore.textContent === 'Read More') {
         moretext.style.display = 'inline';
-        btnmore.textContent = 'Read Less';
+        btnmore.textContent = 'Hide';
         caption.classList.remove('read-blur');
-    } else if (btnmore.textContent === 'Read Less') {
+    } else if (btnmore.textContent === 'Hide') {
         moretext.style.display = 'none';
         btnmore.textContent = 'Read More';
         caption.classList.add('read-blur');
