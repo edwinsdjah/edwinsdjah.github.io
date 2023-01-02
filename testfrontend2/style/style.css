@@ -1984,6 +1984,21 @@ footer ul {
     #section5 {
         padding-bottom: 18em;
     }
+    
+    .lower-card .col-lg-4:nth-child(2) .card .upper-content-card {
+        background-image: url(../img/card-01.png);
+        background-size: contain;
+    }
+    
+    .lower-card .col-lg-4:nth-child(3) .card .upper-content-card {
+        background-image: url(../img/card-02.png);
+        background-size: contain;
+    }
+    
+    .lower-card .col-lg-4:nth-child(4) .card .upper-content-card {
+        background-image: url(../img/card-03.png);
+        background-size: contain;
+    }
 
     .card {
         height: 25em;
