@@ -851,7 +851,7 @@ img {
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover,
 .next:hover {
-    background-color: #5468E7;
+    background-color: #D1AD0A;
     border-radius: 50%;
 }
 
