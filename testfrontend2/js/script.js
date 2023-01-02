@@ -310,13 +310,16 @@ function showSlides(n) {
 let btnmore = document.querySelector('.btn-more');
 
 btnmore.addEventListener('click', function () {
-    let moretext = document.querySelector('.more-text')
+    let moretext = document.querySelector('.more-text');
+    let caption = document.getElementById('caption-read');
     if (btnmore.textContent === 'Read More') {
         moretext.style.display = 'inline';
         btnmore.textContent = 'Read Less';
+        caption.classList.remove('read-blur');
     } else if (btnmore.textContent === 'Read Less') {
         moretext.style.display = 'none';
         btnmore.textContent = 'Read More';
+        caption.classList.add('read-blur');
     }
 
 })

@@ -496,6 +496,10 @@ ol.red-list li:before {
     width: 100%;
 }
 
+.read-blur{
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0));
+}
+
 .caption p {
     margin-top: 2.5em;
     font-style: normal;
@@ -1904,6 +1908,8 @@ footer ul {
         height: 1.5em;
         width: 1.5em;
     }
+    
+    
 
     .green-arrow:after {
         content: url(../img/green-arrow-down.png);
