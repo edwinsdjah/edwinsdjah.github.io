@@ -300,10 +300,17 @@ ul.ctrl {
 }
 
 
+.ld-card-1::before{
+    content: "01";
+}
 
+.ld-card-02::before{
+    content: "02";
+}
 
-
-
+.ld-card-03::before{
+    content: "03";
+}
 
 .ld-card .caption {
     color: #FFFFFF;
@@ -741,17 +748,6 @@ span.number {
     border-top-right-radius: 0;
 }
 
-.ld-card-1::before{
-    content: "01";
-}
-
-.ld-card-02::before{
-    content: "02";
-}
-
-.ld-card-03::before{
-    content: "03";
-}
 
 
 #section2 .content>p.caption {
