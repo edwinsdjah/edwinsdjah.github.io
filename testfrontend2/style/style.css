@@ -258,7 +258,6 @@ ul.ctrl {
 }
 
 .ld-card {
-    counter-increment: value;
     position: relative;
     display: flex;
     background-color: #171B29;
@@ -271,7 +270,6 @@ ul.ctrl {
 }
 
 .ld-card::before {
-    content: "0"counter(value);
     color: #5C5F69;
     top: 1em;
     left: 1em;
@@ -496,8 +494,8 @@ ol.red-list li:before {
     width: 100%;
 }
 
-.read-blur{
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0));
+.read-blur {
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0));
 }
 
 .caption p {
@@ -622,7 +620,7 @@ span.number {
     display: block;
 }
 
-.tab-bg{
+.tab-bg {
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -741,6 +739,18 @@ span.number {
 
 #section4>.container-fluid {
     border-top-right-radius: 0;
+}
+
+.ld-card-1::before{
+    content: "01";
+}
+
+.ld-card-02::before{
+    content: "02";
+}
+
+.ld-card-03::before{
+    content: "03";
 }
 
 
@@ -888,11 +898,11 @@ img {
     transition: background-color height 0.6s ease;
 }
 
-.dot:hover{
+.dot:hover {
     background-color: #ffffff;
 }
 
-.dot.active{
+.dot.active {
     background-color: #ffffff;
     height: 15px;
     width: 15px;
@@ -1378,7 +1388,7 @@ footer ul {
     align-items: center;
 }
 
-#section6 li a:hover{
+#section6 li a:hover {
     color: #0a4a9d;
 }
 
@@ -1581,12 +1591,12 @@ footer ul {
     .slick-prev {
         display: none;
     }
-    
-    .tab-bg{
-        background-size: auto;  
+
+    .tab-bg {
+        background-size: auto;
     }
-    
-    .img-def{
+
+    .img-def {
         width: 100%;
     }
 
@@ -1653,6 +1663,20 @@ footer ul {
 
     }
 
+    .btn-green-transparent {
+        border: none;
+        border-radius: 0;
+        width: 7em;
+        font-weight: bold;
+        text-decoration: underline dashed;
+    }
+    
+    .btn-outline-success:hover {
+        color: #fff;
+        background-color: transparent;
+        border-color: transparent;
+    }
+
     .navbar-nav .nav-item.text-center {
         text-align: left !important;
     }
@@ -1700,12 +1724,12 @@ footer ul {
         font-size: 2.2em;
         line-height: 1.2em;
     }
-    
-    #section2 .container{
+
+    #section2 .container {
         max-width: 100% !important;
     }
 
-    .lower-tab-content .col-lg-4 .content{
+    .lower-tab-content .col-lg-4 .content {
         width: 20em;
         margin: 0 auto;
         margin-top: 3em;
@@ -1908,8 +1932,8 @@ footer ul {
         height: 1.5em;
         width: 1.5em;
     }
-    
-    
+
+
 
     .green-arrow:after {
         content: url(../img/green-arrow-down.png);
@@ -1995,17 +2019,17 @@ footer ul {
     #section5 {
         padding-bottom: 18em;
     }
-    
+
     .lower-card .col-lg-4:nth-child(2) .card .upper-content-card {
         background-image: url(../img/card-01.png);
         background-size: contain;
     }
-    
+
     .lower-card .col-lg-4:nth-child(3) .card .upper-content-card {
         background-image: url(../img/card-02.png);
         background-size: contain;
     }
-    
+
     .lower-card .col-lg-4:nth-child(4) .card .upper-content-card {
         background-image: url(../img/card-03.png);
         background-size: contain;
@@ -2086,7 +2110,7 @@ footer ul {
     #section6 .z-index2 .col-lg-4:nth-child(2) {
         margin-top: 0;
     }
-    
+
     .green-arrow:after {
         content: url(../img/green-arrow-down.png);
         top: 14em;
@@ -2114,7 +2138,7 @@ footer ul {
     #section6 .z-index2 .col-lg-4:nth-child(2) {
         margin-top: 0;
     }
-    
+
     .green-arrow:after {
         content: url(../img/green-arrow-down.png);
         top: 14em;
@@ -2224,8 +2248,8 @@ footer ul {
     #section5::after {
         box-shadow: 0px -9em 0px 0 #0a4a9d;
     }
-    
-    
+
+
 
     footer .col-lg-4 {
         display: flex;
@@ -2252,11 +2276,11 @@ footer ul {
     .tabing .col-lg-9 {
         width: 100%;
     }
-    
+
     .green-arrow:after {
         right: 47%;
     }
-    
+
     .yellow-arrow:after {
         right: 47%;
     }
@@ -2270,24 +2294,24 @@ footer ul {
 /* LARGE SCREEN */
 
 @media only screen and (min-width: 1368px) {
-    h1{
+    h1 {
         font-size: 4.2em;
     }
-    
+
     .cst-row .sub-title {
         font-size: 1em;
         font-weight: bold;
     }
-    
-    .top-caption p{
+
+    .top-caption p {
         font-size: 18px;
     }
-    
-    .nav-link{
+
+    .nav-link {
         font-size: 18px;
     }
-    
-    .circle-sp{
+
+    .circle-sp {
         padding-left: 2.5em;
         padding-right: 2.5em;
     }
