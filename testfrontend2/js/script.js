@@ -6,7 +6,8 @@ var total = 0;
 var option2 = "";
 
 window.addEventListener('load', function () {
-    setTimeout(showPage, 2000)
+    changeColor();
+    setTimeout(showPage, 2000);
 });
 
 let burger = document.querySelector('.hamburger');
@@ -343,4 +344,3 @@ spOnly();
 // navBack();
 // sel();
 selectTab();
-changeColor();
