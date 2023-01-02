@@ -1901,6 +1901,8 @@ footer ul {
 
     .slick-dots li.slick-active button {
         background-color: #ffffff;
+        height: 1.5em;
+        width: 1.5em;
     }
 
     .green-arrow:after {
@@ -2209,6 +2211,8 @@ footer ul {
 
     .slick-dots li.slick-active button {
         background-color: #ffffff;
+        height: 1.5em;
+        width: 1.5em;
     }
 
     #section5::after {
