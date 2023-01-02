@@ -884,8 +884,11 @@ img {
     transition: background-color height 0.6s ease;
 }
 
-.dot.active,
-.dot:hover {
+.dot:hover{
+    background-color: #ffffff;
+}
+
+.dot.active{
     background-color: #ffffff;
     height: 15px;
     width: 15px;
