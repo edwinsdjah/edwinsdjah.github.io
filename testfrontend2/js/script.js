@@ -50,28 +50,12 @@ function spOnly() {
     return
 };
 
-function changeColor() {
-    let bounce = document.querySelector('.bounce div');
-    let index = 0
-    let colors = ['#FFD100', '#22A75D', '#2278D4', '#E20613'];
-    setInterval(
-        function () {
-            if(index === colors.length){
-                clearInterval();
-            }
-            bounce.style.background = `${colors[index++]}`
-        }, 500
-    )
-}
-
-
-
 function showPage() {
     const l = document.getElementById('loader');
     const c = document.getElementById('content');
     l.style.display = 'none'
     c.style.opacity = '1'
-}
+};
 
 // function navBack() {
 //     const nav = document.querySelector('.navbar');
@@ -120,7 +104,7 @@ function plusTab(n) {
         showTab(tabindex += n);
         console.log(tabindex)
     }
-}
+};
 
 
 function selectTab() {
@@ -154,9 +138,9 @@ function selectTab() {
         }
 
         showTab(tabindex)
-    })
+    });
 
-}
+};
 
 function showTab(n) {
     let tab = document.querySelectorAll('.tab-pane');
@@ -196,7 +180,7 @@ function showTab(n) {
         tab[tabindex - 1].classList.remove('blink')
     }, 500);
     getTabContentbyId(contId);
-}
+};
 
 function openTab(event, id) {
     let i, tabcontent, tablink;
@@ -224,7 +208,7 @@ function openTab(event, id) {
 
     getTabContentbyId(id);
     // event.currentTarget.className += 'active';
-}
+};
 
 function getTabContentbyId(id) {
     let lowercontent = document.querySelector('.lower-tab-content .content h2');
@@ -262,8 +246,8 @@ function getTabContentbyId(id) {
             lowerdate.textContent = '19';
             tabBg.style.backgroundImage = 'url(/testfrontend2/img/tab-bg-5.png)';
             break;
-    }
-}
+    };
+};
 
 
 // carousel
@@ -272,11 +256,11 @@ showSlides(slideIndex);
 
 function plusSlides(n) {
     showSlides(slideIndex += n);
-}
+};
 
 function currentSlide(n) {
     showSlides(slideIndex = n);
-}
+};
 
 function showSlides(n) {
     let i;
@@ -335,12 +319,8 @@ btnmore.addEventListener('click', function () {
         btnmore.textContent = 'Read More';
         caption.classList.add('read-blur');
     }
-
-})
+});
 
 scroll();
-// dropDown();
 spOnly();
-// navBack();
-// sel();
 selectTab();
