@@ -411,7 +411,7 @@ ul.ctrl {
 
 .img-def {
     display: flex;
-    width: 70%;
+    width: 60%;
     height: auto;
     margin: 0 auto;
 }
@@ -628,7 +628,7 @@ span.number {
 }
 
 .tab-bg {
-    background-size: 100%;
+    background-size: 87%;
     background-repeat: no-repeat;
     background-position: center;
     display: flex;
@@ -2315,6 +2315,10 @@ footer ul {
 
     .nav-link {
         font-size: 18px;
+    }
+    
+    .tab-bg {
+        background-size: 83%;
     }
 
     .circle-sp {
