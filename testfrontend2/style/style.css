@@ -616,7 +616,7 @@ span.number {
 }
 
 .nav-pills {
-    width: 80%;
+    width: 100%;
 }
 
 .tab-pane {
@@ -641,7 +641,7 @@ span.number {
     position: absolute;
     padding: 0;
     margin: 0;
-    left: 13em;
+    left: 16em;
 }
 
 .nav-pills .nav-link.active,
@@ -2341,7 +2341,7 @@ footer ul {
     }
 
     .nav-pills button.nav-link.active::after {
-        left: 15em;
+        left: 16em;
     }
 }
 
