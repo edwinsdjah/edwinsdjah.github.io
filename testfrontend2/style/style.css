@@ -2208,6 +2208,10 @@ footer ul {
     .cst-row {
         flex-direction: column;
     }
+    
+    .width-container1{
+        background-image: url(../img/width-bg1-rotate.png);
+    }
 
     .width-container1 {
         height: 30vh;
