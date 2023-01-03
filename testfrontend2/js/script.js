@@ -6,7 +6,6 @@ var total = 0;
 var option2 = "";
 
 window.addEventListener('load', function () {
-    changeColor();
     setTimeout(showPage, 2000);
 });
 
