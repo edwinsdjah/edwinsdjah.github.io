@@ -1821,6 +1821,10 @@ footer ul {
     .lower-content {
         flex-direction: column-reverse;
     }
+    
+    .ld-card {
+        padding: 2em;
+    }
 
     .row.list-container .upper-img img {
         margin-left: -2em;
@@ -2024,6 +2028,10 @@ footer ul {
 
     #section5 {
         padding-bottom: 18em;
+    }
+    
+    .width-container1{
+        background-image: url(../img/width-bg1-rotate.png);
     }
 
     .lower-card .col-lg-4:nth-child(2) .card .upper-content-card {
