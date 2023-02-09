@@ -1,15 +1,29 @@
-
-
-.head{
-    height: 10vh;
+body{
+    background-image: url(../pukultikus/image/grass.jpg);
+    background-size: cover;
 }
 
+
 h1{
+    padding-top: 0.5em;
     text-align: center;
+    padding-bottom: 0.5em;
 }
 
 img{
     width: 100%;
+}
+
+.show{
+    display: show;
+}
+
+.none{
+    display: none;
+}
+
+.menu{
+    text-align: center;
 }
 
 .center{
@@ -45,8 +59,6 @@ img{
 }
 
 .mainContent{
-    background-image: url(../pukultikus/image/grass.jpg);
-    background-size: cover;
     width: 100%;
     padding-top: 5em;
     padding-bottom: 5em;
