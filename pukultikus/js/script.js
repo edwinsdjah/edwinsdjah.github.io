@@ -24,7 +24,7 @@ function randomHole(holes){
 
 function peep(){
     // get randome time to determine how long mole peep
-    const time = randomTime(1000,1500); 
+    const time = randomTime(500,800); 
     // get random hole from randomhole function
     const hole = randomHole(holes);
     hole.classList.add('up');
@@ -38,6 +38,11 @@ function peep(){
 
 function whack(e){
     score++;
+    let mole = this
+    mole.classList.add('vibrate');
+    setTimeout(function(){
+        mole.classList.remove('vibrate');
+    },300)
     // this refer to item clicked
     this.parentNode.classList.remove('up');
     scoreValue.textContent = score;
