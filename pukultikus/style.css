@@ -1,0 +1,71 @@
+.head{
+    height: 10vh;
+}
+
+h1{
+    text-align: center;
+}
+
+img{
+    width: 100%;
+}
+
+.center{
+    margin: 0 auto;
+}
+
+.mainContent .container{
+    height: 400px;
+    max-width: 700px;
+}
+
+.hole{
+    overflow: hidden;
+    position: relative;
+    height: 150px;
+}
+
+.hole::after{
+    display: block;
+    background: url(../image/hole.png) bottom center no-repeat;
+    background-size: contain;
+    content: '';
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    z-index: 2;
+    bottom: -35px;
+}
+
+.hole.up .mole{
+    top: 1.6em;
+}
+
+.mainContent{
+    background-image: url(../image/grass.jpg);
+    background-size: cover;
+    width: 100%;
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+
+.mole{
+    background: url(../image/mole.png) bottom center no-repeat;
+    background-size: 80%;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    transition: all 0.4s;
+}
+
+@media only screen and (max-width: 786px) {
+    .hole::after{
+        bottom: -12px;
+    }
+    
+    .hole.up .mole {
+        top: 0.3em;
+    }
+
+}
