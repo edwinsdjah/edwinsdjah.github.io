@@ -41,6 +41,7 @@ img{
 
 .hole.up .mole{
     top: 1.6em;
+    z-index: 3;
 }
 
 .mainContent{
@@ -68,6 +69,7 @@ img{
     
     .hole.up .mole {
         top: 0.3em;
+        z-index: 3;
     }
 
 }
