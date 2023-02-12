@@ -118,6 +118,10 @@ img {
     .menu .col-lg-4 a{
         height: 10em;
     }
+    
+    h1 img {
+        width: 12em;
+    }
 
 }
 
