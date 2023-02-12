@@ -10,13 +10,13 @@
   </head>
   <body>
     <section class="body">
-      <h1>PUKUL TIKUS</h1>
+      <h1 class="container"><img src="../pukultikus/image/title.png" alt=""></h1>
       <section class="head">
         <div class="content">
           <div class="container col-8">
               <div class="row">
-                <div class="col-6 text-center">
-                  <p>SCORE</p>
+                <div class="col-6 text-center" style="display: flex; justify-content: center; align-items: center;">
+                  <p><img src="../pukultikus/image/score.png" class="score" alt=""></p>
                 </div>
                 <div class="col-6 text-center">
                   <p class="scoreValue">0</p>
@@ -27,14 +27,14 @@
       <section class="menu show">
         <div class="content container">
             <div class="row">
-              <div class="col-4">
-                <a class="level" href="#" id="easy">EASY</a>
+              <div class="col-lg-4 col-12">
+                <a href="#" id="easy"><img class="level swing" src="../pukultikus/image/easy.png" alt=""></a>
               </div>
-              <div class="col-4">
-                <a class="level" href="#" id="medium">MEDIUM</a>
+              <div class="col-lg-4 col-12">
+                <a href="#" id="medium"><img class="level swing" src="../pukultikus/image/medium.png" alt=""></a>
               </div>
-              <div class="col-4">
-                <a class="level" href="#" id="hard">HARD</a>
+              <div class="col-lg-4 col-12">
+                <a  href="#" id="hard"><img class="level swing" src="../pukultikus/image/hard.png" alt=""></a>
               </div>
           </div>
         </div>
@@ -75,8 +75,11 @@
           </div>
         </div>
       </section>
+      <section class="restartWindow none text-center">
+        <button type="button" class="btn btn-warning"><img src="../pukultikus/image/restart.png" alt=""></button>
+      </section>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <script src="../pukultikus/js/script.js"></script>
+    <script src="../js/script.js"></script>
   </body>
 </html>

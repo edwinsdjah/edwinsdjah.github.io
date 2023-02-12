@@ -1,47 +1,69 @@
-body{
+body {
     background-image: url(../pukultikus/image/grass.jpg);
     background-size: cover;
 }
 
+a {
+    width: 100%;
+}
 
-h1{
+h1 {
     padding-top: 0.5em;
     text-align: center;
     padding-bottom: 0.5em;
 }
 
-img{
+h1 img {
+    width: 15em;
+}
+
+img {
     width: 100%;
 }
 
-.show{
+.show {
     display: show;
 }
 
-.none{
+.none {
     display: none;
 }
 
-.menu{
+.menu {
     text-align: center;
 }
 
-.center{
+.score {
+    width: 100px;
+}
+
+.menu img {
+    width: 8em;
+}
+
+.menu .col-lg-4 a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20em;
+}
+
+.center {
     margin: 0 auto;
 }
 
-.mainContent .container{
+.mainContent .container {
     height: 400px;
     max-width: 700px;
 }
 
-.hole{
+.hole {
     overflow: hidden;
     position: relative;
     height: 150px;
 }
 
-.hole::after{
+.hole::after {
     display: block;
     background: url(../pukultikus/image/hole.png) bottom center no-repeat;
     background-size: contain;
@@ -53,18 +75,23 @@ img{
     bottom: -35px;
 }
 
-.hole.up .mole{
+.hole.up .mole {
     top: 1.6em;
     z-index: 3;
 }
 
-.mainContent{
+.mainContent {
     width: 100%;
     padding-top: 5em;
     padding-bottom: 5em;
 }
 
-.mole{
+.scoreValue{
+    font-size: 5em;
+    font-weight: bold;
+}
+
+.mole {
     background: url(../pukultikus/image/mole.png) bottom center no-repeat;
     background-size: 80%;
     position: absolute;
@@ -74,14 +101,22 @@ img{
     transition: all 0.4s;
 }
 
+.btn-warning{
+    width: 30%;
+}
+
 @media only screen and (max-width: 786px) {
-    .hole::after{
+    .hole::after {
         bottom: -12px;
     }
-    
+
     .hole.up .mole {
         top: 0.3em;
         z-index: 3;
+    }
+    
+    .menu .col-lg-4 a{
+        height: 10em;
     }
 
 }
@@ -89,29 +124,75 @@ img{
 
 .swing {
     animation: swing 1.5s ease-in-out;
-  }
+}
 
-  @keyframes swing {
-    0% { transform: rotate(15deg); }
-    10% { transform: rotate(-10deg); }
-    20% { transform: rotate(5deg); }
-    30% { transform: rotate(-5deg); }
-    40% { transform: rotate(3deg); }
-    50% { transform: rotate(0deg); }
-  }
-  
-  .vibrate {
-	-webkit-animation: vibrate 0.3s linear both;
-	        animation: vibrate 0.3s linear both;
+@keyframes swing {
+    0% {
+        transform: rotate(15deg);
+    }
+
+    10% {
+        transform: rotate(-10deg);
+    }
+
+    20% {
+        transform: rotate(5deg);
+    }
+
+    30% {
+        transform: rotate(-5deg);
+    }
+
+    40% {
+        transform: rotate(3deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+}
+
+.vibrate {
+    -webkit-animation: vibrate 0.3s linear both;
+    animation: vibrate 0.3s linear both;
 }
 
 @keyframes vibrate {
-    0% { background-position: 0 0; }
-    10% { background-position: -10px 0; }
-    20% { background-position: 10px 0; }
-    30% { background-position: -10px 0; }
-    40% { background-position: 10px 0; }
-    50% { background-position: 0 0; }
-    100% { background-position: 0 0; }
-  }
-  
+    0% {
+        background-position: 0 0;
+    }
+
+    10% {
+        background-position: -10px 0;
+    }
+
+    20% {
+        background-position: 10px 0;
+    }
+
+    30% {
+        background-position: -10px 0;
+    }
+
+    40% {
+        background-position: 10px 0;
+    }
+
+    50% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.swing {
+    animation: swing ease-in-out 1s infinite alternate;
+    transform-origin: center -20px;
+}
+
+@keyframes swing {
+    0% { transform: rotate(3deg); }
+    100% { transform: rotate(-3deg); }
+}
