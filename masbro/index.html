@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../style.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+  <title>MASBRO ADVENTURE</title>
+</head>
+
+<body>
+  <section id="title">
+
+
+  </section>
+
+  <section id="mainGame">
+    <div class="gameLayer">
+      <div class="title-section">
+        <h1 class="text-center title"><img src="../images/title.png" alt=""></h1>
+        <div class="text-center"><img class="text-center button-start heartbeat" src="../images/start.png" alt=""></div>
+      </div>
+
+      <div class="gameObject">
+        <h2 class="score none">Score : <span class="value">0</span></h2>
+        <img src="../images/jump.png" class="jumpBtn none" alt="">
+        <div class="ground"><img src="" alt=""></div>
+        <div class="capyBara"><img src="../images/capy.png" alt="" width="80" height="60"></div>
+        <div class="obstacles"></div>
+      </div>
+      
+      <div class="gameOver none">
+        <div class="window">
+          <h2 class="text-center overImg"><img src="../images/over.png" alt=""></h2>
+          <h2 class="overImg scoreEnd"><img src="../images/score.png" alt=""><p class="end-value"></p></h2>
+          <div class="text-center"><img class="button-reset heartbeat" src="../images/reset.png" alt=""></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
+  <script src="../js/script.js"></script>
+</body>
+
+</html>
