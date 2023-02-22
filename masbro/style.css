@@ -60,7 +60,7 @@ margin-top: 1em;
 }
 
 .gameLayer{
-    background-image: url(../images/day.png);
+    background-image: url(../masbro/images/day.png);
     background-size: cover;
     background-repeat: repeat;
     height: 100vh;
@@ -73,7 +73,7 @@ margin-top: 1em;
 
 .ground{
     position: absolute;
-    background-image: url(../images/ground.png);
+    background-image: url(../masbro/images/ground.png);
     width: 100%;
     background-repeat: repeat-x;
     background-size: contain;
