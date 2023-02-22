@@ -143,8 +143,10 @@ start.addEventListener('click', function () {
     titleMenu.classList.add('none');
     score.classList.remove('none');
     score.classList.add('show');
-    jumpBtn.classList.remove('none');
-    jumpBtn.classList.add('show')
+    if (screen.width < 600) {
+        jumpBtn.classList.remove('none');
+        jumpBtn.classList.add('show')
+    }
     generateObstacles
     generateObstaclesInterval = setInterval(generateObstacles, 1500);
     return scoreNumber;
