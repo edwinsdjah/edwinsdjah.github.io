@@ -62,7 +62,7 @@ margin-top: 1em;
 }
 
 .gameLayer{
-    background-image: url(images/day.png);
+    background-image: url(../images/day.png);
     background-size: cover;
     background-repeat: repeat;
     height: 100vh;
@@ -75,7 +75,7 @@ margin-top: 1em;
 
 .ground{
     position: absolute;
-    background-image: url(images/ground.png);
+    background-image: url(../images/ground.png);
     width: 100%;
     background-repeat: repeat-x;
     background-size: contain;
@@ -114,6 +114,11 @@ margin-top: 1em;
 }
 
 @media only screen and (max-width: 600px) {
+    body{
+        overflow: auto;
+    }
+    
+    
     .capyBara img{
         width: 4em;
         height: 3em;
