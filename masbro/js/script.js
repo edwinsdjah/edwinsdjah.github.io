@@ -73,13 +73,15 @@ function generateObstacles() {
     obstacle.setAttribute('class', 'pipe');
     obstacle.setAttribute('src', `images/${obstacleObject[randomIndex].name}`);
     obstacles.appendChild(obstacle);
-    let obstacleRight = 0;
+    let obstacleRight;
     let obstacleBottom = parseInt(window.getComputedStyle(obstacle).getPropertyValue('bottom'));
     let obstacleWidth = parseInt(window.getComputedStyle(obstacle).getPropertyValue('width'));
     let obstacleHeight
     if (screen.width < 600) {
+        obstacleRight = -35
         obstacleHeight = obstacleObject[randomIndex].heightSP;
     } else {
+        obstacleRight = 0
         obstacleHeight = obstacleObject[randomIndex].height;
     }
 
@@ -91,7 +93,7 @@ function generateObstacles() {
         let object = document.querySelector('.gameObject')
         let over = document.querySelector('.gameOver')
         if (screen.width < 600) {
-            obstacleRight += 10;
+            obstacleRight += 8;
         } else {
             obstacleRight += 16;
         }
