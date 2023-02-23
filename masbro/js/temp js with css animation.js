@@ -14,6 +14,10 @@ let scoreNumber = 0;
 let scoreInterval;
 let scoreValue = document.querySelector('.score .value');
 let endValue = document.querySelector('.end-value');
+
+
+console.log(characterBottom)
+
 const obstacleObject = [{
     name: 'pipe-small.png',
     height: 107,
@@ -36,24 +40,45 @@ function addScore() {
 
 
 function jump() {
-    if (isJumping) return;
-    upTime = setInterval(function () {
-        if (characterBottom >= groundHeight + 200) {
-            clearInterval(upTime);
-            downTime = setInterval(function () {
-                if (characterBottom <= groundHeight - 160) {
-                    clearInterval(downTime);
-                    isJumping = false;
-                }
-                characterBottom -= 10;
-                character.style.bottom = characterBottom + 'px';
-            }, 8);
-        }
-        characterBottom += 10;
-        character.style.bottom = characterBottom + 'px'
-        isJumping = true;
-    }, 10);
+    // if (isJumping) return;
+    // upTime = setInterval(function () {
+    //     if (characterBottom >= groundHeight + 200) {
+    //         clearInterval(upTime);
+    //         downTime = setInterval(function () {
+    //             if (characterBottom <= groundHeight - 160) {
+    //                 clearInterval(downTime);
+    //                 isJumping = false;
+    //             }
+    //             characterBottom -= 10;
+    //             character.style.bottom = characterBottom + 'px';
+    //         }, 8);
+    //     }
+    //     characterBottom += 10;
+    //     character.style.bottom = characterBottom + 'px'
+    //     isJumping = true;
+    // }, 10);
+    character.classList.add('jump');
+    let layer = document.querySelector('.gameLayer').offsetHeight;
+    let rect = character.getBoundingClientRect();
+    let positionValue = layer - rect.bottom;
+    console.log(positionValue);
+    setTimeout(function () {
+        character.classList.remove('jump')
+    }, 1000)
+
 }
+
+let moving = false
+character.addEventListener('transitionend', function () {
+    
+})
+
+function getPosition(){
+    
+}
+
+
+window.requestAnimationFrame(getPosition);
 
 function control(e) {
     if (e.key === 'ArrowUp' || e.key == ' ') {
@@ -61,8 +86,6 @@ function control(e) {
         jumpSound.play();
     }
 }
-
-
 
 
 function generateObstacles() {
@@ -137,10 +160,10 @@ let generateObstaclesInterval
 start.addEventListener('click', function () {
     let score = document.querySelector('.score');
     let titleMenu = document.querySelector('.title-section');
-    if(screen.width < 600){
+    if (screen.width < 600) {
         let main = document.getElementById('mainGame');
-        main.addEventListener('click',function(e){
-            if(e.target.classList.contains('gameLayer')){
+        main.addEventListener('click', function (e) {
+            if (e.target.classList.contains('gameLayer')) {
                 jump();
             }
         })
