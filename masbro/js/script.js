@@ -46,6 +46,14 @@ function control(e) {
     }
 }
 
+window.addEventListener('click',function(){
+    character.classList.add('jump')
+    setTimeout(function(){
+        character.classList.remove('jump')
+    },1000)
+})
+
+
 
 
 
