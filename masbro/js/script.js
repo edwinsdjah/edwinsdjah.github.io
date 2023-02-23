@@ -21,6 +21,9 @@ function jump() {
     let upTime;
     let downTime;
     if (isJumping) return;
+    
+    
+   
     upTime = setInterval(function () {
         if (characterBottom >= groundHeight + 200) {
             clearInterval(upTime);
@@ -43,15 +46,31 @@ function control(e) {
     if (e.key === 'ArrowUp' || e.key == ' ') {
         jump();
         jumpSound.play();
+        
+    
     }
 }
 
-window.addEventListener('click',function(){
-    character.classList.add('jump')
-    setTimeout(function(){
-        character.classList.remove('jump')
-    },1000)
-})
+// window.addEventListener('click',function(){
+//     let moving = false
+//     character.classList.add('jump');
+    
+//     function getValue(){
+//         const rect = character.getBoundingClientRect();      
+//         if (!moving) {
+//             window.requestAnimationFrame(getValue);
+//             console.log(this.innerHeight - rect.bottom);
+//           }
+//     }
+    
+//     window.requestAnimationFrame(getValue);
+//     console.log(moving)
+    
+//     setTimeout(function(){
+//         character.classList.remove('jump');
+//         moving = true;
+//     },1000)
+// })
 
 
 
@@ -96,7 +115,6 @@ function generateObstacles() {
 
 
     function moveObstacle() {
-
         let object = document.querySelector('.gameObject')
         let over = document.querySelector('.gameOver')
         if (screen.width < 600) {
@@ -148,6 +166,7 @@ start.addEventListener('click', function () {
         main.addEventListener('click', function (e) {
             if (e.target.classList.contains('gameLayer')) {
                 jump();
+                jumpSound.play();
             }
         })
     }
