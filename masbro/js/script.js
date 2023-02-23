@@ -1,32 +1,13 @@
 const start = document.querySelector('.button-start')
 let character = document.querySelector('.capyBara');
 let characterBottom = parseInt(window.getComputedStyle(character).getPropertyValue('bottom'));
-let characterRight = parseInt(window.getComputedStyle(character).getPropertyValue('right'));
-let characterWidth = parseInt(window.getComputedStyle(character).getPropertyValue('width'));
 let ground = document.querySelector('.ground');
-let groundBottom = parseInt(window.getComputedStyle(ground).getPropertyValue('bottom'));
 let groundHeight = parseInt(window.getComputedStyle(ground).getPropertyValue('height'));
-let isJumping = false;
-let isDone = false;
-let upTime;
-let downTime;
 let scoreNumber = 0;
 let scoreInterval;
 let scoreValue = document.querySelector('.score .value');
 let endValue = document.querySelector('.end-value');
-const obstacleObject = [{
-    name: 'pipe-small.png',
-    height: 107,
-    heightSP: 80
-}, {
-    name: 'pipe-med.png',
-    height: 173,
-    heightSP: 100
-}, {
-    name: 'pipe-long.png',
-    height: 269,
-    heightSP: 150
-}]
+
 
 function addScore() {
     scoreNumber++;
@@ -36,6 +17,9 @@ function addScore() {
 
 
 function jump() {
+    let isJumping = false;
+    let upTime;
+    let downTime;
     if (isJumping) return;
     upTime = setInterval(function () {
         if (characterBottom >= groundHeight + 200) {
@@ -66,6 +50,21 @@ function control(e) {
 
 
 function generateObstacles() {
+    const obstacleObject = [{
+        name: 'pipe-small.png',
+        height: 107,
+        heightSP: 80
+    }, {
+        name: 'pipe-med.png',
+        height: 173,
+        heightSP: 100
+    }, {
+        name: 'pipe-long.png',
+        height: 269,
+        heightSP: 150
+    }]
+    let characterRight = parseInt(window.getComputedStyle(character).getPropertyValue('right'));
+    let characterWidth = parseInt(window.getComputedStyle(character).getPropertyValue('width'));
     let randomIndex = Math.floor(Math.random() * obstacleObject.length);
     let obstacles = document.querySelector('.obstacles');
     let ground = document.querySelector('.ground')
@@ -132,15 +131,14 @@ function setBackground() {
     }, 60000);
 }
 
-let generateObstaclesInterval
 
 start.addEventListener('click', function () {
     let score = document.querySelector('.score');
     let titleMenu = document.querySelector('.title-section');
-    if(screen.width < 600){
+    if (screen.width < 600) {
         let main = document.getElementById('mainGame');
-        main.addEventListener('click',function(e){
-            if(e.target.classList.contains('gameLayer')){
+        main.addEventListener('click', function (e) {
+            if (e.target.classList.contains('gameLayer')) {
                 jump();
             }
         })
