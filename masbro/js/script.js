@@ -63,6 +63,8 @@ function control(e) {
     }
 }
 
+
+
 jumpBtn.addEventListener('click', jump)
 
 function generateObstacles() {
@@ -139,6 +141,14 @@ let generateObstaclesInterval
 start.addEventListener('click', function () {
     let score = document.querySelector('.score');
     let titleMenu = document.querySelector('.title-section');
+    if(screen.width < 600){
+        let main = document.getElementById('mainGame');
+        main.addEventListener('click',function(e){
+            if(e.target.classList.contains('gameLayer')){
+                jump();
+            }
+        })
+    }
     click.play();
     mainMusic.play();
     scoreInterval = setInterval(addScore, 100);
