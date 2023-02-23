@@ -122,6 +122,10 @@ function generateObstacles() {
         } else {
             obstacleRight += 16;
         }
+        
+        if(obstacleRight > window.innerWidth){
+            obstacle.remove();
+        }
 
         ground.style.backgroundPositionX = obstacleRight + 'px';
         obstacle.style.right = obstacleRight + 'px';
