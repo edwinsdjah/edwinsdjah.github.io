@@ -65,20 +65,19 @@ $.ajax({
     console.log(arr);
     let cards = ``;
     for (i = 0; i < 10; i++) {
-      console.log(arr[i].credits)
       cards += `<div class="col-lg-2 col-4 carousel-cell">
       <div class="card-content">
         <div class="imageOverlay">
           <img src="https://www.themoviedb.org/t/p/w1280/${arr[i].poster_path}" alt="">
           <div class="overlay">
-            <button type="button" class="btn btn-light btn-overlay" data-bs-toggle="modal" data-bs-target="#exampleModal">See Detail</button>
+            <button type="button" class="btn btn-light btn-overlay info-modal" data-bs-toggle="modal" data-bs-target="#exampleModal">See Detail</button>
           </div>
         </div>
         <h3 class="movieTitle">${arr[i].title}</h3>
       </div>
     </div>`
     }
-    const container = document.querySelector('#horror .cardListContent');
+    const container = document.querySelector('#animation .cardListContent');
     container.innerHTML = cards
   },
   error: (e) => {
@@ -139,3 +138,40 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 }
+
+const modalBtn = document.querySelectorAll('.info-modal');
+
+
+
+modalBtn.forEach(function(e){
+  e.addEventListener('click',function(){
+    $.ajax({
+      url: `https://api.themoviedb.org/3/movie/${this.id}/credits?api_key=8596b8914c63f1b64f5193ff80976696&language=en-US`,
+      success: objectAPI => {
+        // const arr = objectAPI.results
+        // console.log(arr);
+        // let cards = ``; {
+        //   console.log(arr[i].credits)
+        //   cards += `<div class="col-lg-2 col-4 carousel-cell">
+        //   <div class="card-content">
+        //     <div class="imageOverlay">
+        //       <img src="https://www.themoviedb.org/t/p/w1280/${arr[i].poster_path}" alt="">
+        //       <div class="overlay">
+        //         <button type="button" class="btn btn-light btn-overlay info-modal" data-bs-toggle="modal" data-bs-target="#exampleModal">See Detail</button>
+        //       </div>
+        //     </div>
+        //     <h3 class="movieTitle">${arr[i].title}</h3>
+        //   </div>
+        // </div>`
+        // }
+        // const container = document.querySelector('#horror .cardListContent');
+        // container.innerHTML = cards
+        
+      },
+      error: (e) => {
+        console.log(e.responseText);
+      }
+    })
+  }
+)
+})
