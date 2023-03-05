@@ -65,6 +65,7 @@ $.ajax({
     console.log(arr);
     let cards = ``;
     for (i = 0; i < 10; i++) {
+      console.log(arr[i].credits)
       cards += `<div class="col-lg-2 col-4 carousel-cell">
       <div class="card-content">
         <div class="imageOverlay">
