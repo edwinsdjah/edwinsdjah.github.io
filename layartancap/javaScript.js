@@ -18,7 +18,6 @@ $.ajax({
     }
 
     arrayObjectofDetail.result.push(latestChild)
-    console.log(arr);
     let cards = ``;
     for (i = 0; i < 10; i++) {
       cards += `<div class="col-lg-2 col-4 carousel-cell">
@@ -44,13 +43,13 @@ $.ajax({
       }
       latestChild.content.push(detail)
     }
-    
 
 
-    const container = document.querySelector('.cardListContent');
+
+    const container = document.querySelector('#latest .cardListContent');
     container.innerHTML = cards;
-    
-    $('.info-modal').on('click',function(){
+
+    $('.info-modal').on('click', function () {
       let parameter = this
       getDetail(parameter);
     })
@@ -64,8 +63,13 @@ $.ajax({
 $.ajax({
   url: `https://api.themoviedb.org/3/discover/movie?api_key=8596b8914c63f1b64f5193ff80976696&with_genres=28`,
   success: objectAPI => {
-    const arr = objectAPI.results
-    console.log(arr);
+    const arr = objectAPI.results;
+    const latestChild = {
+      id: "action",
+      content: []
+    }
+
+    arrayObjectofDetail.result.push(latestChild)
     let cards = ``;
     for (i = 0; i < 10; i++) {
       cards += `<div class="col-lg-2 col-4 carousel-cell">
@@ -78,10 +82,26 @@ $.ajax({
         </div>
         <h3 class="movieTitle">${arr[i].title}</h3>
       </div>
-    </div>`
+    </div>`;
+
+      let detail = {
+        id: `${arr[i].id}`,
+        backdrop: `${arr[i].backdrop_path}`,
+        genre: `${arr[i].genre_ids[0]}`,
+        title: `${arr[i].title}`,
+        releaseYear: `${arr[i].release_date.split("-")[0]}`,
+        plot: `${arr[i].overview}`
+      }
+      latestChild.content.push(detail)
     }
+
     const container = document.querySelector('#action .cardListContent');
-    container.innerHTML = cards
+    container.innerHTML = cards;
+
+    $('.info-modal').on('click', function () {
+      let parameter = this
+      getDetail(parameter);
+    })
   },
   error: (e) => {
     console.log(e.responseText);
@@ -91,8 +111,13 @@ $.ajax({
 $.ajax({
   url: `https://api.themoviedb.org/3/discover/movie?api_key=8596b8914c63f1b64f5193ff80976696&with_genres=16`,
   success: objectAPI => {
-    const arr = objectAPI.results
-    console.log(arr);
+    const arr = objectAPI.results;
+    const latestChild = {
+      id: "animation",
+      content: []
+    }
+
+    arrayObjectofDetail.result.push(latestChild)
     let cards = ``;
     for (i = 0; i < 10; i++) {
       cards += `<div class="col-lg-2 col-4 carousel-cell">
@@ -105,10 +130,26 @@ $.ajax({
         </div>
         <h3 class="movieTitle">${arr[i].title}</h3>
       </div>
-    </div>`
+    </div>`;
+
+      let detail = {
+        id: `${arr[i].id}`,
+        backdrop: `${arr[i].backdrop_path}`,
+        genre: `${arr[i].genre_ids[0]}`,
+        title: `${arr[i].title}`,
+        releaseYear: `${arr[i].release_date.split("-")[0]}`,
+        plot: `${arr[i].overview}`
+      }
+      latestChild.content.push(detail)
     }
+
     const container = document.querySelector('#animation .cardListContent');
-    container.innerHTML = cards
+    container.innerHTML = cards;
+
+    $('.info-modal').on('click', function () {
+      let parameter = this
+      getDetail(parameter);
+    })
   },
   error: (e) => {
     console.log(e.responseText);
@@ -125,15 +166,11 @@ $(document).ready(function () {
     }
   });
   
-  // window.addEventListener('click',function(e){
-  //   if(e.target.classList.contains('info-modal')){
-  //     let attId = e.target.getAttribute('data-id')
-  //     console.log(attId)
-  //     getDetail(attId);
-  //   }
-  // })
-  // const modalBtn = document.querySelectorAll('.info-modal');
-  // modalBtn.addEventListener('click',getDetail)
+
+  $('.close-modal').on('click',function(){
+    let e = document.querySelector('modal-header');
+    e.remove();
+  })
 
 });
 
@@ -180,38 +217,32 @@ function showSlides(n) {
 }
 // CAROUSEL
 
-function getContent() {
-
-}
-
-
-
 function getDetail(parameter) {
-      let currentObject = {}
-      let id = parameter.getAttribute('data-id');
-      for (i = 0; i < arrayObjectofDetail.result.length; i++) {
-        if (arrayObjectofDetail.result[i].id === parameter.closest('div[id]').id) {
-          let specifiedArray = arrayObjectofDetail.result[i].content;
-          for (i = 0; i < specifiedArray.length; i++) {
-            if (parameter.getAttribute('data-id') === specifiedArray[i].id) {
-              currentObject = specifiedArray[i];
-            }
-          }
+  let currentObject = {}
+  let id = parameter.getAttribute('data-id');
+  for (i = 0; i < arrayObjectofDetail.result.length; i++) {
+    if (arrayObjectofDetail.result[i].id === parameter.closest('div[id]').id) {
+      let specifiedArray = arrayObjectofDetail.result[i].content;
+      for (i = 0; i < specifiedArray.length; i++) {
+        if (parameter.getAttribute('data-id') === specifiedArray[i].id) {
+          currentObject = specifiedArray[i];
         }
       }
-      $.ajax({
-        url: `https://api.themoviedb.org/3/movie/${id}?api_key=8596b8914c63f1b64f5193ff80976696&append_to_response=credits`,
-        success: objectAPI => {
-          console.log(objectAPI);
-          let director;
-          objectAPI.credits.crew.find(function(e){
-            if(e.job === 'Director'){
-              director = e.name
-            }
-          });
-          let cast = objectAPI.credits.cast.slice(0, 5).map(e => e.name);
-          let cards = ``;
-          cards += `<div class="modal-header">
+    }
+  }
+  $.ajax({
+    url: `https://api.themoviedb.org/3/movie/${id}?api_key=8596b8914c63f1b64f5193ff80976696&append_to_response=credits`,
+    success: objectAPI => {
+      console.log(objectAPI);
+      let director;
+      objectAPI.credits.crew.find(function (e) {
+        if (e.job === 'Director') {
+          director = e.name
+        }
+      });
+      let cast = objectAPI.credits.cast.slice(0, 5).map(e => e.name);
+      let cards = ``;
+      cards += `<div class="modal-header">
           <img class="back-drop" src="https://www.themoviedb.org/t/p/w1280/${currentObject.backdrop}" alt="">
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
@@ -276,16 +307,14 @@ function getDetail(parameter) {
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary close-modal" data-bs-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary">Save changes</button>
           </div>`
-          const container = document.querySelector('.modal-content');
-          container.innerHTML = cards
-        },
-        error: (e) => {
-          console.log(e.responseText);
-        }
-      })
-  }
-
-
+      const container = document.querySelector('.modal-content');
+      container.innerHTML = cards
+    },
+    error: (e) => {
+      console.log(e.responseText);
+    }
+  })
+}
