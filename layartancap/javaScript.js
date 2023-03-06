@@ -242,6 +242,7 @@ function getDetail(parameter) {
       });
       let cast = objectAPI.credits.cast.slice(0, 5).map(e => e.name);
       let cards = ``;
+      let runtime = getRunTime(objectAPI)
       cards += `<div class="modal-header">
           <img class="back-drop" src="https://www.themoviedb.org/t/p/w1280/${currentObject.backdrop}" alt="">
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -277,7 +278,7 @@ function getDetail(parameter) {
                     <tbody>
                       <tr>
                         <td>${currentObject.releaseYear}</td>
-                        <td>1h 60m</td>
+                        <td>${runtime}</td>
                         <td><img src="./images/4k.png"></td>
                       </tr>
                     </tbody>
@@ -317,4 +318,12 @@ function getDetail(parameter) {
       console.log(e.responseText);
     }
   })
+}
+
+function getRunTime(e){
+  const minutes = parseInt(e.runtime);
+  console.log(minutes)
+  const hours = Math.floor(minutes/60);
+  const remainingMinutes = minutes % 60;
+  return `${hours}h ${remainingMinutes}m`
 }
