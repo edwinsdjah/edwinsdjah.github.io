@@ -595,4 +595,8 @@ th.duration {
     .headTitle {
         font-size: 2em;
         }
+    
+    .netflix-dropdown-box .dropdown-menu{
+        margin-top: 0;
+    }
 }
