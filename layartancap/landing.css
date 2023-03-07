@@ -494,7 +494,7 @@ ul {
     top: 1em;
     right: 1em;
     font-size: 1em !important;
-    
+
 }
 
 .modal .modal-header::before {
@@ -512,57 +512,57 @@ ul {
     background-color: #1d1b1b;
 }
 
-.btn-modal-play{
+.btn-modal-play {
     width: 100% !important;
 }
 
-.button-play-container{
+.button-play-container {
     margin-top: 0.5em;
 }
 
-.modal-footer{
+.modal-footer {
     border-top: 0 !important;
 }
 
-.modal-title{
+.modal-title {
     margin-top: -3.5em;
 }
 
-.movie-table{
+.movie-table {
     margin-top: 1em;
 }
 
-.cast-table{
+.cast-table {
     margin-top: 1em;
 }
 
-.cast-table th{
+.cast-table th {
     width: 6em;
 }
 
-.synopsis{
+.synopsis {
     margin-top: 1em;
 }
 
-.cast-table td{
+.cast-table td {
     word-wrap: anywhere;
 }
 
-.movie-table img{
+.movie-table img {
     width: 100%;
     max-width: 30px;
     max-height: 50px;
 }
 
-th.release{
+th.release {
     width: 6em;
 }
 
-th.duration{
+th.duration {
     width: 5em;
 }
 
-.modal-header iframe{
+.modal-header iframe {
     z-index: 2;
 }
 
@@ -577,5 +577,14 @@ th.duration{
 @media (max-width: 768px) {
     .button-play-container {
         margin-top: 0;
+    }
+
+    .headTitle {
+        margin-bottom: 0;
+    }
+
+    .row.cardListContent .carousel-cell {
+        padding-right: calc(var(--bs-gutter-x) * .2);
+        padding-left: calc(var(--bs-gutter-x) * .2);
     }
 }
