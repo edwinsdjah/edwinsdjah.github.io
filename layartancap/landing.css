@@ -562,6 +562,10 @@ th.duration{
     width: 5em;
 }
 
+.modal-header iframe{
+    z-index: 2;
+}
+
 
 @media (min-width: 576px) {
     .modal-dialog {
