@@ -126,7 +126,7 @@ function getDetail(parameter) {
       let runtime = getRunTime(objectAPI)
       cards += `<div class="modal-header">
           <img class="back-drop" src="https://www.themoviedb.org/t/p/w1280/${currentObject.backdrop}" alt="">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close close-modal" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <div class="modal-title">
@@ -227,7 +227,7 @@ function play(){
           const videoKey = videoResult.key;
     
           // Create URL for the video player
-          const videoUrl = `https://www.youtube.com/embed/${videoKey}`;
+          const videoUrl = `https://www.youtube.com/embed/${videoKey}?autoplay=1`;
           let modalHeader = document.querySelector('.modal-header')
           // Embed the video player in your HTML page
           const videoPlayer = document.createElement('iframe');
@@ -310,4 +310,8 @@ function deleteModal(){
   $('.close-modal').on('click', function () {
     $('.modal-header').remove();
   })
+}
+
+function getEmbedVideo(){
+  return `<iframe src="${videoUrl}" width="${img.clientWidth}" height="${img.clientHeight}"></iframe>`
 }
