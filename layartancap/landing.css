@@ -573,3 +573,9 @@ th.duration{
         margin: 1.75rem auto;
     }
 }
+
+@media (max-width: 768px) {
+    .button-play-container {
+        margin-top: 0;
+    }
+}
