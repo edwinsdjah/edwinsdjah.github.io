@@ -56,7 +56,11 @@
             </div>
           </div>
           <div class="right d-flex align-items-center">
-            <i class="bi bi-search"></i>
+            <div class="search">
+              <input class="input form-input-search"  type="text" placeholder="Titles, people, genres">
+              <i class="bi bi-search img"></i>
+              <i class="bi bi-x-circle img hide"></i>
+            </div>
             <i class="bi bi-bell-fill"></i>
             <section class="netflix-profile">
 
@@ -133,9 +137,19 @@
       <!-- Button trigger modal -->
 
       <section id="cardContainer">
-        <div class="container">
+        <div class="searchContainer fade-in container hide">
+          <div id="search">
+            <h2 class="headTitle">Search</h2>
+            <div class="row cardListContent move-slide"></div>
+          </div>
+        </div>
+        <div class="movieListContainer fade-in container">
           <div id="latest">
             <h2 class="headTitle">Latest Movies</h2>
+            <div class="row cardListContent move-slide"></div>
+          </div>
+          <div id="musical">
+            <h2 class="headTitle">DRAMA MUSICAL</h2>
             <div class="row cardListContent move-slide"></div>
           </div>
           <div id="action">
