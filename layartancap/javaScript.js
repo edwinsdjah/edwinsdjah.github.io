@@ -227,7 +227,7 @@ function play(){
           const videoKey = videoResult.key;
     
           // Create URL for the video player
-          const videoUrl = `https://www.youtube.com/embed/${videoKey}?autoplay=1`;
+          const videoUrl = `https://www.youtube.com/embed/${videoKey}?autoplay=1&mute=1`;
           let modalHeader = document.querySelector('.modal-header')
           // Embed the video player in your HTML page
           const videoPlayer = document.createElement('iframe');
