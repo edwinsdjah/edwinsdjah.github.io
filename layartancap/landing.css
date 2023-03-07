@@ -587,4 +587,8 @@ th.duration {
         padding-right: calc(var(--bs-gutter-x) * .2);
         padding-left: calc(var(--bs-gutter-x) * .2);
     }
+    
+    .movieTitle{
+        display: none;
+    }
 }
