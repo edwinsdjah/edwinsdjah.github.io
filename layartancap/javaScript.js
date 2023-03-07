@@ -11,12 +11,8 @@ const arrayObjectofDetail = {
 $.ajax({
   url: `https://api.themoviedb.org/3/discover/movie?api_key=8596b8914c63f1b64f5193ff80976696&primary_release_date.gte=${pastDateString}&primary_release_date.lte=${todayString}`,
   success: objectAPI => {
-    const arr = objectAPI.results;
-    const latestChild = {
-      id: "latest",
-      content: []
-    }
-    generateContent(arrayObjectofDetail,arr,latestChild,'latest')
+    // memanggil fungsi generate content
+    generateContent(arrayObjectofDetail,objectAPI,'latest')
   },
   error: (e) => {
     console.log(e.responseText);
@@ -27,12 +23,8 @@ $.ajax({
 $.ajax({
   url: `https://api.themoviedb.org/3/discover/movie?api_key=8596b8914c63f1b64f5193ff80976696&with_genres=28`,
   success: objectAPI => {
-    const arr = objectAPI.results;
-    const latestChild = {
-      id: "action",
-      content: []
-    }
-    generateContent(arrayObjectofDetail,arr,latestChild,'action')
+    // memanggil fungsi generate content
+    generateContent(arrayObjectofDetail,objectAPI,'action')
   },
   error: (e) => {
     console.log(e.responseText);
@@ -42,12 +34,8 @@ $.ajax({
 $.ajax({
   url: `https://api.themoviedb.org/3/discover/movie?api_key=8596b8914c63f1b64f5193ff80976696&with_genres=16`,
   success: objectAPI => {
-    const arr = objectAPI.results;
-    const latestChild = {
-      id: "animation",
-      content: []
-    }
-    generateContent(arrayObjectofDetail,arr,latestChild,'animation')
+    // memanggil fungsi generate content
+    generateContent(arrayObjectofDetail,objectAPI,'animation')
   },
   error: (e) => {
     console.log(e.responseText);
@@ -74,7 +62,6 @@ function position(id) {
   // card.style.transform = 'scale(1.5)';
   console.log(id)
 }
-
 
 // CAROUSEL
 let slideIndex = 1;
@@ -227,7 +214,36 @@ function getRunTime(e){
 function play(){
   let play = document.querySelector('.btn-modal-play');
   play.addEventListener('click',function(){
-    console.log(this)
+    let id = this.getAttribute('data-id');
+    $.ajax({
+      url: `https://api.themoviedb.org/3/movie/${id}/videos?api_key=8596b8914c63f1b64f5193ff80976696`,
+      success: objectAPI => {
+        console.log(objectAPI);
+        let img = document.querySelector('.modal-header img')
+        const videoResult = objectAPI.results.find(video => video.type === 'Teaser' || video.type === 'Trailer');
+        console.log(videoResult);
+        if (videoResult) {
+          // Get the key property of the teaser video
+          const videoKey = videoResult.key;
+    
+          // Create URL for the video player
+          const videoUrl = `https://www.youtube.com/embed/${videoKey}`;
+          let modalHeader = document.querySelector('.modal-header')
+          // Embed the video player in your HTML page
+          const videoPlayer = document.createElement('iframe');
+          videoPlayer.setAttribute('src', videoUrl);
+          videoPlayer.setAttribute('width', `${img.clientWidth}`);
+          videoPlayer.setAttribute('height', `${img.clientHeight}`);
+          modalHeader.appendChild(videoPlayer);
+          img.remove()
+        } else {
+          console.log('Teaser video not found.');
+        }
+      },
+      error: (e) => {
+        console.log(e.responseText);
+      }
+    })
   })
 }
 
@@ -256,14 +272,27 @@ function getContentDetail(arr){
   }
 }
 
-function generateContent(arrayObjectofDetail,arr,latestChild,id){
+function generateContent(arrayObjectofDetail,objectAPI,id){
+  // mengambil data result dari hasil url API
+  const arr = objectAPI.results;
+  // membuat object baru sesuai ID parameter
+  const latestChild = {
+    id: `${id}`,
+    content: []
+  }
+  // menambahkan object baru ke dalam variabel arrayOBjectofDetail
   arrayObjectofDetail.result.push(latestChild)
     let cards = ``;
+    // looping konten sesuai kriteria
     for (i = 0; i < 10; i++) {
+      // menjalankan fungsi get konten dan masukkan ke card
       cards += getContent(arr);
+      // menjalankan fungsi get detail dan masukan ke detail
       let detail = getContentDetail(arr);
+      // masukan isi detail ke dalam object latest child
       latestChild.content.push(detail)
     }
+    // memasukan konten hasil looping ke container
     const container = document.querySelector(`#${id} .cardListContent`);
     container.innerHTML = cards;
     clickModal();
@@ -272,6 +301,7 @@ function generateContent(arrayObjectofDetail,arr,latestChild,id){
 function clickModal(){
   $('.info-modal').on('click', function () {
     let parameter = this
+    // menjalankan fungsi get detail untuk menambahkan kontent ke modal
     getDetail(parameter);
   })
 }
