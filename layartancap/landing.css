@@ -596,6 +596,10 @@ th.duration {
         font-size: 2em;
         }
     
+    .card-content{
+        padding-bottom: 0.7em;
+    }
+    
     .netflix-dropdown-box .dropdown-menu{
         margin-top: 0;
     }
