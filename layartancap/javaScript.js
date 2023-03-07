@@ -16,43 +16,7 @@ $.ajax({
       id: "latest",
       content: []
     }
-
-    arrayObjectofDetail.result.push(latestChild)
-    let cards = ``;
-    for (i = 0; i < 10; i++) {
-      cards += `<div class="col-lg-2 col-4 carousel-cell">
-      <div class="card-content">
-        <div class="imageOverlay">
-          <img src="https://www.themoviedb.org/t/p/w1280/${arr[i].poster_path}" alt="">
-          <div class="overlay">
-            <button type="button" class="btn btn-light btn-overlay info-modal" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="${arr[i].id}">See Detail</button>
-          </div>
-        </div>
-        <h3 class="movieTitle">${arr[i].title}</h3>
-      </div>
-    </div>`;
-
-
-      let detail = {
-        id: `${arr[i].id}`,
-        backdrop: `${arr[i].backdrop_path}`,
-        genre: `${arr[i].genre_ids[0]}`,
-        title: `${arr[i].title}`,
-        releaseYear: `${arr[i].release_date.split("-")[0]}`,
-        plot: `${arr[i].overview}`
-      }
-      latestChild.content.push(detail)
-    }
-
-
-
-    const container = document.querySelector('#latest .cardListContent');
-    container.innerHTML = cards;
-
-    $('.info-modal').on('click', function () {
-      let parameter = this
-      getDetail(parameter);
-    })
+    generateContent(arrayObjectofDetail,arr,latestChild,'latest')
   },
   error: (e) => {
     console.log(e.responseText);
@@ -68,40 +32,7 @@ $.ajax({
       id: "action",
       content: []
     }
-
-    arrayObjectofDetail.result.push(latestChild)
-    let cards = ``;
-    for (i = 0; i < 10; i++) {
-      cards += `<div class="col-lg-2 col-4 carousel-cell">
-      <div class="card-content">
-        <div class="imageOverlay">
-          <img src="https://www.themoviedb.org/t/p/w1280/${arr[i].poster_path}" alt="">
-          <div class="overlay">
-            <button type="button" class="btn btn-light btn-overlay info-modal" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="${arr[i].id}">See Detail</button>
-          </div>
-        </div>
-        <h3 class="movieTitle">${arr[i].title}</h3>
-      </div>
-    </div>`;
-
-      let detail = {
-        id: `${arr[i].id}`,
-        backdrop: `${arr[i].backdrop_path}`,
-        genre: `${arr[i].genre_ids[0]}`,
-        title: `${arr[i].title}`,
-        releaseYear: `${arr[i].release_date.split("-")[0]}`,
-        plot: `${arr[i].overview}`
-      }
-      latestChild.content.push(detail)
-    }
-
-    const container = document.querySelector('#action .cardListContent');
-    container.innerHTML = cards;
-
-    $('.info-modal').on('click', function () {
-      let parameter = this
-      getDetail(parameter);
-    })
+    generateContent(arrayObjectofDetail,arr,latestChild,'action')
   },
   error: (e) => {
     console.log(e.responseText);
@@ -116,40 +47,7 @@ $.ajax({
       id: "animation",
       content: []
     }
-
-    arrayObjectofDetail.result.push(latestChild)
-    let cards = ``;
-    for (i = 0; i < 10; i++) {
-      cards += `<div class="col-lg-2 col-4 carousel-cell">
-      <div class="card-content">
-        <div class="imageOverlay">
-          <img src="https://www.themoviedb.org/t/p/w1280/${arr[i].poster_path}" alt="">
-          <div class="overlay">
-            <button type="button" class="btn btn-light btn-overlay info-modal" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="${arr[i].id}">See Detail</button>
-          </div>
-        </div>
-        <h3 class="movieTitle">${arr[i].title}</h3>
-      </div>
-    </div>`;
-
-      let detail = {
-        id: `${arr[i].id}`,
-        backdrop: `${arr[i].backdrop_path}`,
-        genre: `${arr[i].genre_ids[0]}`,
-        title: `${arr[i].title}`,
-        releaseYear: `${arr[i].release_date.split("-")[0]}`,
-        plot: `${arr[i].overview}`
-      }
-      latestChild.content.push(detail)
-    }
-
-    const container = document.querySelector('#animation .cardListContent');
-    container.innerHTML = cards;
-
-    $('.info-modal').on('click', function () {
-      let parameter = this
-      getDetail(parameter);
-    })
+    generateContent(arrayObjectofDetail,arr,latestChild,'animation')
   },
   error: (e) => {
     console.log(e.responseText);
@@ -166,11 +64,7 @@ $(document).ready(function () {
     }
   });
   
-
-  $('.close-modal').on('click',function(){
-    let e = document.querySelector('modal-header');
-    e.remove();
-  })
+  
 
 });
 
@@ -313,6 +207,8 @@ function getDetail(parameter) {
           </div>`
       const container = document.querySelector('.modal-content');
       container.innerHTML = cards
+      play();
+      deleteModal();
     },
     error: (e) => {
       console.log(e.responseText);
@@ -326,4 +222,62 @@ function getRunTime(e){
   const hours = Math.floor(minutes/60);
   const remainingMinutes = minutes % 60;
   return `${hours}h ${remainingMinutes}m`
+}
+
+function play(){
+  let play = document.querySelector('.btn-modal-play');
+  play.addEventListener('click',function(){
+    console.log(this)
+  })
+}
+
+function getContent(arr){
+  return `<div class="col-lg-2 col-4 carousel-cell">
+  <div class="card-content">
+    <div class="imageOverlay">
+      <img src="https://www.themoviedb.org/t/p/w1280/${arr[i].poster_path}" alt="">
+      <div class="overlay">
+        <button type="button" class="btn btn-light btn-overlay info-modal" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="${arr[i].id}">See Detail</button>
+      </div>
+    </div>
+    <h3 class="movieTitle">${arr[i].title}</h3>
+  </div>
+</div>`
+}
+
+function getContentDetail(arr){
+  return {
+    id: `${arr[i].id}`,
+    backdrop: `${arr[i].backdrop_path}`,
+    genre: `${arr[i].genre_ids[0]}`,
+    title: `${arr[i].title}`,
+    releaseYear: `${arr[i].release_date.split("-")[0]}`,
+    plot: `${arr[i].overview}`
+  }
+}
+
+function generateContent(arrayObjectofDetail,arr,latestChild,id){
+  arrayObjectofDetail.result.push(latestChild)
+    let cards = ``;
+    for (i = 0; i < 10; i++) {
+      cards += getContent(arr);
+      let detail = getContentDetail(arr);
+      latestChild.content.push(detail)
+    }
+    const container = document.querySelector(`#${id} .cardListContent`);
+    container.innerHTML = cards;
+    clickModal();
+}
+
+function clickModal(){
+  $('.info-modal').on('click', function () {
+    let parameter = this
+    getDetail(parameter);
+  })
+}
+
+function deleteModal(){
+  $('.close-modal').on('click', function () {
+    $('.modal-header').remove();
+  })
 }

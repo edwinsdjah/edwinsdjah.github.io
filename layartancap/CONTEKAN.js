@@ -31,15 +31,15 @@ fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${apiKey}`)
   });
 
 
-// contekan CAST
-const apiKey = 'YOUR_API_KEY';
-const movieId = 'MOVIE_ID';
-
-fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&append_to_response=credits`)
-  .then(response => response.json())
-  .then(data => {
-    const director = data.credits.crew.find(person => person.job === 'Director');
-    const cast = data.credits.cast.slice(0, 5);
-    console.log(director, cast);
-  })
-  .catch(e
+  const apiKey = 'YOUR_API_KEY';
+  const movieId = 'MOVIE_ID';
+  
+  fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&append_to_response=credits`)
+    .then(response => response.json())
+    .then(data => {
+      const director = data.credits.crew.find(person => person.job === 'Director');
+      const cast = data.credits.cast.slice(0, 5);
+      console.log(director, cast);
+    })
+    .catch(error =>
+  
