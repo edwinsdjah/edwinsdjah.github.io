@@ -591,4 +591,8 @@ th.duration {
     .movieTitle{
         display: none;
     }
+    
+    .headTitle {
+        font-size: 2em;
+        }
 }
