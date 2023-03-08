@@ -65,6 +65,7 @@ $(document).ready(function () {
     $('.search .input').toggleClass('toggle');
     $('.search .bi-x-circle').toggleClass('hide')
     $('.search .bi-search').toggleClass('hide');
+    $('.netflix-dropdown-box.dropdown').toggleClass('hide');
   });
 
   $('.search .bi-x-circle').click(function () {
@@ -74,6 +75,8 @@ $(document).ready(function () {
     $('.search .bi-search').toggleClass('hide');
     $('.searchContainer').toggleClass('hide');
     $('.movieListContainer').toggleClass('hide');
+    $('.netflix-dropdown-box.dropdown').toggleClass('hide');
+    $('.searchContainer .cardListContent .carousel-cell').remove();
   });
 
 

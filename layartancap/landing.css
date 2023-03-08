@@ -7,7 +7,7 @@ body {
 }
 
 .hide{
-    display: none;
+    display: none !important;
 }
 
 .netflix-padding-left {
@@ -178,7 +178,7 @@ body {
 }
 
 .search .toggle {
-    width: 240px;
+    width: 14em;
     border-color: #fff;
 }
 
@@ -634,9 +634,17 @@ th.duration {
     .button-play-container {
         margin-top: 0;
     }
+    
+    .search .input{
+        padding-left: 3px;
+    }
 
     .headTitle {
         margin-bottom: 0;
+    }
+    
+    .netflix-row{
+        padding-top: 0.4em;
     }
 
     .row.cardListContent .carousel-cell {
@@ -658,6 +666,10 @@ th.duration {
 
     .netflix-dropdown-box .dropdown-menu {
         margin-top: 1em;
+    }
+    
+    .netflix-row .right i{
+        font-size: 15px;
     }
 }
 
