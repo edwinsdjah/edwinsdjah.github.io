@@ -7,7 +7,7 @@ const pastDateString = pastDate.toISOString().substring(0, 10);
 
 // get Latest movie
 $.ajax({
-  url: `https://api.themoviedb.org/3/discover/movie?api_key=8596b8914c63f1b64f5193ff80976696&primary_release_date.gte=${pastDateString}&primary_release_date.lte=${todayString}`,
+  url: `https://api.themoviedb.org/3/discover/movie?api_key=8596b8914c63f1b64f5193ff80976696&primary_release_date.gte=${pastDateString}&primary_release_date.lte=${todayString}&with_poster_path=true&with_backdrop_path=true`,
   success: objectAPI => {
     // memanggil fungsi generate content
     generateContent(objectAPI, 'latest')
@@ -19,7 +19,7 @@ $.ajax({
 
 // get Action Movie
 $.ajax({
-  url: `https://api.themoviedb.org/3/discover/movie?api_key=8596b8914c63f1b64f5193ff80976696&with_genres=28`,
+  url: `https://api.themoviedb.org/3/discover/movie?api_key=8596b8914c63f1b64f5193ff80976696&with_genres=28&with_poster_path=true&with_backdrop_path=true`,
   success: objectAPI => {
     // memanggil fungsi generate content
     generateContent(objectAPI, 'action')
@@ -30,7 +30,7 @@ $.ajax({
 })
 
 $.ajax({
-  url: `https://api.themoviedb.org/3/discover/movie?api_key=8596b8914c63f1b64f5193ff80976696&with_genres=16`,
+  url: `https://api.themoviedb.org/3/discover/movie?api_key=8596b8914c63f1b64f5193ff80976696&with_genres=16&with_poster_path=true&with_backdrop_path=true`,
   success: objectAPI => {
     // memanggil fungsi generate content
     generateContent(objectAPI, 'animation')
@@ -41,7 +41,7 @@ $.ajax({
 })
 
 $.ajax({
-  url: `https://api.themoviedb.org/3/discover/movie?api_key=8596b8914c63f1b64f5193ff80976696&with_genres=10402`,
+  url: `https://api.themoviedb.org/3/discover/movie?api_key=8596b8914c63f1b64f5193ff80976696&with_genres=10402&with_poster_path=true&with_backdrop_path=true`,
   success: objectAPI => {
     // memanggil fungsi generate content
     generateContent(objectAPI, 'musical')
@@ -69,12 +69,17 @@ $(document).ready(function () {
   });
 
   $('.search .bi-x-circle').click(function () {
-    $('.search .input').toggleClass('toggle');
-    $('.search .input').val('');
-    $('.search .bi-x-circle').toggleClass('hide')
-    $('.search .bi-search').toggleClass('hide');
-    $('.searchContainer').toggleClass('hide');
-    $('.movieListContainer').toggleClass('hide');
+    if ($('.search .input').width() > 0) {
+      $('.search .input').removeClass('toggle');
+      $('.search .bi-x-circle').toggleClass('hide')
+      $('.search .bi-search').toggleClass('hide');
+      if (!$('.searchContainer').hasClass('hide')) {
+        $('.searchContainer').addClass('hide')
+        $('.movieListContainer').removeClass('hide');
+      }
+      $('.search .input').val('');
+    }
+
     setTimeout(() => {
       $('.netflix-dropdown-box.dropdown').toggleClass('hide');
     }, 300);
@@ -289,11 +294,20 @@ function generateContent(objectAPI, id) {
   // mengambil data result dari hasil url API
   const arr = objectAPI.results;
   let cards = ``;
-  // looping konten sesuai kriteria
-  for (i = 0; i < 10; i++) {
-    // menjalankan fungsi get konten dan masukkan ke card
-    cards += getContent(arr);
+  if (arr.length > 0 && arr.length > 10) {
+    // looping konten sesuai kriteria
+    for (i = 0; i < 10; i++) {
+      // menjalankan fungsi get konten dan masukkan ke card
+      cards += getContent(arr);
+    }
+  } else {
+    for (i = 0; i < arr.length; i++) {
+      // menjalankan fungsi get konten dan masukkan ke card
+      cards += getContent(arr);
+    }
   }
+
+
   // memasukan konten hasil looping ke container
   const container = document.querySelector(`#${id} .cardListContent`);
   container.innerHTML = cards;
@@ -320,17 +334,18 @@ function getEmbedVideo() {
 
 function searchMovie(query) {
   $.ajax({
-    url: `https://api.themoviedb.org/3/search/movie?api_key=8596b8914c63f1b64f5193ff80976696&query=${query}`,
+    url: `https://api.themoviedb.org/3/search/movie?api_key=8596b8914c63f1b64f5193ff80976696&query=${query}&with_poster_path=true&with_backdrop_path=true`,
     success: objectAPI => {
       // memanggil fungsi generate content
       let searchContainer = document.querySelector('.searchContainer');
       let movieListContainer = document.querySelector('.movieListContainer')
-      if(searchContainer.classList.contains('hide')){
+      if (searchContainer.classList.contains('hide')) {
         searchContainer.classList.remove('hide');
         movieListContainer.classList.add('hide');
       }
+      console.log(objectAPI)
       generateContent(objectAPI, 'search');
-
+      
     },
     error: (e) => {
       console.log(e.responseText);
