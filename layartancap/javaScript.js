@@ -75,7 +75,9 @@ $(document).ready(function () {
     $('.search .bi-search').toggleClass('hide');
     $('.searchContainer').toggleClass('hide');
     $('.movieListContainer').toggleClass('hide');
-    $('.netflix-dropdown-box.dropdown').toggleClass('hide');
+    setTimeout(() => {
+      $('.netflix-dropdown-box.dropdown').toggleClass('hide');
+    }, 300);
     $('.searchContainer .cardListContent .carousel-cell').remove();
   });
 
