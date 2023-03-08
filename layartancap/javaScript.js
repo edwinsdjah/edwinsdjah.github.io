@@ -4,71 +4,74 @@ const todayString = today.toISOString().substring(0, 10);
 const pastDate = new Date(today.setDate(today.getDate() - 60));
 const pastDateString = pastDate.toISOString().substring(0, 10);
 let myListData = JSON.parse(localStorage.getItem('my List'))
-if(!myListData){
+if (!myListData) {
   myListData = [];
 }
+let objectAPIforlist
 
-function generateAjax(){
+
+
+function generateAjax() {
   // get Latest movie
-$.ajax({
-  url: `https://api.themoviedb.org/3/discover/movie?api_key=8596b8914c63f1b64f5193ff80976696&primary_release_date.gte=${pastDateString}&primary_release_date.lte=${todayString}&with_poster_path=true&with_backdrop_path=true`,
-  success: objectAPI => {
-    // memanggil fungsi generate content
-    generateContent(objectAPI, 'latest')
-  },
-  error: (e) => {
-    console.log(e.responseText);
-  }
-})
+  $.ajax({
+    url: `https://api.themoviedb.org/3/discover/movie?api_key=8596b8914c63f1b64f5193ff80976696&primary_release_date.gte=${pastDateString}&primary_release_date.lte=${todayString}&with_poster_path=true&with_backdrop_path=true`,
+    success: objectAPI => {
+      // memanggil fungsi generate content
+      generateContent(objectAPI, 'latest')
+    },
+    error: (e) => {
+      console.log(e.responseText);
+    }
+  })
 
-// get Action Movie
-$.ajax({
-  url: `https://api.themoviedb.org/3/discover/movie?api_key=8596b8914c63f1b64f5193ff80976696&with_genres=28&with_poster_path=true&with_backdrop_path=true`,
-  success: objectAPI => {
-    // memanggil fungsi generate content
-    generateContent(objectAPI, 'action')
-  },
-  error: (e) => {
-    console.log(e.responseText);
-  }
-})
+  // get Action Movie
+  $.ajax({
+    url: `https://api.themoviedb.org/3/discover/movie?api_key=8596b8914c63f1b64f5193ff80976696&with_genres=28&with_poster_path=true&with_backdrop_path=true`,
+    success: objectAPI => {
+      // memanggil fungsi generate content
+      generateContent(objectAPI, 'action')
+    },
+    error: (e) => {
+      console.log(e.responseText);
+    }
+  })
 
-$.ajax({
-  url: `https://api.themoviedb.org/3/discover/movie?api_key=8596b8914c63f1b64f5193ff80976696&with_genres=16&with_poster_path=true&with_backdrop_path=true`,
-  success: objectAPI => {
-    // memanggil fungsi generate content
-    generateContent(objectAPI, 'animation')
-  },
-  error: (e) => {
-    console.log(e.responseText);
-  }
-})
+  $.ajax({
+    url: `https://api.themoviedb.org/3/discover/movie?api_key=8596b8914c63f1b64f5193ff80976696&with_genres=16&with_poster_path=true&with_backdrop_path=true`,
+    success: objectAPI => {
+      // memanggil fungsi generate content
+      generateContent(objectAPI, 'animation')
+    },
+    error: (e) => {
+      console.log(e.responseText);
+    }
+  })
 
-$.ajax({
-  url: `https://api.themoviedb.org/3/discover/movie?api_key=8596b8914c63f1b64f5193ff80976696&with_genres=10402&with_poster_path=true&with_backdrop_path=true`,
-  success: objectAPI => {
-    // memanggil fungsi generate content
-    generateContent(objectAPI, 'musical')
-  },
-  error: (e) => {
-    console.log(e.responseText);
-  }
-})
+  $.ajax({
+    url: `https://api.themoviedb.org/3/discover/movie?api_key=8596b8914c63f1b64f5193ff80976696&with_genres=10402&with_poster_path=true&with_backdrop_path=true`,
+    success: objectAPI => {
+      // memanggil fungsi generate content
+      generateContent(objectAPI, 'musical')
+    },
+    error: (e) => {
+      console.log(e.responseText);
+    }
+  })
 }
 
 // FUNCTION YG DIJALANKAN SAAT WINDOW READY
 $(document).ready(function () {
   let body = document.querySelector('body')
-  if(body.id === 'myListPage'){
+  if (body.id === 'myListPage') {
     generateListContent();
-    $('.btn-clear').on('click',function(){
+    $('.btn-clear').on('click', function () {
       localStorage.clear();
       console.log('test')
     })
-    } else {
+  } else {
     generateAjax();
     showSlides(slideIndex);
-    }
+  }
 
   $(window).scroll(function () {
     var scroll = $(window).scrollTop();
@@ -110,11 +113,11 @@ $(document).ready(function () {
       searchMovie(query);
     }
   });
-  
-  
+
+
   let modalButtonContainer = document.querySelector('#cardContainer')
-  modalButtonContainer.addEventListener('click',function(e){
-    if(e.target.classList.contains('info-modal')){
+  modalButtonContainer.addEventListener('click', function (e) {
+    if (e.target.classList.contains('info-modal')) {
       let target = e.target
       clickModal(target);
     }
@@ -168,7 +171,6 @@ function clickModal(target) {
 
 function getRunTime(e) {
   const minutes = parseInt(e.runtime);
-  console.log(minutes)
   const hours = Math.floor(minutes / 60);
   const remainingMinutes = minutes % 60;
   return `${hours}h ${remainingMinutes}m`
@@ -180,6 +182,7 @@ function getDetail(parameter) {
     url: `https://api.themoviedb.org/3/movie/${id}?api_key=8596b8914c63f1b64f5193ff80976696&append_to_response=credits`,
     success: objectAPI => {
       console.log(objectAPI);
+      objectAPIforlist = objectAPI
       let director;
       objectAPI.credits.crew.find(function (e) {
         if (e.job === 'Director') {
@@ -203,7 +206,7 @@ function getDetail(parameter) {
                       <button type="button" class="btn btn-light btn-modal-play" data-id=${id}><i class="bi bi-play-fill"></i>Play</button>
                     </div>
                     <div class="col-3">
-                      <button type="button myListButton" class="btn btn-light">MY LIST</button>
+                      <button type="button" class="btn btn-light myListButton">MY LIST</button>
                     </div>
                     <div class="col-3">
                       <button type="button" class="btn btn-light">Light</button>
@@ -259,15 +262,22 @@ function getDetail(parameter) {
           </div>`
       const container = document.querySelector('.modal-content');
       container.innerHTML = cards
+      
       play();
       deleteModal();
-      $('.myListButton').on('click',saveMyList(objectAPI))
     },
     error: (e) => {
       console.log(e.responseText);
     }
   })
 }
+
+let body = document.querySelector('.modal-content')
+body.addEventListener('click',function(e){
+  if(e.target.classList.contains('myListButton')){
+    saveMyList(objectAPIforlist)
+  }
+})
 
 function play() {
   let play = document.querySelector('.btn-modal-play');
@@ -329,7 +339,7 @@ function searchMovie(query) {
       }
       console.log(objectAPI)
       generateContent(objectAPI, 'search');
-      
+
     },
     error: (e) => {
       console.log(e.responseText);
@@ -337,15 +347,38 @@ function searchMovie(query) {
   })
 }
 
+
+
+
+
 // FUNCTION SAVE MY LIST
-function saveMyList(objectAPI){
+function saveMyList(objectAPI) {
   let object = {
     id: `${objectAPI.id}`,
     title: `${objectAPI.title}`,
     poster_path: `${objectAPI.poster_path}`
   }
-  myListData.push(object)
-  localStorage.setItem('my List',JSON.stringify(myListData));
+
+  for (let index = 0; index < myListData.length; index++) {
+    if (object.id === myListData[index].id) {
+      alert('DATA EXIST');
+      return
+    }
+  }
+  myListData.push(object);
+  localStorage.setItem('my List', JSON.stringify(myListData));
+
+
+
+
+
+  // myListData.forEach(function(el){
+  //   if(el.id === object.id){
+  //     return alert('DATA EXIST')
+  //   } else {
+
+  //   }
+  // })
 }
 
 
@@ -384,43 +417,23 @@ function currentSlide(n) {
 }
 
 // GENERATE LIST CONTENT
-function generateListContent(){
-  
-    let cards = ``;
-    if (myListData.length > 0 && myListData.length > 10) {
-      // looping konten sesuai kriteria
-      for (i = 0; i < 10; i++) {
-        // menjalankan fungsi get konten dan masukkan ke card
-        cards += getContent(myListData);
-      }
-    } else if(myListData.length === 0){
-      cards += `<h2>DATA NOT FOUND<h2>`
-    } {
-      for (i = 0; i < myListData.length; i++) {
-        // menjalankan fungsi get konten dan masukkan ke card
-        cards += getContent(myListData);
-      }
+function generateListContent() {
+
+  let cards = ``;
+  if (myListData.length > 0 && myListData.length > 10) {
+    // looping konten sesuai kriteria
+    for (i = 0; i < 10; i++) {
+      // menjalankan fungsi get konten dan masukkan ke card
+      cards += getContent(myListData);
     }
-    const container = document.querySelector(`#myList .cardListContent`);
-    container.innerHTML = cards;
+  } else if (myListData.length === 0) {
+    cards += `<h2>DATA NOT FOUND<h2>`
+  } {
+    for (i = 0; i < myListData.length; i++) {
+      // menjalankan fungsi get konten dan masukkan ke card
+      cards += getContent(myListData);
+    }
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  const container = document.querySelector(`#myList .cardListContent`);
+  container.innerHTML = cards;
+}
