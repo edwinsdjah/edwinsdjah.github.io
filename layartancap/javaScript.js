@@ -61,6 +61,10 @@ $(document).ready(function () {
   let body = document.querySelector('body')
   if(body.id === 'myListPage'){
     generateListContent();
+    $('.btn-clear').on('click',function(){
+      localStorage.clear();
+      console.log('test')
+    })
     } else {
     generateAjax();
     showSlides(slideIndex);
