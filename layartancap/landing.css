@@ -709,3 +709,14 @@ th.duration {
     }
   }
   
+  
+  /* LIST PAGE */
+  
+#myListPage .netflix-navbar{
+    position: relative;
+}
+
+#myList .cardListContent{
+    flex-wrap: wrap;
+    overflow-x: auto;
+}

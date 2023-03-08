@@ -21,7 +21,7 @@
   <script src="https://kit.fontawesome.com/0a0fc88f6f.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body id="myListPage">
 
   <main id="mainContent">
     <!-- header -->
@@ -38,7 +38,7 @@
                 <button>TV Shows</button>
                 <button>Movies</button>
                 <button>News & Popular</button>
-                <button><a href="list.html">My List</a></button>
+                <button><a href="">My List</a></button>
               </section>
             </div>
             <div class="netflix-dropdown-box dropdown">
@@ -56,11 +56,6 @@
             </div>
           </div>
           <div class="right d-flex align-items-center">
-            <div class="search">
-              <input class="input form-input-search"  type="text" placeholder="Search by Movie name">
-              <i class="bi bi-search img"></i>
-              <i class="bi bi-x-circle img hide"></i>
-            </div>
             <section class="netflix-profile">
 
             </section>
@@ -69,98 +64,15 @@
       </div>
     </nav>
     <!-- /header -->
-
     <section id="bodyContent">
-      <!-- video -->
-      <section class="netflix-home-video">
-        <div class="top"></div>
-        <div class="bottom"></div>
-        <div id="videoCarousel" class="carouselContainer">
-          <div class="carouselItem">
-            <video src="./video/video.mp4" autoplay muted loop playsinline></video>
-            <div class="content">
-              <section class="left">
-                <img class="movie-logo" src="./images/image2.webp" alt="">
-                <div class="d-flex mt-3">
-                  <button class="btn btn-light m-2"> <i class="bi bi-play-fill" style="color: black; padding: 0%;"></i>
-                    Play
-                    Now </button>
-                  <button class="btn btn-secondary m-2"><i class="bi bi-info-circle" style=" padding: 0%;"></i> More
-                    Info</button>
-                </div>
-              </section>
+          <section id="cardContainer">
+            <div class="searchContainer fade-in container">
+              <div id="myList">
+                <h2 class="headTitle">My List</h2>
+                <div class="row cardListContent move-slide"></div>
+              </div>
             </div>
-          </div>
-          <div class="carouselItem">
-            <video src="./video/video2.mp4" autoplay muted loop playsinline></video>
-            <div class="content">
-              <section class="left">
-                <img class="movie-logo" src="./images/logo2.png" alt="">
-                <div class="d-flex mt-3">
-                  <button class="btn btn-light m-2"> <i class="bi bi-play-fill" style="color: black; padding: 0%;"></i>
-                    Play
-                    Now </button>
-                  <button class="btn btn-secondary m-2"><i class="bi bi-info-circle" style=" padding: 0%;"></i> More
-                    Info</button>
-                </div>
-              </section>
-            </div>
-          </div>
-          <div class="carouselItem">
-            <video src="./video/video3.mp4" autoplay muted loop playsinline></video>
-            <div class="content">
-              <section class="left">
-                <img class="movie-logo" src="./images/logo3.png" alt="">
-                <div class="d-flex mt-3">
-                  <button class="btn btn-light m-2"> <i class="bi bi-play-fill" style="color: black; padding: 0%;"></i>
-                    Play
-                    Now </button>
-                  <button class="btn btn-secondary m-2"><i class="bi bi-info-circle" style=" padding: 0%;"></i> More
-                    Info</button>
-                </div>
-              </section>
-            </div>
-          </div>
-          <!-- Next and previous buttons -->
-          <a class="prev " onclick="plusSlides(-1)"><i class="bi bi-chevron-left"></i></a>
-          <a class="next" onclick="plusSlides(1)"><i class="bi bi-chevron-right"></i></a>
-        </div>
-        
-      </section>
-      <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-      </div>
-      <!-- video -->
-      <!-- Button trigger modal -->
-
-      <section id="cardContainer">
-        <div class="searchContainer fade-in container hide">
-          <div id="search">
-            <h2 class="headTitle">Search</h2>
-            <div class="row cardListContent move-slide"></div>
-          </div>
-        </div>
-        <div class="movieListContainer fade-in container">
-          <div id="latest">
-            <h2 class="headTitle">Latest Movies</h2>
-            <div class="row cardListContent move-slide"></div>
-          </div>
-          <div id="musical">
-            <h2 class="headTitle">DRAMA MUSICAL</h2>
-            <div class="row cardListContent move-slide"></div>
-          </div>
-          <div id="action">
-            <h2 class="headTitle">ACTION</h2>
-            <div class="row cardListContent move-slide"></div>
-          </div>
-          <div id="animation">
-            <h2 class="headTitle">ANIMATION</h2>
-            <div class="row cardListContent move-slide"></div>
-          </div>
-        </div>
-      </section>
+          </section>
     </section>
 
     <!-- Modal -->

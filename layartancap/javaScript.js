@@ -3,9 +3,13 @@ const today = new Date();
 const todayString = today.toISOString().substring(0, 10);
 const pastDate = new Date(today.setDate(today.getDate() - 60));
 const pastDateString = pastDate.toISOString().substring(0, 10);
+let myListData = JSON.parse(localStorage.getItem('my List'))
+if(!myListData){
+  myListData = [];
+}
 
-
-// get Latest movie
+function generateAjax(){
+  // get Latest movie
 $.ajax({
   url: `https://api.themoviedb.org/3/discover/movie?api_key=8596b8914c63f1b64f5193ff80976696&primary_release_date.gte=${pastDateString}&primary_release_date.lte=${todayString}&with_poster_path=true&with_backdrop_path=true`,
   success: objectAPI => {
@@ -50,8 +54,18 @@ $.ajax({
     console.log(e.responseText);
   }
 })
+}
 
+// FUNCTION YG DIJALANKAN SAAT WINDOW READY
 $(document).ready(function () {
+  let body = document.querySelector('body')
+  if(body.id === 'myListPage'){
+    generateListContent();
+    } else {
+    generateAjax();
+    showSlides(slideIndex);
+    }
+
   $(window).scroll(function () {
     var scroll = $(window).scrollTop();
     if (scroll > 100) {
@@ -86,57 +100,75 @@ $(document).ready(function () {
     $('.searchContainer .cardListContent .carousel-cell').remove();
   });
 
-
   $(".form-input-search").keypress(function (event) {
     if (event.which === 13 && $('.search .input').length) {
       let query = $('.form-input-search').val()
       searchMovie(query);
     }
   });
+  
+  
+  let modalButtonContainer = document.querySelector('#cardContainer')
+  modalButtonContainer.addEventListener('click',function(e){
+    if(e.target.classList.contains('info-modal')){
+      let target = e.target
+      clickModal(target);
+    }
+  })
 
 });
 
+// ALUR SESUAI PROSES FUNCTION
+function generateContent(objectAPI, id) {
+  // mengambil data result dari hasil url API
+  const arr = objectAPI.results;
+  let cards = ``;
+  if (arr.length > 0 && arr.length > 10) {
+    // looping konten sesuai kriteria
+    for (i = 0; i < 10; i++) {
+      // menjalankan fungsi get konten dan masukkan ke card
+      cards += getContent(arr);
+    }
+  } else {
+    for (i = 0; i < arr.length; i++) {
+      // menjalankan fungsi get konten dan masukkan ke card
+      cards += getContent(arr);
+    }
+  }
 
-function position(id) {
-  var card = document.getElementsByClassName('card')[id];
-  // card.style.transform = 'scale(1.5)';
-  console.log(id)
+
+  // memasukan konten hasil looping ke container
+  const container = document.querySelector(`#${id} .cardListContent`);
+  container.innerHTML = cards;
 }
 
-// CAROUSEL
-let slideIndex = 1;
-showSlides(slideIndex);
-
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
+function getContent(arr) {
+  return `<div class="col-lg-2 col-4 carousel-cell">
+  <div class="card-content">
+    <div class="imageOverlay">
+      <img src="https://www.themoviedb.org/t/p/w1280/${arr[i].poster_path}" alt="">
+      <div class="overlay">
+        <button type="button" class="btn btn-light btn-overlay info-modal" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="${arr[i].id}">See Detail</button>
+      </div>
+    </div>
+    <h3 class="movieTitle">${arr[i].title}</h3>
+  </div>
+</div>`
 }
 
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
+function clickModal(target) {
+  let parameter = target
+  // menjalankan fungsi get detail untuk menambahkan kontent ke modal
+  getDetail(parameter);
 }
 
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("carouselItem");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {
-    slideIndex = 1
-  }
-  if (n < 1) {
-    slideIndex = slides.length
-  }
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
+function getRunTime(e) {
+  const minutes = parseInt(e.runtime);
+  console.log(minutes)
+  const hours = Math.floor(minutes / 60);
+  const remainingMinutes = minutes % 60;
+  return `${hours}h ${remainingMinutes}m`
 }
-// CAROUSEL
 
 function getDetail(parameter) {
   let id = parameter.getAttribute('data-id');
@@ -167,7 +199,7 @@ function getDetail(parameter) {
                       <button type="button" class="btn btn-light btn-modal-play" data-id=${id}><i class="bi bi-play-fill"></i>Play</button>
                     </div>
                     <div class="col-3">
-                      <button type="button" class="btn btn-light">Light</button>
+                      <button type="button myListButton" class="btn btn-light">MY LIST</button>
                     </div>
                     <div class="col-3">
                       <button type="button" class="btn btn-light">Light</button>
@@ -225,19 +257,12 @@ function getDetail(parameter) {
       container.innerHTML = cards
       play();
       deleteModal();
+      $('.myListButton').on('click',saveMyList(objectAPI))
     },
     error: (e) => {
       console.log(e.responseText);
     }
   })
-}
-
-function getRunTime(e) {
-  const minutes = parseInt(e.runtime);
-  console.log(minutes)
-  const hours = Math.floor(minutes / 60);
-  const remainingMinutes = minutes % 60;
-  return `${hours}h ${remainingMinutes}m`
 }
 
 function play() {
@@ -276,50 +301,8 @@ function play() {
   })
 }
 
-function getContent(arr) {
-  return `<div class="col-lg-2 col-4 carousel-cell">
-  <div class="card-content">
-    <div class="imageOverlay">
-      <img src="https://www.themoviedb.org/t/p/w1280/${arr[i].poster_path}" alt="">
-      <div class="overlay">
-        <button type="button" class="btn btn-light btn-overlay info-modal" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="${arr[i].id}">See Detail</button>
-      </div>
-    </div>
-    <h3 class="movieTitle">${arr[i].title}</h3>
-  </div>
-</div>`
-}
-
-function generateContent(objectAPI, id) {
-  // mengambil data result dari hasil url API
-  const arr = objectAPI.results;
-  let cards = ``;
-  if (arr.length > 0 && arr.length > 10) {
-    // looping konten sesuai kriteria
-    for (i = 0; i < 10; i++) {
-      // menjalankan fungsi get konten dan masukkan ke card
-      cards += getContent(arr);
-    }
-  } else {
-    for (i = 0; i < arr.length; i++) {
-      // menjalankan fungsi get konten dan masukkan ke card
-      cards += getContent(arr);
-    }
-  }
-
-
-  // memasukan konten hasil looping ke container
-  const container = document.querySelector(`#${id} .cardListContent`);
-  container.innerHTML = cards;
-  clickModal();
-}
-
-function clickModal() {
-  $('.info-modal').on('click', function () {
-    let parameter = this
-    // menjalankan fungsi get detail untuk menambahkan kontent ke modal
-    getDetail(parameter);
-  })
+function getEmbedVideo() {
+  return `<iframe src="${videoUrl}" width="${img.clientWidth}" height="${img.clientHeight}"></iframe>`
 }
 
 function deleteModal() {
@@ -328,10 +311,7 @@ function deleteModal() {
   })
 }
 
-function getEmbedVideo() {
-  return `<iframe src="${videoUrl}" width="${img.clientWidth}" height="${img.clientHeight}"></iframe>`
-}
-
+// FUNCTION SEARCH MOVIE
 function searchMovie(query) {
   $.ajax({
     url: `https://api.themoviedb.org/3/search/movie?api_key=8596b8914c63f1b64f5193ff80976696&query=${query}&with_poster_path=true&with_backdrop_path=true`,
@@ -352,3 +332,91 @@ function searchMovie(query) {
     }
   })
 }
+
+// FUNCTION SAVE MY LIST
+function saveMyList(objectAPI){
+  let object = {
+    id: `${objectAPI.id}`,
+    title: `${objectAPI.title}`,
+    poster_path: `${objectAPI.poster_path}`
+  }
+  myListData.push(object)
+  localStorage.setItem('my List',JSON.stringify(myListData));
+}
+
+
+// CAROUSEL
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("carouselItem");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {
+    slideIndex = 1
+  }
+  if (n < 1) {
+    slideIndex = slides.length
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
+}
+
+// CAROUSEL
+let slideIndex = 1;
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+// GENERATE LIST CONTENT
+function generateListContent(){
+  
+    let cards = ``;
+    if (myListData.length > 0 && myListData.length > 10) {
+      // looping konten sesuai kriteria
+      for (i = 0; i < 10; i++) {
+        // menjalankan fungsi get konten dan masukkan ke card
+        cards += getContent(myListData);
+      }
+    } else if(myListData.length === 0){
+      cards += `<h2>DATA NOT FOUND<h2>`
+    } {
+      for (i = 0; i < myListData.length; i++) {
+        // menjalankan fungsi get konten dan masukkan ke card
+        cards += getContent(myListData);
+      }
+    }
+    const container = document.querySelector(`#myList .cardListContent`);
+    container.innerHTML = cards;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
