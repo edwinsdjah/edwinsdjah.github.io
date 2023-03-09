@@ -6,12 +6,55 @@ body {
     /* position: relative; */
 }
 
-.hide{
+.splash-screen{
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.splash-screen img{
+    width: 85%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+
+
+
+.empty-msg{
+    margin-top: 2em;
+    text-align: center;
+    color: #f8f9fa;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2em;
+}
+
+.hide {
     display: none !important;
 }
 
 .netflix-padding-left {
     padding-left: 57px;
+}
+
+.netflix-nav button a {
+    color: rgba(255, 255, 255, 0.623);
+    text-decoration: none;
+}
+
+.btn-clear {
+    background-color: #db0000;
+    border-color: #db0000;
+    color: #f8f9fa;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.btn-clear:hover {
+    background-color: #7e0505;
+    border-color: #7e0505;
 }
 
 
@@ -88,10 +131,14 @@ body {
 .netflix-profile {
     width: 30px;
     height: 30px;
-    background-color: gray;
+    background-color: transparent;
     border-radius: 4px;
     margin-left: 20px;
     cursor: pointer;
+}
+
+.netflix-profile i{
+    padding: 5px;
 }
 
 .netflix-nav {
@@ -183,7 +230,7 @@ body {
 }
 
 
-.search .img:hover{
+.search .img:hover {
     cursor: pointer;
 }
 
@@ -410,7 +457,7 @@ ul {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
-.searchContainer .cardListContent{
+.searchContainer .cardListContent {
     flex-wrap: wrap;
 }
 
@@ -631,19 +678,25 @@ th.duration {
 }
 
 @media (max-width: 768px) {
+    .splash-screen{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     .button-play-container {
         margin-top: 0;
     }
-    
-    .search .input{
+
+    .search .input {
         padding-left: 3px;
     }
 
     .headTitle {
         margin-bottom: 0;
     }
-    
-    .netflix-row{
+
+    .netflix-row {
         padding-top: 0.4em;
     }
 
@@ -667,16 +720,16 @@ th.duration {
     .netflix-dropdown-box .dropdown-menu {
         margin-top: 1em;
     }
-    
-    .netflix-row .right i{
+
+    .netflix-row .right i {
         font-size: 15px;
     }
 }
 
 
 .fade-in {
-	-webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-	        animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    -webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 
@@ -692,32 +745,34 @@ th.duration {
  * animation fade-in
  * ----------------------------------------
  */
- @-webkit-keyframes fade-in {
+@-webkit-keyframes fade-in {
     0% {
-      opacity: 0;
+        opacity: 0;
     }
+
     100% {
-      opacity: 1;
+        opacity: 1;
     }
-  }
-  @keyframes fade-in {
+}
+
+@keyframes fade-in {
     0% {
-      opacity: 0;
+        opacity: 0;
     }
+
     100% {
-      opacity: 1;
+        opacity: 1;
     }
-  }
-  
-  
-  /* LIST PAGE */
-  
-#myListPage .netflix-navbar{
+}
+
+
+/* LIST PAGE */
+
+#myListPage .netflix-navbar {
     position: relative;
 }
 
-#myList .cardListContent{
+#myList .cardListContent {
     flex-wrap: wrap;
     overflow-x: auto;
 }
-

@@ -61,12 +61,32 @@ function generateAjax() {
 
 // FUNCTION YG DIJALANKAN SAAT WINDOW READY
 $(document).ready(function () {
-  let body = document.querySelector('body')
+  let body = document.querySelector('body');
+  let splash = document.querySelector('.splash-screen');
+  let mainContent = document.querySelector('#bodyContent');
+  if(window.innerWidth < 768){
+    let img = splash.querySelector('img');
+    img.src = './images/netflix-intro-mobile.gif'
+    splashScreen(2500)
+  } else {
+    let img = splash.querySelector('img');
+    img.src = './images/netflix-intro.gif'
+    splashScreen(4000)
+  }
+  
+  function splashScreen(time){
+    setTimeout(function(){
+      mainContent.classList.remove('hide');
+      splash.classList.add('hide');
+    }, time)
+  }
+  
   if (body.id === 'myListPage') {
     generateListContent();
     $('.btn-clear').on('click', function () {
       localStorage.clear();
-      console.log('test')
+      myListData.length = 0
+      updateListHTML();
     })
   } else {
     generateAjax();
@@ -203,13 +223,10 @@ function getDetail(parameter) {
             <div class="col-6 button-play-container">
                   <div class="row">
                     <div class="col-6">
-                      <button type="button" class="btn btn-light btn-modal-play" data-id=${id}><i class="bi bi-play-fill"></i>Play</button>
+                      <button type="button" class="btn btn-light btn-modal-play" data-id=${id}><i class="bi bi-play-fill"></i> Play</button>
                     </div>
-                    <div class="col-3">
-                      <button type="button" class="btn btn-light myListButton">MY LIST</button>
-                    </div>
-                    <div class="col-3">
-                      <button type="button" class="btn btn-light">Light</button>
+                    <div class="col-6">
+                      <button type="button" class="btn btn-light myListButton">Add to My List  <i class="bi bi-plus-circle"></i></button>
                     </div>
                   </div>
             </div>
@@ -361,11 +378,12 @@ function saveMyList(objectAPI) {
 
   for (let index = 0; index < myListData.length; index++) {
     if (object.id === myListData[index].id) {
-      alert('DATA EXIST');
+      alert('THIS MOVIE IS ALREADY IN LIST');
       return
     }
   }
   myListData.push(object);
+  alert('SUCESSFULLY ADDED TO LIST')
   localStorage.setItem('my List', JSON.stringify(myListData));
 
 
@@ -427,7 +445,7 @@ function generateListContent() {
       cards += getContent(myListData);
     }
   } else if (myListData.length === 0) {
-    cards += `<h2>DATA NOT FOUND<h2>`
+    cards += `<h2 class='empty-msg'>NO MOVIE DATA FOUND<h2>`
   } {
     for (i = 0; i < myListData.length; i++) {
       // menjalankan fungsi get konten dan masukkan ke card
@@ -436,4 +454,9 @@ function generateListContent() {
   }
   const container = document.querySelector(`#myList .cardListContent`);
   container.innerHTML = cards;
+}
+
+function updateListHTML(){
+  let parentElement = document.querySelector('.cardListContent');
+  parentElement.innerHTML = `<h2 class='empty-msg'>NO MOVIE DATA FOUND<h2>`
 }

@@ -24,6 +24,9 @@
 <body>
 
   <main id="mainContent">
+    <div class="splash-screen fade-in">
+      <img src="" alt="">
+    </div>
     <!-- header -->
     <nav class="navbar navbar-expand-lg netflix-navbar netflix-padding-left netflix-padding-right">
       <div class="container-fluid">
@@ -34,7 +37,7 @@
             </a>
             <div class="netflix-nav">
               <section>
-                <button>Home</button>
+                <button><a href="index.html">Home</a></button>
                 <button>TV Shows</button>
                 <button>Movies</button>
                 <button>News & Popular</button>
@@ -47,7 +50,7 @@
                 Browse
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="#">Home</a></li>
+                <li><a class="dropdown-item" href="index.html">Home</a></li>
                 <li><a class="dropdown-item" href="#">TV Shows</a></li>
                 <li><a class="dropdown-item" href="#">Movies</a></li>
                 <li><a class="dropdown-item" href="#">News & Popular</a></li>
@@ -57,12 +60,12 @@
           </div>
           <div class="right d-flex align-items-center">
             <div class="search">
-              <input class="input form-input-search"  type="text" placeholder="Search by Movie name">
+              <input class="input form-input-search" type="text" placeholder="Search by Movie name">
               <i class="bi bi-search img"></i>
               <i class="bi bi-x-circle img hide"></i>
             </div>
             <section class="netflix-profile">
-
+              <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="fa fa-user"></i></a>
             </section>
           </div>
         </div>
@@ -70,7 +73,7 @@
     </nav>
     <!-- /header -->
 
-    <section id="bodyContent">
+    <section id="bodyContent" class="hide fade-in">
       <!-- video -->
       <section class="netflix-home-video">
         <div class="top"></div>
@@ -125,7 +128,7 @@
           <a class="prev " onclick="plusSlides(-1)"><i class="bi bi-chevron-left"></i></a>
           <a class="next" onclick="plusSlides(1)"><i class="bi bi-chevron-right"></i></a>
         </div>
-        
+
       </section>
       <div style="text-align:center">
         <span class="dot" onclick="currentSlide(1)"></span>
@@ -161,6 +164,55 @@
           </div>
         </div>
       </section>
+      
+      <div class="container footer">
+        <div class="row">
+          <div class="col-md-10 mx-auto">
+            <div class="row">
+              <div class="col-md-3">
+                <ul>
+                  <li>Audio and Subtitle</li>
+                  <li>Media Center</li>
+                  <li>Privacy</li>
+                  <li>Contact Us</li>
+                </ul>
+              </div>
+              <div class="col-md-3">
+                <ul>
+                  <li>Audio description</li>
+                  <li>Investor Relation</li>
+                  <li>Terms and Conditions</li>
+                  <li>Legal Notices</li>
+                </ul>
+              </div>
+              <div class="col-md-3">
+                <ul>
+                  <li>Help Center</li>
+                  <li>Jobs</li>
+  
+                </ul>
+              </div>
+              <div class="col-md-3">
+                <ul>
+                  <li>Gift card</li>
+                  <li>Subscription</li>
+  
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-10 mx-auto">
+            <div class="row">
+  
+              <div class="col">
+                <p class="copy-right">@netflix copyright</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Modal -->
@@ -169,57 +221,64 @@
         <div class="modal-content">
         </div>
       </div>
-    </div>  
+    </div>
+
+    <!-- MODAL LOGIN -->
+    <section>
+      <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header text-center">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body omb_socialButtons">
+              <form>
+                <div class="form-group">
+                  <div class="modal-caption text-center" style="font-family: 'Anton', sans-serif;">
+                    ONE STOP LOGIN<br>
+                    FOR EVERYTHING
+                  </div>
+                  <span><input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                      placeholder="Enter email"></span>
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                  <label class="form-check-label label-caption" for="defaultCheck1">
+                    Keep me logged in
+                    <a href="#">
+                      <p class=" label-caption " style="float:right;">Forget your password?</p>
+                    </a>
+                  </label>
+                  <p class="  form-check-label label-caption text-center mt1rem ">By logging in, you agree
+                    to our Privacy
+                    Policy and Terms of Use</p>
+                </div>
+                <div class="  omb_socialButtons  mt2rem">
+                  <a href="#" class="btn btn-lg btn-block omb_btn-facebook">
+                    <span class="hidden-xs" style="font-family: 'Anton', sans-serif;">LOG IN</span>
+                  </a>
+                  <a href="#" class="btn btn-lg btn-block omb_btn-google">
+                    <i class="fab fa-google-plus-g">&nbsp;</i>
+                    <span class="hidden-xs" style="font-family: 'Anton', sans-serif;">LOG IN WITH
+                      GOOGLE</span>
+                  </a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END MODAL -->
+    </section>
 
     <!-- footer  -->
-    <div class="container footer">
-      <div class="row">
-        <div class="col-md-10 mx-auto">
-          <div class="row">
-            <div class="col-md-3">
-              <ul>
-                <li>Audio and Subtitle</li>
-                <li>Media Center</li>
-                <li>Privacy</li>
-                <li>Contact Us</li>
-              </ul>
-            </div>
-            <div class="col-md-3">
-              <ul>
-                <li>Audio description</li>
-                <li>Investor Relation</li>
-                <li>Terms and Conditions</li>
-                <li>Legal Notices</li>
-              </ul>
-            </div>
-            <div class="col-md-3">
-              <ul>
-                <li>Help Center</li>
-                <li>Jobs</li>
-
-              </ul>
-            </div>
-            <div class="col-md-3">
-              <ul>
-                <li>Gift card</li>
-                <li>Subscription</li>
-
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-10 mx-auto">
-          <div class="row">
-
-            <div class="col">
-              <p class="copy-right">@netflix copyright</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    
   </main>
 
   <!-- Optional JavaScript; choose one of the two! -->
