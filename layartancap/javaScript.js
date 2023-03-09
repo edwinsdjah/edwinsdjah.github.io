@@ -61,18 +61,7 @@ function generateAjax() {
 
 // FUNCTION YG DIJALANKAN SAAT WINDOW READY
 $(document).ready(function () {
-  let body = document.querySelector('body');
-  let splash = document.querySelector('.splash-screen');
-  let mainContent = document.querySelector('#bodyContent');
-  if(window.innerWidth < 768){
-    let img = splash.querySelector('img');
-    img.src = './images/netflix-intro-mobile.gif'
-    splashScreen(2500)
-  } else {
-    let img = splash.querySelector('img');
-    img.src = './images/netflix-intro.gif'
-    splashScreen(4000)
-  }
+
   
   function splashScreen(time){
     setTimeout(function(){
@@ -91,6 +80,18 @@ $(document).ready(function () {
   } else {
     generateAjax();
     showSlides(slideIndex);
+    let body = document.querySelector('body');
+    let splash = document.querySelector('.splash-screen');
+    let mainContent = document.querySelector('#bodyContent');
+    if(window.innerWidth < 768){
+      let img = splash.querySelector('img');
+      img.src = './images/netflix-intro-mobile.gif'
+      splashScreen(2500)
+    } else {
+      let img = splash.querySelector('img');
+      img.src = './images/netflix-intro.gif'
+      splashScreen(4000)
+    }
   }
 
   $(window).scroll(function () {
