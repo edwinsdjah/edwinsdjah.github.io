@@ -65,6 +65,7 @@ $(document).ready(function () {
   
   function splashScreen(time){
     setTimeout(function(){
+      let mainContent = document.querySelector('#bodyContent');
       let splash = document.querySelector('.splash-screen');
       mainContent.classList.remove('hide');
       splash.classList.add('hide');
@@ -83,7 +84,6 @@ $(document).ready(function () {
     showSlides(slideIndex);
     let body = document.querySelector('body');
     let splash = document.querySelector('.splash-screen');
-    let mainContent = document.querySelector('#bodyContent');
     if(window.innerWidth < 768){
       let img = splash.querySelector('img');
       img.src = './images/netflix-intro-mobile.gif'
