@@ -65,6 +65,7 @@ $(document).ready(function () {
   
   function splashScreen(time){
     setTimeout(function(){
+      let splash = document.querySelector('.splash-screen');
       mainContent.classList.remove('hide');
       splash.classList.add('hide');
     }, time)
