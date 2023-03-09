@@ -62,7 +62,7 @@ function generateAjax() {
 // FUNCTION YG DIJALANKAN SAAT WINDOW READY
 $(document).ready(function () {
 
-  
+  let body = document.querySelector('body');
   function splashScreen(time){
     setTimeout(function(){
       let mainContent = document.querySelector('#bodyContent');
@@ -82,7 +82,7 @@ $(document).ready(function () {
   } else {
     generateAjax();
     showSlides(slideIndex);
-    let body = document.querySelector('body');
+   
     let splash = document.querySelector('.splash-screen');
     if(window.innerWidth < 768){
       let img = splash.querySelector('img');
