@@ -65,8 +65,8 @@ function getSchedule(city, time) {
                     tableContainer.innerHTML = `<tr class="schedule-list">
                     <td>${jsonResponse.data[startingIndex].date.hijri.day} Ramadhan</td>
                     <td class='gregorian'>${jsonResponse.data[startingIndex].date.readable}</td>
-                    <td>${jsonResponse.data[startingIndex].timings.Fajr}</td>
                     <td>${jsonResponse.data[startingIndex].timings.Imsak}</td>
+                    <td>${jsonResponse.data[startingIndex].timings.Fajr}</td>
                     <td>${jsonResponse.data[startingIndex].timings.Dhuhr}</td>
                     <td>${jsonResponse.data[startingIndex].timings.Asr}</td>
                     <td>${jsonResponse.data[startingIndex].timings.Maghrib}</td>
@@ -91,8 +91,8 @@ function getContent(arr) {
     return `<tr class="schedule-list">
     <td>${arr[i].date.hijri.day} Ramadhan</td>
     <td class='gregorian'>${arr[i].date.readable}</td>
-    <td>${arr[i].timings.Fajr}</td>
     <td>${arr[i].timings.Imsak}</td>
+    <td>${arr[i].timings.Fajr}</td>
     <td>${arr[i].timings.Dhuhr}</td>
     <td>${arr[i].timings.Asr}</td>
     <td>${arr[i].timings.Maghrib}</td>
