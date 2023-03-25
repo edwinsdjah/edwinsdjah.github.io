@@ -116,7 +116,7 @@ function getGPSlocation(position) {
     const longitude = position.coords.longitude;
     console.log(latitude)
     console.log(longitude)
-    const apiUrl = `http://api.aladhan.com/v1/hijriCalendar/1444/9?latitude=${latitude}&longitude=${longitude}&method=11&tune=3,3,3,3,3,3,3,3`;
+    const apiUrl = `https://api.aladhan.com/v1/hijriCalendar/1444/9?latitude=${latitude}&longitude=${longitude}&method=11&tune=3,3,3,3,3,3,3,3`;
     fetch(apiUrl)
         .finally(function () {
             gpsfilter.classList.remove('hide')
