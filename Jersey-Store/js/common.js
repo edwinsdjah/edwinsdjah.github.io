@@ -86,14 +86,14 @@ $(document).ready(function () {
         const productPrice = el.querySelector('.price').textContent.split('Rp')[1];
         const productImg = el.querySelector('.pic-1').src;
         const priceNum = getPrice(productPrice);
-        let product = {
-          name: productName,
-          image: productImg,
-          priceString: productPrice,
-          count: 1,
-          price: +priceNum,
-          basePrice: priceNum,
-        }
+          let product = {
+            name: productName,
+            image: productImg,
+            priceString: productPrice,
+            count: 1,
+            price: +priceNum,
+            basePrice: priceNum,
+          }
         updateProduct(product);
         updateCartinHTML();
       }

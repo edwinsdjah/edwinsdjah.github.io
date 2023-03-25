@@ -3,15 +3,17 @@ const today = new Date();
 const todayString = today.toISOString().substring(0, 10);
 const pastDate = new Date(today.setDate(today.getDate() - 60));
 const pastDateString = pastDate.toISOString().substring(0, 10);
+const apiKey = '8596b8914c63f1b64f5193ff80976696';
 
-$.ajax({
-  url: `https://api.themoviedb.org/3/discover/movie?api_key=8596b8914c63f1b64f5193ff80976696&primary_release_date.gte=${pastDateString}&primary_release_date.lte=${todayString}`,
-  success: objectAPI => {
-    const arr = objectAPI.results
-    console.log(arr);
-    let cards = ``;
-    for( i = 0; i < 10; i++){
-      cards += `<div class="col-lg-2 col-4 carousel-cell">
+function getMovieAPI(url,parent) {
+  return fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      const arr = data.results
+      console.log(arr);
+      let cards = ``;
+      for (i = 0; i < 10; i++) {
+        cards += `<div class="col-lg-2 col-4 carousel-cell">
       <div class="card-content">
         <div class="imageOverlay">
           <img src="https://www.themoviedb.org/t/p/w1280/${arr[i].poster_path}" alt="">
@@ -22,41 +24,71 @@ $.ajax({
         <h3 class="movieTitle">${arr[i].title}</h3>
       </div>
     </div>`;
-    }
-    const container = document.querySelector('.cardListContent');
-    container.innerHTML = cards
-  },
-  error: (e) => {
-    console.log(e.responseText);
-  }
-})
+      }
+      const container = document.querySelector(`#${parent} .cardListContent`);
+      container.innerHTML = cards
+    }).catch(response => {
+      console.log(response)
+    })
+}
+getMovieAPI(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&primary_release_date.gte=${pastDateString}&primary_release_date.lte=${todayString}`,'latest');
+getMovieAPI(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=28`,'action');
 
-$.ajax({
-  url: `https://api.themoviedb.org/3/discover/movie?api_key=8596b8914c63f1b64f5193ff80976696&with_genres=28`,
-  success: objectAPI => {
-    const arr = objectAPI.results
-    console.log(arr);
-    let cards = ``;
-    for (i = 0; i < 10; i++) {
-      cards += `<div class="col-lg-2 col-4 carousel-cell">
-      <div class="card-content">
-        <div class="imageOverlay">
-          <img src="https://www.themoviedb.org/t/p/w1280/${arr[i].poster_path}" alt="">
-          <div class="overlay">
-            <button type="button" class="btn btn-light btn-overlay" data-bs-toggle="modal" data-bs-target="#exampleModal">See Detail</button>
-          </div>
-        </div>
-        <h3 class="movieTitle">${arr[i].title}</h3>
-      </div>
-    </div>`
-    }
-    const container = document.querySelector('#action .cardListContent');
-    container.innerHTML = cards
-  },
-  error: (e) => {
-    console.log(e.responseText);
-  }
-})
+// $.ajax({
+//   url: `https://api.themoviedb.org/3/discover/movie?api_key=8596b8914c63f1b64f5193ff80976696&primary_release_date.gte=${pastDateString}&primary_release_date.lte=${todayString}`,
+//   success: objectAPI => {
+//     const arr = objectAPI.results
+//     console.log(arr);
+//     let cards = ``;
+//     for (i = 0; i < 10; i++) {
+//       cards += `<div class="col-lg-2 col-4 carousel-cell">
+//       <div class="card-content">
+//         <div class="imageOverlay">
+//           <img src="https://www.themoviedb.org/t/p/w1280/${arr[i].poster_path}" alt="">
+//           <div class="overlay">
+//             <button type="button" class="btn btn-light btn-overlay" data-bs-toggle="modal" data-bs-target="#exampleModal">See Detail</button>
+//           </div>
+//         </div>
+//         <h3 class="movieTitle">${arr[i].title}</h3>
+//       </div>
+//     </div>`;
+//     }
+//     const container = document.querySelector('.cardListContent');
+//     container.innerHTML = cards
+//   },
+//   error: (e) => {
+//     console.log(e.responseText);
+//   }
+// })
+
+
+
+// $.ajax({
+//   url: `https://api.themoviedb.org/3/discover/movie?api_key=8596b8914c63f1b64f5193ff80976696&with_genres=28`,
+//   success: objectAPI => {
+//     const arr = objectAPI.results
+//     console.log(arr);
+//     let cards = ``;
+//     for (i = 0; i < 10; i++) {
+//       cards += `<div class="col-lg-2 col-4 carousel-cell">
+//       <div class="card-content">
+//         <div class="imageOverlay">
+//           <img src="https://www.themoviedb.org/t/p/w1280/${arr[i].poster_path}" alt="">
+//           <div class="overlay">
+//             <button type="button" class="btn btn-light btn-overlay" data-bs-toggle="modal" data-bs-target="#exampleModal">See Detail</button>
+//           </div>
+//         </div>
+//         <h3 class="movieTitle">${arr[i].title}</h3>
+//       </div>
+//     </div>`
+//     }
+//     const container = document.querySelector('#action .cardListContent');
+//     container.innerHTML = cards
+//   },
+//   error: (e) => {
+//     console.log(e.responseText);
+//   }
+// })
 
 $.ajax({
   url: `https://api.themoviedb.org/3/discover/movie?api_key=8596b8914c63f1b64f5193ff80976696&with_genres=16`,
@@ -96,11 +128,6 @@ $(document).ready(function () {
     }
   });
 
-  $('.carousel').flickity({
-    // options
-    cellAlign: 'left',
-    contain: true
-  });
 });
 
 
@@ -128,14 +155,18 @@ function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("carouselItem");
   let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
+  if (n > slides.length) {
+    slideIndex = 1
+  }
+  if (n < 1) {
+    slideIndex = slides.length
+  }
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
 }
