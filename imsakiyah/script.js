@@ -31,7 +31,7 @@ function generateCities() {
 }
 
 function getSchedule(city, time) {
-    fetch(`http://api.aladhan.com/v1/hijriCalendarByCity/1444/9?city=${city}&country=indonesia&method=11&tune=0,0,-6,0,-6,0,0,0`)
+    fetch(`http://api.aladhan.com/v1/hijriCalendarByCity/1444/9?city=${city}&country=indonesia&method=11&tune=3,3,3,3,3,3,3,3`)
         .then(response => response.json())
         .then(jsonResponse => {
             let startingIndex
@@ -116,7 +116,7 @@ function getGPSlocation(position) {
     const longitude = position.coords.longitude;
     console.log(latitude)
     console.log(longitude)
-    const apiUrl = `http://api.aladhan.com/v1/hijriCalendar/1444/9?latitude=${latitude}&longitude=${longitude}&method=11`;
+    const apiUrl = `http://api.aladhan.com/v1/hijriCalendar/1444/9?latitude=${latitude}&longitude=${longitude}&method=11&tune=3,3,3,3,3,3,3,3`;
     fetch(apiUrl)
         .finally(function () {
             gpsfilter.classList.remove('hide')
