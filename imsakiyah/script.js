@@ -118,7 +118,7 @@ function getGPSlocation(position) {
     console.log(longitude)
     const apiUrl = `https://api.aladhan.com/v1/hijriCalendar/1444/9?latitude=${latitude}&longitude=${longitude}&method=11&tune=3,3,3,3,3,3,3,3`;
     fetch(apiUrl)
-        .finally(function () {
+        .finally(() => {
             gpsfilter.classList.remove('hide')
             gpsfilter.classList.add('fade-in')
             let table = document.querySelector('table tbody')
