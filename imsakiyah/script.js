@@ -14,6 +14,9 @@ const date = new Date();
 let day = date.getDate();
 let month = date.getMonth() + 1;
 let year = date.getFullYear();
+if (day < 10) {
+    day = `0${day}`
+}
 if (month < 10) {
     month = `0${month}`
 }
@@ -31,15 +34,14 @@ function generateCities() {
 }
 
 function getSchedule(city, time) {
-    fetch(`https://api.aladhan.com/v1/hijriCalendarByCity/1444/9?city=${city}&country=indonesia&method=11&tune=3,3,3,3,3,3,3,3`)
+    fetch(`https://api.aladhan.com/v1/hijriCalendarByCity/1444/10?city=${city}&country=indonesia&method=11&tune=3,3,3,3,3,3,3,3`)
         .then(response => response.json())
         .then(jsonResponse => {
             let startingIndex
-            let elementstoKeep
             let cards = ''
             switch (time) {
-                case '7':
-                    elementstoKeep = time
+                case '7': 
+                    
                     for (i = 0; i < jsonResponse.data.length; i++) {
                         if (jsonResponse.data[i].date.gregorian.date === currentDate) {
                             startingIndex = i
@@ -56,14 +58,13 @@ function getSchedule(city, time) {
                     searchToday();
                     break;
                 case '1':
-                    elementstoKeep = time
                     for (i = 0; i < jsonResponse.data.length; i++) {
                         if (jsonResponse.data[i].date.gregorian.date === currentDate) {
                             startingIndex = i
                         }
                     }
                     tableContainer.innerHTML = `<tr class="schedule-list">
-                    <td>${jsonResponse.data[startingIndex].date.hijri.day} Ramadhan</td>
+                    <td>${jsonResponse.data[startingIndex].date.hijri.day} ${jsonResponse.data[startingIndex].date.hijri.month.en}</td>
                     <td class='gregorian'>${jsonResponse.data[startingIndex].date.readable}</td>
                     <td>${jsonResponse.data[startingIndex].timings.Imsak}</td>
                     <td>${jsonResponse.data[startingIndex].timings.Fajr}</td>
@@ -89,7 +90,7 @@ function getSchedule(city, time) {
 
 function getContent(arr) {
     return `<tr class="schedule-list">
-    <td>${arr[i].date.hijri.day} Ramadhan</td>
+    <td>${arr[i].date.hijri.day} ${arr[i].date.hijri.month.en}</td>
     <td class='gregorian'>${arr[i].date.readable}</td>
     <td>${arr[i].timings.Imsak}</td>
     <td>${arr[i].timings.Fajr}</td>
@@ -116,7 +117,7 @@ function getGPSlocation(position) {
     const longitude = position.coords.longitude;
     console.log(latitude)
     console.log(longitude)
-    const apiUrl = `https://api.aladhan.com/v1/hijriCalendar/1444/9?latitude=${latitude}&longitude=${longitude}&method=11&tune=3,3,3,3,3,3,3,3`;
+    const apiUrl = `https://api.aladhan.com/v1/hijriCalendar/1444/10?latitude=${latitude}&longitude=${longitude}&method=11&tune=3,3,3,3,3,3,3,3`;
     fetch(apiUrl)
         .finally(() => {
             gpsfilter.classList.remove('hide')
@@ -136,7 +137,7 @@ function getGPSlocation(position) {
             searchToday();
             let citySplit = jsonResponse.data[0].meta.timezone.split('/')
             citybyGps = citySplit[1]
-            cityText.innerHTML = `Anda terdeteksi berada di ${citybyGps} <br> Berikut adalah jadwal Imsakiyah untuk wilayah ${citybyGps} dan sekitarnya`
+            cityText.innerHTML = `Anda terdeteksi berada di ${citybyGps} <br> Berikut adalah jadwal Sholat untuk wilayah ${citybyGps} dan sekitarnya`
         })
         .catch(error => console.log(error))
 }
@@ -151,6 +152,7 @@ function searchToday(){
         }
     }
 }
+
 
 cityContainer.addEventListener('change', e => {
     cityValue = e.target.value;
