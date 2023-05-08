@@ -37,16 +37,11 @@ function getSchedule(city, time) {
     fetch(`https://api.aladhan.com/v1/hijriCalendarByCity/1444/10?city=${city}&country=indonesia&method=11&tune=3,3,3,3,3,3,3,3`)
         .then(response => response.json())
         .then(jsonResponse => {
-            let startingIndex
+            startingIndex = undefined
             let cards = ''
             switch (time) {
                 case '7': 
-                    
-                    for (i = 0; i < jsonResponse.data.length; i++) {
-                        if (jsonResponse.data[i].date.gregorian.date === currentDate) {
-                            startingIndex = i
-                        }
-                    }
+                    searchDate(jsonResponse)
                     jsonResponse.data.splice(0, startingIndex)
                     jsonResponse.data.splice(time)
                     // let newArray = jsonResponse.data.slice(startingIndex, startingIndex + elementstoKeep);
@@ -58,11 +53,7 @@ function getSchedule(city, time) {
                     searchToday();
                     break;
                 case '1':
-                    for (i = 0; i < jsonResponse.data.length; i++) {
-                        if (jsonResponse.data[i].date.gregorian.date === currentDate) {
-                            startingIndex = i
-                        }
-                    }
+                    searchDate(jsonResponse)
                     tableContainer.innerHTML = `<tr class="schedule-list">
                     <td>${jsonResponse.data[startingIndex].date.hijri.day} ${jsonResponse.data[startingIndex].date.hijri.month.en}</td>
                     <td class='gregorian'>${jsonResponse.data[startingIndex].date.readable}</td>
@@ -78,7 +69,7 @@ function getSchedule(city, time) {
                 case '30':
                     for (i = 0; i < jsonResponse.data.length; i++) {
                         cards += getContent(jsonResponse.data)
-                    }
+                    }   
                     tableContainer.innerHTML = cards
                     searchToday();
             }
@@ -153,6 +144,14 @@ function searchToday(){
     }
 }
 
+function searchDate(response){
+    for (i = 0; i < response.data.length; i++) {
+        if (response.data[i].date.gregorian.date === currentDate) {
+            startingIndex = i
+        }
+    }
+    
+}
 
 cityContainer.addEventListener('change', e => {
     cityValue = e.target.value;
