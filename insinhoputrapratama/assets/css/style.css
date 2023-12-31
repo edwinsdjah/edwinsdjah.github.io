@@ -39609,5 +39609,10 @@ footer.bg-dark.angled.upper-start:before {
 .navbar-other{
   flex-direction: row-reverse;
 }
+}
 
+@media (min-width: 900px){
+  .card-services{
+    min-height: 323px;
+  }
 }
