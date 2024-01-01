@@ -39638,10 +39638,17 @@ swiper-slide img {
   object-fit: cover;
 }
 
-swiper-container::part(button-next) , swiper-container::part(button-prev) , swiper-container::part(pagination bullet-active) {
+swiper-container::part(button-next) , swiper-container::part(button-prev) {
   color: white;
+}
+swiper-container::part(bullet-active){
+  background: white;
 }
 
 swiper-container, swiper-slide{
   max-height:500px !important;
+}
+
+.brand-swiper .swiper-slide{
+  align-self: center;
 }
