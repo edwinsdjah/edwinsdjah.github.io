@@ -42,7 +42,7 @@ function getSchedule(city, time) {
             switch (time) {
                 case '7': 
                     searchDate(jsonResponse)
-                    jsonResponse.data.splice(0, startingIndex)
+                    jsonResponse.data.splice(1, startingIndex)
                     jsonResponse.data.splice(time)
                     // let newArray = jsonResponse.data.slice(startingIndex, startingIndex + elementstoKeep);
                     console.log(jsonResponse.data)
