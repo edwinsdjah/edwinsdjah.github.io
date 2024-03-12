@@ -42,11 +42,11 @@ function getSchedule(city, time) {
             switch (time) {
                 case '7': 
                     searchDate(jsonResponse)
-                    jsonResponse.data.splice(1, startingIndex)
+                    jsonResponse.data.splice(0, startingIndex)
                     jsonResponse.data.splice(time)
                     // let newArray = jsonResponse.data.slice(startingIndex, startingIndex + elementstoKeep);
                     console.log(jsonResponse.data)
-                    for (i = 0; i < jsonResponse.data.length; i++) {
+                    for (i = 1; i < jsonResponse.data.length; i++) {
                         cards += getContent(jsonResponse.data);
                     }
                     tableContainer.innerHTML = cards
@@ -67,7 +67,7 @@ function getSchedule(city, time) {
                   searchToday();
                     break;
                 case '30':
-                    for (i = 0; i < jsonResponse.data.length; i++) {
+                    for (i = 1; i < jsonResponse.data.length; i++) {
                         cards += getContent(jsonResponse.data)
                     }   
                     tableContainer.innerHTML = cards
@@ -119,7 +119,7 @@ function getGPSlocation(position) {
         .then(response => response.json())
         .then(jsonResponse => {
             let cards = ''
-            for (i = 0; i < jsonResponse.data.length; i++) {
+            for (i = 1; i < jsonResponse.data.length; i++) {
                 cards += getContent(jsonResponse.data)
             }
             tableContainer.innerHTML = cards
