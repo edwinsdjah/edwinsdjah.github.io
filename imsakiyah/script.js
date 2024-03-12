@@ -46,7 +46,7 @@ function getSchedule(city, time) {
                     jsonResponse.data.splice(time)
                     // let newArray = jsonResponse.data.slice(startingIndex, startingIndex + elementstoKeep);
                     console.log(jsonResponse.data)
-                    for (i = 1; i < jsonResponse.data.length; i++) {
+                    for (i = 0; i < jsonResponse.data.length; i++) {
                         cards += getContent(jsonResponse.data);
                     }
                     tableContainer.innerHTML = cards
