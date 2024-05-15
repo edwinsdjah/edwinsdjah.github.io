@@ -19,9 +19,12 @@ export function SimpleCard({ id, image, title, description }) {
         </Typography>
         <Typography>{description}</Typography>
       </CardBody>
-      <CardFooter className="pt-0">
-        <Button>Read More</Button>
-      </CardFooter>
+      <div className="flex items-center justify-center">
+        <span className="text-3xl font-bold text-blue-gray">Rp 1.000.000</span>
+        <CardFooter>
+          <Button>Add to Cart</Button>
+        </CardFooter>
+      </div>
     </Card>
   );
 }

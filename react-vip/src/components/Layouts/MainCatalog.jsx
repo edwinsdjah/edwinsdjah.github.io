@@ -34,7 +34,7 @@ const MainCatalogLayout = () => {
     },
   ];
   return (
-    <div className="flex justify-center min-h-screen items-center">
+    <div className="flex justify-center min-h-screen items-center flex-wrap">
       {arrayCats.map((items, index) => {
         return (
           <SimpleCard
