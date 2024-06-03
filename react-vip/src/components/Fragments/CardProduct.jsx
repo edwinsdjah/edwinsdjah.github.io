@@ -2,7 +2,7 @@ import { Button } from "@material-tailwind/react";
 
 const CardProduct = ({ children }) => {
   return (
-    <div className="w-full max-w-sm bg-gray-800 border border-gray-700 rounded-lg shadow mx-2 flex flex-col justify-between">
+    <div className="w-full max-w-sm bg-gray-800 border border-gray-700 rounded-lg shadow mx-2 my-2 flex flex-col justify-between">
       {children}
     </div>
   );
@@ -16,10 +16,10 @@ const Header = ({ image }) => {
   );
 };
 
-const Footer = ({ price }) => {
+const Footer = ({ price, handleAddtoCart }) => {
   return (
     <div className="flex item-center justify-between px-5 pb-5">
-      <span className="text-3xl font-bold text-white">{price}</span>
+      <span className="text-3xl font-bold text-white">Rp {price.toLocaleString('id-ID',{styles: 'currency', currency: 'IDR'})}</span>
       <Button className="bg-blue-500">Add to Cart</Button>
     </div>
   );

@@ -1,10 +1,11 @@
 const Button = (props) => {
-  const { variant, children } = props;
+  const { variant, children, onClick = () => {}, type = "button"} = props;
 
   return (
     <button
       className={`h-10 px-6 font-semibold ${variant} rounded-md text-white`}
-      type="submit"
+      type={type}
+      onClick={onClick}
     >
       {children}
     </button>
