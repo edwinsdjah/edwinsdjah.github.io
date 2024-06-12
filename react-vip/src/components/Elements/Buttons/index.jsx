@@ -1,5 +1,5 @@
 const Button = (props) => {
-  const { variant, children, onClick = () => {}, type = "button"} = props;
+  const { variant, children, onClick = () => {}, type = "button" } = props;
 
   return (
     <button

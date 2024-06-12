@@ -16,11 +16,16 @@ const Header = ({ image }) => {
   );
 };
 
-const Footer = ({ price, handleAddtoCart }) => {
+const Footer = ({ price, handleAddToCart, id }) => {
   return (
     <div className="flex item-center justify-between px-5 pb-5">
-      <span className="text-3xl font-bold text-white">Rp {price.toLocaleString('id-ID',{styles: 'currency', currency: 'IDR'})}</span>
-      <Button className="bg-blue-500">Add to Cart</Button>
+      <span className="text-3xl font-bold text-white">
+        Rp{" "}
+        {price.toLocaleString("id-ID", { styles: "currency", currency: "IDR" })}
+      </span>
+      <Button className="bg-blue-500" onClick={() => handleAddToCart(id)}>
+        Add to Cart
+      </Button>
     </div>
   );
 };
