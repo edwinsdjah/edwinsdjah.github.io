@@ -30,9 +30,16 @@ const products = [
 ];
 
 const ProductPage = () => {
-  const [carts, setCart] = useState([]);
-  const [totalPrice, setTotalPrice] = useState(0);
+  const [cart, setCart] = useState([
+    {
+      name: "Sepatu Lama",
+      qty: 1,
+    },
+  ]);
 
+  const handleAddToCart = () => {
+    setCart([]);
+  };
   // USE EFFECT digunakan untuk menjalankan suatu fungsi dengan mendetek state mana yang ada perubahan
   // lalu state tersebut dimasukan sebagai dependency parameter di akhir hooksnya
 
