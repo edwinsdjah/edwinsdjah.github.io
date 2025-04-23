@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
@@ -26,6 +26,8 @@ function App() {
   // Contoh todolist dengan usestate
   const [task, setTask] = useState("");
   const [todos, setTodos] = useState([]);
+  const [editId, setEditId] = useState(null);
+  const [editText, setEditText] = useState("");
 
   const handleAdd = () => {
     if (task.trim === "") return;
@@ -35,6 +37,21 @@ function App() {
 
   const handleDelete = (id) => {
     setTodos(todos.filter((todo) => todo.id !== id));
+  };
+
+  const handleEdit = (todo) => {
+    setEditId(todo.id);
+    setEditText(todo.text);
+  };
+
+  const handleSave = () => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === editId ? { ...todo, text: editText } : todo
+      )
+    );
+    setEditId(null);
+    setEditText("");
   };
 
   return (
@@ -72,14 +89,33 @@ function App() {
       <ul>
         {todos.map((todo) => (
           <li key={todo.id}>
-            {todo.text}
-            <button
-              onClick={() => {
-                handleDelete(todo.id);
-              }}
-            >
-              Hapus
-            </button>
+            {editId === todo.id ? (
+              <>
+                <input
+                  value={editText}
+                  onChange={(e) => setEditText(e.target.value)}
+                />
+                <button onClick={handleSave}>Simpan</button>
+              </>
+            ) : (
+              <>
+                {todo.text}
+                <button
+                  onClick={() => {
+                    handleEdit(todo);
+                  }}
+                >
+                  Edit
+                </button>
+                <button
+                  onClick={() => {
+                    handleDelete(todo.id);
+                  }}
+                >
+                  Hapus
+                </button>
+              </>
+            )}
           </li>
         ))}
       </ul>
